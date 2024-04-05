@@ -15,6 +15,10 @@
     just
     obsidian
   ];
+  xdg.configFile.nvim = {
+      source = ./home/nvim/.config;
+      recursive = true;
+  };
   home.stateVersion = "23.11";
 
   programs.home-manager.enable= true;
