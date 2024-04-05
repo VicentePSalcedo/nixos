@@ -13,6 +13,7 @@
     neofetch
     neovim
     firefox
+    cargo-make
   ];
 
   home.stateVersion = "23.11";
