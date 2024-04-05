@@ -8,11 +8,13 @@
   home.homeDirectory = "/home/sintra";
 
   home.packages = with pkgs; [
-    htop
     fira-code-nerdfont
-    neofetch
     firefox
+    htop
     just
+    mictray
+    neofetch
+    neovim
     obsidian
   ];
   xdg.configFile.nvim = {
