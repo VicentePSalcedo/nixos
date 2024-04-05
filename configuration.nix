@@ -2,7 +2,6 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./nixvim.nixosModules.nixvim
       ./i3
       ./hardware-configuration.nix
       ./modules/nvidia.nix
