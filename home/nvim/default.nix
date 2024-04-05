@@ -1,12 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    extraConfig = ''
-        :luafile home/sintra/.config/nvim/init.lua
-      '';
+    extraConfig = lib.fileContents /home/sintra/nvim/init.lua;
   };
 }

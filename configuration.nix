@@ -56,6 +56,7 @@
     lshw 
     lsof
     pulseaudio
+    neovim
     pavucontrol
   ];
 
@@ -79,7 +80,6 @@
   };
   # run scripts on shell login
   environment.loginShellInit = ''
-    mictray
   '';
 
   environment.variables.EDITOR = "neovim";

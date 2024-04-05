@@ -14,7 +14,6 @@
     just
     mictray
     neofetch
-    neovim
     obsidian
   ];
   home.stateVersion = "23.11";
