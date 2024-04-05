@@ -55,9 +55,9 @@
     curl 
     lshw 
     lsof
-    neovim
     pulseaudio
     pavucontrol
+    unzip
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];

@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./nvim
     ./alacritty.nix 
     ./bash.nix 
     ./git.nix
@@ -13,11 +14,13 @@
     firefox
     htop
     just
+    libgcc
     mictray
     neofetch
     obsidian
     google-chrome
   ];
+
   home.stateVersion = "23.11";
 
   programs.home-manager.enable= true;
