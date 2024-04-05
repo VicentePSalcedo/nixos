@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./nvim
     ./alacritty.nix 
     ./bash.nix 
     ./git.nix
@@ -18,7 +17,6 @@
     neofetch
     obsidian
     google-chrome
-    libcxxStdenv
   ];
   home.stateVersion = "23.11";
 

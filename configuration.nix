@@ -55,6 +55,7 @@
     curl 
     lshw 
     lsof
+    neovim
     pulseaudio
     pavucontrol
   ];
@@ -81,7 +82,7 @@
   environment.loginShellInit = ''
   '';
 
-  environment.variables.EDITOR = "neovim";
+  environment.variables.EDITOR = "nvim";
 
   hardware = {
     pulseaudio = {
