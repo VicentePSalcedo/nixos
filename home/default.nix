@@ -1,4 +1,3 @@
-{ config, pkgs, inputs, callPackages, ... }:
 {
   imports = [
     ./alacritty.nix 
