@@ -3,7 +3,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./i3
-      ./nvim
       ./hardware-configuration.nix
       ./modules/nvidia.nix
     ];
