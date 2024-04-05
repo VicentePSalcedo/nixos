@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./nvim
     ./alacritty.nix 
     ./bash.nix 
     ./git.nix
-    ./nvim.nix
   ];
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
