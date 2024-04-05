@@ -19,6 +19,7 @@
 	i3lock
 	i3blocks
       ];
+      configFile = /home/sintra/nixos-config/home/i3/config;
     };
   };
 }
