@@ -2,8 +2,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./i3
+      ./nvim
       ./hardware-configuration.nix
-      ./modules/i3.nix
       ./modules/nvidia.nix
     ];
   boot.loader.systemd-boot.enable = true;
