@@ -5,6 +5,6 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    extraConfig = lib.fileContents /home/sintra/nvim/init.lua;
+    extraConfig = lib.fileContents ./config/init.lua;
   };
 }
