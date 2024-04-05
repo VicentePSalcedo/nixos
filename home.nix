@@ -14,6 +14,7 @@
     neovim
     firefox
     just
+    obsidian
   ];
 
   home.stateVersion = "23.11";
