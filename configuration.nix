@@ -3,6 +3,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./i3
+      ./home
       ./hardware-configuration.nix
       ./modules/nvidia.nix
     ];
@@ -53,6 +54,7 @@
     git 
     wget 
     curl 
+    libgcc
     lshw 
     lsof
     pulseaudio
