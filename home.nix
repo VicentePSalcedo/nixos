@@ -11,12 +11,10 @@
     htop
     fira-code-nerdfont
     neofetch
-    neovim
     firefox
     just
     obsidian
   ];
-
   home.stateVersion = "23.11";
 
   programs.home-manager.enable= true;

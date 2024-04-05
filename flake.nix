@@ -22,7 +22,7 @@
 	    home-manager.users.sintra = import ./home.nix;
 	  }
 	  {
-	  _module.args = { inherit inputs; };
+	    _module.args = { inherit inputs; };
 	  }
 	];
       };

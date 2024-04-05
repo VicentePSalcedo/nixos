@@ -77,6 +77,7 @@
     lshw
     neovim
   ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
   security.polkit.enable = true;
   hardware.opengl = {
     enable = true;
