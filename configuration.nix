@@ -53,11 +53,9 @@
     git 
     wget 
     curl 
-    libgcc
     lshw 
     lsof
     pulseaudio
-    neovim
     pavucontrol
   ];
 

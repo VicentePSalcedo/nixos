@@ -17,6 +17,8 @@
     mictray
     neofetch
     obsidian
+    google-chrome
+    libcxxStdenv
   ];
   home.stateVersion = "23.11";
 
