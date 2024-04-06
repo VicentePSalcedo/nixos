@@ -5,7 +5,7 @@
     shellAliases = {
     };
     bashrcExtra = ''
-      rustup completions bash > ~/.local/share/bash-completion/completions/rustup
+      (cat ~/.cache/wal/sequences &)
     '';
   };
 }
