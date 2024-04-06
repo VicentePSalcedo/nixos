@@ -16,7 +16,7 @@ update:
   nix flake update
 
 upgrade:
-  nixos-rebuild switch --flake ./nixos-config/ --upgrade --use-remote-sudo
+  nixos-rebuild switch --flake . --upgrade --use-remote-sudo
 
 clean:
   # remove all generations older than 7 days

@@ -10,11 +10,14 @@
   home.homeDirectory = "/home/sintra";
 
   home.packages = with pkgs; [
+    discord
     fira-code-nerdfont
     firefox
+    gcc_multi
     htop
     just
     libgcc
+    libgccjit
     mictray
     neofetch
     obsidian
