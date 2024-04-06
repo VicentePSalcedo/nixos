@@ -1,14 +1,14 @@
 { config, lib, pkgs, inputs, ... }:
 {
   imports = [
-    ./nvim
     ./alacritty 
     ./bash 
+    ./nvim
+    ./picom
     ./git
   ];
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
-
   home.packages = with pkgs; [
     discord
     du-dust
@@ -30,10 +30,6 @@
     xfce.thunar
     xfce.thunar-volman
   ];
-
-  services.picom.enable = true;
-
   home.stateVersion = "23.11";
-
   programs.home-manager.enable= true;
 }
