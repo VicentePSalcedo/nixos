@@ -2,6 +2,9 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      general = {
+        shell = "nu"; 
+      };
       window = {
         opacity = 0.95;
       };
