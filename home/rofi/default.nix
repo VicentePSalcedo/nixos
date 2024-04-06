@@ -1,8 +1,9 @@
 {
   programs.rofi = {
     enable = true;
-    extraConfig = ''
-      @import "~/.cache/wal/colors-rofi-dark"
-    '';
+    font = "FiraCodeNerdFont";
+  };
+  home.file.".config/rofi" = {
+      source = ./config.rasi;
   };
 }
