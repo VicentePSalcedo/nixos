@@ -159,9 +159,9 @@ bar {
         status_command i3status
 }
 
-default_border pixel 0
-gaps inner 8
-gaps outer 8
+default_border pixel 2
+gaps inner 6
+gaps outer 6
 smart_gaps on
 smart_gaps inverse_outer
 smart_borders on

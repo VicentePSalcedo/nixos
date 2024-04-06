@@ -1,3 +1,8 @@
 {
-  services.picom.enable = true;
+  services.picom = {
+    enable = true;
+    fade = true;
+    fadeDelta = 2;
+    shadow = true;
+  };
 }

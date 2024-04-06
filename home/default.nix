@@ -3,6 +3,7 @@
   imports = [
     ./alacritty 
     ./bash 
+    ./nushell
     ./nvim
     ./picom
     ./git
