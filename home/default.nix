@@ -6,6 +6,7 @@
     ./nvim
     ./picom
     ./rofi
+    ./steam
     ./git
   ];
   home.username = "sintra";
