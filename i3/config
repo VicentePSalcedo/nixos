@@ -120,7 +120,10 @@ bindsym $mod+y mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        colors {
+          statusline $fg
+          separator $fg
+        }
 }
 
 default_border pixel 2
@@ -129,3 +132,11 @@ gaps outer 6
 smart_gaps on
 smart_gaps inverse_outer
 smart_borders on
+
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.background       $bg
+
+exec --no-startup-id wal -R

@@ -14,10 +14,9 @@
       enable = true;
       package = pkgs.i3-gaps;
       extraPackages = with pkgs; [
-        rofi
-	i3status
-	i3lock
-	i3blocks
+    	  i3status
+	      i3lock
+	      i3blocks
       ];
       configFile = ./config;
     };

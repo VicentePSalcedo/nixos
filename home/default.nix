@@ -3,9 +3,9 @@
   imports = [
     ./alacritty 
     ./bash 
-    ./nushell
     ./nvim
     ./picom
+    ./rofi
     ./git
   ];
   home.username = "sintra";
