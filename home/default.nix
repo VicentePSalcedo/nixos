@@ -11,17 +11,24 @@
 
   home.packages = with pkgs; [
     discord
+    du-dust
     fira-code-nerdfont
     firefox
     gcc_multi
+    google-chrome
     htop
     just
     libgcc
     libgccjit
     mictray
     neofetch
+    nodejs_20
+    pywal
     obsidian
-    google-chrome
+    rustup
+    slack
+    xfce.thunar
+    xfce.thunar-volman
   ];
 
   home.stateVersion = "23.11";

@@ -40,7 +40,6 @@
     isNormalUser = true;
     description = "sintra";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
-    packages = with pkgs; [];
   };
   services.getty.autologinUser = "sintra";
 
@@ -97,6 +96,7 @@
   # services to enable
   services.openssh.enable = true;
   services.dbus.enable = true;
+  services.devmon.enable = true;
   
   system.stateVersion = "23.11"; 
 }
