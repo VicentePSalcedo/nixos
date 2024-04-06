@@ -2,9 +2,9 @@
 {
   imports = [
     ./nvim
-    ./alacritty.nix 
-    ./bash.nix 
-    ./git.nix
+    ./alacritty 
+    ./bash 
+    ./git
   ];
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
@@ -30,6 +30,8 @@
     xfce.thunar
     xfce.thunar-volman
   ];
+
+  services.picom.enable = true;
 
   home.stateVersion = "23.11";
 
