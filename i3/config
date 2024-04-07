@@ -1,5 +1,5 @@
 set $mod Mod1
-font pango:monospace 8
+font pango:FiraCodeNerdFont 12
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -139,4 +139,9 @@ set_from_resource $bg i3wm.color2 #f0f0f0
 client.focused          $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
-exec --no-startup-id wal -R
+exec --no-startup-id wal -i /etc/nixos/i3/wallpaper.jpg
+exec --no-startup-id dunst
+exec --no-startup-id mictray
+
+for_window [class="Steam"] floating enable
+for_window [class="Steam" title="^Steam$"] floating disable

@@ -48,16 +48,17 @@
 
   ## The Section I edit the most
   ################################################################################################################
-  environment.systemPackages = with pkgs; [ 
-    git 
-    wget 
-    curl 
-    lshw 
+  environment.systemPackages = with pkgs; [
+    curl
+    git
+    htop
+    lshw
     lsof
-    pulseaudio
     pavucontrol
+    pulseaudio
     vim
     unzip
+    wget
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
@@ -96,7 +97,6 @@
   # services to enable
   services.openssh.enable = true;
   services.dbus.enable = true;
-  services.devmon.enable = true;
   
   system.stateVersion = "23.11"; 
 }

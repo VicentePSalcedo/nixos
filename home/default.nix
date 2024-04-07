@@ -6,7 +6,6 @@
     ./nvim
     ./picom
     ./rofi
-    ./steam
     ./git
   ];
   home.username = "sintra";
@@ -14,11 +13,10 @@
   home.packages = with pkgs; [
     discord
     du-dust
+    dunst
     fira-code-nerdfont
-    firefox
     gcc_multi
     google-chrome
-    htop
     just
     libgcc
     libgccjit
@@ -27,10 +25,9 @@
     nodejs_20
     pywal
     obsidian
+    ripgrep
     rustup
     slack
-    xfce.thunar
-    xfce.thunar-volman
   ];
   home.stateVersion = "23.11";
   programs.home-manager.enable= true;
