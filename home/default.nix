@@ -22,7 +22,7 @@
     libgccjit
     mictray
     neofetch
-    nodejs_20
+    nodejs_21
     pywal
     obsidian
     ripgrep
