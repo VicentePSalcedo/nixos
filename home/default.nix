@@ -16,10 +16,9 @@
     dunst
     fira-code-nerdfont
     gcc_multi
+    gnucash
     google-chrome
     just
-    libgcc
-    libgccjit
     mictray
     neofetch
     nodejs_21
@@ -29,6 +28,14 @@
     rustup
     slack
   ];
+  gtk = {
+    enable = true;
+      font.name = "FiraCodeNerdFont";
+      theme = {
+        name = "Adwaita-dark";
+        package = pkgs.gnome.gnome-themes-extra;
+      };
+  };
   home.stateVersion = "23.11";
   programs.home-manager.enable= true;
 }
