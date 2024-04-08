@@ -11,6 +11,7 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    cargo-make
     discord
     du-dust
     dunst
