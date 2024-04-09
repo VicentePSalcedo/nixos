@@ -5,9 +5,11 @@ If you are cloning via SSH the first thing that you'll want to do is generate an
 1. Generate new SSH key:
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
-
+```
+```bash
 eval "$(ssh-agent -s)"
-
+```
+```bash
 ssh-add ~/.ssh/id_ed25519
 ```
 2. Add the new SSH key to your GitHub account:
@@ -27,15 +29,19 @@ cat ~/.ssh/id_ed25519.pub
 ```bash
 # If you're using SSH
 git clone git@github.com:VicentePSalcedo/nixos.git
+```
+```bash
 # If you're using HTTPS
 git clone https://github.com/VicentePSalcedo/nixos.git
 ```
 ## Link repo and rebuild
 ```bash
 sudo mv /etc/nixos /etc/nixos.bak # Backup the original configuration
-
+```
+```bash
 sudo ln -s ~/nixos-config/ /etc/nixos
-
+```
+```bash
 # Deploy the flake.nix located at the default location (/etc/nixos)
 sudo nixos-rebuild switch
 ```
