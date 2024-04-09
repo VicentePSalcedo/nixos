@@ -17,14 +17,12 @@
     dunst
     fira-code-nerdfont
     firefox
-    gcc_multi
     gnucash
     google-chrome
     just
     mictray
     neofetch
     nnn
-    nodejs_21
     pywal
     obsidian
     ripgrep
