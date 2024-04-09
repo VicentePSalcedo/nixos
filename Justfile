@@ -5,7 +5,10 @@
 #  Nix commands related to the local machine
 #
 ############################################################################
-
+backup:
+  git add .
+  git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
+  git push
 deploy:
   nixos-rebuild switch --flake . --use-remote-sudo
 
