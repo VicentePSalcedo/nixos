@@ -39,7 +39,7 @@ sudo nixos-rebuild switch
 - audio
 - media keys
 - taskbar
-- monitor that displays [polybar](./home/ploybar/default.nix)
+- monitor that displays [polybar](./home/ploybar/default.nix) 
 
 
 If anything breaks, create an issue and I might fix it.
