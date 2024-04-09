@@ -15,9 +15,7 @@
       package = pkgs.i3-gaps;
       extraPackages = with pkgs; [
         rofi
-    	  i3status
-	      i3lock
-	      i3blocks
+        polybar
       ];
       configFile = ./config;
     };
