@@ -35,3 +35,11 @@ sudo ln -s ~/nixos-config/ /etc/nixos
 # Deploy the flake.nix located at the default location (/etc/nixos)
 sudo nixos-rebuild switch
 ```
+## Things to configure
+- audio
+- media keys
+- taskbar
+- monitor that displays [polybar](./home/ploybar/default.nix)
+
+
+If anything breaks, create an issue and I might fix it.

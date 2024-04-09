@@ -5,13 +5,13 @@
     ./bash 
     ./nvim
     ./picom
+    ./polybar
     ./rofi
     ./git
   ];
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
-    cargo-make
     discord
     du-dust
     dunst
@@ -25,6 +25,7 @@
     nnn
     pywal
     obsidian
+    rofi
     ripgrep
     rustup
     slack
