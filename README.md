@@ -1,11 +1,13 @@
-# OS setup guide
-This guide assume you already have a minimal install of nixOS and have SSH enabled.
-## Step 0
+This repo is how I key my OS the same regardless of which machine I'm using. This assume you already have a minimal install of NixOS and have SSH enabled.
+# Quick Start
+## Add your SSH key to clone your repo
 If you are cloning via SSH the first thing that you'll want to do is generate an SSH key and make sure it is connected to your GitHub account.
 1. Generate new SSH key:
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
+
 eval "$(ssh-agent -s)"
+
 ssh-add ~/.ssh/id_ed25519
 ```
 2. Add the new SSH key to your GitHub account:
@@ -21,3 +23,19 @@ cat ~/.ssh/id_ed25519.pub
 7. Select the type of key, either authentication or signing. For more information about commit signing, see "About commit signature verification."
 8. In the "Key" field, paste your public key.
 9. Click Add SSH key.
+## Clone NixOS repo to your home directory
+```bash
+# If you're using SSH
+git clone git@github.com:VicentePSalcedo/nixos.git
+# If you're using HTTPS
+git clone https://github.com/VicentePSalcedo/nixos.git
+```
+## Link repo and rebuild
+```bash
+sudo mv /etc/nixos /etc/nixos.bak # Backup the original configuration
+
+sudo ln -s ~/nixos-config/ /etc/nixos
+
+# Deploy the flake.nix located at the default location (/etc/nixos)
+sudo nixos-rebuild switch
+```
