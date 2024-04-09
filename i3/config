@@ -24,6 +24,10 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+x kill
 
+bindsym $mod+Shift+p exit
+bindsym $mod+Shift+u reload
+bindsym $mod+Shift+i restart
+
 bindsym $mod+semicolon exec --no-startup-id rofi -show drun
 
 # change focus
@@ -145,3 +149,5 @@ exec --no-startup-id mictray
 
 for_window [class="Steam"] floating enable
 for_window [class="Steam" title="^Steam$"] floating disable
+for_window [class="Settings"] floating enable
+for_window [class="Discord"] floating enable

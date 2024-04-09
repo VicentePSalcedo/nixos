@@ -1,0 +1,5 @@
+{
+  services.polybar = {
+    enable = true;
+  };
+}

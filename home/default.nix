@@ -5,6 +5,7 @@
     ./bash 
     ./nvim
     ./picom
+    ./polybar
     ./rofi
     ./git
   ];
