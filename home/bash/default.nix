@@ -6,7 +6,6 @@
     };
     bashrcExtra = ''
       (cat ~/.cache/wal/sequences &)
-      neofetch
     '';
   };
 }
