@@ -1,14 +1,11 @@
 { config, pkgs, inputs, callPackages, ... }:
 {
-  imports =
-    [
-      ./i3
-      ./hardware-configuration.nix
-      ./modules/nvidia.nix
-      ./modules/dual-boot-windows.nix
-    ];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  imports = [
+    ./i3
+    ./hardware-configuration.nix
+    ./modules/nvidia.nix
+    ./modules/grub.nix
+  ];
   boot.initrd.luks.devices."luks-0a9a3d2f-b3e9-4eda-b18f-68a5e806d347".device = "/dev/disk/by-uuid/0a9a3d2f-b3e9-4eda-b18f-68a5e806d347";
 
   networking.hostName = "nixos"; # Define your hostname.
