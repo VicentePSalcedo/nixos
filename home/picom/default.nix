@@ -9,14 +9,9 @@
       corner-radius = 9;
       blur = { 
           method = "dual_kawase";
-          strength = 2;
+          strength = 5;
       };
     };
     shadow = true;
-    shadowExclude = [
-      "window_type = 'dock'"
-      "window_type = 'desktop'"
-      "_GTK_FRAME_EXTENTS@:c"
-    ];
   };
 }

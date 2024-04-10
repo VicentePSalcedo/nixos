@@ -12,6 +12,7 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    bottom
     discord
     du-dust
     dunst
