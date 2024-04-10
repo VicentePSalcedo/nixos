@@ -5,6 +5,7 @@
       ./i3
       ./hardware-configuration.nix
       ./modules/nvidia.nix
+      ./modules/dual-boot-windows.nix
     ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
