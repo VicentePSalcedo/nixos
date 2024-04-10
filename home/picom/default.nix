@@ -13,5 +13,10 @@
       };
     };
     shadow = true;
+    shadowExclude = [
+      "window_type = 'dock'"
+      "window_type = 'desktop'"
+      "_GTK_FRAME_EXTENTS@:c"
+    ];
   };
 }
