@@ -1,4 +1,4 @@
-This repo is how I key my OS the same regardless of which machine I'm using. This assume you already have a minimal install of NixOS and have SSH enabled.
+This repo is how I key my OS the same regardless of which machine I'm using. This assume you already have a minimal install of NixOS, have SSH enabled, and your username is sintra.
 # Quick Start
 ## Add your SSH key to clone your repo
 If you are cloning via SSH the first thing that you'll want to do is generate an SSH key and make sure it is connected to your GitHub account.

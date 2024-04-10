@@ -1,7 +1,7 @@
 { config, pkgs, inputs, callPackages, ... }:
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./i3
       ./hardware-configuration.nix
       ./modules/nvidia.nix
@@ -28,7 +28,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Configure keymap in X11
   services.xserver = {
     layout = "us";
     xkbVariant = "";
