@@ -18,6 +18,7 @@
     dunst
     fira-code-nerdfont
     firefox
+    flameshot
     gnucash
     google-chrome
     just

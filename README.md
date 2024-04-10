@@ -40,6 +40,11 @@ sudo nixos-rebuild switch
 - media keys
 - taskbar
 - monitor that displays [polybar](./home/ploybar/default.nix) 
-
+## Resources
+[Quick Home Manager Look Ups](https://nix-community.github.io/home-manager/options.xhtml)
+## TODO
+- add screenshot to repo
+- add apptray to polybar
+- add volume to polybar
 
 If anything breaks, create an issue and I might fix it.
