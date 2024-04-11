@@ -1,4 +1,6 @@
-This repo is how I key my OS the same regardless of which machine I'm using. This assume you already have a minimal install of Nix OS with an encrypted partition, have SSH enabled, and your username is sintra.
+This repo is how I keep my OS the same regardless of which machine I'm using. This assume you already have a minimal install of Nix OS with an encrypted partition, have SSH enabled, and your username is sintra.
+
+![alt text](./desktop_preview.jpg "Desktop Preview")
 
 ## TO DO
 - add app tray to polybar
@@ -51,4 +53,4 @@ sudo nixos-rebuild switch
 
 ## Resources
 [Quick Home Manager Look Ups](https://nix-community.github.io/home-manager/options.xhtml)
-
+[Quick Configuration Options Look Ups](https://nixos.org/manual/nixos/stable/options)
