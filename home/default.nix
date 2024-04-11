@@ -32,6 +32,7 @@
     rustup
     slack
   ];
+
   gtk = {
     enable = true;
       font.name = "FiraCodeNerdFont";

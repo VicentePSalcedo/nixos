@@ -38,7 +38,6 @@
     description = "sintra";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
   };
-  services.getty.autologinUser = "sintra";
 
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -59,6 +58,7 @@
     wget
   ];
 
+  # IMPORTANT FOR OBSIDIAN (my preferred not Markdown viewer unfortunately)
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
   security.polkit.enable = true;
@@ -77,11 +77,12 @@
       ];
     };
   };
-  # run scripts on shell login
-  environment.loginShellInit = ''
-  '';
 
-  environment.variables.EDITOR = "nvim";
+  # run scripts on shell login
+  # environment.loginShellInit = ''
+  # '';
+
+  environment.variables.EDITOR = "vim";
 
   hardware = {
     pulseaudio = {
