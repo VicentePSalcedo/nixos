@@ -1,4 +1,4 @@
-This repo is how I key my OS the same regardless of which machine I'm using. This assume you already have a minimal install of NixOS, have SSH enabled, and your username is sintra.
+This repo is how I key my OS the same regardless of which machine I'm using. This assume you already have a minimal install of Nix OS with an encrypted partition, have SSH enabled, and your username is sintra.
 
 ## TO DO
 - add screenshot to repo
