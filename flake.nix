@@ -11,7 +11,7 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      wraith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linx";
 	modules = [
 	  ./configuration.nix

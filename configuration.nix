@@ -8,7 +8,7 @@
     ];
   boot.initrd.luks.devices."luks-0a9a3d2f-b3e9-4eda-b18f-68a5e806d347".device = "/dev/disk/by-uuid/0a9a3d2f-b3e9-4eda-b18f-68a5e806d347";
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "wraith"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/New_York";

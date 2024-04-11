@@ -1,3 +1,4 @@
+{ config, pkgs, inputs, callPackages, ... }:
 {
   imports =
     [
