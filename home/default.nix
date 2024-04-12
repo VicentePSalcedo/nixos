@@ -20,6 +20,7 @@
     firefox
     flameshot
     gnucash
+    gnupg
     google-chrome
     just
     mictray
