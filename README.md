@@ -5,6 +5,8 @@ This repo is how I keep my OS the same regardless of which machine I'm using. Th
 ## TO DO
 - add app tray to polybar
 - add volume to polybar
+- add rhythmbox module to polybar
+- link media keys to media control
 
 # Quick Start
 
@@ -44,12 +46,6 @@ sudo ln -s ~/nixos-config/ /etc/nixos
 # Deploy the flake.nix located at the default location (/etc/nixos)
 sudo nixos-rebuild switch
 ```
-
-## Things to configure
-- audio
-- media keys
-- taskbar
-- monitor that displays [polybar](./home/ploybar/default.nix) 
 
 ## Resources
 [Quick Home Manager Look Ups](https://nix-community.github.io/home-manager/options.xhtml)
