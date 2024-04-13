@@ -1,8 +1,8 @@
 { config, lib, pkgs, inputs, ... }:
 {
   imports = [
-    ./alacritty 
-    ./bash 
+    ./alacritty
+    ./bash
     ./nvim
     ./picom
     ./polybar
@@ -20,7 +20,6 @@
     firefox
     flameshot
     gnucash
-    gnupg
     google-chrome
     just
     mictray
@@ -31,9 +30,10 @@
     rofi
     ripgrep
     rustup
+    rhythmbox
     slack
+    yt-dlp
   ];
-
   gtk = {
     enable = true;
       font.name = "FiraCodeNerdFont";

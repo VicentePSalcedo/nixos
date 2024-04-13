@@ -6,6 +6,7 @@
     };
     bashrcExtra = ''
       (cat ~/.cache/wal/sequences &)
+      export GPG_TTY=$(tty)
     '';
   };
 }

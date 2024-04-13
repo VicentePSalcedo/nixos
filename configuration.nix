@@ -48,18 +48,25 @@
     curl
     dconf
     git
+    gnupg22
     htop
     lshw
     lsof
     pavucontrol
+    pinentry
+    pinentry-rofi
     pulseaudio
     vim
     unzip
     wget
   ];
+  programs.gnupg.agent.enable = true;
 
   # IMPORTANT FOR OBSIDIAN (my preferred not Markdown viewer unfortunately)
-  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
+  nixpkgs.config.permittedInsecurePackages = [ 
+    "electron-25.9.0"
+    "libgcrypt-1.8.10"
+  ];
 
   security.polkit.enable = true;
   hardware.opengl = {

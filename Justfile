@@ -21,7 +21,7 @@ deploy:
   nixos-rebuild switch --flake . --use-remote-sudo
 refresh:
   git add .
-  git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
+  git commit -s -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
   git push
   nix flake update
   nixos-rebuild switch --flake . --use-remote-sudo
