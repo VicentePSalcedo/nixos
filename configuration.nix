@@ -53,8 +53,6 @@
     lshw
     lsof
     pavucontrol
-    pinentry
-    pinentry-rofi
     pulseaudio
     vim
     unzip
