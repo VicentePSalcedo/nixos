@@ -20,3 +20,9 @@ debug:
   nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
 update:
   nix flake update
+refresh:
+  git add .
+  git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
+  git push
+  nix flake update
+  nixos-rebuild switch --flake . --upgrade --use-remote-sudo
