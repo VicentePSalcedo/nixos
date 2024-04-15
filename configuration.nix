@@ -48,6 +48,7 @@
     curl
     dconf
     git
+    npth
     gnupg22
     htop
     lshw
