@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/unstable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -20,7 +20,6 @@
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.sintra = import ./home;
-      home-manager.extraSpecialArgs = { inherit nixpkgs; };
 	  }
 	  {
 	    _module.args = { inherit inputs; };
