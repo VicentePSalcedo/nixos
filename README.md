@@ -3,7 +3,6 @@ This repo is how I keep my OS the same regardless of which machine I'm using. Th
 ![alt text](./desktop_preview.jpg "Desktop Preview")
 
 ## TO DO
-- add app tray to polybar
 - add volume to polybar
 - add rhythmbox module to polybar
 - link media keys to media control
