@@ -8,7 +8,7 @@
       init.defaultBranch = "main";
     };
     signing = {
-      key = "11F2553FE9834701";
+      key = "202511B15435C6F6";
       signByDefault = true;
       gpgPath = "gpg";
     };
