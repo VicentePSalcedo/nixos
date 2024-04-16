@@ -12,6 +12,7 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    amberol
     bottom
     discord
     du-dust
@@ -24,7 +25,6 @@
     just
     mictray
     neofetch
-    nnn
     pywal
     obsidian
     rofi
