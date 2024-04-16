@@ -13,6 +13,7 @@
         lazygit
         tree-sitter
         xclip
+        ripgrep
       ];
   };
 }

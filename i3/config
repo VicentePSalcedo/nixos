@@ -95,9 +95,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id wal -i /etc/nixos/i3/wallpaper.jpg
 exec --no-startup-id dunst
-exec --no-startup-id mictray
+exec --no-startup-id slack
 exec_always --no-startup-id polybar-msg cmd quit; polybar
 for_window [class="Steam"] floating enable
 for_window [class="Steam" title="^Steam$"] floating disable
-for_window [class="Settings"] floating enable
-for_window [class="Discord"] floating enable

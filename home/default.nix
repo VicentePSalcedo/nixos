@@ -3,45 +3,35 @@
   imports = [
     ./alacritty
     ./bash
+    ./git
+    ./gtk
     ./nvim
     ./picom
     ./polybar
     ./rofi
-    ./git
   ];
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
-    amberol
-    bottom
+    bottom #btm to view resource usage
     discord
-    du-dust
-    dunst
+    du-dust #dust to view file usage
+    dunst #handles notifications
     fira-code-nerdfont
-    firefox
-    flameshot
+    firefox #the true default browser
+    flameshot #screen shot app
     gnucash
-    google-chrome
-    just
-    mictray
+    google-chrome #I wanna get rid of this but I need it for work
+    just #just Just
     neofetch
-    pywal
-    obsidian
-    rofi
-    ripgrep
-    rustup
-    rhythmbox
+    playerctl #used to bind media keys
+    pywal #generates colorscheme based off of wallpaper
+    obsidian #note taking app
+    rustup #favorite programing language
+    rhythmbox #music player
     slack
-    yt-dlp
+    yt-dlp #youtube audio downloads
   ];
-  gtk = {
-    enable = true;
-      font.name = "FiraCodeNerdFont";
-      theme = {
-        name = "Adwaita-dark";
-        package = pkgs.gnome.gnome-themes-extra;
-      };
-  };
   home.stateVersion = "23.11";
   programs.home-manager.enable= true;
 }
