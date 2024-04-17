@@ -27,9 +27,11 @@
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper
     obsidian #note taking app
+    rofi #application menu
     rustup #favorite programing language
     rhythmbox #music player
     slack
+    tmux
     yt-dlp #youtube audio downloads
   ];
   home.stateVersion = "23.11";

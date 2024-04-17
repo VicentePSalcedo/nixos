@@ -31,7 +31,6 @@
     lshw
     lsof
     pavucontrol
-    pulseaudio
     vim
     unzip
     wget
