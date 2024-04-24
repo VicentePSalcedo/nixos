@@ -26,11 +26,16 @@
     curl
     dconf
     git
-    npth
     htop
     lshw
     lsof
+    npth
     pavucontrol
+    # dont know how to install steam via homemanager
+    steam
+    steam-tui
+    steamcmd
+    # ------------------------------------------- #
     vim
     unzip
     wget
