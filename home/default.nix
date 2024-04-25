@@ -18,7 +18,6 @@
     du-dust #dust to view file usage
     dunst #handles notifications
     fira-code-nerdfont
-    firefox #the true default browser
     flameshot #screen shot app
     gnucash
     google-chrome #I wanna get rid of this but I need it for work
@@ -34,6 +33,13 @@
     tmux
     yt-dlp #youtube audio downloads
   ];
+  services = {
+    redshift = {
+        enable = true;
+        longitude = 28.5;
+        latitude = -81.5;
+    };
+  };
   home.stateVersion = "23.11";
   programs.home-manager.enable= true;
 }

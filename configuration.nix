@@ -33,8 +33,6 @@
     pavucontrol
     # dont know how to install steam via homemanager
     steam
-    steam-tui
-    steamcmd
     # ------------------------------------------- #
     vim
     unzip
@@ -51,6 +49,8 @@
   hardware.opengl = {
     enable = true;
     driSupport = true;
+    # dont need this line if you dont want steam
+    driSupport32Bit = true;
   };
   hardware = {
     pulseaudio = {
