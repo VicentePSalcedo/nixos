@@ -8,7 +8,7 @@
       vimdiffAlias = true;
       extraPackages = with pkgs; [
         gcc_multi
-        nodejs_21
+        nodejs_20
         fd
         lazygit
         tree-sitter
