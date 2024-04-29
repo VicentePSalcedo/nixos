@@ -33,6 +33,8 @@
     pavucontrol
     # dont know how to install steam via homemanager
     steam
+    steamcmd
+    steam-tui
     # ------------------------------------------- #
     vim
     unzip

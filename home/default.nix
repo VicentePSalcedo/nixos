@@ -29,6 +29,7 @@
     rofi #application menu
     rustup #favorite programing language
     rhythmbox #music player
+    signal-desktop
     slack
     tmux
     yt-dlp #youtube audio downloads
