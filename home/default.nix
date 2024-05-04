@@ -31,14 +31,15 @@
     rhythmbox #music player
     signal-desktop
     slack
+    syncthing
     tmux
     yt-dlp #youtube audio downloads
   ];
   services = {
     redshift = {
         enable = true;
-        longitude = 28.5;
-        latitude = -81.5;
+        longitude = -81.5;
+        latitude = 28.5;
     };
   };
   home.stateVersion = "23.11";
