@@ -1,9 +1,8 @@
 { config, pkgs, inputs, callPackages, ... }:
 {
   imports = [
-      ./i3
+      ../i3
       ./hardware-configuration.nix
-      ./modules
     ];
   nix = {
     settings = {
@@ -15,7 +14,7 @@
   };
 ## The Section I edit the most
 ################################################################################################################
-  networking.hostName = "wraith"; # Define your hostname.
+  networking.hostName = "wraith";
   users.users.sintra = {
     isNormalUser = true;
     description = "sintra";
@@ -26,7 +25,6 @@
     curl
     dconf
     git
-    firefox
     htop
     lshw
     lsof
@@ -40,40 +38,51 @@
   programs.gnupg.agent = {
     enable = true;
   };
-# IMPORTANT FOR OBSIDIAN (my preferred not Markdown viewer unfortunately)
+# IMPORTANT FOR OBSIDIAN
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" "libgcrypt-1.8.10" ];
   security.polkit.enable = true;
-# hardware settings for wraith
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    # dont need this line if you dont want steam
-    driSupport32Bit = true;
-  };
   hardware = {
     pulseaudio = {
       enable = true; 
       support32Bit = true;
     };
+    opengl = {
+        enable = true;
+        driSupport = true;
+        # dont need this line if you dont want steam
+        driSupport32Bit = true;
+    };
+    nvidia = {
+        modesetting.enable = true;
+        powerManagement.enable = false;
+        powerManagement.finegrained = false;
+        open = false;
+        nvidiaSettings = true;
+        package = config.boot.kernelPackages.nvidiaPackages.beta;
+    };
   };
   sound.enable = true;
-  # services to enable
   services.openssh.enable = true;
   services.dbus.enable = true;
-#  services = {
-#    syncthing = {
-#      enable = true;
-#      user = "sintra";
-#    };
-#  };
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
     videoDrivers = ["nvidia"];
   };
 ###############################################################################################################
-# good defaults if you live on the east coast
   networking.networkmanager.enable = true;
+  boot.loader = {
+    grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+      useOSProber = true;
+      configurationLimit = 50;
+    };
+    efi = {
+      canTouchEfiVariables = true;
+    };
+  };
   boot.initrd.luks.devices."luks-0a9a3d2f-b3e9-4eda-b18f-68a5e806d347".device = "/dev/disk/by-uuid/0a9a3d2f-b3e9-4eda-b18f-68a5e806d347";
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";

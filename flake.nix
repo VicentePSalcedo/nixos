@@ -26,6 +26,21 @@
 	        }
         ];
       };
+      miata = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linx";
+        modules = [
+          ./miata/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.sintra = import ./home; 
+          }
+	        {
+	          _module.args = { inherit inputs; };
+	        }
+        ];
+      };
     };
   };
 }
