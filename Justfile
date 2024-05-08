@@ -21,6 +21,8 @@ debug:
 update:
   nix flake update
 refresh:
+  git fetch
+  git pull
   git add .
   git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
   git push
