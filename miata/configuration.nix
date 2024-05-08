@@ -10,6 +10,14 @@
       ./hardware-configuration.nix
       ../i3
     ];
+  nix = {
+    settings = {
+      experimental-features = "nix-command flakes";
+      auto-optimise-store = true;
+      trusted-users = ["sintra"];
+      substituters = [ "https//cache.nixos.org" ];
+    };
+  };
 
   # Bootloader.
   boot.loader.grub.enable = true;
