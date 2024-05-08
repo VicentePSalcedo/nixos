@@ -76,6 +76,7 @@
     curl
     dconf
     git
+    google-chrome #I wanna get rid of this but I need it for work
     htop
     lshw
     lsof

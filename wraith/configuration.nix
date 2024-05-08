@@ -24,6 +24,7 @@
   environment.systemPackages = with pkgs; [
     curl
     dconf
+    firefox
     git
     htop
     lshw

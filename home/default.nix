@@ -17,10 +17,8 @@
     du-dust #dust to view file usage
     dunst #handles notifications
     fira-code-nerdfont
-    firefox
     flameshot #screen shot app
     # gnucash
-    google-chrome #I wanna get rid of this but I need it for work
     just #just Just
     neofetch
     playerctl #used to bind media keys
