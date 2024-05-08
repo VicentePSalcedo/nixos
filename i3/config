@@ -92,10 +92,11 @@ default_border pixel 2
 # smart_borders on
 
 exec --no-startup-id wal -i /etc/nixos/i3/wallpaper
+exec_always --no-startup-id polybar-msg cmd quit; polybar
 exec --no-startup-id dunst
+exec --no-startup-id slack
 exec --no-startup-id flameshot
 exec --no-startup-id syncthing
-exec_always --no-startup-id polybar-msg cmd quit; polybar
 
 for_window [class="Steam"] floating enable
 for_window [class="Steam" title="^Steam$"] floating disable
