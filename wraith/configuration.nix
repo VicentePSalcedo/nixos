@@ -34,12 +34,10 @@
     unzip
     wget
   ];
-  environment.variables.EDITOR = "vim";
   programs.gnupg.agent = {
     enable = true;
   };
 # IMPORTANT FOR OBSIDIAN
-  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" "libgcrypt-1.8.10" ];
   security.polkit.enable = true;
   hardware = {
     pulseaudio = {

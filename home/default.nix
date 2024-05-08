@@ -3,7 +3,6 @@
   imports = [
     ./alacritty
     ./bash
-    ./git
     ./gtk
     ./nvim
     ./picom
@@ -20,7 +19,7 @@
     fira-code-nerdfont
     firefox
     flameshot #screen shot app
-    gnucash
+    # gnucash
     google-chrome #I wanna get rid of this but I need it for work
     just #just Just
     neofetch
