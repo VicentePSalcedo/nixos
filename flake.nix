@@ -14,7 +14,7 @@
       wraith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linx";
         modules = [
-          ./configuration.nix
+          ./wraith/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
