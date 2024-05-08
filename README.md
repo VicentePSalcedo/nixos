@@ -38,6 +38,10 @@ git clone https://github.com/VicentePSalcedo/nixos.git
 ```bash
 sudo mv /etc/nixos /etc/nixos.bak # Backup the original configuration
 sudo ln -s ~/nixos/ /etc/nixos
+mkdir ~/nixos/"your-hostname"
+cp /etc/nixos.bak/configuration.nix /etc/nixos.bak/hardware-configuration.nix ~/nixos/"your-hostname"/
+# need to git add because the flake is tied to the git version control and wont see new files otherwise
+git add .
 # Deploy the flake.nix located at the default location (/etc/nixos)
 sudo nixos-rebuild switch
 ```
