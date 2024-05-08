@@ -26,16 +26,12 @@
     curl
     dconf
     git
+    firefox
     htop
     lshw
     lsof
     npth
     pavucontrol
-    # dont know how to install steam via homemanager
-    steam
-    steamcmd
-    steam-tui
-    # ------------------------------------------- #
     vim
     unzip
     wget
@@ -64,6 +60,12 @@
   # services to enable
   services.openssh.enable = true;
   services.dbus.enable = true;
+#  services = {
+#    syncthing = {
+#      enable = true;
+#      user = "sintra";
+#    };
+#  };
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
