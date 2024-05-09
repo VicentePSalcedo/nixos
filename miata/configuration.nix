@@ -17,4 +17,9 @@
     layout = "us";
     xkbVariant = "";
   };
+  services.xserver = {
+    windowManager.i3 = {
+      configFile = ./config;
+    };
+  };
 }
