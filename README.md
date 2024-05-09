@@ -41,6 +41,9 @@ sudo ln -s ~/nixos/ /etc/nixos
 mkdir ~/nixos/"your-hostname"
 cp /etc/nixos.bak/configuration.nix /etc/nixos.bak/hardware-configuration.nix ~/nixos/"your-hostname"/
 # need to git add because the flake is tied to the git version control and wont see new files otherwise
+```
+I recommend importing base.nix in your new configuration.nix
+```bash
 git add .
 # Deploy the flake.nix located at the default location (/etc/nixos)
 sudo nixos-rebuild switch

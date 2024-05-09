@@ -21,9 +21,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.sintra = import ./home; 
           }
-	        {
-	          _module.args = { inherit inputs; };
-	        }
+	      {
+	        _module.args = { inherit inputs; };
+	      }
         ];
       };
       miata = nixpkgs.lib.nixosSystem {
@@ -36,9 +36,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.sintra = import ./home; 
           }
-	        {
-	          _module.args = { inherit inputs; };
-	        }
+	      {
+	        _module.args = { inherit inputs; };
+	      }
         ];
       };
     };
