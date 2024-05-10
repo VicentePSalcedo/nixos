@@ -7,5 +7,10 @@
   ];
   home.packages = with pkgs; [
     firefox
+    discord
+    bottom #btm to view resource usage
+    gnucash
+    rustup #favorite programing language
+    signal-desktop
   ];
 }
