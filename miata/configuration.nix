@@ -14,15 +14,4 @@
     xkb.layout = "us";
     xkb.variant = "";
   };
-  services.xserver = {
-    windowManager.i3 = {
-      configFile = ./config;
-    };
-  };
-  services = {
-      syncthing = {
-          enable = true;
-          user = "sintra";
-      };
-  };
 }

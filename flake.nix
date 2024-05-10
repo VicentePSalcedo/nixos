@@ -19,7 +19,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.sintra = import ./home; 
+            home-manager.users.sintra = import ./home/wraith.nix; 
           }
 	      {
 	        _module.args = { inherit inputs; };

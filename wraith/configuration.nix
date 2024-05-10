@@ -34,17 +34,6 @@
     xkb.variant = "";
     videoDrivers = ["nvidia"];
   };
-  services.xserver = {
-    windowManager.i3 = {
-      configFile = ./config;
-    };
-  };
-  services = {
-      syncthing = {
-          enable = true;
-          user = "sintra";
-      };
-  };
   boot.loader = {
     grub = {
       enable = true;

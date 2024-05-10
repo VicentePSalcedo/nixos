@@ -5,7 +5,6 @@
     ./bash
     ./gtk
     ./nvim
-    ./picom
     ./polybar
     ./rofi
   ];
@@ -29,6 +28,7 @@
     rustup #favorite programing language
     rhythmbox #music player
     signal-desktop
+    syncthing
     tmux
     yt-dlp #youtube audio downloads
   ];
