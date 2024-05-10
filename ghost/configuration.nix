@@ -31,6 +31,7 @@
   sound.enable = true;
   security.rtkit.enable = true;
   hardware = {
+    xpadneo.enable = true;
     pulseaudio = {
       enable = true; 
       support32Bit = true;
