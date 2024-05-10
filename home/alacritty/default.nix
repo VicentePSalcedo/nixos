@@ -4,7 +4,7 @@
     settings = {
       window = {
         opacity = 0.95;
-        blue = true;
+        blur = true;
         startup_mode = "Maximized";
       };
       font = {
