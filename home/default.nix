@@ -17,6 +17,7 @@
     du-dust #dust to view file usage
     dunst #handles notifications
     fira-code-nerdfont
+    firefox
     flameshot #screen shot app
     # gnucash
     just #just Just
@@ -28,8 +29,6 @@
     rustup #favorite programing language
     rhythmbox #music player
     signal-desktop
-    slack
-    syncthing
     tmux
     yt-dlp #youtube audio downloads
   ];
@@ -39,6 +38,7 @@
         longitude = -81.5;
         latitude = 28.5;
     };
+    services.syncthing.enable = true;
   };
   home.stateVersion = "23.11";
   programs.home-manager.enable= true;

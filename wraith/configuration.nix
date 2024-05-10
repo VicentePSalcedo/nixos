@@ -5,10 +5,12 @@
       ./hardware-configuration.nix
       ../base.nix
     ];
+  services.xserver = {
+    windowManager.i3 = {
+      configFile = ./config;
+    };
+  };
   networking.hostName = "wraith";
-  environment.systemPackages = with pkgs; [
-    firefox
-  ];
   security.polkit.enable = true;
   hardware = {
     pulseaudio = {

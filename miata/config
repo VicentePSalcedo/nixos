@@ -91,7 +91,7 @@ default_border pixel 2
 # smart_gaps on
 # smart_borders on
 
-exec --no-startup-id wal -i /etc/nixos/i3/wallpaper
+exec --no-startup-id wal -i /etc/nixos/i3/wallpaper/frieren4k.jpg
 exec_always --no-startup-id polybar-msg cmd quit; polybar
 exec --no-startup-id dunst
 exec --no-startup-id slack
