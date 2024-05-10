@@ -3,7 +3,9 @@
 {
   imports = [
     ./base.nix
+    ./gtk
     ./picom
+    ./polybar
   ];
   home.packages = with pkgs; [
     firefox

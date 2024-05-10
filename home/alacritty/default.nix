@@ -4,6 +4,8 @@
     settings = {
       window = {
         opacity = 0.95;
+        blue = true;
+        startup_mode = "Maximized";
       };
       font = {
         normal = {

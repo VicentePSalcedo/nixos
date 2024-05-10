@@ -2,6 +2,8 @@
 {
   imports = [
     ./base.nix
+    ./gtk
+    ./polybar
   ];
   home.packages = with pkgs; [
     google-chrome
