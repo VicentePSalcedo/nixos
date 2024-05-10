@@ -19,4 +19,10 @@
       configFile = ./config;
     };
   };
+  services = {
+      syncthing = {
+          enable = true;
+          user = "sintra";
+      };
+  };
 }

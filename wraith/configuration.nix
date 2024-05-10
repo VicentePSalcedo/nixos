@@ -5,11 +5,6 @@
       ./hardware-configuration.nix
       ../base.nix
     ];
-  services.xserver = {
-    windowManager.i3 = {
-      configFile = ./config;
-    };
-  };
   networking.hostName = "wraith";
   security.polkit.enable = true;
   hardware = {
@@ -38,6 +33,17 @@
     xkb.layout = "us";
     xkb.variant = "";
     videoDrivers = ["nvidia"];
+  };
+  services.xserver = {
+    windowManager.i3 = {
+      configFile = ./config;
+    };
+  };
+  services = {
+      syncthing = {
+          enable = true;
+          user = "sintra";
+      };
   };
   boot.loader = {
     grub = {

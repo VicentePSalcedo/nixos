@@ -38,7 +38,6 @@
         longitude = -81.5;
         latitude = 28.5;
     };
-    services.syncthing.enable = true;
   };
   home.stateVersion = "23.11";
   programs.home-manager.enable= true;
