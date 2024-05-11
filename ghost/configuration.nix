@@ -1,9 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
+{ config, pkgs, inputs, callPackages, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -14,22 +9,28 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   networking.hostName = "ghost"; # Define your hostname.
   services.xserver.enable = true;
-
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
     videoDrivers = ["nvidia"];
   };
+  environment.systemPackages = with pkgs; [
+    gparted
+  ];
   services.printing.enable = true;
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
   sound.enable = true;
   security.rtkit.enable = true;
+  security.polkit.enable = true;
   hardware = {
     xpadneo.enable = true;
     pulseaudio = {
@@ -54,4 +55,5 @@
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "sintra";
+  system.stateVersion = "23.11";
 }

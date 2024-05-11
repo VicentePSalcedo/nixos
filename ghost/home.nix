@@ -13,21 +13,18 @@
     discord
     du-dust #dust to view file usage
     dunst #handles notifications
-    feh
     fira-code-nerdfont
     firefox
     flameshot #screen shot app
-    gnucash
-    gparted
     just #just Just
     neofetch
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper
     obsidian #note taking app
+    r2modman
     rofi #application menu
     rhythmbox #music player
     rustup #favorite programing language
-    steam
     syncthing
     tmux
     yt-dlp #youtube audio downloads
@@ -38,6 +35,7 @@
         longitude = -81.5;
         latitude = 28.5;
     };
+    syncthing.enable = true;
   };
   home.stateVersion = "23.11";
   programs.home-manager.enable= true;

@@ -14,4 +14,5 @@
     xkb.layout = "us";
     xkb.variant = "";
   };
+  system.stateVersion = "23.11";
 }
