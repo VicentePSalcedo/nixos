@@ -46,7 +46,8 @@ I recommend importing base.nix in your new configuration.nix
 ```bash
 git add .
 # Deploy the flake.nix located at the default location (/etc/nixos)
-sudo nixos-rebuild switch
+nix flake update
+sudo nixos-rebuild switch --flake ~/nixos
 ```
 
 ## Resources
