@@ -16,6 +16,7 @@
     fira-code-nerdfont
     firefox
     flameshot #screen shot app
+    google-chrome
     just #just Just
     neofetch
     playerctl #used to bind media keys
@@ -25,6 +26,7 @@
     rofi #application menu
     rhythmbox #music player
     rustup #favorite programing language
+    slack
     syncthing
     tmux
     yt-dlp #youtube audio downloads

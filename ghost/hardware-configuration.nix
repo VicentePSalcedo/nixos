@@ -30,9 +30,8 @@
     };
 
   fileSystems."/home/sintra/Drives/HDD2-1T" =
-    { device = "/home/sintra/Drives/HDD1-1T";
-      fsType = "none";
-      options = [ "bind" ];
+    { device = "/dev/disk/by-uuid/9ea0c1bb-9e14-4615-b317-53c240571a1d";
+      fsType = "ext4";
     };
 
   swapDevices =
