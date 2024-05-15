@@ -28,6 +28,7 @@
     rustup #favorite programing language
     slack
     syncthing
+    thunderbird
     tmux
     yt-dlp #youtube audio downloads
   ];
