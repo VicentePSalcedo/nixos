@@ -7,12 +7,25 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+#  boot.loader.systemd-boot.enable = true;
+#  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+      useOSProber = true;
+      configurationLimit = 50;
+    };
+    efi = {
+      canTouchEfiVariables = true;
+    };
+  };
   networking.hostName = "ghost"; # Define your hostname.
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.defaultSession = "plasma";
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
@@ -22,12 +35,12 @@
     gparted
   ];
   services.printing.enable = true;
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+ nixpkgs.config.allowBroken = true;
   sound.enable = true;
   security.rtkit.enable = true;
   security.polkit.enable = true;
@@ -53,7 +66,7 @@
     };
   };
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "sintra";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "sintra";
   system.stateVersion = "23.11";
 }

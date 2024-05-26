@@ -13,11 +13,15 @@
     discord
     du-dust #dust to view file usage
     dunst #handles notifications
+    ferium
     fira-code-nerdfont
     firefox
     flameshot #screen shot app
     google-chrome
+    heroic
     just #just Just
+    lutris
+    minecraft
     neofetch
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper
@@ -27,17 +31,16 @@
     rhythmbox #music player
     rustup #favorite programing language
     slack
+    sunshine
     syncthing
     thunderbird
     tmux
     yt-dlp #youtube audio downloads
+    # support both 32- and 64-bit applications
+    wineWowPackages.stable
+    winetricks
   ];
   services = {
-    redshift = {
-        enable = true;
-        longitude = -81.5;
-        latitude = 28.5;
-    };
     syncthing.enable = true;
   };
   home.stateVersion = "23.11";
