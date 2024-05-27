@@ -4,11 +4,13 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../base.nix
+      ../i3
     ];
 
   # Bootloader.
 #  boot.loader.systemd-boot.enable = true;
 #  boot.loader.efi.canTouchEfiVariables = true;
+  virtualisation.docker.enable = true;
   boot.loader = {
     grub = {
       enable = true;
@@ -23,9 +25,8 @@
   };
   networking.hostName = "ghost"; # Define your hostname.
   services.xserver.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
-  services.xserver.displayManager.defaultSession = "plasma";
+  services.xserver.displayManager.defaultSession = "plasmax11";
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";

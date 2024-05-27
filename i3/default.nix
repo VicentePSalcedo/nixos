@@ -1,12 +1,6 @@
 { config, pkgs, inputs, callPackages, ... }:
 {
   environment.pathsToLink = [ "/libexec" ];
-  services.displayManager = {
-    autoLogin = {
-      enable = true;
-      user = "sintra";
-    };
-  };
   services.xserver = {
     enable = true;
     desktopManager = {
@@ -15,7 +9,6 @@
     displayManager = {
       lightdm = {
         enable = true;
-        autoLogin.timeout = 0;
         background = ./wallpaper/power.jpg;
         greeters.slick = {
           enable = true;

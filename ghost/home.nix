@@ -5,12 +5,14 @@
     ../home/alacritty
     ../home/bash
     ../home/nvim
+    ../home/polybar
+    ../home/rofi
   ];
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     bottom #btm to view resource usage
-    discord
+    discord-canary
     du-dust #dust to view file usage
     dunst #handles notifications
     ferium
@@ -31,7 +33,6 @@
     rhythmbox #music player
     rustup #favorite programing language
     slack
-    sunshine
     syncthing
     thunderbird
     tmux
