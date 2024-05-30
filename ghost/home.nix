@@ -6,11 +6,13 @@
     ../home/bash
     ../home/nvim
     ../home/polybar
+    ../home/picom
     ../home/rofi
   ];
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    anki
     bottom #btm to view resource usage
     discord-canary
     du-dust #dust to view file usage

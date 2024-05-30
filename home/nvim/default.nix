@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 {
-  programs.neovim = 
-  {
+  programs.neovim =
+    {
       enable = true;
       viAlias = true;
       vimAlias = true;
@@ -10,10 +10,11 @@
         gcc_multi
         nodejs_20
         fd
+        fzf
         lazygit
         tree-sitter
         xclip
         ripgrep
       ];
-  };
+    };
 }

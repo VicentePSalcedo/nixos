@@ -21,7 +21,7 @@
   users.users.sintra = {
     isNormalUser = true;
     description = "sintra";
-    extraGroups = [ "networkmanager" "wheel" "audio" "libvirtd" ];
+    extraGroups = [ "networkmanager" "docker" "wheel" "audio" "libvirtd" ];
   };
   nix = {
     settings = {

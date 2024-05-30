@@ -19,11 +19,11 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.sintra = import ./home/wraith.nix; 
+            home-manager.users.sintra = import ./home/wraith.nix;
           }
-	      {
-	        _module.args = { inherit inputs; };
-	      }
+          {
+            _module.args = { inherit inputs; };
+          }
         ];
       };
       miata = nixpkgs.lib.nixosSystem {
@@ -34,11 +34,11 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.sintra = import ./home/miata.nix;
+            home-manager.users.sintra = import ./miata/home.nix;
           }
-	      {
-	        _module.args = { inherit inputs; };
-	      }
+          {
+            _module.args = { inherit inputs; };
+          }
         ];
       };
       ghost = nixpkgs.lib.nixosSystem {
@@ -51,9 +51,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.sintra = import ./ghost/home.nix;
           }
-	      {
-	        _module.args = { inherit inputs; };
-	      }
+          {
+            _module.args = { inherit inputs; };
+          }
         ];
       };
     };
