@@ -15,6 +15,7 @@
     anki
     bottom #btm to view resource usage
     discord-canary
+    discord-screenaudio
     du-dust #dust to view file usage
     dunst #handles notifications
     ferium

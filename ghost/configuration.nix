@@ -25,8 +25,6 @@
   };
   networking.hostName = "ghost"; # Define your hostname.
   services.xserver.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmax11";
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
