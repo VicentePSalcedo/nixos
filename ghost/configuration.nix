@@ -39,7 +39,7 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
- nixpkgs.config.allowBroken = true;
+  nixpkgs.config.allowBroken = true;
   sound.enable = true;
   security.rtkit.enable = true;
   security.polkit.enable = true;
@@ -64,6 +64,5 @@
         package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
   };
-  # Enable automatic login for the user.
   system.stateVersion = "23.11";
 }

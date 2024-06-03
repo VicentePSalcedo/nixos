@@ -4,6 +4,7 @@
   imports = [
     ../home/alacritty
     ../home/bash
+    ../home/gtk
     ../home/nvim
     ../home/polybar
     ../home/picom
@@ -46,6 +47,11 @@
   ];
   services = {
     syncthing.enable = true;
+    redshift = {
+        enable = true;
+        longitude = -82.114749;
+        latitude = 29.558167;
+    };
   };
   home.stateVersion = "23.11";
   programs.home-manager.enable= true;
