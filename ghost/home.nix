@@ -16,10 +16,8 @@
     anki
     bottom #btm to view resource usage
     discord-canary
-    discord-screenaudio
     du-dust #dust to view file usage
     dunst #handles notifications
-    ferium
     fira-code-nerdfont
     firefox
     flameshot #screen shot app
@@ -29,6 +27,7 @@
     lutris
     minecraft
     neofetch
+    nnn
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper
     obsidian #note taking app
@@ -38,8 +37,10 @@
     rustup #favorite programing language
     slack
     syncthing
+    xfce.thunar
     thunderbird
     tmux
+    vesktop
     yt-dlp #youtube audio downloads
     # support both 32- and 64-bit applications
     wineWowPackages.stable

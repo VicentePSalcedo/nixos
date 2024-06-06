@@ -11,21 +11,6 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-      wraith = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linx";
-        modules = [
-          ./wraith/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.sintra = import ./home/wraith.nix;
-          }
-          {
-            _module.args = { inherit inputs; };
-          }
-        ];
-      };
       miata = nixpkgs.lib.nixosSystem {
         system = "x86_64-linx";
         modules = [
