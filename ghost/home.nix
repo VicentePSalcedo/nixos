@@ -34,7 +34,6 @@
     r2modman
     rofi #application menu
     rhythmbox #music player
-    rustup #favorite programing language
     slack
     syncthing
     xfce.thunar
