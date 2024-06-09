@@ -16,6 +16,7 @@
     anki
     bottom #btm to view resource usage
     discord-canary
+    discord-screenaudio
     du-dust #dust to view file usage
     dunst #handles notifications
     fira-code-nerdfont
@@ -39,7 +40,6 @@
     xfce.thunar
     thunderbird
     tmux
-    vesktop
     yt-dlp #youtube audio downloads
     # support both 32- and 64-bit applications
     wineWowPackages.stable
