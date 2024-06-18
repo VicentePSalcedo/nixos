@@ -23,12 +23,9 @@
     firefox
     flameshot #screen shot app
     google-chrome
-    heroic
     just #just Just
-    lutris
     minecraft
     neofetch
-    nnn
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper
     obsidian #note taking app
