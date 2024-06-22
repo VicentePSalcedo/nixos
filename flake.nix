@@ -41,6 +41,21 @@
           }
         ];
       };
+      diablo = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linx";
+        modules = [
+          ./diablo/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.sintra = import ./diablo/home.nix;
+          }
+          {
+            _module.args = { inherit inputs; };
+          }
+        ];
+      };
     };
   };
 }
