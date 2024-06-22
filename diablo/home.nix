@@ -15,6 +15,7 @@
   home.packages = with pkgs; [
     anki
     bottom #btm to view resource usage
+    bluez
     discord-canary
     discord-screenaudio
     du-dust #dust to view file usage
