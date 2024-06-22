@@ -8,7 +8,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../base.nix
-      ../i3
+      ./i3
     ];
 
   # Bootloader.
