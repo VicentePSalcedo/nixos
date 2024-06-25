@@ -23,6 +23,7 @@
     firefox
     flameshot #screen shot app
     google-chrome
+    github-desktop
     just #just Just
     minecraft
     neofetch
