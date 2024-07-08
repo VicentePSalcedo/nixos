@@ -28,7 +28,7 @@
     github-desktop
     just #just Just
     minecraft
-    neofetch
+    # neofetch
     obsidian #note taking app
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper
