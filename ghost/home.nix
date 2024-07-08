@@ -26,9 +26,9 @@
     just #just Just
     minecraft
     neofetch
+    obsidian #note taking app
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper
-    obsidian #note taking app
     r2modman
     rofi #application menu
     rhythmbox #music player

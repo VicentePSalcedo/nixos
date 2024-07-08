@@ -13,9 +13,9 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    amberol
     anki
     bottom #btm to view resource usage
-    bluez
     discord-canary
     discord-screenaudio
     du-dust #dust to view file usage
