@@ -49,11 +49,10 @@
       enable = true; 
       support32Bit = true;
     };
-    opengl = {
+    graphics = {
         enable = true;
-        driSupport = true;
         # dont need this line if you dont want steam
-        driSupport32Bit = true;
+        enable32Bit = true;
     };
     nvidia = {
         modesetting.enable = true;

@@ -14,6 +14,7 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     anki
+    amberol
     bottom #btm to view resource usage
     discord-canary
     discord-screenaudio
@@ -23,6 +24,7 @@
     firefox
     flameshot #screen shot app
     google-chrome
+    github-desktop
     just #just Just
     minecraft
     neofetch
