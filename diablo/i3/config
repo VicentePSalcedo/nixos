@@ -15,6 +15,18 @@ set $ws8 "8:VIII"
 set $ws9 "9:IX"
 set $ws10 "10:X"
 
+assign [class="alacritty"] $ws1
+assign [class="Google-chrome"] $ws2
+assign [class="obsidian"] $ws3
+assign [class="amberol"] $ws3
+assign [class="slack"] $ws4
+assign [class="Slack"] $ws4
+exec --no-startup-id alacritty
+exec --no-startup-id amberol
+exec --no-startup-id obsidian
+exec --no-startup-id google-chrome-stable
+exec --no-startup-id slack
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # move tiling windows via drag & drop by left-clicking into the title bar,

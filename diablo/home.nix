@@ -25,7 +25,7 @@
     flameshot #screen shot app
     google-chrome
     just #just Just
-    neofetch
+    # neofetch
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper
     obsidian #note taking app

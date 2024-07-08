@@ -11,29 +11,23 @@ workspace $ws5 output HDMI-0
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:/"
-set $ws2 "2:󰈹/"
-set $ws3 "3:󰠮/"
+set $ws1 "1:"
+set $ws2 "2:󰈹"
+set $ws3 "3:󰠮"
 set $ws4 "4:󰓓"
-set $ws5 "5:V"
+set $ws5 "5:"
 set $ws6 "6:VI"
 set $ws7 "7:VII"
 set $ws8 "8:VIII"
 set $ws9 "9:IX"
 set $ws10 "10:X"
 
-assign [class="slack"] $ws1
 assign [class="discord"] $ws1
-assign [class="Google-chrome"] $ws2
+assign [class="firefox"] $ws2
 assign [class="obsidian"] $ws3
-assign [class="amberol"] $ws3
-assign [class="Rhythmbox"] $ws3
 assign [class="steam"] $ws4
 exec --no-startup-id steam
-exec --no-startup-id amberol
-exec --no-startup-id obsidian
-exec --no-startup-id google-chrome-stable
-exec --no-startup-id slack
+exec --no-startup-id firefox
 exec --no-startup-id discordcanary
 
 for_window [class="steam"] floating enable
