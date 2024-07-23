@@ -16,9 +16,8 @@
     anki
     amberol
     bottom #btm to view resource usage
-    (discord-canary.override {
-        withVencord = true;
-    })
+    discord-canary
+    discord-screenaudio
     du-dust #dust to view file usage
     dunst #handles notifications
     fira-code-nerdfont
@@ -28,7 +27,6 @@
     github-desktop
     just #just Just
     minecraft
-    # neofetch
     obsidian #note taking app
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper
@@ -54,5 +52,6 @@
     };
   };
   home.stateVersion = "23.11";
+  programs.direnv.enable = true;
   programs.home-manager.enable= true;
 }
