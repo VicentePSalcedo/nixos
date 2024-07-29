@@ -40,7 +40,6 @@
     dedicatedServer.openFirewall = true;
   };
   nixpkgs.config.allowBroken = true;
-  sound.enable = true;
   security.rtkit.enable = true;
   security.polkit.enable = true;
   hardware = {
