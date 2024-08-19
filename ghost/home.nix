@@ -25,8 +25,12 @@
     flameshot #screen shot app
     google-chrome
     github-desktop
+    hunspell
+    hunspellDicts.en_US
     just #just Just
+    libreoffice
     minecraft
+    neofetch
     obsidian #note taking app
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper

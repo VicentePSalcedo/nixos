@@ -26,9 +26,6 @@ assign [class="discord"] $ws1
 assign [class="firefox"] $ws2
 assign [class="obsidian"] $ws3
 assign [class="steam"] $ws4
-exec --no-startup-id steam
-exec --no-startup-id firefox
-exec --no-startup-id discordcanary
 
 for_window [class="steam"] floating enable
 for_window [class="steam" title="^Steam$"] floating disable
