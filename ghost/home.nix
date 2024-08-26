@@ -13,7 +13,7 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
-    anki
+    anki-bin
     amberol
     bottom #btm to view resource usage
     discord-canary
