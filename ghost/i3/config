@@ -2,7 +2,7 @@ set $mod Mod1
 font pango:FiraCodeNerdFont 16
 set $refresh_i3status killall -SIGUSR1 i3status
 
-exec --no-startup-id xrandr --output HDMI-0 --mode 2560x1440 --rate 120
+exec --no-startup-id xrandr --output HDMI-0 --mode 2560x1440 --rate 60
 workspace $ws1 output HDMI-1
 workspace $ws2 output HDMI-0
 workspace $ws3 output HDMI-0

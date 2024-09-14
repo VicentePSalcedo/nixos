@@ -20,6 +20,7 @@
     discord-screenaudio
     du-dust #dust to view file usage
     dunst #handles notifications
+    fdupes
     fira-code-nerdfont
     firefox
     flameshot #screen shot app
