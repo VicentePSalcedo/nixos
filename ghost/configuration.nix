@@ -15,6 +15,8 @@
     grub = {
       enable = true;
       device = "nodev";
+      default = "saved";
+      splashImage = "/etc/nixos/wallpaper/frieren4k.jpg";
       efiSupport = true;
       useOSProber = true;
       configurationLimit = 50;
@@ -24,30 +26,27 @@
     };
   };
   networking.hostName = "ghost"; # Define your hostname.
+
+  services.printing.enable = true;
   services.xserver.enable = true;
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
     videoDrivers = ["nvidia"];
   };
+
   environment.systemPackages = with pkgs; [
+    ldmtool
+    ntfs3g
     gparted
   ];
-  services.printing.enable = true;
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
-  nixpkgs.config.allowBroken = true;
+
   security.rtkit.enable = true;
   security.polkit.enable = true;
+
   hardware = {
-    xpadneo.enable = true;
-    pulseaudio = {
-      enable = true; 
-      support32Bit = true;
-    };
+    # enable if you need xboxcontroller to work
+    # xpadneo.enable = true;
     graphics = {
         enable = true;
         # dont need this line if you dont want steam
@@ -62,5 +61,7 @@
         package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
   };
+
   system.stateVersion = "23.11";
+
 }

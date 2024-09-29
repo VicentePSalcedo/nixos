@@ -24,11 +24,6 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/home/sintra/Drives/HDD1-1T" =
-    { device = "/dev/disk/by-uuid/0859a95a-6fde-429c-9026-8e4299353b0c";
-      fsType = "ext4";
-    };
-
   swapDevices =
     [ { device = "/dev/disk/by-uuid/98ec25bf-8695-4f51-81ef-d887cfaeaa05"; }
     ];
