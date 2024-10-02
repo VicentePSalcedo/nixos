@@ -25,7 +25,7 @@ set $ws10 "10:X"
 assign [class="firefox"] $ws2
 assign [class="obsidian"] $ws3
 
-exec --no-startup-id wal -i /etc/nixos/wallpaper/kafka.png
+exec --no-startup-id wal -i /etc/nixos/wallpaper/power.jpg
 exec_always --no-startup-id polybar-msg cmd quit; polybar
 exec --no-startup-id dunst
 
