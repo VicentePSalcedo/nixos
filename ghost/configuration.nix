@@ -3,6 +3,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./minecraft.nix
       ../base.nix
       ./i3
     ];
@@ -35,10 +36,14 @@
     videoDrivers = ["nvidia"];
   };
 
+  nixpkgs.config.allowBroken = true;
+
   environment.systemPackages = with pkgs; [
+    cargo
     ldmtool
     ntfs3g
     gparted
+    rustc
   ];
 
   security.rtkit.enable = true;

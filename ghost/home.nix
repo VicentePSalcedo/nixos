@@ -27,9 +27,11 @@
     hunspellDicts.en_US
     just #just Just
     libreoffice
+    minecraft
     neofetch
     obsidian #note taking app
     playerctl #used to bind media keys
+    prismlauncher
     pywal #generates colorscheme based off of wallpaper
     rhythmbox #music player
     slack
