@@ -25,6 +25,6 @@ refresh:
   git pull
   git add .
   nixos-rebuild switch --flake . --use-remote-sudo
-  nix flake update
   git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
   git push
+  nix flake update

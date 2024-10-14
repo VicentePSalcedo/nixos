@@ -7,14 +7,17 @@
       vimAlias = true;
       vimdiffAlias = true;
       extraPackages = with pkgs; [
-        gcc_multi
-        nodejs_20
         fd
         fzf
+        gcc_multi
         lazygit
+        lua-language-server
+        nodejs_20
+        nodePackages.typescript-language-server
+        ripgrep
+        rust-analyzer
         tree-sitter
         xclip
-        ripgrep
       ];
     };
 }

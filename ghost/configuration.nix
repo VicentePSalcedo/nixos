@@ -1,10 +1,10 @@
-{ config, pkgs, inputs, callPackages, ... }:
+{ config, pkgs, lib, inputs, callPackages, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./minecraft.nix
       ../base.nix
+      ./minecraft.nix
       ./i3
     ];
 
@@ -39,11 +39,6 @@
   nixpkgs.config.allowBroken = true;
 
   environment.systemPackages = with pkgs; [
-    cargo
-    ldmtool
-    ntfs3g
-    gparted
-    rustc
   ];
 
   security.rtkit.enable = true;

@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
@@ -27,6 +28,7 @@
         ];
       };
       ghost = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         system = "x86_64-linx";
         modules = [
           ./ghost/configuration.nix
