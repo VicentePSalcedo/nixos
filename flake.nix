@@ -12,21 +12,6 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-      miata = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linx";
-        modules = [
-          ./miata/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.sintra = import ./miata/home.nix;
-          }
-          {
-            _module.args = { inherit inputs; };
-          }
-        ];
-      };
       ghost = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         system = "x86_64-linx";
@@ -43,15 +28,15 @@
           }
         ];
       };
-      diablo = nixpkgs.lib.nixosSystem {
+      bandit = nixpkgs.lib.nixosSystem {
         system = "x86_64-linx";
         modules = [
-          ./diablo/configuration.nix
+          ./bandit/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.sintra = import ./diablo/home.nix;
+            home-manager.users.sintra = import ./bandit/home.nix;
           }
           {
             _module.args = { inherit inputs; };
