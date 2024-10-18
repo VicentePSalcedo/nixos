@@ -1,8 +1,5 @@
 This repo is how I keep my OS the same regardless of which machine I'm using. This assume you already have a minimal install of Nix OS with an encrypted partition, have SSH enabled, and your username is sintra.
 
-![alt text](./desktop_preview.jpg "Desktop Preview")
-^ what it should look like ^
-
 # Quick Start
 
 ## Add your SSH key to clone your repo
