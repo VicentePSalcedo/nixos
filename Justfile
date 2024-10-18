@@ -22,9 +22,9 @@ update:
   nix flake update
 refresh:
   git fetch
-  git pull
+  git pull --rebase
   git add .
   nixos-rebuild switch --flake . --use-remote-sudo
+  nix flake update
   git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
   git push
-  nix flake update
