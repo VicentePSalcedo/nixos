@@ -10,6 +10,7 @@
         fd
         fzf
         gcc_multi
+        jdk
         lazygit
         lua-language-server
         nodejs_20

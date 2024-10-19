@@ -5,7 +5,7 @@
     curl
     dconf
     git
-    htop
+    bottom
     lshw
     lsof
     npth
@@ -14,6 +14,7 @@
     unzip
     wget
   ];
+  programs.direnv.enable = true;
   programs.gnupg.agent = {
     enable = true;
   };

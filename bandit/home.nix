@@ -2,17 +2,22 @@
 {
   imports = [
     ../home/alacritty
+    ../home/gtk
+    ../home/bash
     ../home/nvim
   ];
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    discord
     fira-code-nerdfont
+    google-chrome
     jetbrains.idea-community
     just #just Just
     libreoffice
-    neofetch
     obsidian #note taking app
+    pywal
+    rhythmbox
     syncthing
     tmux
     yt-dlp #youtube audio downloads

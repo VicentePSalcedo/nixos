@@ -43,7 +43,6 @@
     yt-dlp #youtube audio downloads
   ];
 
-  programs.direnv.enable = true;
 
   services = {
     syncthing.enable = true;

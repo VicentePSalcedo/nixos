@@ -4,7 +4,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../base.nix
-      ./minecraft.nix
       ./i3
     ];
 
