@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
@@ -22,21 +21,6 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.sintra = import ./ghost/home.nix;
-          }
-          {
-            _module.args = { inherit inputs; };
-          }
-        ];
-      };
-      bandit = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linx";
-        modules = [
-          ./bandit/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.sintra = import ./bandit/home.nix;
           }
           {
             _module.args = { inherit inputs; };

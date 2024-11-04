@@ -7,8 +7,8 @@
     ../home/bash
     ../home/gtk
     ../home/nvim
-    ../home/polybar
     ../home/picom
+    ../home/polybar
     ../home/rofi
   ];
 
