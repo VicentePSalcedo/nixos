@@ -19,23 +19,16 @@
     fira-code-nerdfont
     firefox
     flameshot #screen shot app
+    foliate
     hunspell
     hunspellDicts.en_US
-    jetbrains.idea-community
     just #just Just
     libreoffice
     neofetch
     obsidian #note taking app
     playerctl #used to bind media keys
-    postman
-    prismlauncher
     pywal #generates colorscheme based off of wallpaper
-    rhythmbox #music player
-    slack
-    steam
     syncthing
-    xfce.thunar
-    tmux
     yt-dlp #youtube audio downloads
   ];
 
