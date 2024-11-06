@@ -1,9 +1,9 @@
-This repo is how I keep my OS the same regardless of which machine I'm using. This assume you already have a minimal install of Nix OS with an encrypted partition, have SSH enabled, and your username is sintra.
+This repo is how I keep my OS the same regardless of which machine I use. It assumes you already have a minimal install of Nix OS with an encrypted partition, SSH enabled, and your username is Sintra.
 
 # Quick Start
 
 ## Add your SSH key to clone your repo
-If you are cloning via SSH the first thing that you'll want to do is generate an SSH key and make sure it is connected to your GitHub account.
+If you are cloning via SSH, you'll first want to generate an SSH key and make sure it is connected to your GitHub account.
 - Generate new SSH key:
 
 ```bash
@@ -32,15 +32,14 @@ git clone https://github.com/VicentePSalcedo/nixos.git
 ```
 
 ## Link repo and rebuild
-before you run the following make sure that you rebuild with a host name that you chose instead of the default "nixos" otherwise it gets messy to fix later
+before you run the following, make sure that you rebuild with a hostname that you chose instead of the default "nixos" otherwise, it gets messy to fix later
 ```bash
 sudo mv /etc/nixos /etc/nixos.bak # Backup the original configuration
 sudo ln -s ~/nixos/ /etc/nixos
 mkdir ~/nixos/"your-hostname"
 cp /etc/nixos.bak/configuration.nix /etc/nixos.bak/hardware-configuration.nix ~/nixos/"your-hostname"/
-# need to git add because the flake is tied to the git version control and wont see new files otherwise
+# need to git add because the flake is tied to the git version control and won't see new files otherwise
 ```
-I recommend importing base.nix in your new configuration.nix
 You'll need to generate a home.nix file or copy one that already exists and then add the following section 
 ```nix
       *your-host-name* = nixpkgs.lib.nixosSystem {
@@ -67,5 +66,5 @@ sudo nixos-rebuild switch --flake ~/nixos
 ```
 
 ## Resources
-[Quick Home Manager Look Ups](https://nix-community.github.io/home-manager/options.xhtml)
+[Quick Home Manager Look-Ups](https://nix-community.github.io/home-manager/options.xhtml)
 [Quick Configuration Options Look Ups](https://nixos.org/manual/nixos/stable/options)
