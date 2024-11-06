@@ -20,6 +20,7 @@
     firefox
     flameshot #screen shot app
     foliate
+    google-chrome
     hunspell
     hunspellDicts.en_US
     just #just Just
