@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
     anki-bin
     bottom #btm to view resource usage
+    direnv
     discord
     du-dust #dust to view file usage
     dunst #handles notifications
