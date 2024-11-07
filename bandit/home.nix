@@ -5,6 +5,9 @@
     ../home/alacritty
     ../home/bash
     ../home/nvim
+    ../home/picom
+    ../home/polybar
+    ../home/rofi
   ];
 
   home.username = "sintra";
@@ -30,6 +33,7 @@
     playerctl #used to bind media keys
     pywal #generates colorscheme based off of wallpaper
     syncthing
+    tmux
     yt-dlp #youtube audio downloads
   ];
 
