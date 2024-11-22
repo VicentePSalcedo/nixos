@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   programs.neovim =
     {
@@ -10,15 +10,16 @@
         fd
         fzf
         gcc_multi
-        jdk
         lazygit
-        lua-language-server
-        nodejs_20
-        nodePackages.typescript-language-server
         ripgrep
-        rust-analyzer
         tree-sitter
         xclip
+        # language servers commonly used outside of my repos
+        jdk
+	      lua-language-server
+        nixd
       ];
+      defaultEditor = true;
     };
+  xdg.configFile."nvim".source = ./config;
 }

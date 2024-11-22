@@ -1,4 +1,3 @@
-{ config, pkgs, lib, inputs, callPackages, ... }:
 {
     nix = {
         settings = {

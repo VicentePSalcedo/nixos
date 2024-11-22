@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, callPackages, ... }:
+{ config, ... }:
 {
   hardware = {
     # enable if you need xboxcontroller to work

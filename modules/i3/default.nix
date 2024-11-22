@@ -1,25 +1,27 @@
-{ config, pkgs, inputs, callPackages, ... }:
+{ pkgs, ... }:
 {
-  environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
     enable = true;
+    xkb.layout = "us";
+    xkb.variant = "";
     desktopManager = {
       xterm.enable = false;
     };
     displayManager = {
       lightdm = {
         enable = true;
-        background = ../../wallpaper/power.jpg;
+        autoLogin.timeout = 0;
         greeters.slick = {
           enable = true;
           font.name = "FiraCodeNerdFont";
+          draw-user-backgrounds = true;
         };
       };
     };
     windowManager.i3 = {
+      configFile = ./config;
       enable = true;
       package = pkgs.i3-gaps;
-      configFile = ./config;
     };
   };
 }

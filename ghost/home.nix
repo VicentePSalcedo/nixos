@@ -1,15 +1,15 @@
-
-{ config, lib, pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
 
   imports = [
-    ../home/alacritty
-    ../home/bash
-    ../home/gtk
+    ../home/alacritty.nix
+    ../home/bash.nix
+    ../home/gtk.nix
+    ../home/hyprland
     ../home/nvim
-    ../home/picom
-    ../home/polybar
-    ../home/rofi
+    #../home/picom.nix
+    #../home/polybar
+    ../home/rofi.nix
   ];
 
   home.username = "sintra";
@@ -18,40 +18,27 @@
     anki-bin
     bottom #btm to view resource usage
     direnv
-    discord
     du-dust #dust to view file usage
     dunst #handles notifications
+    kdePackages.elisa
     fira-code-nerdfont
     firefox
-    flameshot #screen shot app
     hunspell
     hunspellDicts.en_US
-    jetbrains.idea-community
     just #just Just
     libreoffice
     neofetch
     obsidian #note taking app
     playerctl #used to bind media keys
-    postman
-    prismlauncher
-    pywal #generates colorscheme based off of wallpaper
-    rhythmbox #music player
-    slack
-    steam
+    pywal
     syncthing
-    xfce.thunar
-    tmux
+    vesktop
     yt-dlp #youtube audio downloads
   ];
 
 
   services = {
     syncthing.enable = true;
-    redshift = {
-        enable = true;
-        longitude = -82.114749;
-        latitude = 29.558167;
-    };
   };
 
   home.stateVersion = "23.11";

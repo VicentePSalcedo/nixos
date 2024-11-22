@@ -3,17 +3,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./i3
+      ../modules/cachix.nix
+      ../modules/hyprland
+      #../modules/i3
+      ../modules/nix-experimental.nix
+      ../modules/nvidia.nix
+      ../modules/tmux
     ];
-
-  nix = {
-    settings = {
-      experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
-      trusted-users = ["sintra"];
-      substituters = [ "https//cache.nixos.org" ];
-    };
-  };
 
   users.users.sintra = {
     isNormalUser = true;
@@ -44,17 +40,12 @@
   services.openssh.enable = true;
   services.printing.enable = true;
   services.xserver = {
-    enable = true;
-    xkb.layout = "us";
-    xkb.variant = "";
-    videoDrivers = ["nvidia"];
   };
 
   programs.gnupg.agent = {
     enable = true;
   };
 
-  nixpkgs.config.allowBroken = true;
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -73,24 +64,6 @@
 
   security.rtkit.enable = true;
   security.polkit.enable = true;
-
-  hardware = {
-    # enable if you need xboxcontroller to work
-    # xpadneo.enable = true;
-    graphics = {
-        enable = true;
-        # dont need this line if you dont want steam
-        enable32Bit = true;
-    };
-    nvidia = {
-        modesetting.enable = true;
-        powerManagement.enable = false;
-        powerManagement.finegrained = false;
-        open = false;
-        nvidiaSettings = true;
-        package = config.boot.kernelPackages.nvidiaPackages.beta;
-    };
-  };
 
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
