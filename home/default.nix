@@ -2,15 +2,13 @@
 {
 
   imports = [
-    ../home/alacritty.nix
-    ../home/bash.nix
-    ../home/gtk.nix
-    ../home/hyprland
-    ../home/nvim
-    ../home/waybar
-    #../home/picom.nix
-    #../home/polybar
-    ../home/rofi.nix
+    ./hyprland
+    ./nvim
+
+    ./alacritty.nix
+    ./bash.nix
+    ./gtk.nix
+    ./rofi.nix
   ];
 
   home.username = "sintra";
