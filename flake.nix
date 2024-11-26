@@ -21,7 +21,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.sintra = import ./ghost/home.nix;
+            home-manager.users.sintra = import ./home;
           }
           {
             _module.args = { inherit inputs; };
