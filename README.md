@@ -68,3 +68,7 @@ sudo nixos-rebuild switch --flake ~/nixos
 ## Resources
 [Quick Home Manager Look-Ups](https://nix-community.github.io/home-manager/options.xhtml)
 [Quick Configuration Options Look Ups](https://nixos.org/manual/nixos/stable/options)
+
+## repos I borrowed from
+[tmux](https://github.com/dreamsofcode-io/tmux)
+[LazyVim](https://github.com/LazyVim/LazyVim)
