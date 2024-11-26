@@ -7,6 +7,7 @@
     ../home/gtk.nix
     ../home/hyprland
     ../home/nvim
+    ../home/waybar
     #../home/picom.nix
     #../home/polybar
     ../home/rofi.nix
