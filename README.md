@@ -72,3 +72,6 @@ sudo nixos-rebuild switch --flake ~/nixos
 ## repos I borrowed from
 [tmux](https://github.com/dreamsofcode-io/tmux)
 [LazyVim](https://github.com/LazyVim/LazyVim)
+
+## Inspiration for the style setup that I am working on
+[Dynamic Rice](https://github.com/zDyanTB/HyprNova)
