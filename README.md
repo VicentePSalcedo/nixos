@@ -50,7 +50,7 @@ You'll need to generate a home.nix file or copy one that already exists and then
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.sintra = import ./*your-host-name*/home.nix;
+            home-manager.users.sintra = import ./home;
           }
           {
             _module.args = { inherit inputs; };
