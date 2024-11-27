@@ -7,7 +7,6 @@
 
     ./alacritty.nix
     ./bash.nix
-    ./gtk.nix
     ./rofi.nix
   ];
 
