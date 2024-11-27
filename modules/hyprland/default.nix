@@ -13,8 +13,9 @@
         };
       };
   };
-  environment.systemPackages = [
-    pkgs.hyprpaper
+  environment.systemPackages = with pkgs; [
+    hyprpaper
+    wlogout
   ];
   programs.hyprland = {
     enable = true;
