@@ -29,6 +29,7 @@
     obsidian #note taking app
     playerctl #used to bind media keys
     pywal
+    slack
     syncthing
     vesktop
     yt-dlp #youtube audio downloads
