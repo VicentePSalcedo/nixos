@@ -2,11 +2,13 @@ set $mod Mod1
 font pango:FiraCodeNerdFont 16
 set $refresh_i3status killall -SIGUSR1 i3status
 
-exec --no-startup-id xrandr --output HDMI-0 --mode 2560x1440 --rate 60
+exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 240 --primary
+exec --no-startup-id xrandr --output HDMI-0 --right-of HDMI-1
+
 workspace $ws1 output HDMI-1
-workspace $ws2 output HDMI-0
-workspace $ws3 output HDMI-0
-workspace $ws4 output HDMI-0
+workspace $ws2 output HDMI-1
+workspace $ws3 output HDMI-1
+workspace $ws4 output HDMI-1
 workspace $ws5 output HDMI-0
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -22,7 +24,14 @@ set $ws8 "8:VIII"
 set $ws9 "9:IX"
 set $ws10 "10:X"
 
-assign [class="discord"] $ws1
+assign [class="Alacritty"] $ws1
+assign [class="Godot"] $ws2
+for_window [class="Godot" instance="Godot_ProjectList"] floating enable
+for_window [class="*" instance="Godot_Engine"] floating enable
+assign [class="Godot_Engine"] $ws2
+assign [class="firefox"] $ws3
+assign [class="obsidian"] $ws4
+assign [class="vesktop"] $ws5
 
 exec --no-startup-id wal -R
 exec_always --no-startup-id polybar-msg cmd quit; polybar

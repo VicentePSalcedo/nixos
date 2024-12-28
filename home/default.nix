@@ -2,34 +2,37 @@
 {
 
   imports = [
-    ./hyprland
+    #./hyprland
+    ./polybar
     ./nvim
 
     ./alacritty.nix
     ./bash.nix
+    ./gtk.nix
+    ./picom.nix
     ./rofi.nix
   ];
 
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
-    anki-bin
     bottom #btm to view resource usage
     direnv
     du-dust #dust to view file usage
     dunst #handles notifications
-    kdePackages.elisa
     fira-code-nerdfont
     firefox
+    gimp
+    godot_4
     hunspell
     hunspellDicts.en_US
     just #just Just
     libreoffice
     neofetch
+    nautilus
     obsidian #note taking app
     playerctl #used to bind media keys
     pywal
-    slack
     syncthing
     vesktop
     yt-dlp #youtube audio downloads
