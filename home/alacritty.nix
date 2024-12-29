@@ -12,7 +12,7 @@
 	        family = "FiraCodeNerdFont";
 	        style = "Regular";
 	      };
-        size = 12;
+        size = 8;
       };
     };
   };

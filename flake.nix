@@ -28,18 +28,18 @@
           }
         ];
       };
-      bandit = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linx";
+      pipboy3000 = nixpkgs.lib.nixosSystem {
+      system = "x86_64-link";
         modules = [
-          ./bandit/configuration.nix
+          ./pipboy3000/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.sintra = import ./bandit/home.nix;
+            home-manager.users.sintra = import ./home;
           }
           {
-            _module.args = { inherit inputs; };
+            _module.args = { inherit inputs; } ;
           }
         ];
       };

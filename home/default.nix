@@ -8,6 +8,7 @@
 
     ./alacritty.nix
     ./bash.nix
+    ./git.nix
     ./gtk.nix
     ./picom.nix
     ./rofi.nix
@@ -16,11 +17,12 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    amberol
     bottom #btm to view resource usage
     direnv
     du-dust #dust to view file usage
     dunst #handles notifications
-    fira-code-nerdfont
+    nerd-fonts.fira-code
     firefox
     gimp
     godot_4

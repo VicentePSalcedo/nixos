@@ -4,7 +4,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../modules/cachix.nix
-      #../modules/hyprland
       ../modules/i3
       ../modules/nix-experimental.nix
       ../modules/nvidia.nix
@@ -39,8 +38,6 @@
 
   services.openssh.enable = true;
   services.printing.enable = true;
-  services.xserver = {
-  };
 
   programs.gnupg.agent = {
     enable = true;
