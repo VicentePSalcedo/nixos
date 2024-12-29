@@ -1,12 +1,3 @@
-#echo "generating ssh key for github"
-#ssh-keygen -t ed25519 -C "vicentepsalcedo@gmail.com"
-#echo "evaluating ssh agent"
-#eval "$(ssh-agent -s)"
-#echo "adding ssh key"
-#ssh-add ~/.ssh/id_ed25519
-#echo "please add the following ssh key to your github account"
-#cat ~/.ssh/id_ed25519.pub
-
 echo "backing up existing configuration"
 sudo mv /etc/nixos /etc/nixos.bak
 echo "symbolicaly linking the nixos directory in your home to the nixos directory for the system"
