@@ -24,19 +24,15 @@
     dunst #handles notifications
     nerd-fonts.fira-code
     firefox
-    gimp
-    godot_4
     hunspell
     hunspellDicts.en_US
     just #just Just
     libreoffice
     neofetch
-    nautilus
     obsidian #note taking app
     playerctl #used to bind media keys
     pywal
     syncthing
-    vesktop
     yt-dlp #youtube audio downloads
   ];
 

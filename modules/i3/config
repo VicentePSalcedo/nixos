@@ -24,15 +24,14 @@ set $ws8 "8:VIII"
 set $ws9 "9:IX"
 set $ws10 "10:X"
 
+exec alacritty
 assign [class="Alacritty"] $ws1
-assign [class="Godot"] $ws2
-for_window [class="Godot" instance="Godot_ProjectList"] floating enable
-for_window [class="*" instance="Godot_Engine"] floating enable
-assign [class="Godot_Engine"] $ws2
-assign [class="firefox"] $ws3
-assign [class="obsidian"] $ws4
-assign [class="amberol"] $ws5
-assign [class="vesktop"] $ws5
+exec firefox
+assign [class="firefox"] $ws2
+exec obsidian
+assign [class="obsidian"] $ws3
+exec amberol
+assign [class="amberol"] $ws4
 
 exec --no-startup-id wal -R
 exec_always --no-startup-id polybar-msg cmd quit; polybar
