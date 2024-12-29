@@ -6,6 +6,7 @@
       ../modules/i3
       ../modules/tmux
 
+      ../modules/bluetooth.nix
       ../modules/cachix.nix
       ../modules/nix-experimental.nix
       ../modules/sintra.nix
