@@ -39,6 +39,12 @@
 
   services = {
     syncthing.enable = true;
+    redshift = {
+      enable = true;
+      latitude = 30.19;
+      longitude = 81.39;
+      tray = true;
+    };
   };
 
   home.stateVersion = "23.11";
