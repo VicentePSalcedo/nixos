@@ -10,6 +10,7 @@ workspace $ws2 output HDMI-1
 workspace $ws3 output HDMI-1
 workspace $ws4 output HDMI-1
 workspace $ws5 output HDMI-0
+workspace $ws5 output eDP-1
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
