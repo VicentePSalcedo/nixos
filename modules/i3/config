@@ -6,10 +6,10 @@ exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 120 --primar
 exec --no-startup-id xrandr --output HDMI-0 --right-of HDMI-1
 
 workspace $ws1 output HDMI-1
+workspace $ws1 output eDP-1
 workspace $ws2 output HDMI-1
 workspace $ws3 output HDMI-1
 workspace $ws4 output HDMI-1
-workspace $ws5 output HDMI-0
 workspace $ws5 output eDP-1
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -25,18 +25,18 @@ set $ws8 "8:VIII"
 set $ws9 "9:IX"
 set $ws10 "10:X"
 
+exec --no-startup-id blueman-applet
+exec --no-startup-id wal -R
+exec --no-startup-id dunst
+exec_always --no-startup-id polybar-msg cmd quit; polybar
 exec alacritty
 assign [class="Alacritty"] $ws1
 exec firefox
 assign [class="firefox"] $ws2
 exec obsidian
 assign [class="obsidian"] $ws3
-exec amberol
 assign [class="amberol"] $ws4
 
-exec --no-startup-id wal -R
-exec_always --no-startup-id polybar-msg cmd quit; polybar
-exec --no-startup-id dunst
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

@@ -4,7 +4,7 @@
       enable = true;
       device = "nodev";
       default = "saved";
-      splashImage = "/etc/nixos/wallpaper/power.jpg";
+      splashImage = "/etc/nixos/wallpaper/kafka.png";
       efiSupport = true;
       useOSProber = true;
       configurationLimit = 50;

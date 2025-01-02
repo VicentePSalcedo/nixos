@@ -17,6 +17,7 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    anki-bin
     amberol
     bottom #btm to view resource usage
     direnv
@@ -42,7 +43,7 @@
     redshift = {
       enable = true;
       latitude = 30.19;
-      longitude = 81.39;
+      longitude = -81.39;
       tray = true;
     };
   };

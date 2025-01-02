@@ -28,10 +28,10 @@
           }
         ];
       };
-      pipboy3000 = nixpkgs.lib.nixosSystem {
+      wraith = nixpkgs.lib.nixosSystem {
       system = "x86_64-link";
         modules = [
-          ./pipboy3000/configuration.nix
+          ./wraith/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
