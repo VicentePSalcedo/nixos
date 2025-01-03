@@ -29,13 +29,12 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id wal -R
 exec --no-startup-id dunst
 exec_always --no-startup-id polybar-msg cmd quit; polybar
-exec alacritty
-assign [class="Alacritty"] $ws1
-exec firefox
-assign [class="firefox"] $ws2
-exec obsidian
-assign [class="obsidian"] $ws3
-assign [class="amberol"] $ws4
+
+exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty -e tmux'
+exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
+exec --no-startup-id i3-msg 'workspace $ws3; exec alacritty -e vi Notebook/'
+exec --no-startup-id i3-msg 'workspace $ws4; exec alacritty -e cmus'
+exec --no-startup-id i3-msg 'workspace $ws5; exec thunderbird'
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position

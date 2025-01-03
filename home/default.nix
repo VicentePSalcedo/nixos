@@ -18,7 +18,6 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     anki-bin
-    amberol
     bottom #btm to view resource usage
     cmus
     direnv
@@ -26,15 +25,16 @@
     dunst #handles notifications
     nerd-fonts.fira-code
     firefox
+    gnucash
     hunspell
     hunspellDicts.en_US
     just #just Just
     libreoffice
     neofetch
-    obsidian #note taking app
     playerctl #used to bind media keys
     pywal
     syncthing
+    thunderbird
     yt-dlp #youtube audio downloads
   ];
 

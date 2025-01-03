@@ -9,13 +9,14 @@
       fd
       fzf
       gcc_multi
+      jdk
+      lua-language-server
+      nixd
+      markdown-oxide
       ripgrep
       tree-sitter
       xclip
       # language servers commonly used outside of my repos
-      jdk
-      lua-language-server
-      nixd
     ];
     defaultEditor = true;
   };
