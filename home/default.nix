@@ -20,6 +20,7 @@
     anki-bin
     amberol
     bottom #btm to view resource usage
+    cmus
     direnv
     du-dust #dust to view file usage
     dunst #handles notifications
