@@ -33,6 +33,7 @@
     neofetch
     playerctl #used to bind media keys
     pywal
+    signal-desktop
     syncthing
     thunderbird
     yt-dlp #youtube audio downloads
