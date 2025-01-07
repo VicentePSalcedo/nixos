@@ -5,7 +5,7 @@
   users.users.sintra = {
     isNormalUser = true;
     description = "sintra";
-    extraGroups = [ "networkmanager" "docker" "wheel" "audio" "libvirtd" ];
+    extraGroups = [ "networkmanager" "docker" "wheel" "audio" ];
   };
   environment.systemPackages = with pkgs; [
     curl

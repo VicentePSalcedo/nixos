@@ -5,7 +5,7 @@
     ./bluetooth.nix
     ./cachix.nix
     ./grub.nix
-    ./kvm.nix
+    ./libvirt.nix
     ./nix-experimental.nix
     ./sintra.nix
     ./us-locale.nix
