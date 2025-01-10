@@ -30,10 +30,10 @@ exec --no-startup-id wal -R
 exec --no-startup-id dunst
 exec_always --no-startup-id polybar-msg cmd quit; polybar
 
-exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty -e tmux'
+exec --no-startup-id i3-msg 'workspace $ws1; exec wal -R && alacritty -e tmux'
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
-exec --no-startup-id i3-msg 'workspace $ws3; exec alacritty -e vi Notebook/todo.md'
-exec --no-startup-id i3-msg 'workspace $ws4; exec alacritty -e cmus'
+exec --no-startup-id i3-msg 'workspace $ws3; exec wal -R && alacritty -e vi Notebook/todo.md'
+exec --no-startup-id i3-msg 'workspace $ws4; exec rhythmbox'
 exec --no-startup-id i3-msg 'workspace $ws5; exec thunderbird'
 
 
