@@ -24,6 +24,7 @@
     dunst #handles notifications
     nerd-fonts.fira-code
     firefox
+    gimp
     gnucash
     hunspell
     hunspellDicts.en_US
