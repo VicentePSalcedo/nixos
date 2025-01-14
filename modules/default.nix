@@ -8,6 +8,7 @@
     ./grub.nix
     ./nix-experimental.nix
     ./us-locale.nix
+    ./wire-guard.nix
   ];
   networking.networkmanager.enable = true;
 
