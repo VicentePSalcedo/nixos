@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
 
   imports = [
     #./hyprland
@@ -10,6 +9,7 @@
     ./bash.nix
     ./git.nix
     ./gtk.nix
+    ./helix.nix
     ./picom.nix
     ./rofi.nix
   ];
@@ -17,29 +17,31 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    amberol
     anki-bin
-    bottom #btm to view resource usage
+    bottom # btm to view resource usage
     direnv
-    du-dust #dust to view file usage
-    dunst #handles notifications
+    du-dust # dust to view file usage
+    dunst # handles notifications
     nerd-fonts.fira-code
     firefox
+    flameshot
     gimp
     gnucash
     hunspell
     hunspellDicts.en_US
-    just #just Just
-    libreoffice
+    just # just Just
+    libation
     neofetch
-    playerctl #used to bind media keys
+    playerctl # used to bind media keys
     pywal
-    rhythmbox
     signal-desktop
     syncthing
     thunderbird
-    yt-dlp #youtube audio downloads
+    whatsapp-for-linux
+    xfce.thunar
+    yt-dlp # youtube audio downloads
   ];
-
 
   services = {
     syncthing.enable = true;
@@ -52,6 +54,6 @@
   };
 
   home.stateVersion = "23.11";
-  programs.home-manager.enable= true;
+  programs.home-manager.enable = true;
 
 }
