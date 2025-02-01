@@ -3,7 +3,7 @@ font pango:FiraCodeNerdFont 16
 set $refresh_i3status killall -SIGUSR1 i3status
 
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 120 --primary
-exec --no-startup-id xrandr --output HDMI-0 --right-of HDMI-1
+exec --no-startup-id xrandr --output HDMI-0 --left-of HDMI-1
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.

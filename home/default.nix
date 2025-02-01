@@ -21,6 +21,7 @@
     anki-bin
     bottom # btm to view resource usage
     direnv
+    discord
     du-dust # dust to view file usage
     dunst # handles notifications
     nerd-fonts.fira-code
@@ -28,6 +29,7 @@
     flameshot
     gimp
     gnucash
+    google-chrome
     hunspell
     hunspellDicts.en_US
     just # just Just
