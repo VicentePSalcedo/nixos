@@ -21,7 +21,6 @@
     anki-bin
     bottom # btm to view resource usage
     direnv
-    discord
     du-dust # dust to view file usage
     dunst # handles notifications
     nerd-fonts.fira-code
@@ -35,6 +34,7 @@
     just # just Just
     libation
     neofetch
+    minecraft
     playerctl # used to bind media keys
     pywal
     signal-desktop
