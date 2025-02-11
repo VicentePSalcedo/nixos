@@ -1,7 +1,6 @@
 { pkgs, ... }: {
 
   imports = [
-    #./hyprland
     ./polybar
     ./nvim
 
@@ -17,29 +16,26 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
-    amberol
     anki-bin
-    bottom # btm to view resource usage
     direnv
     du-dust # dust to view file usage
     dunst # handles notifications
-    nerd-fonts.fira-code
-    firefox
-    flameshot
-    gimp
-    gnucash
-    google-chrome
-    hunspell
-    hunspellDicts.en_US
+    elisa
+    nerd-fonts.fira-code # favorite font that support ligatures
+    firefox #default browser
+    flameshot #screen capture tool
+    gimp # image editing
+    google-chrome # keeping work and business separated
+    hunspell 
+    hunspellDicts.en_US# spelling support for nvim 
     just # just Just
-    libation
-    neofetch
-    minecraft
+    libation # rip audio books from audible
+    neofetch # show off
+    networkmanagerapplet
     playerctl # used to bind media keys
-    pywal
-    signal-desktop
+    prismlauncher # minecraft launcher (official not working for versions 1.19 or higher as of 2/7/25)
+    pywal # setting wallpaper and a matching color scheme
     syncthing
-    thunderbird
     whatsapp-for-linux
     xfce.thunar
     yt-dlp # youtube audio downloads

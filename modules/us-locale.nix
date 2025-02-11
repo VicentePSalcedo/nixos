@@ -12,4 +12,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  time.timeZone = "America/New_York";
 }

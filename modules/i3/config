@@ -2,9 +2,6 @@ set $mod Mod1
 font pango:FiraCodeNerdFont 16
 set $refresh_i3status killall -SIGUSR1 i3status
 
-exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 120 --primary
-exec --no-startup-id xrandr --output HDMI-0 --left-of HDMI-1
-
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:I"
@@ -18,10 +15,11 @@ set $ws8 "8:VIII"
 set $ws9 "9:IX"
 set $ws10 "10:X"
 
-exec --no-startup-id blueman-applet
-exec --no-startup-id wal -R
-exec --no-startup-id dunst
 exec_always --no-startup-id polybar-msg cmd quit; polybar
+exec --no-startup-id dunst
+exec --no-startup-id blueman-applet
+exec --no-startup-id networkmanagerapplet
+exec --no-startup-id wal -R
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -98,7 +96,6 @@ bindsym $mod+y mode "resize"
 default_border pixel 2
 smart_gaps inverse_outer
 smart_borders on
-gaps inner 6
 
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
