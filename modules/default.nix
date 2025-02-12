@@ -10,6 +10,7 @@
     ./us-locale.nix
     ./wire-guard.nix
   ];
+
   networking.networkmanager.enable = true;
 
   users.users.sintra = {
@@ -17,23 +18,21 @@
     description = "sintra";
     extraGroups = [ "networkmanager" "docker" "wheel" "audio" ];
   };
+
   environment.systemPackages = with pkgs; [
+    bottom
     curl
     dconf
-    htop
     lshw
     lsof
     npth
     pavucontrol
+    pulseaudio
     vim
     unzip
     wget
   ];
+
   nixpkgs.config.allowUnfree = true;
   security.rtkit.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-  services.openssh.enable = true;
 }

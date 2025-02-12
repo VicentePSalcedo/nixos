@@ -20,23 +20,19 @@
     direnv
     du-dust # dust to view file usage
     dunst # handles notifications
-    elisa
     nerd-fonts.fira-code # favorite font that support ligatures
-    firefox #default browser
     flameshot #screen capture tool
     gimp # image editing
     google-chrome # keeping work and business separated
     hunspell 
     hunspellDicts.en_US# spelling support for nvim 
     just # just Just
-    libation # rip audio books from audible
+    librewolf
     neofetch # show off
-    networkmanagerapplet
+    networkmanagerapplet #nm-applet in the cli
     playerctl # used to bind media keys
-    prismlauncher # minecraft launcher (official not working for versions 1.19 or higher as of 2/7/25)
     pywal # setting wallpaper and a matching color scheme
-    syncthing
-    whatsapp-for-linux
+    rhythmbox
     xfce.thunar
     yt-dlp # youtube audio downloads
   ];
