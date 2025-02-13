@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   imports = [
     ./polybar
-    ./nvim
 
     ./alacritty.nix
     ./bash.nix
@@ -21,15 +21,16 @@
     du-dust # dust to view file usage
     dunst # handles notifications
     nerd-fonts.fira-code # favorite font that support ligatures
-    flameshot #screen capture tool
+    flameshot # screen capture tool
+    feh
     gimp # image editing
     google-chrome # keeping work and business separated
-    hunspell 
-    hunspellDicts.en_US# spelling support for nvim 
+    hunspell
+    hunspellDicts.en_US # spelling support for nvim
     just # just Just
     librewolf
     neofetch # show off
-    networkmanagerapplet #nm-applet in the cli
+    networkmanagerapplet # nm-applet in the cli
     playerctl # used to bind media keys
     pywal # setting wallpaper and a matching color scheme
     rhythmbox

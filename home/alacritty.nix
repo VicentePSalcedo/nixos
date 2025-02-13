@@ -4,18 +4,14 @@
     settings = {
       window = {
         opacity = 0.95;
-        blur = true;
         startup_mode = "Maximized";
       };
       font = {
         normal = {
-	        family = "FiraCodeNerdFont";
-	        style = "Regular";
-	      };
+          family = "FiraCodeNerdFont";
+          style = "Regular";
+        };
         size = 10;
-      };
-      bell = {
-        duration = 1;
       };
     };
   };

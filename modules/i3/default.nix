@@ -17,7 +17,7 @@
     displayManager = {
       lightdm = {
         enable = true;
-        background = ../../wallpaper/power.jpg;
+        background = ../../wallpaper/ainzred.jpg;
         greeters.slick = {
           enable = true;
           font.name = "FiraCodeNerdFont";
