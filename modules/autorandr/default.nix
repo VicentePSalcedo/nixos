@@ -2,6 +2,9 @@
   services = {
     autorandr = {
       enable = true;
+      hooks.postswitch = {
+        "*" = "/etc/nixos/modules/autorandr/postswtich.sh";
+      };
       profiles = {
         "external lid open" = {
           # included from example but we should see if the setups become universal when these are removed

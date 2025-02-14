@@ -3,9 +3,9 @@
   imports = [
     ./autorandr
     ./i3
+
     ./tmux.nix
     ./bluetooth.nix
-    # ./cachix.nix
     ./grub.nix
     # ./nvidia.nix # only enable this if you have an nvidia gpu
     ./nix-experimental.nix

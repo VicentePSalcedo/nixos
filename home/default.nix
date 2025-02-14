@@ -25,12 +25,9 @@
     just # just Just, (yeah I'm lazy)
     librewolf # becuase you deserve a pain in the a** in the name of internet privacy and security
     networkmanagerapplet # the wifi bars in polybar are thanks to this guy
+    ranger
     playerctl # used to bind media keys
     pywal # setting wallpaper and a matching color scheme
-    qutebrowser
-
-    ranger
-
     rhythmbox # tried many, still the best minimal music player I know
     xfce.thunar # file explorer
     xfce.tumbler # used for thumbnail images inside thunar, might need to change settings inside thunar itself
