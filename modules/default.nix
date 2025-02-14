@@ -1,12 +1,13 @@
 { pkgs, ... }:
 {
   imports = [
+    ./autorandr
     ./i3
     ./tmux.nix
     ./bluetooth.nix
-    ./cachix.nix
+    # ./cachix.nix
     ./grub.nix
-    # ./nvidia.nix # only enable this if you have an nvidia gpu or you will get bent and not in a nice way
+    # ./nvidia.nix # only enable this if you have an nvidia gpu
     ./nix-experimental.nix
     ./us-locale.nix
   ];

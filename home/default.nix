@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-
   imports = [
     ./polybar
 
@@ -16,30 +15,30 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
-    anki-bin
-    direnv
+    anki-bin # flash card app
+    direnv # cause "nix develope" is to much to type everytime
     du-dust # dust to view file usage
     dunst # handles notifications
     nerd-fonts.fira-code # favorite font that support ligatures
-    flameshot # screen capture tool
-    feh
-    gimp # image editing
+    feh # most basic bitch image viewer I could find (hope you like keyboard navigation)
     google-chrome # keeping work and business separated
-    hunspell
-    hunspellDicts.en_US # spelling support for nvim
-    just # just Just
-    librewolf
-    neofetch # show off
-    networkmanagerapplet # nm-applet in the cli
+    just # just Just, (yeah I'm lazy)
+    librewolf # becuase you deserve a pain in the a** in the name of internet privacy and security
+    networkmanagerapplet # the wifi bars in polybar are thanks to this guy
     playerctl # used to bind media keys
     pywal # setting wallpaper and a matching color scheme
-    rhythmbox
-    xfce.thunar
-    yt-dlp # youtube audio downloads
+    qutebrowser
+
+    ranger
+
+    rhythmbox # tried many, still the best minimal music player I know
+    xfce.thunar # file explorer
+    xfce.tumbler # used for thumbnail images inside thunar, might need to change settings inside thunar itself
   ];
 
   services = {
     syncthing.enable = true;
+    # lmao, doxing myself in the name of eye safety
     redshift = {
       enable = true;
       latitude = 30.19;
