@@ -19,12 +19,13 @@
     direnv # cause "nix develope" is to much to type everytime
     du-dust # dust to view file usage
     dunst # handles notifications
-    nerd-fonts.fira-code # favorite font that support ligatures
     feh # most basic bitch image viewer I could find (hope you like keyboard navigation)
     google-chrome # keeping work and business separated
     just # just Just, (yeah I'm lazy)
     librewolf # becuase you deserve a pain in the a** in the name of internet privacy and security
     networkmanagerapplet # the wifi bars in polybar are thanks to this guy
+    nerd-fonts.fira-code # favorite font that support ligatures
+    obsidian
     ranger
     playerctl # used to bind media keys
     pywal # setting wallpaper and a matching color scheme

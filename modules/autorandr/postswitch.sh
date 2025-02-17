@@ -1,1 +1,2 @@
-/etc/profiles/per-user/sintra/bin/wal -R &
+#!/bin/sh
+/run/current-system/sw/bin/wal -R &
