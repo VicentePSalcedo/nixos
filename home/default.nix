@@ -30,8 +30,10 @@
     playerctl # used to bind media keys
     pywal # setting wallpaper and a matching color scheme
     rhythmbox # tried many, still the best minimal music player I know
+    vesktop
     xfce.thunar # file explorer
     xfce.tumbler # used for thumbnail images inside thunar, might need to change settings inside thunar itself
+    zellij
   ];
 
   services = {
