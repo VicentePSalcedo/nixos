@@ -6,25 +6,18 @@
 #
 ############################################################################
 upgrade:
-  git add .
-  git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
   nixos-rebuild switch --flake . --upgrade --use-remote-sudo
   nix flake update
-  git push
-deploy:
   git add .
   git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
+  git push
+deploy:
   nixos-rebuild switch --flake . --use-remote-sudo
   nix flake update
+  git add .
+  git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
   git push
 collect-garbage:
   sudo nix-collect-garbage --delete-old
 debug:
   nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
-doitall:
-  nixos-rebuild switch --flake . --upgrade --use-remote-sudo
-  nix flake update
-  git add .
-  git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
-  git push
-  sudo nix-collect-garbage --delete-old
