@@ -16,17 +16,16 @@ set $ws9 "9:IX"
 set $ws10 "10:X"
 
 exec_always --no-startup-id autorandr -c
-exec_always --no-startup-id polybar-msg cmd quit; polybar
+exec_always --no-startup-id polybar-msg cmd quit; polybar mybar
 exec --no-startup-id dunst
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
 exec --no-startup-id wal -R
 
-# exec alacritty
-# for_window [class="alacritty"] move to workspace $ws1
-# exec librewolf
-# for_window [class="librewolf"] move to workspace $ws2
-# for_window [class="Wasistlos"] move to workspace $ws4
+exec alacritty
+for_window [class="alacritty"] move to workspace $ws1
+exec librewolf
+for_window [class="librewolf"] move to workspace $ws2
 # for_window [class="vesktop"] move to workspace $ws4
 # exec rhythmbox
 # for_window [class="Rhythmbox"] move to workspace $ws5

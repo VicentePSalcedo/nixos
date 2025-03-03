@@ -20,7 +20,6 @@
     du-dust # dust to view file usage
     dunst # handles notifications
     feh # most basic bitch image viewer I could find (hope you like keyboard navigation)
-    google-chrome # keeping work and business separated
     just # just Just, (yeah I'm lazy)
     librewolf # becuase you deserve a pain in the a** in the name of internet privacy and security
     networkmanagerapplet # the wifi bars in polybar are thanks to this guy
@@ -33,7 +32,6 @@
     vesktop
     xfce.thunar # file explorer
     xfce.tumbler # used for thumbnail images inside thunar, might need to change settings inside thunar itself
-    zellij
   ];
 
   services = {

@@ -18,13 +18,15 @@
           insert = "block";
           select = "underline";
         };
-        # auto-save = {
-        #   after-delay.enable = true;
-        # };
-        soft-wrap = {
-          enable = true;
-          wrap-at-text-width = true;
+        auto-save = {
+          after-delay.enable = true;
         };
+        # soft-wrap = {
+        #   enable = true;
+        #   wrap-at-text-width = true;
+        #   max-indent-retain = 0;
+        #   wrap-indicator = "";
+        # };
       };
     };
     languages = {
@@ -37,6 +39,8 @@
         }
         {
           name = "python";
+          auto-format = true;
+          formatter.command = "${pkgs.black}/bin/black";
           language-servers = [ "pyright" ];
         }
       ];
