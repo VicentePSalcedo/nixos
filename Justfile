@@ -6,13 +6,15 @@
 #
 ############################################################################
 upgrade:
+  git add .
+  git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
   nixos-rebuild switch --flake . --upgrade --use-remote-sudo
 deploy:
+  git add .
+  git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
   nixos-rebuild switch --flake . --use-remote-sudo
 backup:
   nix flake update
-  git add .
-  git commit -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`"
   git push
 collect-garbage:
   # garbage collect all unused nix store entries
