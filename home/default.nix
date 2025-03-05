@@ -29,6 +29,7 @@
     obsidian
     ranger
     playerctl # used to bind media keys
+    postman
     pywal # setting wallpaper and a matching color scheme
     rhythmbox # tried many, still the best minimal music player I know
     vesktop
