@@ -15,7 +15,6 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
-    audacious
     anki-bin # flash card app
     direnv # cause "nix develope" is to much to type everytime
     du-dust # dust to view file usage
@@ -33,6 +32,7 @@
     postman
     pywal # setting wallpaper and a matching color scheme
     rhythmbox # tried many, still the best minimal music player I know
+    strawberry
     vesktop
     xfce.thunar # file explorer
     xfce.tumbler # used for thumbnail images inside thunar, might need to change settings inside thunar itself
