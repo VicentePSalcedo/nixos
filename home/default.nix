@@ -20,6 +20,7 @@
     du-dust # dust to view file usage
     dunst # handles notifications
     feh # most basic bitch image viewer I could find (hope you like keyboard navigation)
+    ungoogled-chromium
     gimp
     just # just Just, (yeah I'm lazy)
     librewolf # becuase you deserve a pain in the a** in the name of internet privacy and security
