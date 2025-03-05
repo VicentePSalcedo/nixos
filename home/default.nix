@@ -15,6 +15,7 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    audacious
     anki-bin # flash card app
     direnv # cause "nix develope" is to much to type everytime
     du-dust # dust to view file usage
