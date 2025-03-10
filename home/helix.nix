@@ -43,6 +43,12 @@
           formatter.command = "${pkgs.black}/bin/black";
           language-servers = [ "pyright" ];
         }
+        {
+          name = "angular";
+          auto-format = true;
+          formatter.command = "${pkgs.prettierd}/bin/prettierd";
+          language-servers = [ "angular-language-server" ];
+        }
       ];
     };
     themes = {
