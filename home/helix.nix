@@ -44,9 +44,7 @@
           language-servers = [ "pyright" ];
         }
         {
-          name = "typescript";
-          auto-format = true;
-          formatter.command = "${pkgs.prettierd}/bin/prettierd";
+          name = "angular";
           language-servers = [ "angular-language-server" ];
         }
       ];
