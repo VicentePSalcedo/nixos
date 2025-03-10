@@ -45,7 +45,6 @@
         }
         {
           name = "angular";
-          scope = "angular.json";
           auto-format = true;
           formatter.command = "${pkgs.prettierd}/bin/prettierd";
           language-servers = [ "angular-language-server" ];
