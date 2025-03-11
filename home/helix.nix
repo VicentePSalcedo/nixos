@@ -46,6 +46,8 @@
         {
           name = "angular";
           language-servers = [ "angular-language-server" ];
+          file-types = [ "typescript" ];
+          scope = "angular.json";
         }
       ];
     };
