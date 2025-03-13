@@ -18,15 +18,15 @@
           insert = "block";
           select = "underline";
         };
-        auto-save = {
-          after-delay.enable = true;
-        };
-        # soft-wrap = {
-        #   enable = true;
-        #   wrap-at-text-width = true;
-        #   max-indent-retain = 0;
-        #   wrap-indicator = "";
+        # auto-save = {
+        #   after-delay.enable = true;
         # };
+        soft-wrap = {
+          enable = true;
+          wrap-at-text-width = true;
+          max-indent-retain = 0;
+          wrap-indicator = "";
+        };
       };
     };
     languages = {
