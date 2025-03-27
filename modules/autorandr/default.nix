@@ -53,7 +53,10 @@
               rate = "120";
             };
             eDP-1 = {
-              enable = false;
+              primary = false;
+              enable = true;
+              position = "1920x0";
+              mode = "1920x1080";
             };
           };
         };

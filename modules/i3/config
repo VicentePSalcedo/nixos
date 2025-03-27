@@ -15,6 +15,12 @@ set $ws8 "8:VIII"
 set $ws9 "9:IX"
 set $ws10 "10:X"
 
+workspace $ws1 output "DP-2"
+workspace $ws2 output "DP-2"
+workspace $ws3 output "DP-2"
+workspace $ws4 output "DP-2"
+workspace $ws5 output "eDP-1"
+
 exec_always --no-startup-id autorandr -c
 exec_always --no-startup-id polybar-msg cmd quit; polybar mybar
 exec --no-startup-id dunst

@@ -21,6 +21,7 @@
     dunst # handles notifications
     feh # most basic bitch image viewer I could find (hope you like keyboard navigation)
     gimp
+    google-chrome
     just # just Just, (yeah I'm lazy)
     librewolf # becuase you deserve a pain in the a** in the name of internet privacy and security
     networkmanagerapplet # the wifi bars in polybar are thanks to this guy
