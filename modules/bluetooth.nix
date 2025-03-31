@@ -7,5 +7,6 @@
   services.blueman.enable = true;
   environment.systemPackages = with pkgs; [
     nettools
+    iproute2
   ];
 }

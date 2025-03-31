@@ -20,6 +20,7 @@ workspace $ws2 output "DP-2"
 workspace $ws3 output "DP-2"
 workspace $ws4 output "DP-2"
 workspace $ws5 output "eDP-1"
+workspace $ws6 output "eDP-1"
 
 exec_always --no-startup-id autorandr -c
 exec_always --no-startup-id polybar-msg cmd quit; polybar mybar
@@ -57,7 +58,7 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+x kill
 bindsym $mod+Shift+p exit
-bindsym $mod+Shift+u reload
+# bindsym $mod+Shift+u reload
 bindsym $mod+Shift+i restart
 bindsym $mod+semicolon exec --no-startup-id rofi -show drun
 
@@ -101,6 +102,7 @@ bindsym $mod+w workspace number $ws2
 bindsym $mod+e workspace number $ws3
 bindsym $mod+r workspace number $ws4
 bindsym $mod+t workspace number $ws5
+bindsym $mod+y workspace number $ws6
 
 # move focused container to workspace
 bindsym $mod+Shift+q move container to workspace number $ws1; workspace number $ws1;
@@ -108,6 +110,7 @@ bindsym $mod+Shift+w move container to workspace number $ws2; workspace number $
 bindsym $mod+Shift+e move container to workspace number $ws3; workspace number $ws3;
 bindsym $mod+Shift+r move container to workspace number $ws4; workspace number $ws4;
 bindsym $mod+Shift+t move container to workspace number $ws5; workspace number $ws5;
+bindsym $mod+Shift+y move container to workspace number $ws6; workspace number $ws6;
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -120,7 +123,7 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+y mode "default"
 }
-bindsym $mod+y mode "resize"
+bindsym $mod+u mode "resize"
 
 default_border pixel 2
 smart_gaps inverse_outer
