@@ -21,6 +21,7 @@
     dunst # handles notifications
     feh # most basic bitch image viewer I could find (hope you like keyboard navigation)
     gimp
+    github-desktop
     google-chrome
     just # just Just, (yeah I'm lazy)
     librewolf # becuase you deserve a pain in the a** in the name of internet privacy and security
