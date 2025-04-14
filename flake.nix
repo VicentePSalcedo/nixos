@@ -12,8 +12,6 @@
   outputs =
     inputs@{ nixpkgs, home-manager, ... }:
     {
-      # I should figure out how to automate this part cause then I'd have my own distro I could share with others
-      # or someone out there could do it for me, just shoot me an email to let me know: vicentepsalcedo@gmail.com
       nixosConfigurations = {
         wraith = nixpkgs.lib.nixosSystem {
           system = "x86_64-link";
