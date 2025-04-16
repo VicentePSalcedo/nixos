@@ -9,6 +9,7 @@
     ./grub.nix
     # ./nvidia.nix # only enable this if you have an nvidia gpu
     ./nix-experimental.nix
+    ./steam.nix
     ./us-locale.nix
   ];
 
