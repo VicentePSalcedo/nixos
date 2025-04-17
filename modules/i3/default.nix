@@ -2,7 +2,7 @@
 {
   services = {
     logind = {
-      lidSwitch = "hybrid-sleep";
+      lidSwitch = "sleep";
       powerKey = "lock";
       powerKeyLongPress = "poweroff";
     };
