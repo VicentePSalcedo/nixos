@@ -15,16 +15,12 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
-    amberol
-    cmus
-
     anki-bin # flash card app
     direnv # cause "nix develope" is to much to type everytime
     du-dust # dust to view file usage
     dunst # handles notifications
     feh # most basic bitch image viewer I could find (hope you like keyboard navigation)
     gimp
-    github-desktop
     google-chrome
     just # just Just, (yeah I'm lazy)
     librewolf # becuase you deserve a pain in the a** in the name of internet privacy and security
@@ -36,6 +32,7 @@
     playerctl # used to bind media keys
     postman
     pywal # setting wallpaper and a matching color scheme
+    signal-desktop-bin
     thunderbird
     vscodium
     xfce.thunar # file explorer
