@@ -15,6 +15,9 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
+    amberol
+    cmus
+
     anki-bin # flash card app
     direnv # cause "nix develope" is to much to type everytime
     du-dust # dust to view file usage
@@ -33,8 +36,6 @@
     playerctl # used to bind media keys
     postman
     pywal # setting wallpaper and a matching color scheme
-    remmina
-    rhythmbox # tried many, still the best minimal music player I know
     thunderbird
     vscodium
     xfce.thunar # file explorer
