@@ -1,11 +1,6 @@
 { pkgs, ... }:
 {
   services = {
-    logind = {
-      lidSwitch = "sleep";
-      powerKey = "lock";
-      powerKeyLongPress = "poweroff";
-    };
     displayManager = {
       defaultSession = "none+i3";
       autoLogin = {
@@ -34,10 +29,8 @@
         configFile = ./config;
         enable = true;
         package = pkgs.i3-gaps;
-        extraPackages = with pkgs; [
-          i3lock-fancy
-          xss-lock
-        ];
+        # extraPackages = with pkgs; [
+        # ];
       };
     };
   };

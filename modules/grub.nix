@@ -4,7 +4,7 @@
       enable = true;
       device = "nodev";
       default = "saved";
-      splashImage = "/etc/nixos/wallpaper/ainzred.png";
+      splashImage = "/etc/nixos/wallpaper/1920x1080.png";
       efiSupport = true;
       useOSProber = true;
       configurationLimit = 50;
