@@ -39,6 +39,12 @@
     vscodium
     xfce.thunar # file explorer
     xfce.tumbler # used for thumbnail images inside thunar, might need to change settings inside thunar itself
+
+    #software for clients is below this line
+    cifs-utils
+    nfs-utils
+    rustdesk
+    samba
   ];
 
   services = {
