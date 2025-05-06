@@ -12,7 +12,7 @@
     # ../modules/steam.nix
     ../modules/tmux.nix
     ../modules/us-locale.nix
-    ../modules/wire-guard.nix
+    # ../modules/wire-guard.nix
   ];
 
   # Pretty sure this labels the encrypted disk. Don't f*** with this until you find out.
