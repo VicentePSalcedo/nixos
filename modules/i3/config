@@ -29,6 +29,9 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
 exec_always --no-startup-id wal -R
 
+bindsym $mod+g exec wal -i /home/sintra/nixos/wallpaper/1920x1080.png
+bindsym $mod+Shift+g exec wal -i /home/sintra/nixos/wallpaper/uta.jpeg
+
 exec alacritty
 for_window [class="Alacritty"] move to workspace $ws1
 
@@ -65,8 +68,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+o exec i3lock-fancy
-exec --no-startup-id xss-lock -- i3lock-fancy
 bindsym $mod+x kill
 bindsym $mod+Shift+p exit
 # bindsym $mod+Shift+u reload

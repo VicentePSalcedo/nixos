@@ -11,7 +11,7 @@
           family = "FiraCodeNerdFont";
           style = "Regular";
         };
-        size = 10;
+        size = 8;
       };
     };
   };

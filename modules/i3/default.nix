@@ -3,10 +3,10 @@
   services = {
     displayManager = {
       defaultSession = "none+i3";
-      autoLogin = {
-        enable = true;
-        user = "sintra";
-      };
+      # autoLogin = {
+      #   enable = true;
+      #   user = "sintra";
+      # };
     };
     xserver = {
       enable = true;

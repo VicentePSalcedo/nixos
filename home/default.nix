@@ -48,12 +48,12 @@
   services = {
     syncthing.enable = true;
     # lmao, doxing myself in the name of eye safety
-    redshift = {
-      enable = true;
-      latitude = 30.19;
-      longitude = -81.39;
-      tray = true;
-    };
+    # redshift = {
+    #   enable = true;
+    #   latitude = 30.19;
+    #   longitude = -81.39;
+    #   tray = true;
+    # };
   };
 
   home.stateVersion = "23.11";
