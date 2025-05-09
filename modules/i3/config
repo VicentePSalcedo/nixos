@@ -2,6 +2,32 @@ set $mod Mod1
 font pango:FiraCodeNerdFont 16
 set $refresh_i3status killall -SIGUSR1 i3status
 
+# workspace 1
+exec alacritty
+bindsym $mod+Return exec alacritty; workspace number $ws1
+for_window [class="Alacritty"] move to workspace $ws1
+
+# workspace 2
+exec librewolf
+bindsym $mod+Shift+2 exec librewolf; workspace number $ws2
+for_window [class="LibreWolf"] move to workspace $ws2
+for_window [class="librewolf"] move to workspace $ws2
+
+# workspace 3
+# exec thunar
+bindsym $mod+Shift+3 exec thunar; workspace number $ws3
+for_window [class="Thunar"] move to workspace number $ws3
+
+# workspace 4
+# exec thunderbird
+bindsym $mod+Shift+4 exec thunderbird; workspace number $ws4
+for_window [class="thunderbird"] move to workspace $ws4
+
+# workspace 5
+exec rhythmbox
+bindsym $mod+Shift+5 exec rhythmbox; workspace number $ws5
+for_window [class="Rhythmbox"] move to workspace $ws5
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:I"
@@ -22,28 +48,16 @@ workspace $ws4 output "DP-2"
 workspace $ws5 output "eDP-1"
 workspace $ws6 output "eDP-1"
 
-exec_always --no-startup-id autorandr -c
-exec_always --no-startup-id polybar-msg cmd quit; polybar mybar
-exec --no-startup-id dunst
-exec --no-startup-id blueman-applet
-exec --no-startup-id nm-applet
-exec_always --no-startup-id wal -R
-
+#pywal stuff
+exec --no-startup-id wal -R
 bindsym $mod+g exec wal -i /home/sintra/nixos/wallpaper/1920x1080.png
 bindsym $mod+Shift+g exec wal -i /home/sintra/nixos/wallpaper/uta.jpeg
 
-exec alacritty
-for_window [class="Alacritty"] move to workspace $ws1
-
-exec librewolf
-for_window [class="LibreWolf"] move to workspace $ws2
-for_window [class="librewolf"] move to workspace $ws2
-
-exec thunderbird
-for_window [class="thunderbird"] move to workspace $ws3
-
-# exec rhythmbox
-# for_window [class="Rhythmbox"] move to workspace $ws5
+exec --no-startup-id blueman-applet
+exec --no-startup-id nm-applet
+exec --no-startup-id dunst
+exec_always --no-startup-id autorandr -c
+exec_always --no-startup-id polybar-msg cmd quit; polybar mybar
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -63,9 +77,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
-# start a terminal
-bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+x kill

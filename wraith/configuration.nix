@@ -7,6 +7,7 @@
     ../modules/i3
     ../modules/bluetooth.nix
     ../modules/grub.nix
+    ../modules/hyprland.nix
     ../modules/nix-experimental.nix
     # ../modules/nvidia.nix
     # ../modules/steam.nix

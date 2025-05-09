@@ -15,30 +15,33 @@
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
-    anki-bin # flash card app
-    direnv # cause "nix develope" is to much to type everytime
-    du-dust # dust to view file usage
-    dunst # handles notifications
-    feh # most basic bitch image viewer I could find (hope you like keyboard navigation)
-    gimp
-    google-chrome
-    just # just Just, (yeah I'm lazy)
-    librewolf # becuase you deserve a pain in the a** in the name of internet privacy and security
-    neofetch
-    networkmanagerapplet # the wifi bars in polybar are thanks to this guy
-    nerd-fonts.fira-code # favorite font that support ligatures
-    nnn
+    # home sweet home
+    du-dust
+    dunst
+    fastfetchMinimal
+    feh
+    just
+    librewolf
     obsidian
-    playerctl # used to bind media keys
-    postman
-    pywal # setting wallpaper and a matching color scheme
+    networkmanagerapplet
+    nerd-fonts.fira-code
+    nnn
+    playerctl
+    pywal16 # setting wallpaper and a matching color scheme
+    rhythmbox
     signal-desktop-bin
     thunderbird
-    vscodium
+    vesktop
     xfce.thunar # file explorer
-    xfce.tumbler # used for thumbnail images inside thunar, might need to change settings inside thunar itself
+    xfce.tumbler
 
-    #software for clients is below this line
+    # dev tools
+    direnv
+    google-chrome
+    postman
+    vscodium
+
+    # software for clients
     cifs-utils
     nfs-utils
     rustdesk
