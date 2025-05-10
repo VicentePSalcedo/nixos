@@ -17,6 +17,7 @@
     kitty
     hyprlandPlugins.hy3
     hyprpaper
+    imagemagick
     wofi
     waybar
   ];
