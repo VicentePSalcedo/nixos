@@ -14,12 +14,16 @@
 
   # suprisingling the setup breaks without kitty (still don't know why)
   environment.systemPackages = with pkgs; [
+    kdePackages.xwaylandvideobridge
     kitty
     hyprlandPlugins.hy3
     hyprpaper
     imagemagick
+    pipewire
+    wireplumber
     wofi
     waybar
+    xdg-desktop-portal-hyprland
   ];
 
   # cache fix for hyprland builds that use flakes

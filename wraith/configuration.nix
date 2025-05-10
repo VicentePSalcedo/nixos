@@ -10,7 +10,7 @@
     ../modules/hyprland.nix
     ../modules/nix-experimental.nix
     # ../modules/nvidia.nix
-    # ../modules/steam.nix
+    ../modules/steam.nix
     ../modules/tmux.nix
     ../modules/us-locale.nix
     # ../modules/wire-guard.nix
