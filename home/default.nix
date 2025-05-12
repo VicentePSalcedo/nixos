@@ -16,7 +16,7 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
-    cmus
+    amberol
     du-dust
     dunst
     fastfetchMinimal
@@ -29,7 +29,6 @@
     nnn
     playerctl
     pywal16 # setting wallpaper and a matching color scheme
-    rhythmbox
     signal-desktop-bin
     thunderbird
     vesktop
@@ -51,16 +50,8 @@
 
   services = {
     syncthing.enable = true;
-    # lmao, doxing myself in the name of eye safety
-    # redshift = {
-    #   enable = true;
-    #   latitude = 30.19;
-    #   longitude = -81.39;
-    #   tray = true;
-    # };
   };
 
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;
-
 }
