@@ -46,6 +46,7 @@
     curl
     dconf
     docker-compose
+    htop
     lshw
     lsof
     npth

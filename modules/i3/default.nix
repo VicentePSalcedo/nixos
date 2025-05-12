@@ -1,13 +1,13 @@
 { pkgs, ... }:
 {
   services = {
-    displayManager = {
-      defaultSession = "none+i3";
-      # autoLogin = {
-      #   enable = true;
-      #   user = "sintra";
-      # };
-    };
+    # displayManager = {
+    #   defaultSession = "none+i3";
+    #   autoLogin = {
+    #     enable = true;
+    #     user = "sintra";
+    #   };
+    # };
     xserver = {
       enable = true;
       xkb.layout = "us";

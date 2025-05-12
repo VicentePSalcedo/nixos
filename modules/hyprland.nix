@@ -1,12 +1,20 @@
 { pkgs, ... }:
 {
   # lets you use lightdm and still login to hyprland without crashing
-  services.displayManager.sddm.wayland.enable = true;
-
   programs.hyprland = {
     enable = true;
     # for applications that require xorg
     xwayland.enable = true;
+  };
+  services = {
+    displayManager = {
+      sddm.wayland.enable = true;
+      defaultSession = "hyprland";
+      autoLogin = {
+        enable = true;
+        user = "sintra";
+      };
+    };
   };
 
   # hints dumb electron apps to use wayland
