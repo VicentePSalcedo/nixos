@@ -24,7 +24,7 @@
     just
     librewolf
     obsidian
-    networkmanagerapplet
+    meld
     nerd-fonts.fira-code
     nnn
     playerctl
