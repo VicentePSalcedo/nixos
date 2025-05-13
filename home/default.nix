@@ -34,6 +34,7 @@
     vesktop
     xfce.thunar # file explorer
     xfce.tumbler
+    yt-dlp
 
     # dev tools
     direnv
