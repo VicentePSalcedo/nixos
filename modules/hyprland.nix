@@ -24,7 +24,6 @@
   environment.systemPackages = with pkgs; [
     kdePackages.xwaylandvideobridge
     kitty
-    hyprlandPlugins.hy3
     hyprpaper
     imagemagick
     pipewire

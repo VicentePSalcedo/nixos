@@ -36,7 +36,10 @@
   };
 
   # Fine fine, I'll admit, nix isn't the best for everything. For the rest, docker is the move.
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    waydroid.enable = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
   security.rtkit.enable = true;
