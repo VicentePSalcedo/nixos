@@ -5,12 +5,17 @@
     enable = true;
     defaultEditor = true;
     extraPackages = with pkgs; [
+      angular-language-server
       nixd
+      prettierd
+      pyright
+      typescript-language-server
+      vscode-langservers-extracted
     ];
     settings = {
       theme = "tokyonight_transparent";
       editor = {
-        line-number = "relative";
+        line-number = "absolute";
         bufferline = "multiple";
         color-modes = true;
         popup-border = "all";
@@ -28,7 +33,6 @@
           enable = true;
           wrap-at-text-width = true;
           max-indent-retain = 0;
-          wrap-indicator = "";
         };
       };
     };
