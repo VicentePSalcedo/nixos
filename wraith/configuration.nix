@@ -5,6 +5,8 @@
 
     ../modules/autorandr
     ../modules/i3
+
+    ../modules/auto-upgrade.nix
     ../modules/bluetooth.nix
     ../modules/grub.nix
     ../modules/hyprland.nix
@@ -38,7 +40,6 @@
   # Fine fine, I'll admit, nix isn't the best for everything. For the rest, docker is the move.
   virtualisation = {
     docker.enable = true;
-    waydroid.enable = true;
   };
 
   nixpkgs.config.allowUnfree = true;

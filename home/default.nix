@@ -21,10 +21,10 @@
     dunst
     fastfetchMinimal
     feh
+    gimp
     just
     librewolf
     obsidian
-    meld
     nerd-fonts.fira-code
     nnn
     playerctl
@@ -39,6 +39,7 @@
     # dev tools
     direnv
     google-chrome
+    meld
     postman
     vscodium
 
