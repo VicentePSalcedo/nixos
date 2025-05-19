@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   programs.helix = {
+    package = pkgs.evil-helix;
     enable = true;
     defaultEditor = true;
     extraPackages = with pkgs; [
@@ -18,9 +19,11 @@
           insert = "block";
           select = "underline";
         };
-        # auto-save = {
-        #   after-delay.enable = true;
-        # };
+        auto-save = {
+          after-delay.enable = true;
+          after-delay.timeout = 3000;
+          focus-lost = true;
+        };
         soft-wrap = {
           enable = true;
           wrap-at-text-width = true;

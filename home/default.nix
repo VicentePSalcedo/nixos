@@ -16,7 +16,7 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
-    amberol
+    cmus
     du-dust
     dunst
     fastfetchMinimal
