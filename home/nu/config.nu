@@ -12,4 +12,4 @@ $env.config = {
     }]
   }
 }
-load-env { do { cat ~/.cache/wal/sequences } | source } &
+$env.config.show_banner = false
