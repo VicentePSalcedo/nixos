@@ -22,16 +22,18 @@
     librewolf
     obsidian
     signal-desktop-bin
-    thunderbird
+    # thunderbird
     vesktop
     xfce.thunar
     xfce.tumbler
-    # cli apps
+
+    # cli
     bat
+    # cargo-cargo-info
     cmus
-    direnv
     du-dust
     dunst
+    eza
     fastfetchMinimal
     playerctl
     pywal16
@@ -39,26 +41,30 @@
     speedtest-rs
     starship
     unzip
-    wiki-tui
+    # wiki-tui
     yt-dlp
+
     # dev tools I like to use
-    eza
+    direnv
     gitui
     just
     mprocs
+
     # dev tools for colaboration
+    google-cloud-sdk
     google-chrome
     meld
     postman
     vscodium
+
     # software for client work
     cifs-utils
     nfs-utils
     rustdesk
     samba
+
     # fonts
     nerd-fonts.fira-code
-
   ];
 
   services = {
