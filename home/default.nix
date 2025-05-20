@@ -11,6 +11,7 @@
     ./picom.nix
     ./nu.nix
     ./rofi.nix
+    # ./starship.nix
   ];
 
   home.username = "sintra";
