@@ -29,6 +29,7 @@
           after-delay.timeout = 3000;
           focus-lost = true;
         };
+        text-width = 80;
         soft-wrap = {
           enable = true;
           wrap-at-text-width = true;
