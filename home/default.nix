@@ -32,6 +32,7 @@
     playerctl
     pywal16 # setting wallpaper and a matching color scheme
     signal-desktop-bin
+    starship
     thunderbird
     vesktop
     xfce.thunar # file explorer
