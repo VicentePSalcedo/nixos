@@ -1,0 +1,1 @@
+- just file nu shell auto complete
