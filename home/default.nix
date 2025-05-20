@@ -9,6 +9,7 @@
     ./gtk.nix
     ./helix.nix
     ./picom.nix
+    ./nu.nix
     ./rofi.nix
   ];
 

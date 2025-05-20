@@ -1,5 +1,7 @@
 {
   programs = {
-    nushell = { enable = true };
+    nushell = {
+      enable = true;
+    };
   };
 }
