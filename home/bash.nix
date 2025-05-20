@@ -15,6 +15,8 @@
       }
       fastfetch
       eval -- "$(/etc/profiles/per-user/sintra/bin/starship init bash --print-full-init)"
+      unset CLOUDSDK_CONFIG_ROOT
+      unset GOOGLE_APPLICATION_CREDENTIALS
     '';
   };
 }
