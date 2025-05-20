@@ -6,3 +6,4 @@
 - install bacon
 - install rust
 - install cargo-info
+- added uta wallpaper to hyprpaper preload
