@@ -19,4 +19,4 @@ alias ls = exa --icons --header --classify --group-directories-first --long --ti
 alias la = exa --icons --header --classify --group-directories-first --long --time-style=long-iso --all
 alias lt = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso --all
 
-(cat ~/.cache/wal/sequences &)
+cat ~/.cache/wal/sequences

@@ -1,6 +1,5 @@
 ### Rustification todo list
 - just file nu shell auto complete
-- pywal colorscheme
 - nu shell env variables
 - wal-hypr() function
 - fastfetch config
