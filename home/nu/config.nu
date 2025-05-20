@@ -56,3 +56,9 @@ export-env { $env.STARSHIP_SHELL = "nu"; load-env {
 
 cat ~/.cache/wal/sequences
 fastfetch
+
+def hypr-wal [image] {
+    wal -n -i ($image)
+    hyprctl hyprpaper preload ($image)
+    hyprctl hyprpaper wallpaper eDP-1, ($image)
+}

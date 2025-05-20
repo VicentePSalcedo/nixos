@@ -16,7 +16,6 @@ collect-garbage:
   sudo nix-collect-garbage --delete-old
 debug:
   nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
-
 # check to see is you have autoupdate module enabled
 upgrade:
   nixos-rebuild switch --flake . --upgrade --use-remote-sudo
