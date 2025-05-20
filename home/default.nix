@@ -11,46 +11,54 @@
     ./helix.nix
     ./picom.nix
     ./rofi.nix
-    # ./starship.nix
   ];
 
   home.username = "sintra";
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
+    feh
+    gimp
+    librewolf
+    obsidian
+    signal-desktop-bin
+    thunderbird
+    vesktop
+    xfce.thunar
+    xfce.tumbler
+    # cli apps
+    bat
     cmus
+    direnv
     du-dust
     dunst
     fastfetchMinimal
-    feh
-    gimp
-    just
-    librewolf
-    obsidian
-    nerd-fonts.fira-code
-    nnn
     playerctl
-    pywal16 # setting wallpaper and a matching color scheme
-    signal-desktop-bin
+    pywal16
+    ripgrep
+    speedtest-rs
     starship
-    thunderbird
-    vesktop
-    xfce.thunar # file explorer
-    xfce.tumbler
+    unzip
+    wiki-tui
     yt-dlp
-
-    # dev tools
-    direnv
+    # dev tools I like to use
+    eza
+    gitui
+    just
+    mprocs
+    # dev tools for colaboration
     google-chrome
     meld
     postman
     vscodium
-
-    # software for clients
+    # software for client work
     cifs-utils
     nfs-utils
     rustdesk
     samba
+    # fonts
+    nerd-fonts.fira-code
+
   ];
 
   services = {

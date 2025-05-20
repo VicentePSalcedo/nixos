@@ -6,7 +6,7 @@
     ../modules/autorandr
     ../modules/i3
 
-    ../modules/auto-upgrade.nix
+    # ../modules/auto-upgrade.nix
     ../modules/bluetooth.nix
     ../modules/grub.nix
     ../modules/hyprland.nix
@@ -22,7 +22,7 @@
   boot.initrd.luks.devices."luks-321cf864-183e-4548-836b-9d8a6ad38559".device =
     "/dev/disk/by-uuid/321cf864-183e-4548-836b-9d8a6ad38559";
 
-  networking.hostName = "wraith"; # Define your hostname.
+  networking.hostName = "wraith";
 
   networking.networkmanager.enable = true;
 
@@ -37,7 +37,6 @@
     ];
   };
 
-  # Fine fine, I'll admit, nix isn't the best for everything. For the rest, docker is the move.
   virtualisation = {
     docker.enable = true;
   };
@@ -46,7 +45,6 @@
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
-    bottom
     curl
     dconf
     docker-compose
@@ -56,7 +54,6 @@
     npth
     pavucontrol
     pulseaudio
-    unzip
     wget
   ];
 

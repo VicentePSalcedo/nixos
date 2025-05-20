@@ -6,9 +6,6 @@
   services = {
     autorandr = {
       enable = true;
-      hooks.postswitch = {
-        "*" = "/etc/nixos/modules/autorandr/postswtich.sh";
-      };
       profiles = {
         "laptop" = {
           fingerprint = {

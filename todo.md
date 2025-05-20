@@ -1,19 +1,11 @@
 ### Rustification todo list
 - just file nu shell auto complete
 - pywal colorscheme
-- remove welcome to nushell
 - nu shell env variables
 - wal-hypr() function
-- fastfetch
+- fastfetch config
 - starship config
 - service worker starship prompt removal
-- install exa (replacement for ls)
-- install bat (replacement for cat)
-- install mprocs
-- install and try gitui
-- install ripgrep (e.i. "rg" the best find tool ever)
 - install bacon
 - install rust
 - install cargo-info
-- speedtest-rs
-- wiki-tui
