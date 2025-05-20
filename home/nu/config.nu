@@ -17,4 +17,6 @@ $env.config.show_banner = false
 
 alias ls = exa --icons --header --classify --group-directories-first --long --time-style=long-iso
 alias la = exa --icons --header --classify --group-directories-first --long --time-style=long-iso --all
-alias la = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso --all
+alias lt = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso --all
+
+(cat ~/.cache/wal/sequences &)
