@@ -59,7 +59,18 @@ cat ~/.cache/wal/sequences
 fastfetch
 
 def hypr-wal [image] {
-    wal -n -i ($image)
-    hyprctl hyprpaper preload eDP-1, ($image)
-    hyprctl hyprpaper wallpaper eDP-1, ($image)
+    wal -n -i $image
+    hyprctl hyprpaper preload eDP-1, $image
+    hyprctl hyprpaper wallpaper eDP-1, $image
 }
+
+$env.GPG_TTY = "$(tty)"
+
+def "nu-complete just" [] {
+    (^just --dump --unstable --dump-format json | from json).recipes | transpose recipe data | flatten | where {|row| $row.private == false } | select recipe doc parameters | rename value description
+}
+
+# Just: A Command Runner
+export extern "just" [
+    ...recipe: string@"nu-complete just", # Recipe(s) to run, may be with argument(s)
+]

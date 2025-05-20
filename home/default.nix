@@ -17,7 +17,6 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
-    feh
     gimp
     librewolf
     obsidian
@@ -29,12 +28,18 @@
 
     # cli
     bat
+    bacon
     # cargo-cargo-info
     cmus
+    direnv
     du-dust
     dunst
     eza
     fastfetchMinimal
+    feh
+    gitui
+    just
+    mprocs
     playerctl
     pywal16
     ripgrep
@@ -43,12 +48,6 @@
     unzip
     # wiki-tui
     yt-dlp
-
-    # dev tools I like to use
-    direnv
-    gitui
-    just
-    mprocs
 
     # dev tools for colaboration
     google-cloud-sdk
