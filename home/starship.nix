@@ -1,7 +1,12 @@
+{ pkgs, ... }:
 {
-  programs.starship = {
-    enable = true;
-    # enableBashIntegration = true;
-    # enableNushellIntegration = true;
+
+  home.packages = with pkgs; [
+    starship
+  ];
+  programs.starship.settings = {
+    gcloud = {
+      disabled = true;
+    };
   };
 }

@@ -15,7 +15,6 @@
       }
       fastfetch
       eval -- "$(/etc/profiles/per-user/sintra/bin/starship init bash --print-full-init)"
-      export STARSHIP_CONFIG=~/example/non/default/path/starship.toml
     '';
   };
 }
