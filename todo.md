@@ -1,7 +1,6 @@
 ### Rustification todo list
 - just file nu shell auto complete
 - nu shell env variables
-- wal-hypr() function
 - service worker starship prompt removal
 - install bacon
 - install rust

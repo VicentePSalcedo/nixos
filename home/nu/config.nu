@@ -18,6 +18,7 @@ $env.config.show_banner = false
 alias ls = exa --icons --header --classify --group-directories-first --long --time-style=long-iso
 alias la = exa --icons --header --classify --group-directories-first --long --time-style=long-iso --all
 alias lt = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso --all
+alias vi = hx
 
 export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     STARSHIP_SESSION_KEY: (random chars -l 16)
