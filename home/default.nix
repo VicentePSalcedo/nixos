@@ -30,6 +30,7 @@
     # cli
     bat
     bacon
+    bottom
     cargo-info
     cmus
     direnv
