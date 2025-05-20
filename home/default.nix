@@ -3,6 +3,7 @@
   imports = [
     ./nu
     ./polybar
+    ./starship
 
     ./alacritty.nix
     ./bash.nix
@@ -21,7 +22,7 @@
     librewolf
     obsidian
     signal-desktop-bin
-    # thunderbird
+    thunderbird
     vesktop
     xfce.thunar
     xfce.tumbler
@@ -29,7 +30,7 @@
     # cli
     bat
     bacon
-    # cargo-cargo-info
+    cargo-info
     cmus
     direnv
     du-dust
@@ -44,9 +45,8 @@
     pywal16
     ripgrep
     speedtest-rs
-    starship
     unzip
-    # wiki-tui
+    wiki-tui
     yt-dlp
 
     # dev tools for colaboration
