@@ -59,5 +59,6 @@ fastfetch
 
 def hypr-wal [image] {
     wal -n -i ($image)
+    hyprctl hyprpaper preload eDP-1, ($image)
     hyprctl hyprpaper wallpaper eDP-1, ($image)
 }
