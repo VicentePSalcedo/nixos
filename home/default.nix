@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./nu
     ./polybar
 
     ./alacritty.nix
@@ -9,7 +10,6 @@
     ./gtk.nix
     ./helix.nix
     ./picom.nix
-    ./nu.nix
     ./rofi.nix
     # ./starship.nix
   ];
