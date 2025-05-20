@@ -17,4 +17,4 @@ $env.config.show_banner = false
 
 alias ls = exa --icons --header --classify --group-directories-first --long --time-style=long-iso
 alias la = exa --icons --header --classify --group-directories-first --long --time-style=long-iso --all
-alias la = exa --tee --level=2 --icons --header --classify --group-directories-first --long --time-style=long-iso --all
+alias la = exa --tree --level=2 --icons --header --classify --group-directories-first --long --time-style=long-iso --all
