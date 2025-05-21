@@ -15,6 +15,7 @@
       merge = {
         tool = "meld";
         ff = false;
+        trustExitCode = false;
       };
       mergetool = {
         prompt = false;
