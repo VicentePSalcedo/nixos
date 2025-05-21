@@ -5,6 +5,6 @@
   ];
   xdg.configFile."config.jsonc" = {
     source = ./config.jsonc;
-    target = "fastfetch/";
+    target = "fastfetch/config.jsonc";
   };
 }
