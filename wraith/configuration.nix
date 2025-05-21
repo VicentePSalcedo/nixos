@@ -8,6 +8,7 @@
 
     # ../modules/auto-upgrade.nix
     ../modules/bluetooth.nix
+    ../modules/direnv.nix
     ../modules/grub.nix
     ../modules/hyprland.nix
     ../modules/nix-experimental.nix

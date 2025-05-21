@@ -34,7 +34,6 @@
     bottom
     cargo-info
     cmus
-    direnv
     du-dust
     dunst
     eza
