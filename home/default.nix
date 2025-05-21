@@ -2,6 +2,7 @@
 {
   imports = [
     ./fastfetch
+    ./hyprland
     ./nu
     ./polybar
     ./starship
