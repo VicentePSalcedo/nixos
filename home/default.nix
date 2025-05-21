@@ -48,6 +48,7 @@
     speedtest-rs
     unzip
     wiki-tui
+    wl-clipboard-rs
     yt-dlp
 
     # dev tools for colaboration
