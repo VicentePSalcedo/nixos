@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./fastfetch
     ./nu
     ./polybar
     ./starship
@@ -37,7 +38,6 @@
     du-dust
     dunst
     eza
-    fastfetchMinimal
     feh
     gitui
     just
