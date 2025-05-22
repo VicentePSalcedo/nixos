@@ -32,7 +32,6 @@
     # cli
     cmus
     dunst
-    just
     playerctl
     pywal16
     unzip
@@ -48,9 +47,11 @@
     feh
     fd
     gitui
+    just
     mprocs
     ripgrep
-    rmpc
+    rmpc # music player
+    rusty-man
     speedtest-rs
     wiki-tui
     wl-clipboard-rs
@@ -69,6 +70,7 @@
     nfs-utils
     rustdesk # rusty
     samba
+    woeusb-ng
 
     # fonts
     nerd-fonts.fira-code
