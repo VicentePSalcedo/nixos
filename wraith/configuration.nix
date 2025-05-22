@@ -56,12 +56,15 @@
     npth
     pavucontrol
     pulseaudio
-    ventoy-full-gtk
+    ventoy-full
     wget
   ];
   nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-gtk3-1.1.05"
+    "ventoy-1.1.05"
   ];
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "ventoy-gtk3-1.1.05"
+  # ];
 
   # This enables the password prompt for git commits that are signed with PGP
   programs.gnupg.agent = {
