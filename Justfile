@@ -12,5 +12,5 @@ debug:
 switch:
   nixos-rebuild switch --flake . --use-remote-sudo
   git add .
-  git commit -m "Updated: (date now | format '%Y-%m-%d %H:%M:%S') (NixOS Gen: $generation)"
+  git commit -m "Updated: (date now | format '%Y-%m-%d %H:%M:%S') (NixOS Gen: {{generation}})"
   git push
