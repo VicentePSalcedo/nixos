@@ -69,8 +69,9 @@
   # can find the libraries they are looking for from FHS compliant system
   programs.nix-ld = {
     enable = true;
-    # libraries = with pkgs [
-    # ];
+    libraries = with pkgs; [
+      glib
+    ];
   };
 
   services.printing.enable = true;
