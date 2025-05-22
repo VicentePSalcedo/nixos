@@ -23,7 +23,7 @@
   # suprisingling the setup breaks without kitty (still don't know why)
   environment.systemPackages = with pkgs; [
     kdePackages.xwaylandvideobridge
-    # kitty
+    kitty
     hyprpaper
     imagemagick
     pipewire

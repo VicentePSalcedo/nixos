@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.helix = {
-    package = pkgs.evil-helix;
+    # package = pkgs.evil-helix;
     enable = true;
     defaultEditor = true;
     extraPackages = with pkgs; [
