@@ -59,10 +59,11 @@
     wget
   ];
 
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  # This enables the password prompt for git commits that are signed with PGP
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   services.printing.enable = true;
 

@@ -75,3 +75,35 @@ def "nu-complete just" [] {
 export extern "just" [
     ...recipe: string@"nu-complete just", # Recipe(s) to run, may be with argument(s)
 ]
+
+def "get-nixos-generation" [] {
+  let nixos_profile = "/nix/var/nix/profiles/system"
+
+  # Check if the NixOS profile link exists
+  if (not (path exists $nixos_profile)) {
+    error "NixOS system profile not found at ($nixos_profile)"
+    return "" # Return empty string on error
+  }
+
+  let link_target = (ls -F $nixos_profile | get target)
+
+  # Extract the generation number using regex (Nushell 0.80+ has good regex support)
+  # This regex extracts digits that are between '-system-' and '-link'
+  let matched_gen = ($link_target | str find -r "system-(\d+)-link" | get 0)
+
+  if ($matched_gen | is empty) {
+    error "Could not extract NixOS generation from ($link_target)"
+    return ""
+  }
+
+  # The `str find` command returns a table, we need the first capture group.
+  # For Nushell 0.80+, this is usually the first element of the found list.
+  # For older versions, you might need `get matched_part` and then parse it.
+  # Assuming 0.80+ for simplicity.
+  let gen_num = ($matched_gen | get 1) # Get the first capture group (the actual number)
+
+  $gen_num
+}
+
+# Example usage:
+# get-nixos-generation
