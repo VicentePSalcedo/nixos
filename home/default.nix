@@ -39,6 +39,7 @@
     dunst
     eza
     feh
+    fd
     gitui
     just
     mprocs
@@ -51,6 +52,7 @@
     wiki-tui
     wl-clipboard-rs
     yt-dlp
+    zoxide
 
     # dev tools for colaboration
     google-cloud-sdk
