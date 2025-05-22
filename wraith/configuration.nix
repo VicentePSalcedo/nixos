@@ -3,10 +3,10 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../modules/autorandr
     ../modules/i3
 
-    # ../modules/auto-upgrade.nix
+    ../modules/autorandr.nix
+    ../modules/auto-upgrade.nix
     ../modules/bluetooth.nix
     ../modules/direnv.nix
     ../modules/grub.nix
@@ -59,10 +59,10 @@
     wget
   ];
 
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
 
   services.printing.enable = true;
 
