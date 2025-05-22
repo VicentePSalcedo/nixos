@@ -57,6 +57,7 @@
     pavucontrol
     pulseaudio
     wget
+    woeusb-ng
   ];
 
   # This enables the password prompt for git commits that are signed with PGP

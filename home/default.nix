@@ -70,7 +70,6 @@
     nfs-utils
     rustdesk # rusty
     samba
-    woeusb-ng
 
     # fonts
     nerd-fonts.fira-code
