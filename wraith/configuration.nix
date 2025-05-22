@@ -65,6 +65,14 @@
     enableSSHSupport = true;
   };
 
+  # This facilitates the use of binaries by introducing a shim layer so they
+  # can find the libraries they are looking for from FHS compliant system
+  programs.nix-ld = {
+    enable = true;
+    # libraries = with pkgs [
+    # ];
+  };
+
   services.printing.enable = true;
 
   services.openssh.enable = true;

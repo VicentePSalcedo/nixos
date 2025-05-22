@@ -27,8 +27,8 @@
     hyprpaper
     imagemagick
     pipewire
+    rofi-wayland
     wireplumber
-    wofi
     waybar
     xdg-desktop-portal-hyprland
   ];
