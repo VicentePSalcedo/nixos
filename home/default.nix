@@ -45,6 +45,7 @@
     playerctl
     pywal16
     ripgrep
+    rmpc
     speedtest-rs
     unzip
     wiki-tui
