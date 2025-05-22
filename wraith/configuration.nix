@@ -71,6 +71,7 @@
     enable = true;
     libraries = with pkgs; [
       glib
+      glibc
     ];
   };
 
