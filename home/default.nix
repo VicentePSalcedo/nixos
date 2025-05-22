@@ -30,28 +30,31 @@
     xfce.tumbler
 
     # cli
+    cmus
+    dunst
+    just
+    playerctl
+    pywal16
+    unzip
+    yt-dlp
+
+    # because rust
     bat
     bacon
     bottom
     cargo-info
-    cmus
     du-dust
-    dunst
     eza
     feh
     fd
     gitui
-    just
     mprocs
-    playerctl
-    pywal16
     ripgrep
     rmpc
     speedtest-rs
-    unzip
     wiki-tui
     wl-clipboard-rs
-    yt-dlp
+    yazi
     zoxide
 
     # dev tools for colaboration
@@ -64,7 +67,7 @@
     # software for client work
     cifs-utils
     nfs-utils
-    rustdesk
+    rustdesk # rusty
     samba
 
     # fonts
