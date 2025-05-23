@@ -20,7 +20,6 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
-    chromium
     gimp
     librewolf
     obsidian
@@ -59,6 +58,8 @@
     zoxide
 
     # dev tools for colaboration
+    chromium
+    firefox-bin
     google-cloud-sdk
     google-chrome
     meld
