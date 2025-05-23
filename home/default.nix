@@ -28,6 +28,7 @@
     vesktop
 
     # cli
+    chafa
     dunst
     playerctl
     pywal16

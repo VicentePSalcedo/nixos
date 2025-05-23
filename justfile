@@ -1,4 +1,5 @@
 set shell := ["nu", "-c"]
+# set shell := ["bash", "-uc"]
 set working-directory := '/home/sintra'
 
 default: switch backup
@@ -19,7 +20,13 @@ cg:
 debug:
   nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
 
+@lookfor pkgs:
+  nix search nixpkgs {{pkgs}} | bat
+
 [working-directory: '/home/sintra/nixos']
 switch:
-  pwd
   nixos-rebuild switch --flake . --use-remote-sudo
+
+[positional-arguments]
+@torrent path:
+  rqbit download --output-folder ~/Downloads --exit-on-finish {{path}}
