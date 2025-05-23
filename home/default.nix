@@ -28,6 +28,7 @@
     vesktop
 
     # cli
+    codex
     dunst
     playerctl
     pywal16
