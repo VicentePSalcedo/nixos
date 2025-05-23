@@ -5,6 +5,7 @@
 
     ../modules/i3
 
+    # ../secrets.nix
     ../modules/autorandr.nix
     ../modules/auto-upgrade.nix
     ../modules/bluetooth.nix
