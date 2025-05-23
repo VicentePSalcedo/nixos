@@ -42,7 +42,7 @@ disabled = false
 full_symbol = " "
 charging_symbol = " "
 discharging_symbol = " "
-disabled = false
+disabled = true
 
 [[battery.display]]  # "bold red" style when capacity is between 0% and 10%
 threshold = 15
@@ -68,7 +68,7 @@ disabled = true
 
 # Prompt: param 2 └─
 [character]
-success_symbol = " [╰─λ](bold red)"
+success_symbol = " [╰─](bold red)"
 error_symbol = " [×](bold red)"
 
 # SYMBOLS
