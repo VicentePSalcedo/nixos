@@ -47,7 +47,6 @@
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # agenix-cli
     inputs.agenix.packages."${system}".default
     brightnessctl
     curl
@@ -64,9 +63,6 @@
   nixpkgs.config.permittedInsecurePackages = [
     "ventoy-1.1.05"
   ];
-  # nixpkgs.config.permittedInsecurePackages = [
-  #   "ventoy-gtk3-1.1.05"
-  # ];
 
   # This enables the password prompt for git commits that are signed with PGP
   programs.gnupg.agent = {
@@ -76,13 +72,13 @@
 
   # This facilitates the use of binaries by introducing a shim layer so they
   # can find the libraries they are looking for from FHS compliant system
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [
-      glib
-      glibc
-    ];
-  };
+  # programs.nix-ld = {
+  #   enable = true;
+  #   libraries = with pkgs; [
+  #     # glib
+  #     # glibc
+  #   ];
+  # };
 
   services.printing.enable = true;
 
