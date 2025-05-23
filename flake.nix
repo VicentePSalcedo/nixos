@@ -7,14 +7,14 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    agenix.url = "github:ryantm/agenix";
+    # agenix.url = "github:ryantm/agenix";
   };
 
   outputs =
     inputs@{
       nixpkgs,
       home-manager,
-      agenix,
+      # agenix,
       ...
     }:
     {
@@ -32,7 +32,7 @@
             {
               _module.args = { inherit inputs; };
             }
-            agenix.nixosModules.default
+            # agenix.nixosModules.default
           ];
         };
       };

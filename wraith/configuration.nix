@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -47,7 +52,6 @@
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
-    inputs.agenix.packages."${system}".default
     brightnessctl
     curl
     dconf
