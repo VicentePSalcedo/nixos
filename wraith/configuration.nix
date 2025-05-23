@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -47,6 +47,8 @@
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
+    # agenix-cli
+    inputs.agenix.packages."${system}".default
     brightnessctl
     curl
     dconf
@@ -57,7 +59,6 @@
     npth
     pavucontrol
     pulseaudio
-    ventoy-full
     wget
   ];
   nixpkgs.config.permittedInsecurePackages = [
