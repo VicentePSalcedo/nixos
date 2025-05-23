@@ -8,8 +8,6 @@
   imports = [
     ./hardware-configuration.nix
 
-    # ../secrets.nix
-
     ../modules/i3
     ../modules/autorandr.nix
     ../modules/auto-upgrade.nix

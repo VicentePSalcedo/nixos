@@ -1,2 +1,2 @@
 https/
-secrets/*.age
+secrets.env
