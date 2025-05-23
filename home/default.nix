@@ -26,11 +26,8 @@
     signal-desktop-bin
     thunderbird
     vesktop
-    xfce.thunar
-    xfce.tumbler
 
     # cli
-    cmus
     dunst
     playerctl
     pywal16
@@ -51,6 +48,7 @@
     mprocs
     ripgrep
     rmpc # music player
+    rqbit
     rusty-man
     speedtest-rs
     wiki-tui
