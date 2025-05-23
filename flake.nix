@@ -7,10 +7,16 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
+    inputs@{
+      nixpkgs,
+      home-manager,
+      agenix,
+      ...
+    }:
     {
       nixosConfigurations = {
         wraith = nixpkgs.lib.nixosSystem {
@@ -26,6 +32,7 @@
             {
               _module.args = { inherit inputs; };
             }
+            agenix.nixosModules.default
           ];
         };
       };
