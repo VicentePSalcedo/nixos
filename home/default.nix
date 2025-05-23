@@ -20,6 +20,7 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
+    chromium
     gimp
     librewolf
     obsidian
@@ -28,10 +29,10 @@
     vesktop
 
     # cli
-    chafa
     dunst
     playerctl
     pywal16
+    ueberzugpp
     unzip
     yt-dlp
 
