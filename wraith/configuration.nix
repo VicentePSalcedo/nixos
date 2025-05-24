@@ -9,7 +9,8 @@
     ./hardware-configuration.nix
 
     # ../modules/i3
-    ../modules/hyprland
+    ../modules/kde
+#    ../modules/hyprland
     # ../modules/gnome
 
     ../modules/autorandr.nix
