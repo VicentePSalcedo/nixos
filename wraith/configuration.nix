@@ -9,10 +9,11 @@
     ./hardware-configuration.nix
 
     # ../modules/i3
-    ../modules/kde
+    # ../modules/kde
     ../modules/hyprland
     # ../modules/gnome
 
+    ../modules/display-managers/lightdm.nix
     ../modules/autorandr.nix
     ../modules/auto-upgrade.nix
     ../modules/bluetooth.nix
@@ -23,7 +24,7 @@
     ../modules/us-locale.nix
     ../modules/wire-guard.nix
 
-    ../modules/tmux.nix
+    # ../modules/tmux.nix
     ../modules/steam.nix
   ];
 
@@ -87,10 +88,18 @@
   #     # glibc
   #   ];
   # };
-
-  services.printing.enable = true;
-
-  services.openssh.enable = true;
+  services = {
+    xserver = {
+      enable = true;
+      xkb.layout = "us";
+      xkb.variant = "";
+      desktopManager = {
+        xterm.enable = false;
+      };
+    };
+    printing.enable = true;
+    openssh.enable = true;
+  };
 
   system.stateVersion = "24.05";
 }
