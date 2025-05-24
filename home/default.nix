@@ -6,6 +6,7 @@
     ./nu
     ./polybar
     ./starship
+    ./waybar
 
     ./alacritty.nix
     ./bash.nix
