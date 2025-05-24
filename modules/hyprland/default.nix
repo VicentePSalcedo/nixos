@@ -33,10 +33,6 @@
     # for applications that require xorg
     xwayland.enable = true;
   };
-  services.displayManager.sddm.wayland.enable = true;
-
-  # hints dumb electron apps to use wayland
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # suprisingling the setup breaks without kitty (still don't know why)
   environment.systemPackages = with pkgs; [

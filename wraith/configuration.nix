@@ -10,7 +10,7 @@
 
     # ../modules/i3
     ../modules/kde
-#    ../modules/hyprland
+    ../modules/hyprland
     # ../modules/gnome
 
     ../modules/autorandr.nix
