@@ -82,6 +82,11 @@
     syncthing.enable = true;
   };
 
+  dconf = {
+    enable = true;
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
+
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;
 }

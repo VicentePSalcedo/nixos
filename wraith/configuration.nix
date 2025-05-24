@@ -9,18 +9,21 @@
     ./hardware-configuration.nix
 
     # ../modules/i3
+    ../modules/hyprland
+    ../modules/gnome
+
     ../modules/autorandr.nix
     ../modules/auto-upgrade.nix
     ../modules/bluetooth.nix
     ../modules/direnv.nix
     ../modules/grub.nix
-    ../modules/hyprland.nix
     ../modules/nix-experimental.nix
     # ../modules/nvidia.nix
-    ../modules/steam.nix
-    ../modules/tmux.nix
     ../modules/us-locale.nix
     ../modules/wire-guard.nix
+
+    ../modules/tmux.nix
+    ../modules/steam.nix
   ];
 
   # Pretty sure this labels the encrypted disk. Don't f*** with this until you find out.
