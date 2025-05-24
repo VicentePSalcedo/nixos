@@ -10,7 +10,7 @@
 
     # ../modules/i3
     ../modules/hyprland
-    ../modules/gnome
+    # ../modules/gnome
 
     ../modules/autorandr.nix
     ../modules/auto-upgrade.nix

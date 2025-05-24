@@ -1,12 +1,29 @@
 { pkgs, ... }:
 {
   services = {
+    displayManager = {
+      defaultSession = "hyprland";
+      autoLogin = {
+        enable = true;
+        user = "sintra";
+      };
+    };
     xserver = {
       enable = true;
       xkb.layout = "us";
       xkb.variant = "";
       desktopManager = {
         xterm.enable = false;
+      };
+      displayManager = {
+        lightdm = {
+          enable = true;
+          background = ../../wallpaper/1920x1080.png;
+          greeters.slick = {
+            enable = true;
+            font.name = "FiraCodeNerdFont";
+          };
+        };
       };
     };
   };
@@ -16,16 +33,7 @@
     # for applications that require xorg
     xwayland.enable = true;
   };
-  services = {
-    displayManager = {
-      sddm.wayland.enable = true;
-      defaultSession = "hyprland";
-      autoLogin = {
-        enable = true;
-        user = "sintra";
-      };
-    };
-  };
+  services.displayManager.sddm.wayland.enable = true;
 
   # hints dumb electron apps to use wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
