@@ -15,6 +15,7 @@
       }
       fastfetch
       eval -- "$(/etc/profiles/per-user/sintra/bin/starship init bash --print-full-init)"
+
     '';
   };
 }

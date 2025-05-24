@@ -8,7 +8,7 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../modules/i3
+    # ../modules/i3
     ../modules/autorandr.nix
     ../modules/auto-upgrade.nix
     ../modules/bluetooth.nix
@@ -47,6 +47,8 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  # no idea what this does
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [

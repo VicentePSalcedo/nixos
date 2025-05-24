@@ -1,5 +1,15 @@
 { pkgs, ... }:
 {
+  services = {
+    xserver = {
+      enable = true;
+      xkb.layout = "us";
+      xkb.variant = "";
+      desktopManager = {
+        xterm.enable = false;
+      };
+    };
+  };
   # lets you use lightdm and still login to hyprland without crashing
   programs.hyprland = {
     enable = true;
