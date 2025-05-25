@@ -122,7 +122,7 @@ echo "--- Modifying flake.nix ---"
 if [ -f "$FLAKE_NIX_PATH" ]; then
   echo "Adding new configuration block for '$hostname' to $FLAKE_NIX_PATH..."
 
-  NEW_CONFIG_BLOCK="""          $hostname = nixpkgs.lib.nixosSystem {
+  NEW_CONFIG_BLOCK="""        $hostname = nixpkgs.lib.nixosSystem {
           system = \"x86_64-linux\";
           modules = [
             ./$hostname/configuration.nix
