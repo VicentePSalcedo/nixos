@@ -1,8 +1,9 @@
+{ lib, ... }:
 {
   boot.loader = {
     grub = {
       enable = true;
-      device = "nodev";
+      device = lib.mkDefault "nodev";
       default = "saved";
       splashImage = "/etc/nixos/wallpaper/wp7513283-autumn-anime-scenery-wallpapers.png";
       efiSupport = true;

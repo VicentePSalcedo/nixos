@@ -46,7 +46,7 @@ echo ""
 
 # 1. Backup the original /etc/nixos if it exists
 if [ -d "$NIXOS_CONFIG_DIR" ]; then
-  echo "Backing up existing $NIXOS_CONFIG_DIR to $NIXOX_BAK_DIR..."
+  echo "Backing up existing $NIXOS_CONFIG_DIR to $NIXOS_BAK_DIR..."
   if ! mv "$NIXOS_CONFIG_DIR" "$NIXOS_BAK_DIR"; then
     echo "Error: Failed to backup $NIXOS_CONFIG_DIR. Exiting."
     exit 1
