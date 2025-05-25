@@ -38,7 +38,7 @@ for cmd in mv ln mkdir cp read; do
   fi
 done
 
-git clone https://github.com/VicentePSalcedo/nixos.git
+# git clone https://github.com/VicentePSalcedo/nixos.git
 
 # --- Main Script Logic ---
 echo "--- Starting NixOS Configuration Setup ---"
