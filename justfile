@@ -2,7 +2,7 @@ set shell := ["nu", "-c"]
 # set shell := ["bash", "-uc"]
 set working-directory := '/home/sintra'
 
-default: switch
+default: switch backup
 
 generation := shell('nixos-rebuild list-generations --json | from json | get -i 0.generation')
 
