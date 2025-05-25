@@ -11,6 +11,7 @@ backup:
   git add .
   git commit -m "NixOS Gen: {{generation}}"
   git push
+  git status
 
 [working-directory: '/home/sintra/nixos']
 cg:

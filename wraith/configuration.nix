@@ -1,31 +1,11 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
-
-    # ../modules/i3
-    # ../modules/kde
-    ../modules/hyprland
-    # ../modules/gnome
-
-    ../modules/display-managers/lightdm.nix
+    ../modules
     ../modules/autorandr.nix
-    ../modules/auto-upgrade.nix
     ../modules/bluetooth.nix
-    ../modules/direnv.nix
-    ../modules/grub.nix
-    ../modules/nix-experimental.nix
-    # ../modules/nvidia.nix
-    ../modules/us-locale.nix
     ../modules/wire-guard.nix
-
-    # ../modules/tmux.nix
-    ../modules/steam.nix
   ];
 
   # Pretty sure this labels the encrypted disk. Don't f*** with this until you find out.
@@ -51,8 +31,6 @@
     docker.enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   # no idea what this does
   security.rtkit.enable = true;
 
@@ -67,8 +45,10 @@
     npth
     pavucontrol
     pulseaudio
+    ventoy-full
     wget
   ];
+
   nixpkgs.config.permittedInsecurePackages = [
     "ventoy-1.1.05"
   ];

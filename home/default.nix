@@ -73,7 +73,6 @@
     nfs-utils
     rustdesk # rusty
     samba
-    ventoy-full
 
     # fonts
     nerd-fonts.fira-code
