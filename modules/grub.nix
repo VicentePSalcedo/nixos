@@ -5,7 +5,7 @@
       enable = true;
       device = lib.mkDefault "nodev";
       default = "saved";
-      splashImage = "/etc/nixos/wallpaper/wp7513283-autumn-anime-scenery-wallpapers.png";
+      splashImage = "/etc/nixos/wallpaper/1920x1080.png";
       efiSupport = true;
       useOSProber = true;
       configurationLimit = 50;

@@ -71,7 +71,6 @@
     # software for client work
     cifs-utils
     nfs-utils
-    rustdesk # rusty
     samba
 
     # fonts

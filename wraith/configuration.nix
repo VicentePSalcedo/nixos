@@ -5,6 +5,7 @@
     ../modules
     ../modules/autorandr.nix
     ../modules/bluetooth.nix
+    ../modules/grub.nix
     ../modules/wire-guard.nix
   ];
 
@@ -45,6 +46,7 @@
     npth
     pavucontrol
     pulseaudio
+    rustdesk
     ventoy-full
     wget
   ];
