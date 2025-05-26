@@ -61,7 +61,7 @@
 
     # dev tools for colaboration
     chromium
-    firefox-bin
+    # firefox-bin
     google-cloud-sdk
     google-chrome
     meld

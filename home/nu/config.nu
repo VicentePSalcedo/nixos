@@ -20,7 +20,7 @@ alias la = exa --icons --header --classify --group-directories-first --long --ti
 alias lt = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso
 alias lta = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso --all
 alias vi = hx
-
+alias cat = bat
 export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     STARSHIP_SESSION_KEY: (random chars -l 16)
     PROMPT_MULTILINE_INDICATOR: (
