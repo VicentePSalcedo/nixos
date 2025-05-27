@@ -1,17 +1,27 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ../modules
-    ../modules/autorandr.nix
-    ../modules/bluetooth.nix
-    ../modules/grub.nix
-    ../modules/wire-guard.nix
   ];
 
   # Pretty sure this labels the encrypted disk. Don't f*** with this until you find out.
   boot.initrd.luks.devices."luks-321cf864-183e-4548-836b-9d8a6ad38559".device =
     "/dev/disk/by-uuid/321cf864-183e-4548-836b-9d8a6ad38559";
+  boot.loader = {
+    grub = {
+      enable = true;
+      device = lib.mkDefault "nodev";
+      default = "saved";
+      splashImage = "/etc/nixos/wallpaper/1920x1080.png";
+      efiSupport = true;
+      useOSProber = true;
+      configurationLimit = 50;
+    };
+    efi = {
+      canTouchEfiVariables = true;
+    };
+  };
 
   networking.hostName = "wraith";
 
@@ -35,6 +45,7 @@
   # no idea what this does
   security.rtkit.enable = true;
 
+  # system specific packages I keep here, makes my home modules more portable
   environment.systemPackages = with pkgs; [
     brightnessctl
     curl
