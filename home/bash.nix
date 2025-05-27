@@ -8,10 +8,9 @@
       eval "$(direnv hook bash)"
       (cat ~/.cache/wal/sequences &)
       export GPG_TTY=$(tty)
-      wal-hypr() {
+      hypr-wal() {
           wal -n -i "$@"
-          hyprctl hyprpaper preload "$@"
-          hyprctl hyprpaper wallpaper eDP-1, "$@"
+          hyprctl hyprpaper reload , "$@"
       }
       fastfetch
       eval -- "$(/etc/profiles/per-user/sintra/bin/starship init bash --print-full-init)"
