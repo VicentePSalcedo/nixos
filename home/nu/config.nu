@@ -15,18 +15,7 @@ $env.config = {
 
 $env.config.show_banner = false
 
-alias core-ls = ls
-alias ls = exa --icons --header --classify --group-directories-first --long --time-style=long-iso
-alias la = exa --icons --header --classify --group-directories-first --long --time-style=long-iso --all
-alias lt = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso
-alias lta = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso --all
-
-alias vi = hx
-
-alias core-cat = cat
-alias cat = bat
-
-alias edit = /etc/nixos
+$env.GPG_TTY = "$(tty)"
 
 export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     STARSHIP_SESSION_KEY: (random chars -l 16)
@@ -63,15 +52,28 @@ export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     }
 }}
 
-core-cat ~/.cache/wal/sequences
-fastfetch
+alias core-ls = ls
+alias ls = exa --icons --header --classify --group-directories-first --long --time-style=long-iso
+alias la = exa --icons --header --classify --group-directories-first --long --time-style=long-iso --all
+alias lt = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso
+alias lta = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso --all
+
+alias vi = hx
+alias edit = /etc/nixos
+
+alias core-cat = cat
+alias cat = bat
 
 def hypr-wal [image] {
+    hyprctl hyprpaper reload , $image
     wal -n -i $image
-    hyprctl hyprpaper preload eDP-1, $image
-    hyprctl hyprpaper wallpaper eDP-1, $image
 }
 
-$env.GPG_TTY = "$(tty)"
+def lookfor [pkgs] {
+    nix search nixpkgs $pkgs | bat
+}
+
+core-cat ~/.cache/wal/sequences
+fastfetch
 
 source ~/.zoxide.nu

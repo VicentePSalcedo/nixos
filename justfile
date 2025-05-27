@@ -18,9 +18,6 @@ cg:
 debug:
   nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
 
-@lookfor pkgs:
-  nix search nixpkgs {{pkgs}} | bat
-
 switch:
   nixos-rebuild switch --flake . --use-remote-sudo
 
