@@ -2,7 +2,6 @@
 {
   imports = [
     ./fastfetch
-    ./hyprland
     ./nu
     ./polybar
     ./starship
@@ -13,6 +12,7 @@
     ./git.nix
     ./gtk.nix
     ./helix.nix
+    ./hyprland # configs
     ./picom.nix
     ./rofi.nix
   ];

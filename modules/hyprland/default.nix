@@ -17,7 +17,6 @@
     pipewire
     rofi-wayland
     wireplumber
-    waybar
     xdg-desktop-portal-hyprland
   ];
 
