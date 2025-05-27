@@ -26,9 +26,6 @@ alias vi = hx
 alias core-cat = cat
 alias cat = bat
 
-alias core-cd = cd
-alias cd = zoxide
-
 export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     STARSHIP_SESSION_KEY: (random chars -l 16)
     PROMPT_MULTILINE_INDICATOR: (
