@@ -73,6 +73,10 @@ def lookfor [pkgs] {
     nix search nixpkgs $pkgs | bat
 }
 
+def edit [path] {
+    hx /etc/nixos/($path)
+}
+
 core-cat ~/.cache/wal/sequences
 fastfetch
 
