@@ -66,3 +66,5 @@ def hypr-wal [image] {
 }
 
 $env.GPG_TTY = "$(tty)"
+
+source ~/.zoxide.nu
