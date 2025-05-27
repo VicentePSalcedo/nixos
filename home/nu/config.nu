@@ -21,6 +21,8 @@ alias lt = exa --tree --level=2 --git --icons --header --classify --group-direct
 alias lta = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso --all
 alias vi = hx
 alias cat = bat
+alias core-cat = cat
+
 export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     STARSHIP_SESSION_KEY: (random chars -l 16)
     PROMPT_MULTILINE_INDICATOR: (
@@ -56,7 +58,7 @@ export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     }
 }}
 
-cat ~/.cache/wal/sequences
+core-cat ~/.cache/wal/sequences
 fastfetch
 
 def hypr-wal [image] {
