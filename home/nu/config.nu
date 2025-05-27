@@ -26,6 +26,8 @@ alias vi = hx
 alias core-cat = cat
 alias cat = bat
 
+alias edit = /etc/nixos
+
 export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     STARSHIP_SESSION_KEY: (random chars -l 16)
     PROMPT_MULTILINE_INDICATOR: (
