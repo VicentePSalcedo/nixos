@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # --- Configuration ---
 NIXOS_CONFIG_DIR="/etc/nixos"
 NIXOS_BAK_DIR="/etc/nixos.bak"
