@@ -77,7 +77,10 @@
     nerd-fonts.fira-code
   ];
 
-  programs.keychain.enableNushellIntegration = true;
+  programs.keychain = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
 
   services = {
     syncthing.enable = true;
