@@ -59,7 +59,6 @@ alias lt = exa --tree --level=2 --git --icons --header --classify --group-direct
 alias lta = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso --all
 
 alias vi = hx
-alias edit = /etc/nixos
 
 alias core-cat = cat
 alias cat = bat
@@ -74,7 +73,31 @@ def lookfor [pkgs] {
 }
 
 def edit [path] {
-    hx /etc/nixos/($path)
+    if ($path) {
+        hx /etc/nixos/($path)
+    } else {
+        hx /etc/nixos
+    }
+}
+
+let internal_monitor_name = "eDP-1"
+let internal_monitor_resolution = "1920x1080@60"
+let external_monitor_name = "DP-1"
+let external_monitor_resolution = "1920x1080@120"
+def configure_monitors [ ] {
+    echo "Configuring monitors..."
+    let connected_monitors = hyprctl monitors -j | jq -r '.[].name'
+    if { echo $connected_monitors } == 0 {
+        echo External monitor $external_monitor_name detected. Enabling...
+        hyprctl keyword monitor $external_monitor_name ,($external_monitor_resolution)
+        hyprctl keyword monitor $internal_monitor_name ,($internal_monitor_resolution)
+        echo External monitor active, internal disabled.
+    } else {
+        echo "External monitor not detected. Enabling internal..."
+        hyprctl keyword monitor "$INTERNAL_MONITOR_NAME,1920x1080@60.05,0x0,1"
+        echo "Internal monitor active."
+    }
+    echo "Monitor configuration complete."
 }
 
 core-cat ~/.cache/wal/sequences

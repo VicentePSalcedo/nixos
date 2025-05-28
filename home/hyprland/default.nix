@@ -4,8 +4,5 @@
     source = ./hypr;
     recursive = true;
   };
-  home.packages = with pkgs; [
-    jq
-    socat
-  ];
+  home.packages = with pkgs; [ ];
 }
