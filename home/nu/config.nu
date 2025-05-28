@@ -72,12 +72,8 @@ def lookfor [pkgs] {
     nix search nixpkgs $pkgs | bat
 }
 
-def edit [path] {
-    if $path != null {
-        hx /etc/nixos/($path)
-    } else {
-        hx /etc/nixos
-    }
+def edit [ ] {
+    hx /etc/nixos
 }
 
 # let internal_monitor_name = "eDP-1"
