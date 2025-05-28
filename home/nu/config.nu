@@ -59,6 +59,7 @@ alias lt = exa --tree --level=2 --git --icons --header --classify --group-direct
 alias lta = exa --tree --level=2 --git --icons --header --classify --group-directories-first --long --time-style=long-iso --all
 
 alias vi = hx
+alias viconfig = hx /etc/nixos
 
 alias core-cat = cat
 alias cat = bat
@@ -70,14 +71,6 @@ def hypr-wal [image] {
 
 def lookfor [pkgs] {
     nix search nixpkgs $pkgs | bat
-}
-
-def edit [path] {
-    if $path != null {
-        hx /etc/nixos/($path)
-    } else {
-        hx /etc/nixos
-    }
 }
 
 # let internal_monitor_name = "eDP-1"
