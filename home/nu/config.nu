@@ -73,25 +73,19 @@ def lookfor [pkgs] {
     nix search nixpkgs $pkgs | bat
 }
 
-# let internal_monitor_name = "eDP-1"
-# let internal_monitor_resolution = "1920x1080@60"
-# let external_monitor_name = "DP-1"
-# let external_monitor_resolution = "1920x1080@120"
-# def configure_monitors [ ] {
-#     echo "Configuring monitors..."
-#     # let connected_monitors = hyprctl monitors -j | jq -r '.[].name'
-#     # if { echo $connected_monitors } == 0 {
-#     #     echo External monitor $external_monitor_name detected. Enabling...
-#     #     hyprctl keyword monitor $external_monitor_name ,($external_monitor_resolution)
-#     #     hyprctl keyword monitor $internal_monitor_name ,($internal_monitor_resolution)
-#     #     echo External monitor active, internal disabled.
-#     # } else {
-#     #     echo "External monitor not detected. Enabling internal..."
-#     #     hyprctl keyword monitor "$INTERNAL_MONITOR_NAME,1920x1080@60.05,0x0,1"
-#     #     echo "Internal monitor active."
-#     # }
-#     # echo "Monitor configuration complete."
-# }
+let internal_monitor_name = "eDP-1"
+let internal_monitor_resolution = "1920x1080@60.05,auto,1"
+let external_monitor_name = "DP-1"
+let external_monitor_resolution = "1920x1080@120,auto,1"
+def configure_monitors [ ] {
+    let connected_monitors = hyprctl monitors -j | jq -r '.[].name'
+    if $connected_monitors != '' {
+        hyprctl keyword monitor $external_monitor_name ,($external_monitor_resolution)
+        hyprctl keyword monitor $internal_monitor_name ,disabled
+    } else {
+        hyprctl keyword monitor ($internal_monitor_name) ,($internal_monitor_resolution)
+    }
+}
 
 core-cat ~/.cache/wal/sequences
 fastfetch
