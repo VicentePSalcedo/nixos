@@ -81,6 +81,7 @@
     enable = true;
     enableNushellIntegration = true;
   };
+  # test line
 
   services = {
     syncthing.enable = true;
