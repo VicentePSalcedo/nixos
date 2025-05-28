@@ -80,6 +80,9 @@
   programs.keychain = {
     enable = true;
     enableNushellIntegration = true;
+    keys = [
+
+    ];
   };
   # test line
 
