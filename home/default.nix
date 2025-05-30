@@ -31,6 +31,7 @@
     # cli
     codex
     dunst
+    github-cli
     playerctl
     pywal16
     ueberzugpp
@@ -84,7 +85,11 @@
 
     ];
   };
-  # test line
+  programs.pay-respects = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+  programs.yazi.enableNushellIntegration = true;
 
   services = {
     syncthing.enable = true;

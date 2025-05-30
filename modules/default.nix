@@ -23,6 +23,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-gnome3;
   };
 
   # This facilitates the use of binaries by introducing a shim layer so they
