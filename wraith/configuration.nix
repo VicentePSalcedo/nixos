@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ../modules
+    ./wire-guard.nix
   ];
 
   # Pretty sure this labels the encrypted disk. Don't f*** with this until you find out.
@@ -74,6 +75,22 @@
     printing.enable = true;
     openssh.enable = true;
   };
+
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+
+  time.timeZone = "America/New_York";
 
   system.stateVersion = "24.05";
 }

@@ -21,12 +21,14 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
+    amberol
     gimp
     librewolf
     obsidian
     signal-desktop-bin
     thunderbird
     vesktop
+    vlc
 
     # cli
     codex

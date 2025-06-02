@@ -5,7 +5,7 @@
     enable = true;
     baseIndex = 1;
     shortcut = "space";
-    newSession = true;
+    newSession = false;
     keyMode = "vi";
     escapeTime = 0;
     secureSocket = true;

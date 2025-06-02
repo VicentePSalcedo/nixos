@@ -87,6 +87,10 @@ def configure_monitors [ ] {
     }
 }
 
+def hg [param] {
+    history | grep $param
+}
+
 core-cat ~/.cache/wal/sequences
 fastfetch
 

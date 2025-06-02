@@ -3,20 +3,14 @@
   imports = [
     ./display-managers/lightdm.nix
 
-    # ./gnome
     ./hyprland
-    # ./i3
-    # kde
+    ./i3
 
     ./auto-upgrade.nix
     ./bluetooth.nix
     ./direnv.nix
     ./nix-experimental.nix
-    # ./nvidia.nix
-    ./steam.nix
     ./tmux.nix
-    ./us-locale.nix
-    #./wire-guard.nix
   ];
   nixpkgs.config.allowUnfree = true;
   # This enables the password prompt for git commits that are signed with PGP
