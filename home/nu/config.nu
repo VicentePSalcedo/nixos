@@ -73,20 +73,6 @@ def lookfor [pkgs] {
     nix search nixpkgs $pkgs | bat
 }
 
-let internal_monitor_name = "eDP-1"
-let internal_monitor_resolution = "1920x1080@60.05,auto,1"
-let external_monitor_name = "DP-1"
-let external_monitor_resolution = "1920x1080@120,auto,1"
-def configure_monitors [ ] {
-    let connected_monitors = hyprctl monitors -j | jq -r '.[].name'
-    if $connected_monitors != '' {
-        hyprctl keyword monitor $external_monitor_name ,($external_monitor_resolution)
-        hyprctl keyword monitor $internal_monitor_name ,disabled
-    } else {
-        hyprctl keyword monitor ($internal_monitor_name) ,($internal_monitor_resolution)
-    }
-}
-
 def hg [param] {
     history | grep $param
 }

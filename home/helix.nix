@@ -6,7 +6,9 @@
     defaultEditor = true;
     extraPackages = with pkgs; [
       angular-language-server
+      bash-language-server
       nixd
+      marksman
       prettierd
       pyright
       typescript-language-server

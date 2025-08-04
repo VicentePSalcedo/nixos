@@ -21,23 +21,28 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
-    amberol
+    birdtray
     gimp
     librewolf
+    libreoffice
+    mako
     obsidian
+    rhythmbox
     signal-desktop-bin
     thunderbird
     vesktop
     vlc
 
     # cli
-    codex
-    dunst
+    gemini-cli
     github-cli
+    grimblast
+    nmap
     playerctl
     pywal16
     ueberzugpp
     unzip
+    vim
     yt-dlp
 
     # because rust
@@ -53,7 +58,6 @@
     just
     mprocs
     ripgrep
-    rmpc # music player
     rqbit
     rusty-man
     speedtest-rs
@@ -67,7 +71,6 @@
     # firefox-bin
     google-cloud-sdk
     google-chrome
-    meld
     postman
     vscodium
 
@@ -80,21 +83,14 @@
     nerd-fonts.fira-code
   ];
 
-  programs.keychain = {
-    enable = true;
-    enableNushellIntegration = true;
-    keys = [
-
-    ];
-  };
-  programs.pay-respects = {
-    enable = true;
-    enableNushellIntegration = true;
-  };
   programs.yazi.enableNushellIntegration = true;
 
   services = {
     syncthing.enable = true;
+    mpd = {
+      enable = true;
+      musicDirectory = "/home/sintra/Music";
+    };
   };
 
   dconf = {
