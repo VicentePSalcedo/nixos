@@ -3,7 +3,6 @@
   imports = [
     ./fastfetch
     ./nu
-    ./polybar
     ./starship
     ./waybar
 
@@ -13,7 +12,6 @@
     ./gtk.nix
     ./helix.nix
     ./hyprland # configs
-    ./picom.nix
     ./rofi.nix
   ];
 
@@ -21,7 +19,6 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
-    birdtray
     gimp
     librewolf
     libreoffice
@@ -34,6 +31,7 @@
     vlc
 
     # cli
+    chromedriver
     gemini-cli
     github-cli
     grimblast
@@ -84,14 +82,6 @@
   ];
 
   programs.yazi.enableNushellIntegration = true;
-
-  services = {
-    syncthing.enable = true;
-    mpd = {
-      enable = true;
-      musicDirectory = "/home/sintra/Music";
-    };
-  };
 
   dconf = {
     enable = true;

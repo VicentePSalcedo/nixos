@@ -1,14 +1,11 @@
 { pkgs, ... }:
 {
   imports = [
-    ./display-managers/lightdm.nix
-
     ./hyprland
-    ./i3
-
     ./auto-upgrade.nix
     ./bluetooth.nix
     ./direnv.nix
+    ./display-managers/lightdm.nix
     ./nix-experimental.nix
     ./tmux.nix
   ];
