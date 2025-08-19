@@ -6,6 +6,10 @@ generation := shell('nixos-rebuild list-generations --json | from json | get --o
 
 switch:
   nixos-rebuild switch --flake . --sudo
+
+update:
+  nixos-rebuild switch --upgrade --flake . --sudo
+
 backup:
   git add .
   git commit -m "NixOS Gen: {{generation}}"

@@ -3,7 +3,6 @@
   imports = [
     ./hardware-configuration.nix
     ../modules
-    ./wire-guard.nix
   ];
 
   services = {

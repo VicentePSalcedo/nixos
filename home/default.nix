@@ -19,11 +19,12 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
+    firefox
     gimp
-    librewolf
     libreoffice
     mako
     obsidian
+    protonvpn-gui
     rhythmbox
     signal-desktop-bin
     thunderbird
@@ -32,9 +33,9 @@
 
     # cli
     chromedriver
-    gemini-cli
     github-cli
     grimblast
+    nchat
     nmap
     playerctl
     pywal16
@@ -69,6 +70,7 @@
     # firefox-bin
     google-cloud-sdk
     google-chrome
+    nodejs_24
     postman
     vscodium
 
@@ -80,6 +82,12 @@
     # fonts
     nerd-fonts.fira-code
   ];
+
+  home.sessionPath = [
+    "$HOME/.npm-global"
+  ];
+
+  services.syncthing.enable = true;
 
   programs.yazi.enableNushellIntegration = true;
 

@@ -11,6 +11,8 @@
       marksman
       prettierd
       pyright
+      rustfmt
+      rust-analyzer
       typescript-language-server
       vscode-langservers-extracted
     ];
@@ -30,12 +32,6 @@
           after-delay.enable = true;
           after-delay.timeout = 3000;
           focus-lost = true;
-        };
-        text-width = 80;
-        soft-wrap = {
-          enable = true;
-          wrap-at-text-width = true;
-          max-indent-retain = 0;
         };
       };
     };
@@ -60,6 +56,11 @@
             "typescript"
           ];
           scope = "angular.json";
+        }
+        {
+          name = "rust";
+          auto-format = true;
+          formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
         }
       ];
     };

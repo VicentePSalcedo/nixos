@@ -8,6 +8,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # agenix.url = "github:ryantm/agenix";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -15,6 +19,7 @@
       nixpkgs,
       home-manager,
       # agenix,
+      rust-overlay,
       ...
     }:
     {
@@ -33,6 +38,16 @@
               _module.args = { inherit inputs; };
             }
             # agenix.nixosModules.default
+            (
+              { pkgs, ... }:
+              {
+                nixpkgs.overlays = [ rust-overlay.overlays.default ];
+                environment.systemPackages = [
+                  pkgs.rust-bin.stable.latest.default
+                  pkgs.openssl
+                ];
+              }
+            )
           ];
         };
       };
