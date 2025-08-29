@@ -11,7 +11,7 @@
     ./git.nix
     ./gtk.nix
     ./helix.nix
-    ./hyprland # configs
+    ./hyprland 
     ./rofi.nix
   ];
 
@@ -25,6 +25,7 @@
     mako
     obsidian
     protonvpn-gui
+    remmina
     rhythmbox
     signal-desktop-bin
     thunderbird
@@ -67,6 +68,7 @@
 
     # dev tools for colaboration
     chromium
+    dbeaver-bin
     # firefox-bin
     google-cloud-sdk
     google-chrome

@@ -7,6 +7,7 @@
     extraPackages = with pkgs; [
       angular-language-server
       bash-language-server
+      just-lsp
       nixd
       marksman
       prettierd
@@ -32,6 +33,12 @@
           after-delay.enable = true;
           after-delay.timeout = 3000;
           focus-lost = true;
+        };
+        text-width = 80;
+        soft-wrap = {
+          enable = true;
+          wrap-at-text-width = true;
+          max-indent-retain = 0;
         };
       };
     };
@@ -61,6 +68,10 @@
           name = "rust";
           auto-format = true;
           formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
+        }
+        {
+          name = "just";
+          language-servers = [ "just-lsp" ];
         }
       ];
     };

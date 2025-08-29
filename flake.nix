@@ -45,6 +45,7 @@
                 environment.systemPackages = [
                   pkgs.rust-bin.stable.latest.default
                   pkgs.openssl
+                  pkgs.pkg-config
                 ];
               }
             )
