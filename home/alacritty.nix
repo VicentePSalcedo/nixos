@@ -13,7 +13,7 @@
         shell = "nu";
       };
       window = {
-        opacity = 0.9;
+        opacity = 0.85;
         startup_mode = "Maximized";
       };
     };

@@ -8,9 +8,13 @@ switch:
   nixos-rebuild switch --flake . --sudo
 
 update:
+  git fetch
+  git pull
   nixos-rebuild switch --upgrade --flake . --sudo
 
 backup:
+  git fetch
+  git pull
   git add .
   git commit -m "NixOS Gen: {{generation}}"
   git push
