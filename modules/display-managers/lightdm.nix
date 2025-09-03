@@ -15,7 +15,7 @@
       displayManager = {
         lightdm = {
           enable = true;
-          background = ../../wallpaper/1920x1080.png;
+          background = ../../wallpaper/waifu.jpg;
           greeters.slick = {
             enable = true;
             font.name = "FiraCodeNerdFont";

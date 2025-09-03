@@ -8,8 +8,8 @@
   services = {
     desktopManager.plasma6.enable = true;
     logind = {
-      lidSwitch = "ignore";
-      lidSwitchDocked = "ignore";
+      settings.Login.HandleLidSwitch = "ignore";
+      settings.Login.HandleLidSwitchDocked = "ignore";
     };
   };
   # Pretty sure this labels the encrypted disk. Don't f*** with this until you find out.
