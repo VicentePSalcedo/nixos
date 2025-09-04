@@ -51,6 +51,22 @@
             )
           ];
         };
+	ghost = nixpkgs.lib.nixosSystem {
+          system = "x86_64-link";
+          modules = [
+            ./ghost/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.sintra = import ./home;
+            }
+            {
+              _module.args = { inherit inputs; };
+            }
+            # agenix.nixosModules.default
+          ];
+        };
       };
     };
 }

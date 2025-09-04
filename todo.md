@@ -1,0 +1,1 @@
+- [ ] get ~/.cache/wal/hyprland.conf to generater initally, or otherwise store it with nixos config

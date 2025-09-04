@@ -11,7 +11,7 @@
     ./git.nix
     ./gtk.nix
     ./helix.nix
-    ./hyprland 
+    ./hyprland
     ./rofi.nix
   ];
 
@@ -25,31 +25,29 @@
     mako
     obsidian
     protonvpn-gui
-    remmina
     rhythmbox
     signal-desktop-bin
-    thunderbird
-    vesktop
+    thunderbird # Email Client
+    vesktop # Wayland friendly discord
     vlc
 
     # cli
-    chromedriver
     github-cli
-    grimblast
-    nchat
+    grimblast # Screenshot tool
+    nchat # Terminal-based chat with support for Telegram and WhatsApp
     nmap
     playerctl
     pywal16
-    ueberzugpp
+    ueberzugpp # Allows to draw images on terminals using X11/Wayland
     unzip
-    vim
+    vim # ICE
     yt-dlp
 
     # because rust
-    bat
-    bacon
-    bottom
-    cargo-info
+    bat # better cat
+    # bacon
+    bottom # better htop
+    # cargo-info
     du-dust
     eza
     feh
@@ -59,32 +57,33 @@
     mprocs
     ripgrep
     rqbit
-    rusty-man
+    # rusty-man
     speedtest-rs
-    wiki-tui
-    wl-clipboard-rs
+    # wiki-tui
+    # wl-clipboard-rs
     yazi
     zoxide
 
-    # dev tools for colaboration
-    chromium
-    dbeaver-bin
+    # # dev tools for colaboration
+    # chromium
+    # dbeaver-bin
     # firefox-bin
-    google-cloud-sdk
-    google-chrome
-    nodejs_24
-    postman
-    vscodium
+    # google-cloud-sdk
+    # google-chrome
+    # nodejs_24
+    # postman
+    # vscodium
 
     # software for client work
     cifs-utils
     nfs-utils
     samba
 
-    # fonts
+    # font(s)
     nerd-fonts.fira-code
   ];
 
+  # extra directories to add to the PATH
   home.sessionPath = [
     "$HOME/.npm-global"
   ];

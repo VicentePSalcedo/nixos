@@ -54,7 +54,6 @@
 
   # system specific packages I keep here, makes my home modules more portable
   environment.systemPackages = with pkgs; [
-    brightnessctl
     curl
     dconf
     docker-compose
