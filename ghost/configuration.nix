@@ -54,6 +54,7 @@
   environment.systemPackages = with pkgs; [
     vim
     git
+    docker-compose
   ];
 
   system.stateVersion = "25.05"; # Did you read the comment?
