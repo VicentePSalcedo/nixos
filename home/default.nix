@@ -61,7 +61,7 @@
     fd
     gitui
     just
-    mprocs
+    # mprocs
     ripgrep
     rqbit
     # rusty-man
@@ -76,7 +76,7 @@
     dbeaver-bin
     # firefox-bin
     # google-cloud-sdk
-    # google-chrome
+    google-chrome
     # nodejs_24
     # postman
     # vscodium

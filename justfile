@@ -20,7 +20,6 @@ backup:
   git add .
   git commit -m "NixOS Gen: {{generation}}"
   git push
-  git status
 
 cg:
   sudo nix-collect-garbage --delete-old
