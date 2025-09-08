@@ -2,6 +2,8 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../modules/bluetooth.nix
+    ../modules/tmux.nix
     ../modules
   ];
 
@@ -34,27 +36,11 @@
 
   networking.networkmanager.enable = true;
 
-  users.users.sintra = {
-    isNormalUser = true;
-    description = "sintra";
-    extraGroups = [
-      "networkmanager"
-      "docker"
-      "wheel"
-      "audio"
-    ];
-  };
-
-  virtualisation = {
-    docker.enable = true;
-  };
-
   # no idea what this does
   security.rtkit.enable = true;
 
   # system specific packages I keep here, makes my home modules more portable
   environment.systemPackages = with pkgs; [
-    brightnessctl
     curl
     dconf
     docker-compose
@@ -79,7 +65,6 @@
       xkb.variant = "";
     };
     printing.enable = true;
-    openssh.enable = true;
   };
 
   i18n.defaultLocale = "en_US.UTF-8";

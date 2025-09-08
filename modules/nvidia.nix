@@ -5,7 +5,7 @@
     # xpadneo.enable = true;
     graphics = {
       enable = true;
-        # dont need this line if you dont want steam
+      # dont need this line if you dont want steam
       enable32Bit = true;
     };
     nvidia = {
@@ -18,6 +18,6 @@
     };
   };
   services.xserver = {
-      videoDrivers = ["nvidia"];
+    videoDrivers = [ "nvidia" ];
   };
 }
