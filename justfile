@@ -4,15 +4,17 @@ set working-directory := '/home/sintra/nixos'
 
 generation := shell('nixos-rebuild list-generations --json | from json | get --optional 0.generation')
 
-switch: backup
+switch:
   git fetch
   git pull
   nixos-rebuild switch --flake . --sudo
+  just backup
 
-update: backup
+update:
   git fetch
   git pull
   nixos-rebuild switch --upgrade --flake . --sudo
+  just backup
 
 backup:
   git add .
