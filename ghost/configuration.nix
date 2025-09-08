@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -7,7 +7,22 @@
     ../modules
   ];
 
+  services.getty.autologinUser = "sintra";
+
+  nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    gparted
+  ];
+
+  boot.supportedFilesystems = [ "ntfs" ];
+
+  security.polkit.enable = true;
+
   boot.loader.systemd-boot.enable = true;
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -37,26 +52,5 @@
     variant = "";
   };
 
-  users.users.sintra = {
-    isNormalUser = true;
-    description = "sintra";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages = with pkgs; [ ];
-  };
-
-  services.getty.autologinUser = "sintra";
-
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    vim
-    git
-    docker-compose
-  ];
-
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }

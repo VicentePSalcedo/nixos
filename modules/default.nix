@@ -3,11 +3,9 @@
   imports = [
     ./hyprland
     ./auto-upgrade.nix
-    ./bluetooth.nix
     ./direnv.nix
     ./display-managers/lightdm.nix
     ./nix-experimental.nix
-    ./tmux.nix
   ];
   nixpkgs.config.allowUnfree = true;
 
@@ -27,4 +25,25 @@
   #     glibc
   #   ];
   # };
+
+  users.users.sintra = {
+    isNormalUser = true;
+    description = "sintra";
+    extraGroups = [
+      "networkmanager"
+      "docker"
+      "wheel"
+      "audio"
+    ];
+  };
+
+  environment.systemPackages = with pkgs; [
+    docker-compose
+    docker-buildx
+  ];
+  virtualisation = {
+    docker.enable = true;
+  };
+
+  services.openssh.enable = true;
 }

@@ -25,15 +25,22 @@
     mako
     obsidian
     protonvpn-gui
-    rhythmbox
     signal-desktop-bin
     thunderbird # Email Client
     vesktop # Wayland friendly discord
     vlc
 
+    # music players
+    amberol
+    cmus
+    rhythmbox
+
     # cli
+    evhz
+    gemini-cli
     github-cli
     grimblast # Screenshot tool
+    htop
     nchat # Terminal-based chat with support for Telegram and WhatsApp
     nmap
     playerctl
@@ -66,7 +73,7 @@
 
     # # dev tools for colaboration
     # chromium
-    # dbeaver-bin
+    dbeaver-bin
     # firefox-bin
     # google-cloud-sdk
     # google-chrome
