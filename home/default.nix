@@ -37,7 +37,8 @@
 
     # cli
     evhz
-    gemini-cli
+    gemini-cli-bin
+    geminicommit
     github-cli
     grimblast # Screenshot tool
     htop
