@@ -19,6 +19,7 @@
   home.homeDirectory = "/home/sintra";
   home.packages = with pkgs; [
     # home sweet home
+    android-studio
     firefox
     gimp
     libreoffice
@@ -31,21 +32,20 @@
     vlc
 
     # music players
-    amberol
+    # amberol
     cmus
-    rhythmbox
+    # rhythmbox
 
-    # cli
-    evhz
-    gemini-cli
-    github-cli
+    # cli tools
+    evhz # Show mouse refresh rate under linux + evdev
+    gemini-cli-bin
     grimblast # Screenshot tool
     htop
     nchat # Terminal-based chat with support for Telegram and WhatsApp
     nmap
     playerctl
     pywal16
-    ueberzugpp # Allows to draw images on terminals using X11/Wayland
+    # ueberzugpp # Allows to draw images on terminals using X11/Wayland
     unzip
     vim # ICE
     yt-dlp
