@@ -37,6 +37,16 @@
     ];
   };
 
+  users.users.guest = {
+    isNormalUser = true;
+    description = "guest";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     docker-compose
     docker-buildx

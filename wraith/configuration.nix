@@ -51,12 +51,7 @@
     pavucontrol
     pulseaudio
     rustdesk
-    ventoy-full
     wget
-  ];
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-1.1.05"
   ];
 
   services = {
