@@ -42,6 +42,7 @@
     grimblast # Screenshot tool
     htop
     nchat # Terminal-based chat with support for Telegram and WhatsApp
+    ncdu # god-tier terminal utility for identifing large user files and deleting them
     nmap
     playerctl
     pywal16
