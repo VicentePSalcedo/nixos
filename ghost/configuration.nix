@@ -3,7 +3,6 @@
   imports = [
     ./hardware-configuration.nix
     ../modules/nvidia.nix
-    ../modules/steam.nix
     ../modules
   ];
 
