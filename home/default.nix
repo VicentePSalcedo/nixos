@@ -91,11 +91,6 @@
     nerd-fonts.fira-code
   ];
 
-  # extra directories to add to the PATH
-  home.sessionPath = [
-    "$HOME/.npm-global"
-  ];
-
   services.syncthing = {
     enable = true;
     tray.enable = true;
