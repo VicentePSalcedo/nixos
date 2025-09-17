@@ -6,6 +6,7 @@
     ./direnv.nix
     ./display-managers/lightdm.nix
     ./nix-experimental.nix
+    ./steam.nix
   ];
   nixpkgs.config.allowUnfree = true;
 
