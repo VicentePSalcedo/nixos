@@ -54,7 +54,6 @@
     # bacon
     bottom # better htop
     # cargo-info
-    eza
     feh
     fd
     gitui
