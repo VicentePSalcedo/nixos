@@ -5,6 +5,9 @@
     ../modules/bluetooth.nix
     ../modules/tmux.nix
     ../modules
+    ../modules/steam.nix
+    ../modules/display-managers/lightdm.nix
+    ../modules/hyprland
   ];
 
   services = {
