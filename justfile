@@ -1,3 +1,8 @@
+## useful commands for setup
+# sudo mv /etc/nixos /etc/nixos.bak
+# sudo ln -s ~/nixos /etc/nixos
+# nixos-rebuild switch --flake .  --sudo
+
 set shell := ["nu", "-c"]
 # set shell := ["bash", "-uc"]
 set working-directory := '/home/sintra/nixos'
@@ -12,14 +17,6 @@ backup:
 cg:
   @sudo nix-collect-garbage --delete-old
 
-debug:
-  #nixos-rebuild switch --flake . --sudo --show-trace --verbose
-
-setup:
-  sudo mv /etc/nixos /etc/nixos.bak
-  sudo ln -s ~/nixos /etc/nixos
-  nixos-rebuild switch --flake .  --sudo
-
 switch:
   @git fetch
   @git pull
@@ -33,5 +30,5 @@ switch:
 update:
   @git fetch
   @git pull
-  @nixos-rebuild switch --upgrade --flake . --sudo
+  @nixos-rebuild switch --upgrade --flake . --sudo --impure
   @just backup
