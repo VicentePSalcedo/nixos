@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   home.shell.enableNushellIntegration = true;
   programs = {
@@ -7,4 +8,7 @@
       envFile.source = ./env.nu;
     };
   };
+  home.packages = with pkgs; [
+    eza
+  ];
 }

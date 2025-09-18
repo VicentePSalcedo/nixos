@@ -1,12 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    ./hyprland
     ./auto-upgrade.nix
     ./direnv.nix
-    ./display-managers/lightdm.nix
     ./nix-experimental.nix
-    ./steam.nix
+    ./tmux.nix
   ];
   nixpkgs.config.allowUnfree = true;
 
@@ -16,16 +14,6 @@
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-gnome3;
   };
-
-  # This facilitates the use of binaries by introducing a shim layer so they
-  # can find the libraries they are looking for from FHS compliant system
-  # programs.nix-ld = {
-  #  enable = true;
-  #  libraries = with pkgs; [
-  #     glib
-  #     glibc
-  #   ];
-  # };
 
   users.users.sintra = {
     isNormalUser = true;
@@ -38,20 +26,18 @@
     ];
   };
 
-  users.users.guest = {
-    isNormalUser = true;
-    description = "guest";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "audio"
-    ];
-  };
-
   environment.systemPackages = with pkgs; [
+    bat # better cat
+    curl
     docker-compose
-    docker-buildx
+    du-dust
+    git
+    htop
+    just
+    yazi
+    zoxide
   ];
+
   virtualisation = {
     docker.enable = true;
   };

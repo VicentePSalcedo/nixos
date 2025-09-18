@@ -3,8 +3,10 @@
   imports = [
     ./hardware-configuration.nix
     ../modules/bluetooth.nix
-    ../modules/tmux.nix
     ../modules
+    ../modules/steam.nix
+    ../modules/display-managers/lightdm.nix
+    ../modules/hyprland
   ];
 
   services = {
@@ -41,10 +43,7 @@
 
   # system specific packages I keep here, makes my home modules more portable
   environment.systemPackages = with pkgs; [
-    curl
     dconf
-    docker-compose
-    htop
     lshw
     lsof
     npth

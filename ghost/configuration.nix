@@ -4,6 +4,9 @@
     ./hardware-configuration.nix
     ../modules/nvidia.nix
     ../modules
+    ../modules/steam.nix
+    ../modules/display-managers/lightdm.nix
+    ../modules/hyprland
   ];
 
   services.getty.autologinUser = "sintra";
@@ -11,8 +14,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    vim
-    git
     gparted
   ];
 

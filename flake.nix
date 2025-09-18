@@ -67,6 +67,22 @@
             # agenix.nixosModules.default
           ];
         };
+        pi = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+          modules = [
+            ./pi/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.sintra = import ./home/server.nix;
+            }
+            {
+              _module.args = { inherit inputs; };
+            }
+            # agenix.nixosModules.default
+          ];
+        };
       };
     };
 }
