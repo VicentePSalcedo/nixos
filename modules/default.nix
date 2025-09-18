@@ -4,6 +4,7 @@
     ./auto-upgrade.nix
     ./direnv.nix
     ./nix-experimental.nix
+    ./tmux.nix
   ];
   nixpkgs.config.allowUnfree = true;
 
@@ -26,8 +27,17 @@
   };
 
   environment.systemPackages = with pkgs; [
+    bat # better cat
+    curl
     docker-compose
+    du-dust
+    git
+    htop
+    just
+    yazi
+    zoxide
   ];
+
   virtualisation = {
     docker.enable = true;
   };

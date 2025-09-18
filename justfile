@@ -1,13 +1,13 @@
-# set shell := ["nu", "-c"]
+set shell := ["nu", "-c"]
 # set shell := ["bash", "-uc"]
 set working-directory := '/home/sintra/nixos'
 
-# generation := shell('nixos-rebuild list-generations --json | from json | get --optional 0.generation')
+generation := shell('nixos-rebuild list-generations --json | from json | get --optional 0.generation')
 
-# backup:
-#   @git add .
-#   @git commit -m "NixOS Gen: {{generation}}"
-#   @git push
+backup:
+  @git add .
+  @git commit -m "NixOS Gen: {{generation}}"
+  @git push
 
 cg:
   @sudo nix-collect-garbage --delete-old

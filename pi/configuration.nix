@@ -7,6 +7,7 @@ in {
 
   imports = [
     <nixos-hardware/raspberry-pi/4>
+    ../modules
   ];
 
   boot = {

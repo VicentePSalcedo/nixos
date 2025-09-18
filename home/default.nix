@@ -40,7 +40,6 @@
     evhz # Show mouse refresh rate under linux + evdev
     gemini-cli-bin
     grimblast # Screenshot tool
-    htop
     nchat # Terminal-based chat with support for Telegram and WhatsApp
     ncdu # god-tier terminal utility for identifing large user files and deleting them
     nmap
@@ -52,16 +51,13 @@
     yt-dlp
 
     # because rust
-    bat # better cat
     # bacon
     bottom # better htop
     # cargo-info
-    du-dust
     eza
     feh
     fd
     gitui
-    just
     # mprocs
     ripgrep
     rqbit
@@ -69,8 +65,6 @@
     speedtest-rs
     # wiki-tui
     # wl-clipboard-rs
-    yazi
-    zoxide
 
     # # dev tools for colaboration
     # chromium

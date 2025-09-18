@@ -71,12 +71,12 @@
           system = "aarch64-linux";
           modules = [
             ./pi/configuration.nix
-            # home-manager.nixosModules.home-manager
-            # {
-            #   home-manager.useGlobalPkgs = true;
-            #   home-manager.useUserPackages = true;
-            #   home-manager.users.sintra = import ./home/default.nix;
-            # }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.sintra = import ./home/server.nix;
+            }
             {
               _module.args = { inherit inputs; };
             }
