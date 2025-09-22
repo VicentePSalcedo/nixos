@@ -40,6 +40,17 @@
 
   # no idea what this does
   security.rtkit.enable = true;
+  users.users.sintra = {
+    isNormalUser = true;
+    description = "sintra";
+    extraGroups = [
+      "networkmanager"
+      "docker"
+      "wheel"
+      "audio"
+    ];
+  };
+
 
   # system specific packages I keep here, makes my home modules more portable
   environment.systemPackages = with pkgs; [
