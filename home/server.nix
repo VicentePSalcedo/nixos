@@ -7,7 +7,7 @@
     ./alacritty.nix
     ./bash.nix
     ./git.nix
-    ./helix.nix
+    # ./helix.nix
   ];
   home.packages = with pkgs; [
     cron
