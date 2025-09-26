@@ -24,6 +24,11 @@
     ];
   };
 
+  nix.settings.trusted-users = [
+    "root"
+    "sintra"
+  ];
+
   environment.systemPackages = with pkgs; [
     gparted
   ];
