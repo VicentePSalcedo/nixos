@@ -49,7 +49,6 @@ in
   environment.systemPackages = with pkgs; [
     docker-compose
     git
-    helix
     htop
     just
   ];
@@ -76,6 +75,26 @@ in
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBxpYE8hou9ToMCoTcGB8RozRHJ8qctcVq83P9/YOUax vicentepsalcedo@gmail.com"
       ];
     };
+  };
+
+  nix.buildMachines = [
+    {
+      hostName = "ghost";
+      system = "x86_64-linux";
+      protocol = "ssh-ng";
+      maxJobs = 8;
+      speedFactor = 2;
+      supportedFeatures = [
+        "nixos-test"
+        "benchmark"
+        "big-parallel"
+        "kvm"
+      ];
+    }
+  ];
+  nix.distributedBuilds = true;
+  nix.settings = {
+    builders-use-substitutes = true;
   };
 
   hardware.enableRedistributableFirmware = true;
