@@ -13,6 +13,22 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  users.users.sintra = {
+    isNormalUser = true;
+    description = "sintra";
+    extraGroups = [
+      "networkmanager"
+      "docker"
+      "wheel"
+      "audio"
+    ];
+  };
+
+  nix.settings.trusted-users = [
+    "root"
+    "sintra"
+  ];
+
   environment.systemPackages = with pkgs; [
     gparted
   ];

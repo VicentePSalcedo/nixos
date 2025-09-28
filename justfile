@@ -23,11 +23,23 @@ switch:
   @nixos-rebuild switch --flake . --sudo
   @just backup
 
+switchpi:
+  @git fetch
+  @git pull
+  @nixos-rebuild switch --flake . --sudo --impure
+  @just backup
+
 [positional-arguments]
 @torrent path:
   rqbit download --output-folder ~/Downloads --exit-on-finish {{path}}
 
 update:
+  @git fetch
+  @git pull
+  @nixos-rebuild switch --upgrade --flake . --sudo
+  @just backup
+
+updatepi:
   @git fetch
   @git pull
   @nixos-rebuild switch --upgrade --flake . --sudo --impure

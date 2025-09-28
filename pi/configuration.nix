@@ -1,9 +1,14 @@
-{ config, pkgs, lib, ... }:
-
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   hostname = "pi";
-in {
+in
+{
 
   imports = [
     <nixos-hardware/raspberry-pi/4>
@@ -12,7 +17,11 @@ in {
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
-    initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "usbhid"
+      "usb_storage"
+    ];
     loader = {
       grub.enable = false;
       generic-extlinux-compatible.enable = true;
@@ -40,13 +49,17 @@ in {
   environment.systemPackages = with pkgs; [
     docker-compose
     git
-    helix
     htop
     just
   ];
 
-
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    };
+  };
 
   users = {
     mutableUsers = false;
@@ -58,7 +71,30 @@ in {
         "networkmanager"
         "docker"
       ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBxpYE8hou9ToMCoTcGB8RozRHJ8qctcVq83P9/YOUax vicentepsalcedo@gmail.com"
+      ];
     };
+  };
+
+  nix.buildMachines = [
+    {
+      hostName = "ghost";
+      system = "x86_64-linux";
+      protocol = "ssh-ng";
+      maxJobs = 8;
+      speedFactor = 2;
+      supportedFeatures = [
+        "nixos-test"
+        "benchmark"
+        "big-parallel"
+        "kvm"
+      ];
+    }
+  ];
+  nix.distributedBuilds = true;
+  nix.settings = {
+    builders-use-substitutes = true;
   };
 
   hardware.enableRedistributableFirmware = true;
