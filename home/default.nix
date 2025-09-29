@@ -85,7 +85,7 @@
   ];
 
   home.file.".justfile" = {
-    source = ../justfile
+    source = ../justfile;
   };
 
   services.syncthing = {
