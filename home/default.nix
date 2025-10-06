@@ -84,6 +84,10 @@
     nerd-fonts.fira-code
   ];
 
+  home.file.".justfile" = {
+    source = ../justfile;
+  };
+
   services.syncthing = {
     enable = true;
     tray.enable = true;

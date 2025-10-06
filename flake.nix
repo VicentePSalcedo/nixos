@@ -59,7 +59,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.sintra = import ./home/default.nix;
+              home-manager.users.sintra = import ./home;
             }
             {
               _module.args = { inherit inputs; };
