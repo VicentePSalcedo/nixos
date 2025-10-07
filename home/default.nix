@@ -22,7 +22,6 @@
     android-studio
     firefox
     gimp
-    libreoffice
     mako
     obsidian
     protonvpn-gui
@@ -35,6 +34,7 @@
     # amberol
     cmus
     # rhythmbox
+    spotify
 
     # cli tools
     evhz # Show mouse refresh rate under linux + evdev
@@ -75,7 +75,7 @@
     # postman
     # vscodium
 
-    # software for client work
+    # necessary utils for working with ntfs formated drives
     cifs-utils
     nfs-utils
     samba
