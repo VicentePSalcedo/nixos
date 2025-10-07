@@ -22,7 +22,6 @@
     android-studio
     firefox
     gimp
-    libreoffice
     mako
     obsidian
     protonvpn-gui
