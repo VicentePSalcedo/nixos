@@ -2,6 +2,10 @@
   services = {
     displayManager = {
       defaultSession = "hyprland";
+      autoLogin = {
+        user = "sintra";
+        enable = true;
+      };
     };
     xserver = {
       enable = true;
