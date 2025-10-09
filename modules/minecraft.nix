@@ -24,7 +24,11 @@
         whitelist = { };
 
         symlinks = {
+          "config" = /home/sintra/BMC4/config;
           "mods" = /home/sintra/BMC4/mods;
+          "modernfix" = /home/sintra/BMC4/modernfix;
+          "server.properties" = /home/sintra/BMC4/server.properties;
+          "start.sh" = /home/sintra/BMC4/start.sh;
         };
 
         jvmOpts = "-Xms2048M -Xmx4092M -XX:+UseG1GC";
