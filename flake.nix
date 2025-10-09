@@ -38,6 +38,7 @@
         };
         ghost = nixpkgs.lib.nixosSystem {
           system = "x86_64-link";
+          specialArgs = { inherit inputs; };
           modules = [
             ./ghost/configuration.nix
             home-manager.nixosModules.home-manager
