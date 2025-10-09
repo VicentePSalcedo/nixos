@@ -24,6 +24,7 @@
     gimp
     mako
     obsidian
+    prismlauncher
     protonvpn-gui
     signal-desktop-bin
     thunderbird # Email Client
