@@ -21,6 +21,7 @@
       home-manager,
       # agenix,
       rust-overlay,
+      nix-minecraft,
       ...
     }:
     {
