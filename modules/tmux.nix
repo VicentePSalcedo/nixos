@@ -15,6 +15,7 @@
       yank
     ];
     extraConfig = ''
+      set-option -g default-shell ${pkgs.nushell}
       set -g mouse on
 
       unbind C-b
