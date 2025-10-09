@@ -8,22 +8,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # agenix.url = "github:ryantm/agenix";
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs =
-    inputs@{
+    {
       nixpkgs,
       home-manager,
       # agenix,
-      rust-overlay,
-      nix-minecraft,
       ...
-    }:
+    }@inputs:
     {
       nixosConfigurations = {
         wraith = nixpkgs.lib.nixosSystem {
@@ -40,17 +34,6 @@
               _module.args = { inherit inputs; };
             }
             # agenix.nixosModules.default
-            (
-              { pkgs, ... }:
-              {
-                nixpkgs.overlays = [ rust-overlay.overlays.default ];
-                environment.systemPackages = [
-                  pkgs.rust-bin.stable.latest.default
-                  pkgs.openssl
-                  pkgs.pkg-config
-                ];
-              }
-            )
           ];
         };
         ghost = nixpkgs.lib.nixosSystem {
