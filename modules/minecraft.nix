@@ -13,7 +13,7 @@
     servers = {
       zey-server = {
         enable = true;
-        package = pkgs.fabricServers.fabric-1_20_1.override { loaderVersion = "0.12.1"; };
+        package = pkgs.fabricServers.fabric-1_20_1;
 
         serverProperties = {
           gamemode = "survival";
