@@ -32,6 +32,7 @@
 
   environment.systemPackages = with pkgs; [
     gparted
+    jdk
   ];
 
   boot.supportedFilesystems = [ "ntfs" ];
