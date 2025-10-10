@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   inputs,
   ...
 }:
@@ -14,7 +13,7 @@
     servers = {
       zey-server = {
         enable = true;
-        package = pkgs.minecraftServers.vanilla-1_20_1;
+        package = pkgs.fabricServers.fabric-1_20_1;
 
         serverProperties = {
           gamemode = "survival";
