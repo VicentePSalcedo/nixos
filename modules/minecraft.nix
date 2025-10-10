@@ -19,8 +19,6 @@
           difficulty = "hard";
         };
 
-        whitelist = { };
-
         symlinks = {
           "config" = /home/sintra/BMC4/config;
           "modernfix" = /home/sintra/BMC4/modernfix;
