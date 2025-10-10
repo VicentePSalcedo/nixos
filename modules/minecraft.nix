@@ -13,7 +13,7 @@
     servers = {
       zey-server = {
         enable = true;
-        package = pkgs.fabricServers.fabric-1_20_1;
+        package = pkgs.minecraftServers.vanilla-1_20_1;
         serverProperties = {
           gamemode = "survival";
           difficulty = "hard";
@@ -29,6 +29,7 @@
         };
 
         jvmOpts = "-Xms2048M -Xmx5120M -XX:+UseG1GC";
+        enableReload = true;
       };
     };
 
