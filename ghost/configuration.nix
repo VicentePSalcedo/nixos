@@ -7,7 +7,7 @@
     ../modules/steam.nix
     ../modules/display-managers/lightdm.nix
     ../modules/hyprland
-    ../modules/minecraft.nix
+    # ../modules/minecraft.nix
   ];
 
   services.getty.autologinUser = "sintra";
