@@ -4,7 +4,6 @@
     ./hardware-configuration.nix
     ../modules/bluetooth.nix
     ../modules
-    ../modules/steam.nix
     ../modules/display-managers/lightdm.nix
     ../modules/hyprland
   ];
