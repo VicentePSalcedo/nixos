@@ -24,6 +24,7 @@
     gimp
     mako
     obsidian
+    prismlauncher
     protonvpn-gui
     signal-desktop-bin
     thunderbird # Email Client
@@ -45,7 +46,7 @@
     nmap
     playerctl
     pywal16
-    # ueberzugpp # Allows to draw images on terminals using X11/Wayland
+    ueberzugpp # Allows to draw images on terminals using X11/Wayland
     unzip
     vim # ICE
     yt-dlp

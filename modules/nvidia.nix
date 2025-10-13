@@ -5,8 +5,6 @@
     # xpadneo.enable = true;
     graphics = {
       enable = true;
-      # dont need this line if you dont want steam
-      enable32Bit = true;
     };
     nvidia = {
       modesetting.enable = true;
@@ -14,7 +12,7 @@
       powerManagement.finegrained = false;
       open = false;
       nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
   services.xserver = {

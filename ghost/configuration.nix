@@ -7,6 +7,7 @@
     ../modules/steam.nix
     ../modules/display-managers/lightdm.nix
     ../modules/hyprland
+    # ../modules/minecraft.nix
   ];
 
   services.getty.autologinUser = "sintra";
@@ -31,6 +32,7 @@
 
   environment.systemPackages = with pkgs; [
     gparted
+    jdk
   ];
 
   boot.supportedFilesystems = [ "ntfs" ];

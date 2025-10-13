@@ -78,6 +78,5 @@ def hg [param] {
 }
 
 core-cat ~/.cache/wal/sequences
-fastfetch
 
 source ~/.zoxide.nu
