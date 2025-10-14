@@ -19,7 +19,8 @@
   powerManagement.enable = true;
   services.logind.lidSwitch = "hibernate";
   # Hibernate on power button pressed
-  services.logind.powerKey = "poweroff";
+  services.logind.powerKey = "hibernate";
+  services.logind.powerKeyLongPress = "poweroff";
   boot.resumeDevice = "";
 
   # Pretty sure this labels the encrypted disk. Don't f*** with this until you find out.
