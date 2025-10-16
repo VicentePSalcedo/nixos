@@ -20,7 +20,7 @@
     logind.settings.Login = {
       HandleLidSwitch = "suspend-then-hibernate";
       HandleLidSwitchExternalPower = "suspend-then-hibernate";
-      HandlePowerKey = "suspend";
+      HandlePowerKey = "suspend-then-hibernate";
       HandlePowerKeyLongPress = "poweroff";
     };
   };
