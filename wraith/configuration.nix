@@ -18,9 +18,9 @@
 
   services = {
     logind.settings.Login = {
-      HandleLidSwitch = "hibernate";
-      HandleLidSwitchExternalPower = "hibernate";
-      HandlePowerKey = "hibernate";
+      HandleLidSwitch = "suspend-then-hibernate";
+      HandleLidSwitchExternalPower = "suspend-then-hibernate";
+      HandlePowerKey = "suspend-then-hibernate";
       HandlePowerKeyLongPress = "poweroff";
     };
   };
