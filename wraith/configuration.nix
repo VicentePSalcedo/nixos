@@ -16,7 +16,7 @@
   #   };
   # };
 
-  services.logind.lidSwitch = "hibernate";
+  services.logind.lidSwitch = "sleep";
   # Hibernate on power button pressed
   services.logind.powerKey = "hibernate";
   services.logind.powerKeyLongPress = "poweroff";
