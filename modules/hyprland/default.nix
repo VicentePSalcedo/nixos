@@ -10,7 +10,6 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.systemPackages = with pkgs; [
-    kdePackages.xwaylandvideobridge # May or may not be needed without KDE desktop enabled
     # kitty
     hyprpaper
     imagemagick

@@ -8,13 +8,13 @@
     ../modules/hyprland
   ];
 
-  services = {
-    desktopManager.plasma6.enable = true;
+  # services = {
+  #   desktopManager.plasma6.enable = true;
   #   logind = {
   #     settings.Login.HandleLidSwitch = "ignore";
   #     settings.Login.HandleLidSwitchDocked = "ignore";
   #   };
-  };
+  # };
 
   services = {
     logind.settings.Login = {
