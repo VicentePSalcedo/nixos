@@ -19,7 +19,7 @@
     bat # better cat
     curl
     docker-compose
-    du-dust
+    dust
     git
     htop
     just
