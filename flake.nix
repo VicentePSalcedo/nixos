@@ -10,11 +10,16 @@
     };
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    antigravity-nix = {
+      url = "github:jacopone/antigravity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, hermes-agent, home-manager, sops-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, hermes-agent, home-manager, sops-nix, antigravity-nix, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
       modules = [
         sops-nix.nixosModules.sops
         hermes-agent.nixosModules.default

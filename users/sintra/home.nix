@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "sintra";
@@ -33,6 +33,7 @@
     grim         # Screenshot utility
     slurp        # Region selector for screenshots
     wl-clipboard # Wayland clipboard manager
+    inputs.antigravity-nix.packages.${pkgs.system}.google-antigravity-cli
   ];
 
   # Classic, bulletproof Hyprland configuration
