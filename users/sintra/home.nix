@@ -18,9 +18,15 @@
 
   programs.helix = {
     enable = true;
+    defaultEditor = true;
     settings = {
       theme = "tokyonight_storm";
     };
+  };
+
+  home.sessionVariables = {
+    EDITOR = "hx";
+    VISUAL = "hx";
   };
 
   # Packages to install for the user's environment
