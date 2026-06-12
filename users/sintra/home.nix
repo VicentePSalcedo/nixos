@@ -18,10 +18,9 @@
 
   programs.helix = {
     enable = true;
-    # Custom settings can be defined here, e.g.:
-    # settings = {
-    #   theme = "catppuccin_mocha";
-    # };
+    settings = {
+      theme = "tokyonight_storm";
+    };
   };
 
   # Packages to install for the user's environment
@@ -63,8 +62,8 @@
         gaps_in = 5
         gaps_out = 10
         border_size = 2
-        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-        col.inactive_border = rgba(595959aa)
+        col.active_border = rgba(7aa2f7ee) rgba(bb9af7ee) 45deg
+        col.inactive_border = rgba(414868aa)
         layout = dwindle
     }
 
@@ -149,6 +148,7 @@
     settings = {
       font-size = 11;
       background-opacity = 0.9;
+      theme = "TokyoNight Storm";
       command = "${pkgs.nushell}/bin/nu"; # Launch Nushell by default
     };
   };
@@ -159,6 +159,75 @@
     settings = {
       show_banner = false;
     };
+    extraConfig = ''
+      $env.config.color_config = {
+        binary: "#bb9af7"
+        block: "#7aa2f7"
+        cell-path: "#a9b1d6"
+        closure: "#7dcfff"
+        custom: "#c0caf5"
+        duration: "#e0af68"
+        float: "#f7768e"
+        glob: "#c0caf5"
+        int: "#bb9af7"
+        list: "#7dcfff"
+        nothing: "#f7768e"
+        range: "#e0af68"
+        record: "#7dcfff"
+        string: "#9ece6a"
+        bool: {|| if $in { "#7dcfff" } else { "#e0af68" } }
+
+        shape_and: { fg: "#bb9af7" attr: "b" }
+        shape_binary: { fg: "#bb9af7" attr: "b" }
+        shape_block: { fg: "#7aa2f7" attr: "b" }
+        shape_bool: "#7dcfff"
+        shape_closure: { fg: "#7dcfff" attr: "b" }
+        shape_custom: "#9ece6a"
+        shape_datetime: { fg: "#7dcfff" attr: "b" }
+        shape_directory: "#7dcfff"
+        shape_external: "#7dcfff"
+        shape_external_resolved: "#7dcfff"
+        shape_externalarg: { fg: "#9ece6a" attr: "b" }
+        shape_filepath: "#7dcfff"
+        shape_flag: { fg: "#7aa2f7" attr: "b" }
+        shape_float: { fg: "#f7768e" attr: "b" }
+        shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: "b" }
+        shape_glob_interpolation: { fg: "#7dcfff" attr: "b" }
+        shape_globpattern: { fg: "#7dcfff" attr: "b" }
+        shape_int: { fg: "#bb9af7" attr: "b" }
+        shape_internalcall: { fg: "#7dcfff" attr: "b" }
+        shape_keyword: { fg: "#bb9af7" attr: "b" }
+        shape_list: { fg: "#7dcfff" attr: "b" }
+        shape_literal: "#7aa2f7"
+        shape_match_pattern: "#9ece6a"
+        shape_matching_brackets: { attr: "u" }
+        shape_nothing: "#f7768e"
+        shape_operator: "#e0af68"
+        shape_or: { fg: "#bb9af7" attr: "b" }
+        shape_pipe: { fg: "#bb9af7" attr: "b" }
+        shape_range: { fg: "#e0af68" attr: "b" }
+        shape_raw_string: { fg: "#c0caf5" attr: "b" }
+        shape_record: { fg: "#7dcfff" attr: "b" }
+        shape_redirection: { fg: "#bb9af7" attr: "b" }
+        shape_signature: { fg: "#9ece6a" attr: "b" }
+        shape_string: "#9ece6a"
+        shape_string_interpolation: { fg: "#7dcfff" attr: "b" }
+        shape_table: { fg: "#7aa2f7" attr: "b" }
+        shape_vardecl: { fg: "#7aa2f7" attr: "u" }
+        shape_variable: "#bb9af7"
+
+        foreground: "#c0caf5"
+        background: "#1a1b26"
+        cursor: "#c0caf5"
+
+        empty: "#7aa2f7"
+        header: { fg: "#9ece6a" attr: "b" }
+        hints: "#414868"
+        row_index: { fg: "#9ece6a" attr: "b" }
+        search_result: { fg: "#f7768e" bg: "#a9b1d6" }
+        separator: "#a9b1d6"
+      }
+    '';
   };
 
   # Fast, terminal-based file manager written in Rust
