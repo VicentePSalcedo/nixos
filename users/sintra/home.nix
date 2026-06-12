@@ -42,7 +42,7 @@
     $mainMod = ALT
 
     # Autostart applications
-    exec-once = swaybg -i /home/sintra/Pictures/tokyonight.png -m fill
+    exec-once = swaybg -i /home/sintra/nixos/assets/tokyonight.png -m fill
     exec-once = waybar
     exec-once = mako
 
