@@ -91,7 +91,7 @@
 
     # Keybindings
     bind = $mainMod, RETURN, exec, ghostty
-    bind = $mainMod, Q, killactive,
+    bind = $mainMod, X, killactive,
     bind = $mainMod, M, exit,
     bind = $mainMod, E, exec, dolphin
     bind = $mainMod, V, togglefloating,
