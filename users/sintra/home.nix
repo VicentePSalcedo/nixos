@@ -163,6 +163,10 @@
   # Modern and minimalist structured shell
   programs.nushell = {
     enable = true;
+    environmentVariables = {
+      EDITOR = "hx";
+      VISUAL = "hx";
+    };
     settings = {
       show_banner = false;
     };
@@ -241,6 +245,13 @@
   programs.yazi = {
     enable = true;
     enableNushellIntegration = true;
+    settings = {
+      opener = {
+        edit = [
+          { run = "hx \"$@\""; block = true; desc = "Helix"; }
+        ];
+      };
+    };
   };
 
   # Privacy-focused browser based on Firefox
