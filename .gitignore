@@ -1,0 +1,16 @@
+# Nix build outputs
+result
+result-*
+
+# Decrypted SOPS secrets (if generated)
+secrets.decrypted.yaml
+*.decrypted.*
+
+# Temporary / editor files
+*.swp
+*~
+.DS_Store
+
+# Backups
+*.backup
+*.bak
