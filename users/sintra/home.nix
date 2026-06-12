@@ -243,6 +243,11 @@
     enableNushellIntegration = true;
   };
 
+  # Privacy-focused browser based on Firefox
+  programs.librewolf = {
+    enable = true;
+  };
+
   # Ultra-minimalist Waybar showing ONLY active workspaces
   programs.waybar = {
     enable = true;
@@ -252,11 +257,15 @@
         position = "top";
         height = 24;
         modules-left = [ "hyprland/workspaces" ];
-        modules-center = [];
+        modules-center = [ "clock" ];
         modules-right = [];
         "hyprland/workspaces" = {
           format = "{name}";
           on-click = "activate";
+        };
+        "clock" = {
+          format = "{:%I:%M %p}";
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
       };
     };
@@ -278,6 +287,11 @@
           color: #7f849c;
       }
       #workspaces button.active {
+          color: #cdd6f4;
+          font-weight: bold;
+      }
+      #clock {
+          padding: 0 8px;
           color: #cdd6f4;
           font-weight: bold;
       }
