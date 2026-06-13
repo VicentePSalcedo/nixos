@@ -13,6 +13,12 @@
         "webgl.disabled" = false;
         "ui.systemUsesDarkTheme" = 1;
         "extensions.autoDisableScopes" = 0;
+        
+        # Prevent LibreWolf from wiping cookies, sessions, and local storage on exit
+        # This keeps password managers (like Dashlane) and extension states logged in.
+        "privacy.clearOnShutdown.cookies" = false;
+        "privacy.clearOnShutdown.sessions" = false;
+        "privacy.clearOnShutdown.offlineApps" = false;
       };
       extensions.packages = with pkgs.firefox-addons; [
         dashlane
