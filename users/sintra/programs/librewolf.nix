@@ -12,7 +12,13 @@
         "layers.acceleration.force-enabled" = true;
         "webgl.disabled" = false;
         "ui.systemUsesDarkTheme" = 1;
+        "extensions.autoDisableScopes" = 0;
       };
+      extensions.packages = with pkgs.firefox-addons; [
+        dashlane
+        darkreader
+        vimium
+      ];
       userChrome = ''
         /* TokyoNight Storm Theme for LibreWolf */
         :root {
