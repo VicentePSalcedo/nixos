@@ -6,7 +6,6 @@
     ../../system/gaming.nix
     ../../system/hermes.nix
     ../../system/sops.nix
-    ../../system/bluetooth.nix
     ../../system/direnv.nix
     ../../system/docker.nix
     ../../system/gnupg.nix

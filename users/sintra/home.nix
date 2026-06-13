@@ -18,6 +18,7 @@
     ./programs/hyprland
     ./programs/librewolf.nix
     ./programs/nushell.nix
+    ./programs/starship.nix
     ./programs/waybar
     ./programs/fuzzel.nix
     ./programs/yazi.nix
@@ -36,7 +37,6 @@
     
     # CLI Utilities
     gh           # GitHub CLI
-    just         # Fast task/command runner
     bottom       # Beautiful process viewer (btm)
     zoxide       # Smart directory navigation (z)
     dust         # Beautiful disk usage utility (du)
