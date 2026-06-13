@@ -14,49 +14,21 @@ backup:
 cg:
   @sudo nix-collect-garbage --delete-old
 
-# Rebuild and switch the current active host (determines host automatically from hostname)
-switch:
+# Rebuild and switch a host (defaults to current host, appends --impure for "pi")
+switch host="":
   @git fetch
   @git pull
-  @nixos-rebuild switch --flake . --sudo
+  @nixos-rebuild switch --flake .{{ if host == "" { "" } else { "#" + host } }} --sudo {{ if host == "pi" { "--impure" } else { "" } }}
   @just backup
 
-# Rebuild and switch the 'phantom' host specifically
-switch-phantom:
+# Upgrade packages and switch a host (defaults to current host, appends --impure for "pi")
+update host="":
   @git fetch
   @git pull
-  @nixos-rebuild switch --flake .#phantom --sudo
-  @just backup
-
-# Rebuild and switch the 'ghost' host specifically
-switch-ghost:
-  @git fetch
-  @git pull
-  @nixos-rebuild switch --flake .#ghost --sudo
-  @just backup
-
-# Rebuild and switch the 'wraith' host specifically
-switch-wraith:
-  @git fetch
-  @git pull
-  @nixos-rebuild switch --flake .#wraith --sudo
-  @just backup
-
-# Rebuild and switch the 'pi' host specifically (requires impure/aarch64 setup)
-switch-pi:
-  @git fetch
-  @git pull
-  @nixos-rebuild switch --flake .#pi --sudo --impure
+  @nixos-rebuild switch --upgrade --flake .{{ if host == "" { "" } else { "#" + host } }} --sudo {{ if host == "pi" { "--impure" } else { "" } }}
   @just backup
 
 # Download a torrent using rqbit
 [positional-arguments]
 @torrent path:
   rqbit download --output-folder ~/Downloads --exit-on-finish {{path}}
-
-# Upgrade packages and switch
-update:
-  @git fetch
-  @git pull
-  @nixos-rebuild switch --upgrade --flake . --sudo
-  @just backup
