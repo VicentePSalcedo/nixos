@@ -6,6 +6,7 @@
     environmentVariables = {
       EDITOR = "hx";
       VISUAL = "hx";
+      NPM_CONFIG_CACHE = "$env.HOME/.cache/npm";
     };
     settings = {
       show_banner = false;

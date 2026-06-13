@@ -3,6 +3,17 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../system/gaming.nix
+    ../../system/hermes.nix
+    ../../system/sops.nix
+    ../../system/bluetooth.nix
+    ../../system/direnv.nix
+    ../../system/docker.nix
+    ../../system/gnupg.nix
+    ../../system/nix-settings.nix
+    ../../system/power.nix
+    ../../system/printing.nix
+    ../../system/tmux.nix
   ];
 
   # Bootloader & Kernel
@@ -11,7 +22,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Network
-  networking.hostName = "nixos";
+  networking.hostName = "phantom";
   networking.networkmanager.enable = true;
 
   # Localization
@@ -26,7 +37,7 @@
   users.users.sintra = {
     isNormalUser = true;
     description = "sintra";
-    extraGroups = [ "networkmanager" "wheel" "hermes"];
+    extraGroups = [ "networkmanager" "wheel" "hermes" ];
   };
 
   # System-level Hyprland wrapper (Required for PAM and systemd services)
@@ -38,12 +49,10 @@
     useUserPackages = true;
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
-    users.sintra = import ./users/sintra/home.nix;
+    users.sintra = import ../../users/sintra/home.nix;
   };
 
-  # Nix Settings
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
+
 
   # System Packages (Git/Helix moved to Home Manager)
   environment.systemPackages = with pkgs; [
@@ -52,18 +61,10 @@
     age
   ];
 
-  # System Services & Integrations
-  services.hermes-agent = {
+  # Hardware Acceleration for AMD GPU (Polaris RX 580)
+  hardware.graphics = {
     enable = true;
-    settings.model.default = "gemini-flash-latest";
-    environmentFiles = [ config.sops.secrets."hermes-env".path ];
-    addToSystemPackages = true;
-  };
-
-  sops = {
-    defaultSopsFile = ./secrets.yaml;
-    age.keyFile = "/home/sintra/.config/sops/age/keys.txt";
-    secrets."hermes-env" = { format = "yaml"; };
+    enable32Bit = true;
   };
 
   system.stateVersion = "26.05";
