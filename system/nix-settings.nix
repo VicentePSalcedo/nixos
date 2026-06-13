@@ -9,4 +9,7 @@
     };
   };
   nixpkgs.config.allowUnfree = true;
+
+  # Ensure just is installed system-wide on all hosts now and in the future
+  environment.systemPackages = [ pkgs.just ];
 }
