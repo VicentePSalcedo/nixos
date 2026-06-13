@@ -7,8 +7,7 @@ generation := shell('nixos-rebuild list-generations --json | from json | get --o
 # Commit the current configuration stage to Git and push
 backup:
   @git add -A
-  @git commit -m "NixOS Gen: {{generation}}"
-  @git push
+  @if (git status --porcelain | is-empty) { git push } else { git commit -m "NixOS Gen: {{generation}}"; git push }
 
 # Collect garbage and delete older generations
 cg:
