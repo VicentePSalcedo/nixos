@@ -14,9 +14,9 @@
     "github": {
       "command": "nix",
       "args": [
-        "run",
+        "shell",
         "nixpkgs#nodejs",
-        "--",
+        "-c",
         "npx",
         "-y",
         "@modelcontextprotocol/server-github"
@@ -25,9 +25,9 @@
     "context7": {
       "command": "nix",
       "args": [
-        "run",
+        "shell",
         "nixpkgs#nodejs",
-        "--",
+        "-c",
         "npx",
         "-y",
         "@upstash/context7-mcp@latest"
