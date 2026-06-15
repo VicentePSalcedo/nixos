@@ -32,7 +32,7 @@
     slurp        # Region selector for screenshots
     wl-clipboard # Wayland clipboard manager
     networkmanager_dmenu # Control NetworkManager via wofi
-    inputs.antigravity-nix.packages.${pkgs.system}.google-antigravity-cli
+    inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
     uv           # Fast Python package installer and runner
     
     # CLI Utilities
