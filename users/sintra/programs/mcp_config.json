@@ -1,0 +1,37 @@
+{
+  "mcpServers": {
+    "nixos": {
+      "command": "nix",
+      "args": [
+        "run",
+        "github:utensils/mcp-nixos",
+        "--"
+      ],
+      "env": {
+        "PYTHONPATH": ""
+      }
+    },
+    "github": {
+      "command": "nix",
+      "args": [
+        "run",
+        "nixpkgs#nodejs",
+        "--",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ]
+    },
+    "context7": {
+      "command": "nix",
+      "args": [
+        "run",
+        "nixpkgs#nodejs",
+        "--",
+        "npx",
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ]
+    }
+  }
+}
