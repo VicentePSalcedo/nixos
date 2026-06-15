@@ -13,18 +13,18 @@ backup:
 cg:
   @sudo nix-collect-garbage --delete-old
 
-# Rebuild and switch a host (defaults to current host, appends --impure for "pi")
-switch host="":
+# Rebuild and switch the current system
+switch:
   @git fetch
   @git pull
-  @nixos-rebuild switch --flake .{{ if host == "" { "" } else { "#" + host } }} --sudo {{ if host == "pi" { "--impure" } else { "" } }}
+  @nixos-rebuild switch --flake . --sudo
   @just backup
 
-# Upgrade packages and switch a host (defaults to current host, appends --impure for "pi")
-update host="":
+# Upgrade packages and switch the current system
+update:
   @git fetch
   @git pull
-  @nixos-rebuild switch --upgrade --flake .{{ if host == "" { "" } else { "#" + host } }} --sudo {{ if host == "pi" { "--impure" } else { "" } }}
+  @nixos-rebuild switch --upgrade --flake . --sudo
   @just backup
 
 # Download a torrent using rqbit

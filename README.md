@@ -1,24 +1,21 @@
-# 🌌 Sintra's Modular, Multi-Host NixOS Fleet
+# 🌌 Sintra's Modular NixOS Configuration
 
 [![NixOS](https://img.shields.io/badge/NixOS-26.05-blue.svg?logo=nixos&logoColor=white)](https://nixos.org)
 [![Home Manager](https://img.shields.io/badge/Home_Manager-declarative-orange.svg?logo=nixos&logoColor=white)](https://github.com/nix-community/home-manager)
 [![Built with Flakes](https://img.shields.io/badge/Nix_Flakes-supported-purple.svg?logo=nixos&logoColor=white)](https://wiki.nixos.org/wiki/Flakes)
 [![TokyoNight Storm](https://img.shields.io/badge/Theme-TokyoNight_Storm-7aa2f7.svg?style=flat)](https://github.com/folke/tokyonight.nvim)
 
-> An enterprise-grade, beautifully modularized, multi-host, multi-architecture NixOS flake configuration. This repository manages a heterogeneous fleet of devices ranging from high-performance x86 gaming workstations with discrete GPUs to ultra-lightweight, remote-compiled ARM64 single-board computers (Raspberry Pi 4)—all styled with a cohesive, transparent **TokyoNight Storm** aesthetic.
+> An enterprise-grade, beautifully modularized NixOS flake configuration. This repository manages Sintra's workstation styled with a cohesive, transparent **TokyoNight Storm** aesthetic.
 
 ---
 
-## 🚀 Fleet Overview
+## 🚀 Host Overview
 
-This repository uses a single unified Git-tracked Nix Flake to manage multiple physical machines under a shared declarative framework:
+This repository uses a single unified Git-tracked Nix Flake to manage the physical machine under a shared declarative framework:
 
 | Hostname | Role / Architecture | Graphics / Driver | Bootloader | Highlights |
 | :--- | :--- | :--- | :--- | :--- |
 | **`phantom`** | Daily Driver Workstation <br>`x86_64-linux` | AMD Radeon RX 580 <br>`amdgpu` + Mesa | `systemd-boot` | GPU accelerated, gaming-optimized, runs local system-wide AI assistant. |
-| **`ghost`** | Server / Compile Node <br>`x86_64-linux` | NVIDIA GTX/RTX <br>`nvidia` proprietary | `systemd-boot` | High-performance machine, acts as a distributed SSH build server for low-power nodes. |
-| **`wraith`** | Portable Laptop <br>`x86_64-linux` | Integrated Intel/Mesa | `GRUB` | LUKS full-disk encryption, portable configurations, optimized battery profiles. |
-| **`pi`** | Headless Server <br>`aarch64-linux` (ARM64) | Headless | `generic-extlinux` | Low-power Raspberry Pi 4. **Distributed Builds** outsource heavy package compilation to `ghost`. |
 
 ---
 
@@ -34,17 +31,9 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 ├── secrets.yaml               # Encrypted sops-nix credentials (API keys, environments)
 │
 ├── hosts/                     # Machine-specific directories
-│   ├── phantom/               # Daily driver workstation
-│   │   ├── default.nix        # Host definitions (systemd-boot, user definitions, modules)
-│   │   └── hardware-configuration.nix
-│   ├── ghost/                 # Build Node / NVIDIA Server
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   ├── wraith/                # LUKS Encrypted Laptop
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   └── pi/                    # Headless Raspberry Pi 4 (aarch64)
-│       └── default.nix        # Custom kernel, distributed build client configuration
+│   └── phantom/               # Daily driver workstation
+│       ├── default.nix        # Host definitions (systemd-boot, user definitions, modules)
+│       └── hardware-configuration.nix
 │
 ├── system/                    # Shareable, modular system-level service modules
 │   ├── bluetooth.nix          # Bluetooth daemon and audio profiles
@@ -110,30 +99,8 @@ programs.bash = {
 
 ---
 
-### 2. 🏗️ Remotely Compiled Raspberry Pi (Distributed Nix Builds)
-Compiling large system packages (like Linux kernels or Node.js) on a low-powered Single Board Computer like the Raspberry Pi 4 is incredibly slow and can easily lead to thermal throttling or out-of-memory crashes.
-
-To solve this, `/hosts/pi/default.nix` is configured to use **Distributed Builds**, outsourcing heavy compilation workloads to the high-performance `ghost` workstation over a secure SSH connection, while executing the final package output natively on its ARM64 architecture:
-
-```nix
-nix.buildMachines = [
-  {
-    hostName = "ghost";
-    systems = [ "x86_64-linux" "aarch64-linux" ]; # Ghost is configured as a multi-arch builder
-    protocol = "ssh-ng";
-    maxJobs = 8;
-    speedFactor = 2;
-    supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
-  }
-];
-nix.distributedBuilds = true;
-nix.settings.builders-use-substitutes = true; # Re-use compiled binaries locally where possible
-```
-
----
-
-### 3. 🤖 Autonomous AI Native Integration (Hermes Agent & MCP)
-This fleet is built to cooperate with autonomous AI systems natively. Inside `/system/hermes.nix`, the state-of-the-art **Hermes Agent** is declared system-wide as a background service.
+### 2. 🤖 Autonomous AI Native Integration (Hermes Agent & MCP)
+This configuration is built to cooperate with autonomous AI systems natively. Inside `/system/hermes.nix`, the state-of-the-art **Hermes Agent** is declared system-wide as a background service.
 
 #### Critical Architecture Fixes Implemented:
 * **Systemd PATH Override:** Since Systemd executes services in restricted pathways, core tools like `nix`, `git`, and `nodejs` are dynamically injected into the service environment via `systemd.services.hermes-agent.path`.
@@ -163,7 +130,7 @@ systemd.services.hermes-agent.path = [ pkgs.nix pkgs.git pkgs.nodejs ];
 
 ---
 
-### 4. 🧭 Bulletproof Hyprland config (Bypassing HM Lua Translation)
+### 3. 🧭 Bulletproof Hyprland config (Bypassing HM Lua Translation)
 Recent versions of Home Manager's Hyprland module (v0.55+) attempt to generate a `.lua` configuration layout using experimental compilers. However, translating standard declarative settings lists often produces invalid Lua output, breaking core compositor features like system keybindings on system rebuild.
 
 To prevent this config drift, this repository adopts a stable, robust hybrid configuration. It disables the Home Manager generator and writes a native, raw `hyprland.conf` directly into user space via `builtins.readFile`. This preserves perfect syntax highlighting, standard formatting, and absolute stability:
@@ -177,7 +144,7 @@ To prevent this config drift, this repository adopts a stable, robust hybrid con
 
 ---
 
-### 5. 🦊 Unfree Extensions via Standalone Firefox Overlay
+### 4. 🦊 Unfree Extensions via Standalone Firefox Overlay
 Managing browser extensions declaratively (such as dark themes, ad blockers, or password managers) often crashes during evaluation if an extension has an "unfree" proprietary license. This occurs even if `allowUnfree` is enabled on the host, because external flake inputs evaluate packages in isolated, sandbox states.
 
 This repository resolves this issue by declaring Robert Helgesson's `firefox-addons` input and grafting it directly onto the host's `nixpkgs.overlays`. This pulls the addon libraries directly into the system's global `pkgs` context, where the system-wide `allowUnfree = true` can successfully validate proprietary licenses:
@@ -219,18 +186,17 @@ generation := shell('nixos-rebuild list-generations --json | from json | get --o
 # Commit the current configuration stage to Git and push
 backup:
   @git add -A
-  @git commit -m "NixOS Gen: {{generation}}"
-  @git push
+  @if (git status --porcelain | is-empty) { git push } else { git commit -m "NixOS Gen: {{generation}}"; git push }
 
 # Collect garbage and delete older generations
 cg:
   @sudo nix-collect-garbage --delete-old
 
-# Rebuild and switch a host (defaults to current host, appends --impure for "pi")
-switch host="":
+# Rebuild and switch the current system
+switch:
   @git fetch
   @git pull
-  @nixos-rebuild switch --flake .{{ if host == "" { "" } else { "#" + host } }} --sudo {{ if host == "pi" { "--impure" } else { "" } }}
+  @nixos-rebuild switch --flake . --sudo
   @just backup
 ```
 
@@ -242,12 +208,6 @@ To apply changes made to your configuration on the local machine:
 just switch
 ```
 *Behind the scenes, this will pull updates, compile your configuration, switch your system live, extract the new generation number, stage all changed files in Git, make a commit with the generation number, and push it back to your repository automatically.*
-
-#### 2. Rebuilding a Remote/Specific Host
-To compile and test changes for a remote node (for example, the `pi` server):
-```bash
-just switch pi
-```
 
 #### 3. Freeing Up Disk Space (Garbage Collection)
 To delete older, inactive system generations and run garbage collection on the Nix store:

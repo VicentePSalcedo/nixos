@@ -102,50 +102,16 @@ Rather than running an AI assistant purely in a user session, `services.hermes-a
 
 ---
 
-## 📡 Distributed Build Network Topology
-
-To keep compile times short on minimal single-board ARM computers (e.g. Raspberry Pi 4), the fleet utilizes distributed compilation. 
-
-```text
-   ┌──────────────────────────────────────────────────┐
-   │                  Raspberry Pi                    │
-   │               (aarch64-linux)                    │
-   └───────────────────────┬──────────────────────────┘
-                           │  Nix Build Protocol
-                           │  (via secure SSH-ng)
-                           ▼
-   ┌──────────────────────────────────────────────────┐
-   │                ghost Compile Node                │
-   │            (x86_64-linux & aarch64)              │
-   └──────────────────────────────────────────────────┘
-```
-
-1. **Initiation:** The Raspberry Pi triggers a system rebuild (e.g., `just switch` or `nixos-rebuild switch`).
-2. **Analysis:** The Nix package manager evaluates the local configuration, checks which packages need to be compiled, and notices that the compile load exceeds local speed thresholds.
-3. **Delegation:** The Pi transfers the target packages' source code to `ghost` over SSH.
-4. **Execution:** `ghost` compiles the package natively (or using binfmt emulation if compiling for ARM). Since `ghost` has a high-performance CPU with parallel cores, compilation finishes in seconds.
-5. **Retrieval:** The compiled binaries are transferred back to the Pi's `/nix/store/` and executed live.
-
----
-
 ## 🎮 GPU Acceleration & Performance Profiles
 
-Different physical hosts in the fleet leverage customized graphics driver architectures:
+This configuration leverages optimized graphics driver architectures:
 
-* **AMD Graphics (`phantom`, laptop):** Utilizes the open-source `amdgpu` kernel module and userspace Mesa libraries. Under NixOS 24.11 and newer, hardware acceleration is enabled cleanly under the `hardware.graphics` subsystem:
+* **AMD Graphics (phantom):** Utilizes the open-source `amdgpu` kernel module and userspace Mesa libraries. Hardware acceleration is enabled cleanly under the `hardware.graphics` subsystem:
   ```nix
   hardware.graphics = {
     enable = true;
     enable32Bit = true; # Required for Wine/Steam 32-bit gaming runtimes
   };
   ```
-* **NVIDIA Graphics (`ghost`):** Utilizes NVIDIA's proprietary driver package. Modesetting is forced to support stable Wayland rendering inside Hyprland:
-  ```nix
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = false; # Proprietary blobs provide better 3D performance on legacy cards
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-  services.xserver.videoDrivers = [ "nvidia" ];
-  ```
+* **NVIDIA Graphics:** Although no longer active on the host, a system-level configuration template for NVIDIA's proprietary driver is preserved under `system/nvidia.nix` for future use.
 * **Gaming Optimizations:** System modules like `gaming.nix` configure the kernel to support dynamic process prioritization (`gamemode`) and low-latency compositor isolation (`gamescope`), allowing games to run with high thread priority and zero window-manager lag.

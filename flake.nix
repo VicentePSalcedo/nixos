@@ -31,38 +31,5 @@
         ./hosts/phantom
       ];
     };
-
-    nixosConfigurations.wraith = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        sops-nix.nixosModules.sops
-        hermes-agent.nixosModules.default
-        home-manager.nixosModules.home-manager
-        ./hosts/wraith
-      ];
-    };
-
-    nixosConfigurations.ghost = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        sops-nix.nixosModules.sops
-        hermes-agent.nixosModules.default
-        home-manager.nixosModules.home-manager
-        ./hosts/ghost
-      ];
-    };
-
-    nixosConfigurations.pi = nixpkgs.lib.nixosSystem {
-      system = "aarch64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        sops-nix.nixosModules.sops
-        hermes-agent.nixosModules.default
-        home-manager.nixosModules.home-manager
-        ./hosts/pi
-      ];
-    };
   };
 }
