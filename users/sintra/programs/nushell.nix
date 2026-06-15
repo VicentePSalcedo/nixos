@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 
+let
+  justCompletions = pkgs.runCommand "just-nushell-completions" { } ''
+    ${pkgs.just}/bin/just --completions nushell > $out
+  '';
+in
 {
   programs.nushell = {
     enable = true;
@@ -85,26 +90,25 @@
           if ('.ssh/config' | path exists) {
               open ~/.ssh/config 
               | lines 
-              | filter { $in =~ '^Host\\s+' } 
+              | where { $in =~ '^Host\\s+' } 
               | parse "Host {name}" 
               | get name
           } else { [] }
       }
 
-      $env.config.completions.external = {
+      $env.config.completions.external = ($env.config.completions.external | merge {
         enable: true
         completer: {|spans|
           if ($spans.0 == "ssh") {
-              ssh_hosts | filter { $in | str starts-with ($spans | last) }
+              ssh_hosts | where { $in | str starts-with ($spans | last) }
           } else {
               null
           }
         }
-      }
+      })
+
       # Just completion
-      mkdir ~/.cache/nushell
-      just --completions nushell | save -f ~/.cache/nushell/completions.nu
-      source ~/.cache/nushell/completions.nu
+      source ${justCompletions}
     '';
   };
 }
