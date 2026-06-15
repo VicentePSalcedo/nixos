@@ -10,8 +10,6 @@
     ../../system/docker.nix
     ../../system/gnupg.nix
     ../../system/nix-settings.nix
-    ../../system/power.nix
-    ../../system/printing.nix
     ../../system/tmux.nix
   ];
 
