@@ -12,6 +12,7 @@
     ../../system/nix-settings.nix
     ../../system/tmux.nix
     ../../system/ssh.nix
+    ../../system/tailscale.nix
   ];
 
   # Bootloader & Kernel
