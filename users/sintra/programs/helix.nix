@@ -18,6 +18,6 @@
   home.sessionVariables = {
     EDITOR = "hx";
     VISUAL = "hx";
-    NPM_CONFIG_CACHE = "$HOME/.cache/npm";
+    NPM_CONFIG_CACHE = "${config.home.homeDirectory}/.cache/npm";
   };
 }

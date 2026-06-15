@@ -11,6 +11,7 @@
     ../../system/gnupg.nix
     ../../system/nix-settings.nix
     ../../system/tmux.nix
+    ../../system/ssh.nix
   ];
 
   # Bootloader & Kernel
@@ -53,12 +54,7 @@
 
 
 
-  # System Packages (Git/Helix moved to Home Manager)
-  environment.systemPackages = with pkgs; [
-    sops
-    helix
-    age
-  ];
+  # System Packages (Git/Helix/Sops/Age moved to modules/Home Manager)
 
   # Hardware Acceleration for AMD GPU (Polaris RX 580)
   hardware.graphics = {
