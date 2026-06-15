@@ -79,6 +79,32 @@
         search_result: { fg: "#f7768e" bg: "#a9b1d6" }
         separator: "#a9b1d6"
       }
+
+      # SSH host completion
+      def ssh_hosts [] {
+          if ('.ssh/config' | path exists) {
+              open ~/.ssh/config 
+              | lines 
+              | filter { $in =~ '^Host\\s+' } 
+              | parse "Host {name}" 
+              | get name
+          } else { [] }
+      }
+
+      $env.config.completions.external = {
+        enable: true
+        completer: {|spans|
+          if ($spans.0 == "ssh") {
+              ssh_hosts | filter { $in | str starts-with ($spans | last) }
+          } else {
+              null
+          }
+        }
+      }
+      # Just completion
+      mkdir ~/.cache/nushell
+      just --completions nushell | save -f ~/.cache/nushell/completions.nu
+      source ~/.cache/nushell/completions.nu
     '';
   };
 }
