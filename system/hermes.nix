@@ -22,11 +22,11 @@
       };
       github = {
         command = "nix";
-        args = [ "run" "nixpkgs#nodejs" "--" "npx" "-y" "@modelcontextprotocol/server-github" ];
+        args = [ "shell" "nixpkgs#nodejs" "-c" "npx" "-y" "@modelcontextprotocol/server-github" ];
       };
       context7 = {
         command = "nix";
-        args = [ "run" "nixpkgs#nodejs" "--" "npx" "-y" "@upstash/context7-mcp@latest" ];
+        args = [ "shell" "nixpkgs#nodejs" "-c" "npx" "-y" "@upstash/context7-mcp@latest" ];
       };
     };
     environmentFiles = [ config.sops.secrets."hermes-env".path ];
