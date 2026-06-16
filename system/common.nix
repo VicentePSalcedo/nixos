@@ -5,7 +5,6 @@
     ./gaming.nix
     ./hermes.nix
     ./sops.nix
-    ./direnv.nix
     ./docker.nix
     ./gnupg.nix
     ./nix-settings.nix
