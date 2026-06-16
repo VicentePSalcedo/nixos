@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  sops = {
+  sops = lib.mkIf (config.networking.hostName == "phantom") {
     defaultSopsFile = ../secrets.yaml;
     age.keyFile = "/home/sintra/.config/sops/age/keys.txt";
     secrets."hermes-env" = { format = "yaml"; };
