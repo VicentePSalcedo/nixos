@@ -12,6 +12,7 @@
   imports = [
     ./programs/bash.nix
     ./programs/fastfetch.nix
+    ./programs/direnv.nix
     ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/gtk.nix
@@ -24,6 +25,7 @@
     ./programs/waybar
     ./programs/fuzzel.nix
     ./programs/yazi.nix
+    ./programs/zoxide.nix
   ];
 
   # Packages to install for the user's environment
@@ -41,7 +43,6 @@
     gh           # GitHub CLI
     lazygit      # Simple terminal UI for git
     bottom       # Beautiful process viewer (btm)
-    zoxide       # Smart directory navigation (z)
     dust         # Beautiful disk usage utility (du)
     aerc         # Terminal email client
     
