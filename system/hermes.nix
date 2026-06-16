@@ -29,7 +29,7 @@
         args = [ "shell" "nixpkgs#nodejs" "-c" "npx" "-y" "@upstash/context7-mcp@latest" ];
       };
     };
-    environmentFiles = pkgs.lib.optionals (config.networking.hostName == "phantom") [ config.sops.secrets."hermes-env".path ];
+    environmentFiles = [ config.sops.secrets."hermes-env".path ];
     addToSystemPackages = true;
   };
 
