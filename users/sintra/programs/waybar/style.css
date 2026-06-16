@@ -23,3 +23,17 @@ window#waybar {
     color: #cdd6f4;
     font-weight: bold;
 }
+.modules-right {
+    padding-right: 16px;
+}
+#battery {
+    padding: 0 8px;
+    color: #cdd6f4;
+    font-weight: bold;
+}
+#battery.warning {
+    color: #ff9e64;
+}
+#battery.critical {
+    color: #f7768e;
+}
