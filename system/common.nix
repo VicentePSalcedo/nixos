@@ -9,6 +9,7 @@
     ./docker.nix
     ./gnupg.nix
     ./nix-settings.nix
+    ./security.nix
     ./ssh.nix
     ./tailscale.nix
     ./syncthing.nix
