@@ -12,6 +12,10 @@
         owner = config.users.users.sintra.name;
         format = "yaml";
       };
+      "personal-email-password" = {
+        owner = config.users.users.sintra.name;
+        format = "yaml";
+      };
     };
   };
 
