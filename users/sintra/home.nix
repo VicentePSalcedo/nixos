@@ -39,6 +39,7 @@
     
     # CLI Utilities
     gh           # GitHub CLI
+    lazygit      # Simple terminal UI for git
     bottom       # Beautiful process viewer (btm)
     zoxide       # Smart directory navigation (z)
     dust         # Beautiful disk usage utility (du)
