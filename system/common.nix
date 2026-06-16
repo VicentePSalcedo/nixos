@@ -66,5 +66,18 @@
     extraGroups = [ "networkmanager" "wheel" "hermes" ];
   };
 
+  # Auto-upgrade system packages via pure Nix
+  system.autoUpgrade = {
+    enable = true;
+    flake = "/home/sintra/nixos";
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--commit-lock-file"
+    ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
+  };
+
   system.stateVersion = "26.05";
 }
