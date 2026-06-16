@@ -41,6 +41,7 @@
     bottom       # Beautiful process viewer (btm)
     zoxide       # Smart directory navigation (z)
     dust         # Beautiful disk usage utility (du)
+    aerc         # Terminal email client
     
     # Media & Entertainment
     beets        # Music library organizer

@@ -16,14 +16,14 @@ cg:
 # Rebuild and switch the current system
 switch:
   @git fetch
-  @git pull
+  @git pull --rebase --autostash
   @nixos-rebuild switch --flake . --sudo
   @just backup
 
 # Upgrade packages and switch the current system
 update:
   @git fetch
-  @git pull
+  @git pull --rebase --autostash
   @nixos-rebuild switch --upgrade --flake . --sudo
   @just backup
 
