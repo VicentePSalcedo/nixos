@@ -37,3 +37,8 @@ window#waybar {
 #battery.critical {
     color: #f7768e;
 }
+#bluetooth {
+    padding: 0 8px;
+    color: #7aa2f7;
+    font-weight: bold;
+}

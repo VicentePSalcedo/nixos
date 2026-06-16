@@ -29,4 +29,7 @@
       "udev.log_priority=3"
     ];
   };
+
+  # Prevent network initialization from stalling the boot process
+  systemd.services.NetworkManager-wait-online.enable = pkgs.lib.mkForce false;
 }
