@@ -14,6 +14,7 @@
     ./programs/fastfetch.nix
     ./programs/ghostty.nix
     ./programs/git.nix
+    ./programs/gtk.nix
     ./programs/helix.nix
     ./programs/hermes.nix
     ./programs/hyprland
