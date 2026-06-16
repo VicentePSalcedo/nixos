@@ -16,7 +16,7 @@
           on-click = "activate";
         };
         "clock" = {
-          format = "{:%Y-%m-%d %I:%M %p}";
+          format = "{:%Y-%m-%d %H:%M}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
         "battery" = {
