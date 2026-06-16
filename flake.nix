@@ -21,15 +21,27 @@
   };
 
   outputs = { self, nixpkgs, hermes-agent, home-manager, sops-nix, antigravity-nix, ... }@inputs: {
-    nixosConfigurations.phantom = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        sops-nix.nixosModules.sops
-        hermes-agent.nixosModules.default
-        home-manager.nixosModules.home-manager
-        ./hosts/phantom
-      ];
+    nixosConfigurations = {
+      phantom = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          sops-nix.nixosModules.sops
+          hermes-agent.nixosModules.default
+          home-manager.nixosModules.home-manager
+          ./hosts/phantom
+        ];
+      };
+      wraith = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          sops-nix.nixosModules.sops
+          hermes-agent.nixosModules.default
+          home-manager.nixosModules.home-manager
+          ./hosts/wraith
+        ];
+      };
     };
   };
 }
