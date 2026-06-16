@@ -11,6 +11,7 @@
   # Import split-out application configurations
   imports = [
     ./programs/bash.nix
+    ./programs/fastfetch.nix
     ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/helix.nix
@@ -51,15 +52,32 @@
     protonup-qt  # Easy GE-Proton installer manager
   ];
 
-  home.file.".gemini/config/mcp_config.json".source = ./programs/mcp_config.json;
+  home.file.".gemini/config/mcp_config.json".text = builtins.toJSON {
+    mcpServers = {
+      nixos = {
+        command = "nix";
+        args = [ "run" "github:utensils/mcp-nixos" "--" ];
+        env = { PYTHONPATH = ""; };
+      };
+      github = {
+        command = "nix";
+        args = [ "shell" "nixpkgs#nodejs" "-c" "npx" "-y" "@modelcontextprotocol/server-github" ];
+      };
+      context7 = {
+        command = "nix";
+        args = [ "shell" "nixpkgs#nodejs" "-c" "npx" "-y" "@upstash/context7-mcp@latest" ];
+      };
+    };
+  };
 
-  xdg.configFile."networkmanager-dmenu/config.ini".text = ''
-    [dmenu]
-    dmenu_command = fuzzel --dmenu
-    active_chars = ==
-
-    [editor]
-    terminal = ghostty
-    gui_if_use_terminal = true
-  '';
+  xdg.configFile."networkmanager-dmenu/config.ini".text = pkgs.lib.generators.toINI {} {
+    dmenu = {
+      dmenu_command = "fuzzel --dmenu";
+      active_chars = "==";
+    };
+    editor = {
+      terminal = "ghostty";
+      gui_if_use_terminal = "true";
+    };
+  };
 }

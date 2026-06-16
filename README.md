@@ -16,6 +16,7 @@ This repository uses a single unified Git-tracked Nix Flake to manage the physic
 | Hostname | Role / Architecture | Graphics / Driver | Bootloader | Highlights |
 | :--- | :--- | :--- | :--- | :--- |
 | **`phantom`** | Daily Driver Workstation <br>`x86_64-linux` | AMD Radeon RX 580 <br>`amdgpu` + Mesa | `systemd-boot` | GPU accelerated, gaming-optimized, runs local system-wide AI assistant. |
+| **`wraith`** | Portable Laptop <br>`x86_64-linux` | Integrated Graphics | `systemd-boot` | Portable laptop setup, fully syncs data with Phantom, supports backlight/brightness controls via Hyprland. |
 
 ---
 
@@ -30,12 +31,23 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 ├── justfile                   # Nushell-powered workflow runner and automation engine
 ├── secrets.yaml               # Encrypted sops-nix credentials (API keys, environments)
 │
+├── docs/                      # Detailed documentation
+│   ├── architecture.md        # Detailed breakdown of repository structure
+│   ├── crash-course.md        # NixOS basics and automation workflows
+│   ├── onboarding-new-machine.md # Guide to onboarding new hosts
+│   ├── secrets-management.md  # Guide to setting up and managing encrypted secrets
+│   └── technical-showcases.md # Architecture deep-dives and technical fixes
+│
 ├── hosts/                     # Machine-specific directories
-│   └── phantom/               # Daily driver workstation
-│       ├── default.nix        # Host definitions (systemd-boot, user definitions, modules)
+│   ├── phantom/               # Daily driver workstation
+│   │   ├── default.nix        # Host definitions (systemd-boot, user definitions, modules)
+│   │   └── hardware-configuration.nix
+│   └── wraith/                # Portable laptop setup
+│       ├── default.nix        # Host definitions, brightness, and bluetooth settings
 │       └── hardware-configuration.nix
 │
 ├── system/                    # Shareable, modular system-level service modules
+│   ├── common.nix             # Shared configuration block for all hosts
 │   ├── bluetooth.nix          # Bluetooth daemon and audio profiles
 │   ├── direnv.nix             # Automatic development shell environments
 │   ├── docker.nix             # Containerization runtimes
@@ -48,6 +60,9 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 │   ├── power.nix              # TLP power management for portable devices
 │   ├── printing.nix           # CUPS configuration for printing services
 │   ├── sops.nix               # SOPS age decryption keys & declarations
+│   ├── ssh.nix                # SSH daemon configurations
+│   ├── syncthing.nix          # System-level Syncthing configurations
+│   ├── tailscale.nix          # Tailscale mesh VPN daemon
 │   └── tmux.nix               # Multiplexed terminal setups
 │
 ├── users/                     # Declares home directory layouts & desktop settings
@@ -78,176 +93,12 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 
 ---
 
-## 🛠️ Highlights & Technical Showcases
+## 📚 Documentation
 
-### 1. ⚡ Zero Display-Manager Autostart
-To minimize memory footprint and eliminate display manager overhead (such as GDM or SDDM), graphical sessions are initiated directly from `tty1` upon user login. 
-This is handled via a lightweight POSIX shell startup hook declared in `users/sintra/programs/bash.nix`:
+To keep this overview clean, detailed guides and technical deep-dives have been moved to the `docs/` folder.
 
-```nix
-programs.bash = {
-  enable = true;
-  profileExtra = ''
-    # If logging in on tty1 and not already in a graphical session, autostart Hyprland
-    if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-      # Exec launch bypasses display managers cleanly
-      exec start-hyprland
-    fi
-  '';
-};
-```
-
----
-
-### 2. 🤖 Autonomous AI Native Integration (Hermes Agent & MCP)
-This configuration is built to cooperate with autonomous AI systems natively. Inside `/system/hermes.nix`, the state-of-the-art **Hermes Agent** is declared system-wide as a background service.
-
-#### Critical Architecture Fixes Implemented:
-* **Systemd PATH Override:** Since Systemd executes services in restricted pathways, core tools like `nix`, `git`, and `nodejs` are dynamically injected into the service environment via `systemd.services.hermes-agent.path`.
-* **MCP Sandbox Environment Mitigation:** When running Node or Python-based Model Context Protocol (MCP) servers (like `mcp-nixos` or `@modelcontextprotocol/server-github`), the process clears `PYTHONPATH` explicitly to prevent python library collisions between parent agent environments and sandboxed Nix store packages.
-* **Declarative Skin Sync:** The configuration utilizes `systemd.tmpfiles.rules` to mirror the user's local TokyoNight Storm skin configuration directly into the system-wide service directory, keeping the TUI interface synced on both user and system layers.
-
-```nix
-services.hermes-agent = {
-  enable = true;
-  settings = {
-    model.default = "gemini-flash-latest";
-    display = {
-      interface = "tui";
-      skin = "tokyonight-storm";
-    };
-  };
-  mcpServers.nixos = {
-    command = "nix";
-    args = [ "run" "github:utensils/mcp-nixos" "--" ];
-    env = { PYTHONPATH = ""; }; # Crucial Python sandbox mitigation
-  };
-};
-
-# Inject binaries directly into the service environment path
-systemd.services.hermes-agent.path = [ pkgs.nix pkgs.git pkgs.nodejs ];
-```
-
----
-
-### 3. 🧭 Bulletproof Hyprland config (Bypassing HM Lua Translation)
-Recent versions of Home Manager's Hyprland module (v0.55+) attempt to generate a `.lua` configuration layout using experimental compilers. However, translating standard declarative settings lists often produces invalid Lua output, breaking core compositor features like system keybindings on system rebuild.
-
-To prevent this config drift, this repository adopts a stable, robust hybrid configuration. It disables the Home Manager generator and writes a native, raw `hyprland.conf` directly into user space via `builtins.readFile`. This preserves perfect syntax highlighting, standard formatting, and absolute stability:
-
-```nix
-# users/sintra/programs/hyprland/default.nix
-{ config, pkgs, ... }: {
-  xdg.configFile."hypr/hyprland.conf".text = builtins.readFile ./hyprland.conf;
-}
-```
-
----
-
-### 4. 🦊 Unfree Extensions via Standalone Firefox Overlay
-Managing browser extensions declaratively (such as dark themes, ad blockers, or password managers) often crashes during evaluation if an extension has an "unfree" proprietary license. This occurs even if `allowUnfree` is enabled on the host, because external flake inputs evaluate packages in isolated, sandbox states.
-
-This repository resolves this issue by declaring Robert Helgesson's `firefox-addons` input and grafting it directly onto the host's `nixpkgs.overlays`. This pulls the addon libraries directly into the system's global `pkgs` context, where the system-wide `allowUnfree = true` can successfully validate proprietary licenses:
-
-```nix
-# system/nix-settings.nix
-{ pkgs, inputs, ... }: {
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [
-    inputs.firefox-addons.overlays.default # Graftaddons into global pkgs
-  ];
-}
-```
-This lets you declaratively list any extensions inside Home Manager (e.g., `programs.librewolf.profiles.default.extensions.packages = with pkgs.firefox-addons; [ dashlane DarkReader vimium ];`) without a single evaluation warning.
-
----
-
-## 📖 NixOS Crash Course (For Beginners)
-
-If you are new to NixOS, here are the core concepts that make this repository work:
-
-* **What is NixOS?** Traditional Linux distros (Ubuntu, Arch) store software mutably. If you update a library, it might break another app. NixOS is built on the **Nix Package Manager**, which stores every package in a read-only, content-addressed folder under `/nix/store/`. Your entire operating system is compiled from code, making it completely immutable, reproducible, and immune to "system rot."
-* **What are Flakes?** A Nix Flake (`flake.nix`) is a standardized packaging format. It specifies exact inputs (repositories like Nixpkgs) and locks their versions inside `flake.lock`. This guarantees that if you compile this repository on *any* machine, you will get the *exact same* system image down to the byte.
-* **What is Home Manager?** Home Manager is like NixOS, but for your user home folder. It declaratively manages your configuration files (dotfiles), user-installed software, shell environments, and settings so your user workspace is as reproducible as your kernel.
-
----
-
-## ⚙️ Nushell & Just Automation
-
-A Nushell-native task runner is configured in `/home/sintra/nixos/justfile` to simplify system management. It extracts the active system generation number dynamically from `nixos-rebuild list-generations --json` and attaches it directly to automated Git back-up logs:
-
-```justfile
-## Sintra's NixOS Justfile
-set shell := ["nu", "-c"]
-set working-directory := '/home/sintra/nixos'
-
-generation := shell('nixos-rebuild list-generations --json | from json | get --optional 0.generation')
-
-# Commit the current configuration stage to Git and push
-backup:
-  @git add -A
-  @if (git status --porcelain | is-empty) { git push } else { git commit -m "NixOS Gen: {{generation}}"; git push }
-
-# Collect garbage and delete older generations
-cg:
-  @sudo nix-collect-garbage --delete-old
-
-# Rebuild and switch the current system
-switch:
-  @git fetch
-  @git pull
-  @nixos-rebuild switch --flake . --sudo
-  @just backup
-```
-
-### 🛠️ Common Automation Workflows:
-
-#### 1. Rebuilding and Switching Your System
-To apply changes made to your configuration on the local machine:
-```bash
-just switch
-```
-*Behind the scenes, this will pull updates, compile your configuration, switch your system live, extract the new generation number, stage all changed files in Git, make a commit with the generation number, and push it back to your repository automatically.*
-
-#### 3. Freeing Up Disk Space (Garbage Collection)
-To delete older, inactive system generations and run garbage collection on the Nix store:
-```bash
-just cg
-```
-
----
-
-## 📋 Bootstrapping & Setup Guide
-
-Want to use this repository as a baseline for your own modular multi-host setup? Follow these steps:
-
-### Phase 1: Installation & Key Generation
-1. Install NixOS on your target machine using any standard ISO installer. Choose `systemd-boot` as your bootloader if you are on UEFI.
-2. In your home directory, initialize a GPG or SSH key. If you are using secrets management, generate an `age` key:
-   ```bash
-   mkdir -p ~/.config/sops/age
-   age-keygen -o ~/.config/sops/age/keys.txt
-   ```
-3. Extract your public key from that file to reference in your `.sops.yaml` configuration.
-
-### Phase 2: Cloning the Repository
-1. Clone this repository directly into your home folder:
-   ```bash
-   git clone https://github.com/your-username/nixos-config.git ~/nixos
-   ```
-2. Symlink your local directory to the system configuration root:
-   ```bash
-   sudo ln -s /home/sintra/nixos /etc/nixos
-   ```
-   *(On NixOS, the default rebuild tool looks inside `/etc/nixos/flake.nix` by default. Symlinking it to your home directory lets you edit, compile, and run git operations seamlessly without root privilege warnings!)*
-
-### Phase 3: Building and Activating
-1. Run a dry run build to verify your local host compiles correctly:
-   ```bash
-   nixos-rebuild build --flake ~/nixos#phantom
-   ```
-2. Once the dry run compiles successfully, apply the configuration live:
-   ```bash
-   sudo nixos-rebuild switch --flake ~/nixos#phantom
-   ```
-3. Reboot your system and enjoy a beautiful, TokyoNight Storm workspace!
+* **[📐 Repository Architecture](./docs/architecture.md):** Detailed breakdown of how the repository is structured, including separation of concerns between system, host, and user modules.
+* **[🚀 Onboarding a New Machine](./docs/onboarding-new-machine.md):** An excruciatingly detailed, step-by-step guide on how to provision a brand new physical machine, partition its disks, integrate it into this flake, setup SOPS secrets, and deploy this NixOS configuration from a Live USB.
+* **[🔐 Secrets Management](./docs/secrets-management.md):** Guide on setting up and managing encrypted secrets, API keys, and passwords using `sops`, `age`, and `sops-nix`.
+* **[📖 NixOS Crash Course & Automation](./docs/crash-course.md):** A beginner-friendly introduction to NixOS, Flakes, Home Manager, and our automated `just` workflows (like rebuilding, garbage collection, and git backups).
+* **[🛠️ Technical Showcases & Architecture Fixes](./docs/technical-showcases.md):** Deep dives into how we achieved zero display-manager autostart, native autonomous AI integration (Hermes Agent & MCP), bulletproof Hyprland config bypasses, and unfree Firefox extension overlays.
