@@ -5,7 +5,7 @@
   services.hermes-agent = {
     enable = true;
     settings = {
-      model.default = "gemini-flash-lite-latest";
+      model.default = "openai/o1-2024-12-17"; # Owl Alpha is O1-2024-12-17 in many registries
       display = {
         interface = "tui";
         tui_auto_resume_recent = true;
