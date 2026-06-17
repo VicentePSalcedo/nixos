@@ -58,6 +58,20 @@
     mangohud     # Vulkan/OpenGL performance overlay
     protonup-qt  # Easy GE-Proton installer manager
     prismlauncher # Advanced Minecraft launcher
+
+    # Rust Analyzer MCP server for AI coding assistants
+    (rustPlatform.buildRustPackage {
+      pname = "rust-analyzer-mcp";
+      version = "0.2.0";
+      src = fetchFromGitHub {
+        owner = "zeenix";
+        repo = "rust-analyzer-mcp";
+        rev = "v0.2.0";
+        hash = "sha256-brnzVDPBB3sfM+5wDw74WGqN5ahtuV4OvaGhnQfDqM0=";
+      };
+      cargoHash = "sha256-7t4bjyCcbxFAO/29re7cjoW1ACieeEaM4+QT5QAwc34=";
+      doCheck = false;
+    })
   ];
 
   home.file.".gemini/config/mcp_config.json".text = builtins.toJSON {
@@ -76,8 +90,8 @@
         args = [ "shell" "nixpkgs#nodejs" "-c" "npx" "-y" "@upstash/context7-mcp@latest" ];
       };
       rust-analyzer = {
-        command = "nix";
-        args = [ "shell" "nixpkgs#nodejs" "-c" "npx" "-y" "@ciresnave/rust-analyzer-mcp-server" ];
+        command = "rust-analyzer-mcp";
+        args = [];
       };
     };
   };
