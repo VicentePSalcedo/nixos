@@ -60,3 +60,16 @@ window#waybar {
     color: #bb9af7;
     font-weight: bold;
 }
+#temperature {
+    padding: 0 8px;
+    color: #7dcfff;
+    font-weight: bold;
+}
+#temperature.critical {
+    color: #f7768e;
+}
+#custom-tailscale {
+    padding: 0 8px;
+    color: #9ece6a;
+    font-weight: bold;
+}
