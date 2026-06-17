@@ -35,6 +35,10 @@
         command = "nix";
         args = [ "shell" "nixpkgs#nodejs" "-c" "npx" "-y" "@upstash/context7-mcp@latest" ];
       };
+      rust-analyzer = {
+        command = "nix";
+        args = [ "shell" "nixpkgs#nodejs" "-c" "npx" "-y" "@ciresnave/rust-analyzer-mcp-server" ];
+      };
     };
     environmentFiles = [ config.sops.secrets."hermes-env".path ];
     addToSystemPackages = true;
