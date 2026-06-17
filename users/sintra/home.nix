@@ -45,6 +45,7 @@
     bottom       # Beautiful process viewer (btm)
     dust         # Beautiful disk usage utility (du)
     aerc         # Terminal email client
+    pulsemixer   # TUI for PulseAudio/PipeWire
     
     # Media & Entertainment
     beets        # Music library organizer
