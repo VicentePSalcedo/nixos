@@ -10,7 +10,7 @@
         height = 24;
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = (if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else []) ++ [ "cpu" "memory" "pulseaudio" "custom/spacer" "tray" ];
+        modules-right = (if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else []) ++ [ "temperature" "cpu" "memory" "pulseaudio" "custom/tailscale" "custom/spacer" "tray" ];
         "tray" = {
           "spacing" = 10;
           "icon-size" = 16;
@@ -68,6 +68,21 @@
           "format" = " {used:0.1f}G";
           "tooltip-format" = "RAM {used:0.1f}G / {total:0.1f}G ({percentage}%)";
           "on-click" = "ghostty -e btm";
+        };
+        "temperature" = {
+          "hwmon-path" = "/sys/class/thermal/thermal_zone0/temp";
+          "critical-threshold" = 85;
+          "format" = " {temperatureC}°C";
+          "format-critical" = " {temperatureC}°C";
+          "tooltip-format" = "CPU {temperatureC}°C";
+          "on-click" = "ghostty -e btm";
+        };
+        "custom/tailscale" = {
+          "exec" = "tailscale status 2>/dev/null | head -1 | awk '{print \" \" $2}' || echo \" offline\"";
+          "interval" = 15;
+          "tooltip" = true;
+          "tooltip-format" = "Tailscale: {output}";
+          "on-click" = "ghostty -e tailscale status";
         };
       };
     };
