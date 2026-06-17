@@ -66,7 +66,7 @@
   users.users."sintra" = {
     isNormalUser = true;
     description = "sintra";
-    extraGroups = [ "networkmanager" "wheel" "hermes" ];
+    extraGroups = [ "networkmanager" "wheel" "hermes" "docker" ];
   };
 
   # Auto-upgrade system packages via pure Nix
