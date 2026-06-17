@@ -5,7 +5,8 @@
   services.hermes-agent = {
     enable = true;
     settings = {
-      model.default = "openai/o1-2024-12-17"; # Owl Alpha is O1-2024-12-17 in many registries
+      model.default = "openai/o1-2024-12-17";
+      model.provider = "openrouter";
       display = {
         interface = "tui";
         tui_auto_resume_recent = true;
