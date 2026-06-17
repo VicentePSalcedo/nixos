@@ -38,6 +38,8 @@
     networkmanager_dmenu # Control NetworkManager via wofi
     inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
     uv           # Fast Python package installer and runner
+    just         # Command runner
+    rqbit        # Bittorrent client in Rust
     
     # CLI Utilities
     gh           # GitHub CLI
