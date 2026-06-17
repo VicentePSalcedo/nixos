@@ -10,7 +10,13 @@
       display = {
         interface = "tui";
         tui_auto_resume_recent = true;
+        tui_compact = true;
         skin = "tokyonight-storm";
+      };
+      compression = {
+        enabled = true;
+        threshold = 0.40;
+        target_ratio = 0.15;
       };
     };
     mcpServers = {
