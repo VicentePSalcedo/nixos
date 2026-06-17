@@ -17,6 +17,8 @@ cg:
 switch:
   @git fetch
   @git pull --rebase --autostash
+  @git add -A
+  @if (git status --porcelain | is-empty) { echo "Nothing to commit" } else { git commit -m "NixOS Gen: {{generation}} (pre-switch)" }
   @nixos-rebuild switch --flake . --sudo
   @just backup
 
