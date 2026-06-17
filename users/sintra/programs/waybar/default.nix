@@ -10,10 +10,14 @@
         height = 24;
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = (if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else []) ++ [ "tray" ];
+        modules-right = (if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else []) ++ [ "custom/spacer" "tray" ];
         "tray" = {
           "spacing" = 10;
           "icon-size" = 16;
+        };
+        # Added a dummy module to create spacing between the right modules and the tray
+        "custom/spacer" = {
+          "format" = " ";
         };
         "hyprland/workspaces" = {
           format = "{name}";
