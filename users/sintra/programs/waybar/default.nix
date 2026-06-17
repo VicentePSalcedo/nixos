@@ -10,7 +10,10 @@
         height = 24;
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else [];
+        modules-right = (if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else []) ++ [ "tray" ];
+        "tray" = {
+          "spacing" = 10;
+        };
         "hyprland/workspaces" = {
           format = "{name}";
           on-click = "activate";
@@ -29,13 +32,14 @@
           };
         };
         "bluetooth" = {
-          format = " {status}";
-          format-connected = " {device_alias}";
-          format-connected-battery = " {device_alias} {device_battery_percentage}%";
-          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
-          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
-          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+          "format" = " {status}";
+          "format-connected" = " {device_alias}";
+          "format-connected-battery" = " {device_alias} {device_battery_percentage}%";
+          "tooltip-format" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+          "tooltip-format-connected" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+          "tooltip-format-enumerate-connected" = "{device_alias}\t{device_address}";
+          "tooltip-format-enumerate-connected-battery" = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+          "on-click" = "blueman-manager";
         };
       };
     };

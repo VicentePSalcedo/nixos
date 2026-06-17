@@ -14,6 +14,10 @@
     ./syncthing.nix
   ];
 
+  
+  # Ensure just is installed system-wide on all hosts now and in the future
+  environment.systemPackages = [ pkgs.just ];
+
   # Bootloader configurations
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 6;
