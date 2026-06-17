@@ -72,7 +72,7 @@
       # wraith
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIUtdv2cd/gJrcXgKcuaHOXPdosc0HQE6A5Air0tY4zZ vicentepsalcedo@gmail.com"
       # phantom
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDT1Mz1RGbsk7Ls7ZgwGRQ07OUiUHXFLCiN2RBJ+StDh"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE7zd7U9mqaWhJYshlIPkIaK5VrLTYepKglMaIHDoeHf vicentesalcedo@artoriastechlab.com"
     ];
   };
 
