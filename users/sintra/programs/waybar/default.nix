@@ -82,7 +82,7 @@
           "interval" = 15;
           "tooltip" = true;
           "tooltip-format" = "Tailscale: {output}";
-          "on-click" = "ghostty -e tailscale status";
+          "on-click" = "ghostty -e bash -c 'tailscale status; read -p \"Press Enter to close...\"'";
         };
       };
     };
