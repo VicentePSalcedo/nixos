@@ -32,10 +32,12 @@
   systemd.services.NetworkManager-wait-online.enable = pkgs.lib.mkForce false;
 
   # Power Management
-  services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchExternalPower = "ignore";
-    powerKey = "suspend";
-    powerKeyLongPress = "hibernate";
+  services.logind.settings = {
+    Login = {
+      HandleLidSwitch = "ignore";
+      HandleLidSwitchExternalPower = "ignore";
+      HandlePowerKey = "suspend";
+      HandlePowerKeyLongPress = "hibernate";
+    };
   };
 }
