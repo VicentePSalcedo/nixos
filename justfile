@@ -5,29 +5,29 @@ set working-directory := '/home/sintra/nixos'
 generation := shell('nixos-rebuild list-generations --json | from json | get --optional 0.generation')
 
 # Commit the current configuration stage to Git and push
-backup:
-  @git add -A
-  @if (git status --porcelain | is-empty) { git push } else { git commit -m "NixOS Gen: {{generation}}"; git push }
+@backup:
+  git add -A
+  if (git status --porcelain | is-empty) { git push } else { git commit -m "NixOS Gen: {{generation}}"; git push }
 
 # Collect garbage and delete older generations
-cg:
-  @sudo nix-collect-garbage --delete-old
+@cg:
+  sudo nix-collect-garbage --delete-old
 
 # Rebuild and switch the current system
-switch:
-  @git fetch
-  @git pull --rebase --autostash
-  @git add -A
-  @if (git status --porcelain | is-empty) { echo "Nothing to commit" } else { git commit -m "NixOS Gen: {{generation}} (pre-switch)" }
-  @nixos-rebuild switch --flake . --sudo
-  @just backup
+@switch:
+  git fetch
+  git pull --rebase --autostash
+  git add -A
+  if (git status --porcelain | is-empty) { echo "Nothing to commit" } else { git commit -m "NixOS Gen: {{generation}} (pre-switch)" }
+  nixos-rebuild switch --flake . --sudo
+  just backup
 
 # Upgrade packages and switch the current system
-update:
-  @git fetch
-  @git pull --rebase --autostash
-  @nixos-rebuild switch --upgrade --flake . --sudo
-  @just backup
+@update:
+  git fetch
+  git pull --rebase --autostash
+  nixos-rebuild switch --upgrade --flake . --sudo
+  just backup
 
 # Download a torrent using rqbit
 [positional-arguments]

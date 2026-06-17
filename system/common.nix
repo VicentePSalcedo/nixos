@@ -16,7 +16,8 @@
 
   
   # Ensure just is installed system-wide on all hosts now and in the future
-  environment.systemPackages = with pkgs; [ just rqbit ];
+  environment.systemPackages = [ ];
+
 
   # Bootloader configurations
   boot.loader.systemd-boot.enable = true;
