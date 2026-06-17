@@ -42,3 +42,11 @@ window#waybar {
     color: #7aa2f7;
     font-weight: bold;
 }
+#pulseaudio {
+    padding: 0 8px;
+    color: #cdd6f4;
+    font-weight: bold;
+}
+#pulseaudio.muted {
+    color: #565f89;
+}
