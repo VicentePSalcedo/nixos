@@ -50,3 +50,13 @@ window#waybar {
 #pulseaudio.muted {
     color: #565f89;
 }
+#cpu {
+    padding: 0 8px;
+    color: #9ece6a;
+    font-weight: bold;
+}
+#memory {
+    padding: 0 8px;
+    color: #bb9af7;
+    font-weight: bold;
+}

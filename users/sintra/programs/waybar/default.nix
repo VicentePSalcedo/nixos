@@ -10,7 +10,7 @@
         height = 24;
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = (if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else []) ++ [ "pulseaudio" "custom/spacer" "tray" ];
+        modules-right = (if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else []) ++ [ "cpu" "memory" "pulseaudio" "custom/spacer" "tray" ];
         "tray" = {
           "spacing" = 10;
           "icon-size" = 16;
@@ -58,6 +58,16 @@
           "on-scroll-up" = "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 3%+";
           "on-scroll-down" = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-";
           "tooltip-format" = "{volume}%  {desc}";
+        };
+        "cpu" = {
+          "format" = " {usage}%";
+          "tooltip-format" = "CPU {usage}%";
+          "on-click" = "ghostty -e btm";
+        };
+        "memory" = {
+          "format" = " {used:0.1f}G";
+          "tooltip-format" = "RAM {used:0.1f}G / {total:0.1f}G ({percentage}%)";
+          "on-click" = "ghostty -e btm";
         };
       };
     };
