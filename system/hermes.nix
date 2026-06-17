@@ -5,7 +5,7 @@
   services.hermes-agent = {
     enable = true;
     settings = {
-      model.default = "openai/o1-2024-12-17";
+      model.default = "openrouter/owl-alpha";
       model.provider = "openrouter";
       display = {
         interface = "tui";
