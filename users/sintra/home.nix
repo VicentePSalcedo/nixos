@@ -55,6 +55,7 @@
     # Gaming Optimizations & Utilities
     mangohud     # Vulkan/OpenGL performance overlay
     protonup-qt  # Easy GE-Proton installer manager
+    prismlauncher # Advanced Minecraft launcher
   ];
 
   home.file.".gemini/config/mcp_config.json".text = builtins.toJSON {
