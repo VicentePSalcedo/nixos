@@ -13,6 +13,7 @@
         modules-right = (if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else []) ++ [ "tray" ];
         "tray" = {
           "spacing" = 10;
+          "icon-size" = 16;
         };
         "hyprland/workspaces" = {
           format = "{name}";
@@ -25,6 +26,8 @@
         };
         "battery" = {
           format = "{capacity}% {icon}";
+          format-charging = "{capacity}% ";
+          format-plugged = "{capacity}% ";
           format-icons = ["" "" "" "" ""];
           states = {
             warning = 30;
