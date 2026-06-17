@@ -115,6 +115,11 @@
       nativeBuildInputs = [ pkgs.pkg-config ];
       buildInputs = [ ];
       doCheck = false;
+      postPatch = ''
+        substituteInPlace src/main.rs \
+          --replace-fail 'let response = self.handle_request(request).await;' \
+                         'if request.id.is_none() { debug!("Ignoring notification: {}", request.method); continue; } let response = self.handle_request(request).await;'
+      '';
     })
   ];
 }
