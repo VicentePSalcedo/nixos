@@ -3,7 +3,7 @@
 {
   programs.git = {
     enable = true;
-    extraConfig = {
+    settings = {
       pull.rebase = true;
     };
     # Add your default config if desired, e.g.:
