@@ -9,6 +9,9 @@
         edit = [
           { run = "hx \"$@\""; block = true; desc = "Helix"; }
         ];
+        pdf = [
+          { run = "librewolf \"$@\""; block = false; desc = "LibreWolf"; }
+        ];
       };
     };
   };

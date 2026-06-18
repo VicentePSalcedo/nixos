@@ -41,6 +41,7 @@
     just         # Command runner
     unzip        # Extract zip archives
     rqbit        # Bittorrent client in Rust
+    typst        # Modern typesetting system
     
     # CLI Utilities
     gh           # GitHub CLI
