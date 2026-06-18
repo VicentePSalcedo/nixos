@@ -13,6 +13,11 @@
           { run = "librewolf \"$@\""; block = false; desc = "LibreWolf"; }
         ];
       };
+      open = {
+        prepend_rules = [
+          { mime = "application/pdf"; use = "pdf"; }
+        ];
+      };
     };
   };
 }
