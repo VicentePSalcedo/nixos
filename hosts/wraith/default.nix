@@ -12,6 +12,7 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
+    unzip
   ];
 
   # Ultra-fast boot optimizations for the laptop
