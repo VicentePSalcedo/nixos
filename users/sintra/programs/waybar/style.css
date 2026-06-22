@@ -1,3 +1,21 @@
+/*
+ * Waybar — Tokyo Night Storm
+ * Palette reference:
+ *   bg        #1a1b26
+ *   bg_dark   #16161e
+ *   bg_highlight #292e42
+ *   fg        #c0caf5
+ *   fg_dark   #a9b1d6
+ *   fg_gutter #3b4261
+ *   blue      #7aa2f7
+ *   cyan      #7dcfff
+ *   green     #9ece6a
+ *   orange    #ff9e64
+ *   magenta   #bb9af7
+ *   red       #f7768e
+ *   yellow    #e0af68
+ */
+
 * {
     border: none;
     border-radius: 0;
@@ -5,61 +23,89 @@
     font-size: 13px;
     min-height: 0;
 }
+
 window#waybar {
-    background: transparent;
-    color: #cdd6f4;
+    background: #1a1b26;
+    color: #c0caf5;
+    border-bottom: 2px solid #292e42;
 }
+
+/* ── Workspaces ─────────────────────────────────── */
 #workspaces button {
-    padding: 0 8px;
+    padding: 0 10px;
     background: transparent;
-    color: #7f849c;
+    color: #3b4261;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+#workspaces button:hover {
+    background: #292e42;
+    color: #a9b1d6;
 }
 #workspaces button.active {
-    color: #cdd6f4;
+    color: #7aa2f7;
+    border-bottom: 2px solid #7aa2f7;
     font-weight: bold;
 }
-#clock {
-    padding: 0 8px;
-    color: #cdd6f4;
-    font-weight: bold;
-}
-.modules-right {
-    padding-right: 16px;
-}
-#battery {
-    padding: 0 8px;
-    color: #cdd6f4;
-    font-weight: bold;
-}
-#battery.warning {
-    color: #ff9e64;
-}
-#battery.critical {
+#workspaces button.urgent {
     color: #f7768e;
+    border-bottom: 2px solid #f7768e;
 }
+
+/* ── Left / Center modules ──────────────────────── */
+#clock {
+    padding: 0 12px;
+    color: #c0caf5;
+    font-weight: bold;
+}
+
+/* ── Right modules ──────────────────────────────── */
+.modules-right {
+    padding-right: 8px;
+}
+
 #bluetooth {
     padding: 0 8px;
     color: #7aa2f7;
     font-weight: bold;
 }
+#bluetooth.disabled {
+    color: #3b4261;
+}
+
+#battery {
+    padding: 0 8px;
+    color: #9ece6a;
+    font-weight: bold;
+}
+#battery.warning {
+    color: #e0af68;
+}
+#battery.critical {
+    color: #f7768e;
+}
+
 #pulseaudio {
     padding: 0 8px;
-    color: #cdd6f4;
+    color: #c0caf5;
     font-weight: bold;
 }
 #pulseaudio.muted {
     color: #565f89;
 }
+
 #cpu {
     padding: 0 8px;
     color: #9ece6a;
     font-weight: bold;
 }
+
 #memory {
     padding: 0 8px;
     color: #bb9af7;
     font-weight: bold;
 }
+
 #temperature {
     padding: 0 8px;
     color: #7dcfff;
@@ -68,8 +114,21 @@ window#waybar {
 #temperature.critical {
     color: #f7768e;
 }
+
 #custom-tailscale {
     padding: 0 8px;
-    color: #9ece6a;
+    color: #7dcfff;
     font-weight: bold;
+}
+
+/* ── Tray ───────────────────────────────────────── */
+#tray {
+    padding: 0 8px;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: #f7768e;
 }
