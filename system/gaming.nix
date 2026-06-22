@@ -17,4 +17,13 @@
     enable = true;
     capSysNice = true;                             # Permits GameScope to run with higher thread priority
   };
+
+  # Disable mouse acceleration at the libinput level for consistent 1:1 pointer input
+  services.libinput = {
+    enable = true;
+    mouse = {
+      accelProfile = "flat";
+      accelSpeed = "0";
+    };
+  };
 }
