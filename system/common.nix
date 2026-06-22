@@ -12,6 +12,7 @@
     ./ssh.nix
     ./tailscale.nix
     ./syncthing.nix
+    ./tmux.nix
   ];
 
   
