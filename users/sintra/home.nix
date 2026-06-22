@@ -55,6 +55,7 @@
     beets        # Music library organizer
     spotify      # Music streaming desktop client
     vesktop      # Wayland-friendly Discord client with Vencord
+    signal-desktop # Private, simple, and secure messenger
     
     # Gaming Optimizations & Utilities
     mangohud     # Vulkan/OpenGL performance overlay
