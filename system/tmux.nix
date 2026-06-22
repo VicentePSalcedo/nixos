@@ -37,6 +37,10 @@
       bind '"' split-window -v -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
 
+      # Close panes/windows without confirmation
+      bind-key x kill-pane
+      bind-key & kill-window
+
       set -g pane-active-border-style bg=color0
       set -g pane-border-style bg=color0
       set-window-option -g window-active-style bg=terminal
