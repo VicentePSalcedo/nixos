@@ -69,11 +69,10 @@
     (rustPlatform.buildRustPackage {
       pname = "xero-music";
       version = "1.1.1";
-      src = fetchFromGitHub {
-        owner = "Xero-music";
-        repo = "Xero";
+      src = fetchgit {
+        url = "https://codeberg.org/Xero-music/Xero.git";
         rev = "v1.1.1";
-        hash = "sha256-R47h0WJjT43U7Bf2fWv0gYJvI5bZOn8hF+9kK7kS4Aw="; # Temporary placeholder hash
+        sha256 = "1pamr1i6pkhrn8w3qyld93dgcy8mm80nh017kaxwgrhxy1yadl3x";
       };
       cargoHash = "sha256-0000000000000000000000000000000000000000000="; # Temporary cargo hash placeholder
       doCheck = false;
