@@ -54,7 +54,8 @@
     
     # Media & Entertainment
     beets        # Music library organizer
-    dopamine     # Elegant audio player
+    amberol
+    tauon
     spotify      # Music streaming desktop client
     vesktop      # Wayland-friendly Discord client with Vencord
     signal-desktop # Private, simple, and secure messenger
