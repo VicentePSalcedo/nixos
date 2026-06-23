@@ -6,7 +6,9 @@
     defaultEditor = true;
     settings = {
       theme = "tokyonight_storm_transparent";
-      editor.soft-wrap.enable = true;
+      editor = {
+        soft-wrap.enable = true;
+      };
     };
     themes = {
       tokyonight_storm_transparent = {
