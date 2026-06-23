@@ -1,103 +1,89 @@
 { config, pkgs, ... }:
 
 {
-  # Enable PipeWire (already likely enabled by Hyprland, but be explicit)
+  # Enable PipeWire audio services
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
 
-    # Disable the internal ALSA speaker device by overriding its profile
-    # This prevents the Ryzen HD Audio Controller from ever being used as a sink
-    extraConfig.pipewire = {
-      # Context properties — disable the ALSA card's output profile
-      "100-disable-internal-speaker" = {
-        "context.modules" = [
+    # Natively configure WirePlumber priorities so Bluetooth is always preferred
+    # and the internal speaker has a rock-bottom priority
+    wireplumber.extraConfig = {
+      "10-audio-priorities" = {
+        "monitor.alsa.rules" = [
           {
-            name = "libpipewire-module-protocol-pulse";
-            args = {
-              "pulse.default.req" = "128/48000";
+            matches = [
+              {
+                "node.name" = "alsa_output.pci-0000_06_00.6.HiFi__Speaker__sink";
+              }
+            ];
+            actions = {
+              update-props = {
+                # Rock-bottom priority so it is never auto-selected over Bluetooth
+                "priority.driver" = 100;
+                "priority.session" = 100;
+              };
             };
           }
         ];
-        "context.objects" = [
+        "monitor.bluez.rules" = [
           {
-            # Factory to create nodes with specific properties
-            factory = "adapter";
-            args = {
-              "factory.name" = "api.alsa.pcm.node";
-              "node.name" = "Ryzen HD Audio Controller Speaker";
-              "node.description" = "Internal Speaker (disabled)";
-              "media.class" = "Audio/Sink";
-              "api.alsa.path" = "hw:1,0";
-              "node.pause-on-idle" = true;
+            matches = [
+              {
+                # Match any Bluetooth audio output
+                "node.name" = "~bluez_output.*";
+              }
+            ];
+            actions = {
+              update-props = {
+                # High priority so it is immediately selected when connected
+                "priority.driver" = 2000;
+                "priority.session" = 2000;
+              };
             };
           }
         ];
-        "context.properties" = {
-          # Disable suspend-on-idle for Bluetooth, keep for others
-          "default.clock.rate" = 48000;
-          "default.clock.allowed-rates" = [ 44100 48000 ];
-        };
       };
     };
   };
 
-  # ALSA UCM/UCM2 configuration to disable internal speaker at kernel level
-  # This creates an ALSA conf that sets the internal speaker to 0% and mutes it
-  environment.etc."alsa/conf.d/99-disable-internal-speaker.conf".text = ''
-    # Disable internal speaker — force all audio to Bluetooth/HDMI
-    pcm.!default {
-        type plug
-        slave {
-            pcm "hw:1,0"
-        }
-        softvol {
-            name "SoftMaster"
-            card 1
-        }
-    }
-
-    # Override the internal speaker ALSA device to be muted by default
-    pcm.internal_speaker {
-        type hw
-        card 1
-        device 0
-    }
-
-    ctl.internal_speaker {
-        type hw
-        card 1
-    }
-  '';
-
-  # Systemd user service to ensure internal speaker stays muted on boot
-  # and Bluetooth device becomes the default sink
+  # Systemd user service to ensure the internal speaker is muted and set to 0% volume on boot
   systemd.user.services.disable-internal-speaker = {
-    description = "Disable internal speaker, prefer Bluetooth audio";
+    description = "Mute internal speaker on boot, prefer Bluetooth audio";
     wantedBy = [ "default.target" ];
     after = [ "pipewire.service" "wireplumber.service" ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = pkgs.writeShellScript "disable-internal-speaker" ''
-        # Wait for PipeWire to be ready
-        ${pkgs.wireplumber}/bin/wpctl status > /dev/null 2>&1
-        sleep 2
+        # Wait for PipeWire / WirePlumber to fully initialize
+        for i in {1..10}; do
+          ${pkgs.wireplumber}/bin/wpctl status >/dev/null 2>&1 && break
+          sleep 0.5
+        done
 
-        # Find and mute the internal speaker sink
-        SPEAKER_ID=$(${pkgs.wireplumber}/bin/wpctl status 2>/dev/null | \
-          grep -A1 "Ryzen HD Audio Controller Speaker" | \
-          grep -oP '^\s+\K\d+' | head -1)
+        wpctl_output=$(${pkgs.wireplumber}/bin/wpctl status 2>/dev/null)
+
+        # Robustly parse the Speaker ID using AWK
+        SPEAKER_ID=$(echo "$wpctl_output" | awk '
+          /├─ Sinks:/ { in_sinks=1 }
+          /├─ Sources:/ { in_sinks=0 }
+          in_sinks && match($0, /[[:space:]]+([0-9]+)\./, m) { id = m[1] }
+          in_sinks && $0 ~ "Ryzen HD Audio Controller Speaker" && id != "" { print id; exit }
+        ')
 
         if [ -n "$SPEAKER_ID" ]; then
           ${pkgs.wireplumber}/bin/wpctl set-mute "$SPEAKER_ID" 1
           ${pkgs.wireplumber}/bin/wpctl set-volume "$SPEAKER_ID" 0%
         fi
 
-        # Set Bluetooth as default if available
-        BT_ID=$(${pkgs.wireplumber}/bin/wpctl status 2>/dev/null | \
-          grep -i "bluez\|bluetooth\|JLab" | \
-          grep -oP '^\s+\K\d+' | head -1)
+        # Robustly parse any connected Bluetooth/JLab sink and make it the default
+        BT_ID=$(echo "$wpctl_output" | awk '
+          /├─ Sinks:/ { in_sinks=1 }
+          /├─ Sources:/ { in_sinks=0 }
+          in_sinks && match($0, /[[:space:]]+([0-9]+)\./, m) { id = m[1] }
+          in_sinks && $0 ~ "JLab|bluez" && id != "" { print id; exit }
+        ')
 
         if [ -n "$BT_ID" ]; then
           ${pkgs.wireplumber}/bin/wpctl set-default "$BT_ID"
