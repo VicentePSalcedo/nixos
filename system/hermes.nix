@@ -5,7 +5,7 @@
   services.hermes-agent = {
     enable = true;
     settings = {
-      model.default = "gemini-flash-latest";
+      model.default = "gemini-3.1-flash-lite";
       model.provider = "gemini";
       display = {
         interface = "tui";
