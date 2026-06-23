@@ -75,6 +75,8 @@
         sha256 = "1pamr1i6pkhrn8w3qyld93dgcy8mm80nh017kaxwgrhxy1yadl3x";
       };
       cargoHash = "sha256-T265UPL8gmY4AkeMSGvh0sQQp/zBgQDFgkClHd6g3a0=";
+      nativeBuildInputs = [ pkg-config ];
+      buildInputs = [ rubberband ];
       doCheck = false;
     })
 
