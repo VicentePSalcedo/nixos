@@ -54,7 +54,6 @@
     
     # Media & Entertainment
     beets        # Music library organizer
-    amberol
     tauon
     spotify      # Music streaming desktop client
     vesktop      # Wayland-friendly Discord client with Vencord
@@ -65,6 +64,20 @@
     mangohud     # Vulkan/OpenGL performance overlay
     protonup-qt  # Easy GE-Proton installer manager
     prismlauncher # Advanced Minecraft launcher
+
+    # Rust-based TUI music players built from source
+    (rustPlatform.buildRustPackage {
+      pname = "xero-music";
+      version = "1.1.1";
+      src = fetchFromGitHub {
+        owner = "Xero-music";
+        repo = "Xero";
+        rev = "v1.1.1";
+        hash = "sha256-R47h0WJjT43U7Bf2fWv0gYJvI5bZOn8hF+9kK7kS4Aw="; # Temporary placeholder hash
+      };
+      cargoHash = "sha256-0000000000000000000000000000000000000000000="; # Temporary cargo hash placeholder
+      doCheck = false;
+    })
 
     # Rust Analyzer MCP server for AI coding assistants
     (rustPlatform.buildRustPackage {
