@@ -58,6 +58,7 @@
     spotify      # Music streaming desktop client
     vesktop      # Wayland-friendly Discord client with Vencord
     signal-desktop # Private, simple, and secure messenger
+    zoom-us      # Video conferencing client
     
     # Gaming Optimizations & Utilities
     mangohud     # Vulkan/OpenGL performance overlay
@@ -81,6 +82,20 @@
           --replace-fail 'let response = self.handle_request(request).await;' \
                          'if request.id.is_none() { debug!("Ignoring notification: {}", request.method); continue; } let response = self.handle_request(request).await;'
       '';
+    })
+
+    # Verso: Terminal EPUB reader with vim navigation and Markdown highlight export
+    (rustPlatform.buildRustPackage {
+      pname = "verso";
+      version = "0.1.0";
+      src = fetchFromGitHub {
+        owner = "romankhadka";
+        repo = "verso";
+        rev = "v0.1.0";
+        hash = "sha256-mMBafe+QQg26WIYfMeft58usKYqHAXWhWtmxAjpj5Aw=";
+      };
+      cargoHash = "sha256-ui12XReEp5+zqNjTGygkNox4FJw+EMFdqFbuOj7eSE0=";
+      doCheck = false;
     })
   ];
 
