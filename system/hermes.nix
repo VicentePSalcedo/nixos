@@ -5,8 +5,8 @@
   services.hermes-agent = {
     enable = true;
     settings = {
-      model.default = "openrouter/owl-alpha";
-      model.provider = "openrouter";
+      model.default = "gemini-flash-lite-latest";
+      model.provider = "gemini";
       display = {
         interface = "tui";
         tui_auto_resume_recent = true;
