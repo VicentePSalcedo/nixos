@@ -37,6 +37,7 @@
     wl-clipboard # Wayland clipboard manager
     networkmanager_dmenu # Control NetworkManager via wofi
     inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     uv           # Fast Python package installer and runner
     just         # Command runner
     unzip        # Extract zip archives
