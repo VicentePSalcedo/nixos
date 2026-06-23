@@ -13,6 +13,7 @@
     ./tailscale.nix
     ./syncthing.nix
     ./tmux.nix
+    ./audio.nix
   ];
 
   
