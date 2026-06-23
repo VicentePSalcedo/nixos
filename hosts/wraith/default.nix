@@ -35,9 +35,9 @@
   # Power Management
   services.logind.settings = {
     Login = {
-      HandleLidSwitch = "ignore";
-      HandleLidSwitchExternalPower = "ignore";
-      HandlePowerKey = "suspend";
+      HandleLidSwitch = "suspend";
+      HandleLidSwitchExternalPower = "suspend";
+      HandlePowerKey = "hibernate";
       HandlePowerKeyLongPress = "hibernate";
     };
   };
