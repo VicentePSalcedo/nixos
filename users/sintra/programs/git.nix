@@ -5,8 +5,10 @@
     enable = true;
     settings = {
       pull.rebase = true;
+      user = {
+        name = "Vicente Salcedo";
+        email = "vicentepsalcedo@gmail.com";
+      };
     };
-    userName = "Vicente Salcedo";
-    userEmail = "vicentepsalcedo@gmail.com";
   };
 }
