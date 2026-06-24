@@ -6,8 +6,7 @@
     settings = {
       pull.rebase = true;
     };
-    # Add your default config if desired, e.g.:
-    # userName = "Sintra";
-    # userEmail = "sintra@example.com";
+    userName = "Vicente Salcedo";
+    userEmail = "vicentepsalcedo@gmail.com";
   };
 }
