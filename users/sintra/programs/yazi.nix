@@ -10,7 +10,7 @@
           { run = "hx \"$@\""; block = true; desc = "Helix"; }
         ];
         pdf = [
-          { run = "librewolf \"$@\""; block = false; desc = "LibreWolf"; }
+          { run = "firefox \"$@\""; block = false; desc = "Firefox"; }
         ];
       };
       open = {
