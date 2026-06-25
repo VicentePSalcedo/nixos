@@ -58,59 +58,16 @@
     spotify      # Music streaming desktop client
     vesktop      # Wayland-friendly Discord client with Vencord
     signal-desktop # Private, simple, and secure messenger
+    musikcube    # Terminal-based music player, library, and streaming server
     
     # Gaming Optimizations & Utilities
     mangohud     # Vulkan/OpenGL performance overlay
     protonup-qt  # Easy GE-Proton installer manager
     prismlauncher # Advanced Minecraft launcher
 
-    # Rust-based TUI music players built from source
-    (rustPlatform.buildRustPackage {
-      pname = "xero-music";
-      version = "1.1.1";
-      src = fetchgit {
-        url = "https://codeberg.org/Xero-music/Xero.git";
-        rev = "v1.1.1";
-        sha256 = "1pamr1i6pkhrn8w3qyld93dgcy8mm80nh017kaxwgrhxy1yadl3x";
-      };
-      cargoHash = "sha256-T265UPL8gmY4AkeMSGvh0sQQp/zBgQDFgkClHd6g3a0=";
-      nativeBuildInputs = [ pkg-config ];
-      buildInputs = [ rubberband ];
-      doCheck = false;
-    })
-
-    # Rust Analyzer MCP server for AI coding assistants
-    (rustPlatform.buildRustPackage {
-      pname = "rust-analyzer-mcp";
-      version = "0.2.0";
-      src = fetchFromGitHub {
-        owner = "zeenix";
-        repo = "rust-analyzer-mcp";
-        rev = "v0.2.0";
-        hash = "sha256-brnzVDPBB3sfM+5wDw74WGqN5ahtuV4OvaGhnQfDqM0=";
-      };
-      cargoHash = "sha256-7t4bjyCcbxFAO/29re7cjoW1ACieeEaM4+QT5QAwc34=";
-      doCheck = false;
-      postPatch = ''
-        substituteInPlace src/main.rs \
-          --replace-fail 'let response = self.handle_request(request).await;' \
-                         'if request.id.is_none() { debug!("Ignoring notification: {}", request.method); continue; } let response = self.handle_request(request).await;'
-      '';
-    })
-
-    # Verso: Terminal EPUB reader with vim navigation and Markdown highlight export
-    (rustPlatform.buildRustPackage {
-      pname = "verso";
-      version = "0.1.0";
-      src = fetchFromGitHub {
-        owner = "romankhadka";
-        repo = "verso";
-        rev = "v0.1.0";
-        hash = "sha256-mMBafe+QQg26WIYfMeft58usKYqHAXWhWtmxAjpj5Aw=";
-      };
-      cargoHash = "sha256-ui12XReEp5+zqNjTGygkNox4FJw+EMFdqFbuOj7eSE0=";
-      doCheck = false;
-    })
+    # Custom Rust packages cleanly modularized with callPackage
+    (callPackage ./programs/rust-analyzer-mcp.nix {})
+    (callPackage ./programs/verso.nix {})
   ];
 
   home.file.".gemini/config/mcp_config.json".text = builtins.toJSON {
