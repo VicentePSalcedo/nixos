@@ -18,14 +18,14 @@ set working-directory := '/home/sintra/nixos'
   git add -A
   let generation = (nixos-rebuild list-generations --json | from json | get --optional 0.generation | default "unknown"); if (git status --porcelain | is-empty) { echo "Nothing to commit" } else { git commit -m $"NixOS Gen: ($generation) \(pre-switch\)" }
   nixos-rebuild switch --flake . --sudo
-  just backup
+  sudo -u sintra just backup
 
 # Upgrade packages and switch the current system
 @update:
   git fetch
   git pull --rebase --autostash
   nixos-rebuild switch --upgrade --flake . --sudo
-  just backup
+  sudo -u sintra just backup
 
 # Download a torrent using rqbit
 [positional-arguments]
