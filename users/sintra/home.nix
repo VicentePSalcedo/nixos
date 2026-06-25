@@ -37,10 +37,8 @@
     wl-clipboard # Wayland clipboard manager
     networkmanager_dmenu # Control NetworkManager via wofi
     inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     uv           # Fast Python package installer and runner
     just         # Command runner
-    unzip        # Extract zip archives
     rqbit        # Bittorrent client in Rust
     typst        # Modern typesetting system
     
@@ -51,14 +49,14 @@
     dust         # Beautiful disk usage utility (du)
     aerc         # Terminal email client
     pulsemixer   # TUI for PulseAudio/PipeWire
+    unzip
     
     # Media & Entertainment
     beets        # Music library organizer
-    tauon
+    mpv          # Versatile media player
     spotify      # Music streaming desktop client
     vesktop      # Wayland-friendly Discord client with Vencord
     signal-desktop # Private, simple, and secure messenger
-    zoom-us      # Video conferencing client
     
     # Gaming Optimizations & Utilities
     mangohud     # Vulkan/OpenGL performance overlay
