@@ -46,7 +46,7 @@ in
   # Qt Configuration to match GTK
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "gtk3";
     style.name = "adwaita-dark";
   };
 }
