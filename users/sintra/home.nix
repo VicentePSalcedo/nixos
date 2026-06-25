@@ -52,6 +52,7 @@
     aerc         # Terminal email client
     pulsemixer   # TUI for PulseAudio/PipeWire
     unzip
+    podman-tui   # Terminal UI for Podman
     
     # Media & Entertainment
     beets        # Music library organizer
