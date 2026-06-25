@@ -10,6 +10,7 @@
 
   # Import split-out application configurations
   imports = [
+    ./programs/beets.nix
     ./programs/bash.nix
     ./programs/fastfetch.nix
     ./programs/direnv.nix
