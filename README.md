@@ -50,7 +50,7 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 │   ├── common.nix             # Shared configuration block for all hosts
 │   ├── bluetooth.nix          # Bluetooth daemon and audio profiles
 │   ├── direnv.nix             # Automatic development shell environments
-│   ├── docker.nix             # Containerization runtimes
+│   ├── podman.nix             # Containerization runtimes (Podman with Docker-compat)
 │   ├── gaming.nix             # Steam, GameMode, GameScope optimization blocks
 │   ├── gnupg.nix              # GnuPG daemon configuration and pinentry
 │   ├── hermes.nix             # System-wide Autonomous AI integration (Hermes Agent)
