@@ -24,7 +24,8 @@ set working-directory := '/home/sintra/nixos'
 @update:
   git fetch
   git pull --rebase --autostash
-  nixos-rebuild switch --upgrade --flake . --sudo
+  nix flake update
+  nixos-rebuild switch --flake . --sudo
   sudo -u sintra just backup
 
 # Download a torrent using rqbit

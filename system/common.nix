@@ -81,9 +81,8 @@
   system.autoUpgrade = {
     enable = true;
     flake = "/home/sintra/nixos";
+    upgrade = true;
     flags = [
-      "--update-input"
-      "nixpkgs"
       "--commit-lock-file"
     ];
     dates = "02:00";
