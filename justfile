@@ -2,12 +2,10 @@
 set shell := ["nu", "-c"]
 set working-directory := '/home/sintra/nixos'
 
-generation := shell('nixos-rebuild list-generations --json | from json | get --optional 0.generation')
-
 # Commit the current configuration stage to Git and push
 @backup:
   git add -A
-  if (git status --porcelain | is-empty) { git push } else { git commit -m "NixOS Gen: {{generation}}"; git push }
+  let generation = (nixos-rebuild list-generations --json | from json | get --optional 0.generation | default "unknown"); if (git status --porcelain | is-empty) { git push } else { git commit -m $"NixOS Gen: ($generation)"; git push }
 
 # Collect garbage and delete older generations
 @cg:
@@ -18,7 +16,7 @@ generation := shell('nixos-rebuild list-generations --json | from json | get --o
   git fetch
   git pull --rebase --autostash
   git add -A
-  if (git status --porcelain | is-empty) { echo "Nothing to commit" } else { git commit -m "NixOS Gen: {{generation}} (pre-switch)" }
+  let generation = (nixos-rebuild list-generations --json | from json | get --optional 0.generation | default "unknown"); if (git status --porcelain | is-empty) { echo "Nothing to commit" } else { git commit -m $"NixOS Gen: ($generation) \(pre-switch\)" }
   nixos-rebuild switch --flake . --sudo
   just backup
 
