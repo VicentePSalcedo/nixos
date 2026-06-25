@@ -8,13 +8,7 @@
       trusted-users = [ "sintra" ];
     };
   };
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [
-      "librewolf-151.0.2-1"
-      "librewolf-unwrapped-151.0.2-1"
-    ];
-  };
+  nixpkgs.config.allowUnfree = true;
 
   nixpkgs.overlays = [
     inputs.firefox-addons.overlays.default
