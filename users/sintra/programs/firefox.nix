@@ -26,7 +26,7 @@
   # Symlink ONLY the default profile folder (holding extensions/settings)
   # instead of the entire .config/zen directory. This leaves Zen's configuration
   # directory and profiles.ini fully writable on disk!
-  home.file.".config/zen/default".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.mozilla/firefox/default";
+  home.file.".config/zen/default".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/mozilla/firefox/default";
 
   # Declaratively generate a fully writable profiles.ini on disk upon activation
   home.activation.setupZenProfile = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
