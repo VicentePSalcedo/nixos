@@ -5,7 +5,7 @@
     ./gaming.nix
     ./hermes.nix
     ./sops.nix
-    ./docker.nix
+    ./podman.nix
     ./gnupg.nix
     ./nix-settings.nix
     ./security.nix
@@ -68,7 +68,7 @@
   users.users."sintra" = {
     isNormalUser = true;
     description = "sintra";
-    extraGroups = [ "networkmanager" "wheel" "hermes" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "hermes" "podman" ];
     openssh.authorizedKeys.keys = [
       # wraith
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIUtdv2cd/gJrcXgKcuaHOXPdosc0HQE6A5Air0tY4zZ vicentepsalcedo@gmail.com"
