@@ -27,6 +27,7 @@
     ./programs/fuzzel.nix
     ./programs/yazi.nix
     ./programs/zoxide.nix
+    ./programs/eza.nix
   ];
 
   # Packages to install for the user's environment
