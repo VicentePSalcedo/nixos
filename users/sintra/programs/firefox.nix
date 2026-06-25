@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   programs.firefox = {
@@ -23,7 +23,29 @@
     };
   };
 
-  # Symlink Zen Browser's profile directory to Firefox's profile directory so
-  # they share the exact same profiles, settings, and extensions cleanly.
-  home.file.".config/zen".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.mozilla/firefox";
+  # Symlink ONLY the default profile folder (holding extensions/settings)
+  # instead of the entire .config/zen directory. This leaves Zen's configuration
+  # directory and profiles.ini fully writable on disk!
+  home.file.".config/zen/default".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.mozilla/firefox/default";
+
+  # Declaratively generate a fully writable profiles.ini on disk upon activation
+  home.activation.setupZenProfile = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p $HOME/.config/zen
+    
+    # Write a writable profiles.ini if it doesn't exist
+    if [ ! -f "$HOME/.config/zen/profiles.ini" ]; then
+      cat << 'EOF' > "$HOME/.config/zen/profiles.ini"
+[Profile0]
+Name=default
+IsRelative=1
+Path=default
+Default=1
+
+[General]
+StartWithLastProfile=1
+Version=2
+EOF
+      chmod 644 "$HOME/.config/zen/profiles.ini"
+    fi
+  '';
 }
