@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  programs.librewolf = {
+  programs.firefox = {
     enable = true;
     profiles.default = {
       id = 0;
@@ -13,12 +13,6 @@
         "webgl.disabled" = false;
         "ui.systemUsesDarkTheme" = 1;
         "extensions.autoDisableScopes" = 0;
-        
-        # Prevent LibreWolf from wiping cookies, sessions, and local storage on exit
-        # This keeps password managers (like Dashlane) and extension states logged in.
-        "privacy.clearOnShutdown.cookies" = false;
-        "privacy.clearOnShutdown.sessions" = false;
-        "privacy.clearOnShutdown.offlineApps" = false;
       };
       extensions.packages = with pkgs.firefox-addons; [
         dashlane
@@ -26,7 +20,7 @@
         vimium
       ];
       userChrome = ''
-        /* TokyoNight Storm Theme for LibreWolf */
+        /* TokyoNight Storm Theme for Firefox */
         :root {
           --tokyonight-bg: #1f2335;
           --tokyonight-bg-dark: #1a1b26;

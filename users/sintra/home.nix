@@ -19,7 +19,7 @@
     ./programs/helix.nix
     ./programs/hermes.nix
     ./programs/hyprland
-    ./programs/librewolf.nix
+    ./programs/firefox.nix
     ./programs/nushell.nix
     ./programs/starship.nix
     ./programs/waybar
