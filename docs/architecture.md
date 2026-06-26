@@ -94,13 +94,26 @@ Rather than running an AI assistant purely in a user session, `services.hermes-a
   ```nix
   systemd.services.hermes-agent.path = [ pkgs.nix pkgs.git pkgs.nodejs ];
   ```
-* **Skin Mirroring:** To synchronize the TokyoNight Storm theme between user-space terminal sessions and the system-wide daemon, we deploy custom skins natively via `systemd.tmpfiles.rules`:
+* **Declarative Theme Generation & Sync:** Rather than using static theme files, both user and system-wide configurations programmatically generate the exact same TokyoNight Storm skin YAML file from a Nix attribute set via `pkgs.lib.generators.toYAML`. 
+  At the system level, this is built using `pkgs.writeText` and symlinked natively via `systemd.tmpfiles.rules` using the `L+` rule:
   ```nix
-  systemd.tmpfiles.rules = [
+  systemd.tmpfiles.rules = let
+    themeContent = pkgs.lib.generators.toYAML {} {
+      name = "tokyonight-storm";
+      colors = { ... };
+      branding = { ... };
+    };
+    themeFile = pkgs.writeText "tokyonight-storm.yaml" themeContent;
+  in [
     "d /var/lib/hermes/.hermes/skins 0775 hermes hermes - -"
-    "f+ /var/lib/hermes/.hermes/skins/tokyonight-storm.yaml 0664 hermes hermes - ${builtins.readFile ../users/sintra/programs/tokyonight-storm.yaml}"
+    "L+ /var/lib/hermes/.hermes/skins/tokyonight-storm.yaml - - - - ${themeFile}"
   ];
   ```
+  At the user level (`users/sintra/programs/hermes.nix`), we programmatically generate the skin directly into the user's home directory:
+  ```nix
+  home.file.".hermes/skins/tokyonight-storm.yaml".text = pkgs.lib.generators.toYAML {} { ... };
+  ```
+  This guarantees perfect theme synchronization across all layers while keeping configurations completely declarative and tracked inside the Nix store.
 
 ---
 

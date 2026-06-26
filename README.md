@@ -68,17 +68,26 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 ├── users/                     # Declares home directory layouts & desktop settings
 │   └── sintra/
 │       ├── home.nix           # Home Manager central directory (imports program blocks)
+│       ├── theme.nix          # Global TokyoNight Storm theme colors in pure Nix attribute set
 │       └── programs/          # Flat, native Nix and raw configurations (minimalist)
 │           ├── bash.nix       # Display-Manager-less TTY autostart logic
-│           ├── nushell.nix    # Nu interactive shell with TokyoNight syntax highlight
-│           ├── ghostty.nix    # GPU-accelerated terminal (40% transparent, blurred)
-│           ├── helix.nix      # Minimalist text editor (transparent tokyonight theme)
-│           ├── starship.nix   # Cross-shell prompt featuring custom powerline glyphs
+│           ├── beets.nix      # Music library organizer setup
+│           ├── direnv.nix     # Fast development shells configuration
+│           ├── eza.nix        # Beautiful, color-coded replacement for ls
+│           ├── fastfetch.nix  # Neofetch replacement with performance stats
+│           ├── firefox.nix    # Zen Browser with declaratively managed extensions
 │           ├── fuzzel.nix     # App launcher styled to TokyoNight Storm
-│           ├── librewolf.nix  # Privacy browser with declatively managed extensions
+│           ├── ghostty.nix    # GPU-accelerated terminal (40% transparent, blurred)
+│           ├── git.nix        # Git global configuration
+│           ├── gtk.nix        # GTK theming mirroring TokyoNight Storm
+│           ├── helix.nix      # Minimalist text editor (transparent tokyonight theme)
+│           ├── hermes.nix     # Declarative user-space AI agent skin configuration
+│           ├── nushell.nix    # Nu interactive shell with TokyoNight syntax highlight
+│           ├── rust-analyzer-mcp.nix # Modular custom build definition for rust-analyzer-mcp
+│           ├── starship.nix   # Cross-shell prompt featuring custom powerline glyphs
+│           ├── verso.nix      # Modular custom build definition for Verso web browser
 │           ├── yazi.nix       # Terminal file explorer integrated with Helix and Nushell
-│           ├── hermes.nix     # User-space AI agent setup and theme sync
-│           ├── tokyonight-storm.yaml # Custom skin for AI TUI client
+│           ├── zoxide.nix     # Fast directory jumper setup
 │           ├── hyprland/      # Core window manager folder
 │           │   ├── default.nix  # Bypasses buggy Home Manager Lua generation
 │           │   └── hyprland.conf # Raw compositor config (Vim-navigation, splits)
