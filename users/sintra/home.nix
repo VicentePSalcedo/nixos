@@ -61,6 +61,8 @@
     vesktop      # Wayland-friendly Discord client with Vencord
     signal-desktop # Private, simple, and secure messenger
     musikcube    # Terminal-based music player, library, and streaming server
+
+    google-chrome
     
     # Gaming Optimizations & Utilities
     mangohud     # Vulkan/OpenGL performance overlay
