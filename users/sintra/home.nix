@@ -63,6 +63,7 @@
     musikcube    # Terminal-based music player, library, and streaming server
 
     google-chrome
+    rustdesk     # Open-source remote desktop alternative
     
     # Gaming Optimizations & Utilities
     mangohud     # Vulkan/OpenGL performance overlay
