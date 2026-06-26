@@ -17,23 +17,36 @@ A Nushell-native task runner is configured in `/home/sintra/nixos/justfile` to s
 set shell := ["nu", "-c"]
 set working-directory := '/home/sintra/nixos'
 
-generation := shell('nixos-rebuild list-generations --json | from json | get --optional 0.generation')
-
 # Commit the current configuration stage to Git and push
-backup:
-  @git add -A
-  @if (git status --porcelain | is-empty) { git push } else { git commit -m "NixOS Gen: {{generation}}"; git push }
+@backup:
+  git add -A
+  let generation = (nixos-rebuild list-generations --json | from json | get --optional 0.generation | default "unknown"); if (git status --porcelain | is-empty) { git push } else { git commit -m $"NixOS Gen: ($generation)"; git push }
 
 # Collect garbage and delete older generations
-cg:
-  @sudo nix-collect-garbage --delete-old
+@cg:
+  sudo nix-collect-garbage --delete-old
 
 # Rebuild and switch the current system
-switch:
-  @git fetch
-  @git pull
-  @nixos-rebuild switch --flake . --sudo
-  @just backup
+@switch:
+  git fetch
+  git pull --rebase --autostash
+  git add -A
+  let generation = (nixos-rebuild list-generations --json | from json | get --optional 0.generation | default "unknown"); if (git status --porcelain | is-empty) { echo "Nothing to commit" } else { git commit -m $"NixOS Gen: ($generation) \(pre-switch\)" }
+  nixos-rebuild switch --flake . --sudo
+  sudo -u sintra just backup
+
+# Upgrade packages and switch the current system
+@update:
+  git fetch
+  git pull --rebase --autostash
+  nix flake update
+  nixos-rebuild switch --flake . --sudo
+  sudo -u sintra just backup
+
+# Download a torrent using rqbit
+[positional-arguments]
+@torrent path:
+  rqbit download --output-folder ~/Downloads --exit-on-finish {{path}}
 ```
 
 ### 🛠️ Common Automation Workflows:
@@ -43,10 +56,23 @@ To apply changes made to your configuration on the local machine:
 ```bash
 just switch
 ```
-*Behind the scenes, this will pull updates, compile your configuration, switch your system live, extract the new generation number, stage all changed files in Git, make a commit with the generation number, and push it back to your repository automatically.*
+*Behind the scenes, this will fetch upstream git changes, rebase and autostash if necessary, stage your local changes, create an automated "pre-switch" commit carrying the current generation number, run `nixos-rebuild switch` as root, and then trigger a final `just backup` as your user to commit and push the completed new generation to your Git repository!*
+
+#### 2. Upgrading Packages
+To update your flake inputs and upgrade all system & home packages:
+```bash
+just update
+```
+*This command pulls the latest package definitions from nixpkgs (unstable) by updating the lock file, compiles and switches the system, and performs an automated Git backup.*
 
 #### 3. Freeing Up Disk Space (Garbage Collection)
 To delete older, inactive system generations and run garbage collection on the Nix store:
 ```bash
 just cg
+```
+
+#### 4. Torrenting via CLI
+To quickly download files/torrents using the high-performance Rust torrent client `rqbit`:
+```bash
+just torrent <magnet-url-or-file-path>
 ```
