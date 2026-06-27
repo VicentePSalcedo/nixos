@@ -34,7 +34,7 @@
       match = {
         strong_rec_thresh = 0.25;
         medium_rec_thresh = 0.50;
-        sources = [ "spotify" "chroma" ];
+        sources = [ "spotify" "chroma" "musicbrainz" ];
       };
 
       import = {
@@ -47,9 +47,10 @@
       };
 
       paths = {
-        default = "$main_artist/$album%aunique{}/$track - $title";
-        singleton = "%if{album,$main_artist/$album/$track - $title,Non-Album/$main_artist - $title}";
-        comp = "Compilations/$album/$track - $title";
+        "comp" = "Compilations/$album%aunique{}/$track - $title";
+        "singleton comp:true" = "Compilations/$album%aunique{}/$track - $title";
+        "singleton" = "%if{album,$main_artist/$album%aunique{}/$track - $title,Non-Album/$main_artist - $title}";
+        "default" = "$main_artist/$album%aunique{}/$track - $title";
       };
     };
   };
