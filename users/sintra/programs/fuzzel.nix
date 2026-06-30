@@ -38,8 +38,12 @@
 
   # Hide common CLI apps from launcher (since desktop environments respect NoDisplay=true)
   xdg.desktopEntries = {
-    "com.mitchellh.ghostty" = {
-      name = "Ghostty";
+    "foot" = {
+      name = "Foot";
+      noDisplay = true;
+    };
+    "footclient" = {
+      name = "Foot Client";
       noDisplay = true;
     };
     Helix = {

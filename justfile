@@ -25,6 +25,8 @@ set working-directory := '/home/sintra/nixos'
   git fetch
   git pull --rebase --autostash
   nix flake update
+  git add -A
+  let generation = (nixos-rebuild list-generations --json | from json | get --optional 0.generation | default "unknown"); if (git status --porcelain | is-empty) { echo "Nothing to commit" } else { git commit -m $"NixOS Gen: ($generation) \(pre-update\)" }
   nixos-rebuild switch --flake . --sudo
   sudo -u sintra just backup
 

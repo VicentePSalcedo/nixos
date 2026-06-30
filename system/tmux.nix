@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.tmux = {
-    terminal = "ghostty"; # Let's update terminal to ghostty since user is using ghostty as default
+    terminal = "foot"; # Let's update terminal to foot since user is using foot as default
     enable = true;
     baseIndex = 1;
     shortcut = "space";
