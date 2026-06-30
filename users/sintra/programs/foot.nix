@@ -13,7 +13,7 @@
       scrollback = {
         lines = 10000;
       };
-      colors = {
+      "colors-dark" = {
         alpha = 0.40;
         background = "1a1b26"; # TokyoNight Storm background (dark blueish gray)
         foreground = "c0caf5"; # TokyoNight Storm foreground
