@@ -5,15 +5,9 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "tokyonight_storm_transparent";
+      theme = "tokyonight_storm";
       editor = {
         soft-wrap.enable = true;
-      };
-    };
-    themes = {
-      tokyonight_storm_transparent = {
-        "inherits" = "tokyonight_storm";
-        "ui.background" = { };
       };
     };
   };
