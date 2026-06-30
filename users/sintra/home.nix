@@ -10,69 +10,60 @@
 
   # Import split-out application configurations
   imports = [
-    ./programs/beets.nix
     ./programs/bash.nix
-    ./programs/fastfetch.nix
+    ./programs/beets.nix
     ./programs/direnv.nix
+    ./programs/eza.nix
+    ./programs/fastfetch.nix
+    ./programs/zen.nix
+    ./programs/fuzzel.nix
     ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/gtk.nix
     ./programs/helix.nix
     ./programs/hermes.nix
     ./programs/hyprland
-    ./programs/firefox.nix
     ./programs/nushell.nix
     ./programs/starship.nix
     ./programs/waybar
-    ./programs/fuzzel.nix
     ./programs/yazi.nix
     ./programs/zoxide.nix
-    ./programs/eza.nix
   ];
 
   # Packages to install for the user's environment
   home.packages = with pkgs; [
-    mako         # Lightweight notification daemon
-    swaybg       # Wallpaper utility
-    grim         # Screenshot utility
-    slurp        # Region selector for screenshots
-    wl-clipboard # Wayland clipboard manager
-    networkmanager_dmenu # Control NetworkManager via wofi
+    aerc         # Terminal email client
     inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
-    uv           # Fast Python package installer and runner
-    just         # Command runner
-    rqbit        # Bittorrent client in Rust
-    typst        # Modern typesetting system
-    
-    # CLI Utilities
-    gh           # GitHub CLI
-    lazygit      # Simple terminal UI for git
+    beets        # Music library organizer
     bottom       # Beautiful process viewer (btm)
     dust         # Beautiful disk usage utility (du)
-    aerc         # Terminal email client
-    pulsemixer   # TUI for PulseAudio/PipeWire
-    unzip
-    podman-tui   # Terminal UI for Podman
-    
-    # Media & Entertainment
-    beets        # Music library organizer
-    mpv          # Versatile media player
-    spotify      # Music streaming desktop client
-    vesktop      # Wayland-friendly Discord client with Vencord
-    signal-desktop # Private, simple, and secure messenger
-    musikcube    # Terminal-based music player, library, and streaming server
-
+    gh           # GitHub CLI
     google-chrome
-    rustdesk     # Open-source remote desktop alternative
-    
-    # Gaming Optimizations & Utilities
+    grim         # Screenshot utility
+    just         # Command runner
+    lazygit      # Simple terminal UI for git
+    mako         # Lightweight notification daemon
     mangohud     # Vulkan/OpenGL performance overlay
-    protonup-qt  # Easy GE-Proton installer manager
+    mpv          # Versatile media player
+    musikcube    # Terminal-based music player, library, and streaming server
+    networkmanager_dmenu # Control NetworkManager via wofi
+    podman-tui   # Terminal UI for Podman
     prismlauncher # Advanced Minecraft launcher
-
-    # Custom Rust packages cleanly modularized with callPackage
+    protonup-qt  # Easy GE-Proton installer manager
+    pulsemixer   # TUI for PulseAudio/PipeWire
+    rustdesk     # Open-source remote desktop alternative
     (callPackage ./programs/rust-analyzer-mcp.nix {})
+    rqbit        # Bittorrent client in Rust
+    signal-desktop # Private, simple, and secure messenger
+    spotify      # Music streaming desktop client
+    slurp        # Region selector for screenshots
+    swaybg       # Wallpaper utility
+    typst        # Modern typesetting system
+    unzip
+    uv           # Fast Python package installer and runner
     (callPackage ./programs/verso.nix {})
+    vesktop      # Wayland-friendly Discord client with Vencord
+    wl-clipboard # Wayland clipboard manager
   ];
 
   home.file.".gemini/config/mcp_config.json".text = builtins.toJSON {
