@@ -75,7 +75,7 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 │           ├── direnv.nix     # Fast development shells configuration
 │           ├── eza.nix        # Beautiful, color-coded replacement for ls
 │           ├── fastfetch.nix  # Neofetch replacement with performance stats
-│           ├── firefox.nix    # Zen Browser with declaratively managed extensions
+│           ├── zen.nix        # Zen Browser with declaratively managed extensions
 │           ├── fuzzel.nix     # App launcher styled to TokyoNight Storm
 │           ├── ghostty.nix    # GPU-accelerated terminal (40% transparent, blurred)
 │           ├── git.nix        # Git global configuration

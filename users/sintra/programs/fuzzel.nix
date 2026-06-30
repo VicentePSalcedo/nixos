@@ -6,6 +6,7 @@
     settings = {
       main = {
         font = "JetBrainsMono Nerd Font:size=11";
+        dpi-aware = "no";
         prompt = "❯  ";
         icon-theme = "TokyoNight-Storm";
         fields = "filename,name,generic";

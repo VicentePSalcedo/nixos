@@ -19,6 +19,7 @@
         dashlane
         darkreader
         vimium
+        ublock-origin
       ];
     };
   };

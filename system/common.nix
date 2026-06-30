@@ -2,17 +2,17 @@
 
 {
   imports = [
-    ./gaming.nix
-    ./hermes.nix
-    ./sops.nix
-    ./podman.nix
-    ./gnupg.nix
-    ./nix-settings.nix
-    ./security.nix
-    ./ssh.nix
-    ./tailscale.nix
-    ./syncthing.nix
     ./audio.nix
+    ./gaming.nix
+    ./gnupg.nix
+    ./hermes.nix
+    ./nix-settings.nix
+    ./podman.nix
+    ./security.nix
+    ./sops.nix
+    ./ssh.nix
+    ./syncthing.nix
+    ./tailscale.nix
   ];
 
   
