@@ -5,6 +5,11 @@
   home.homeDirectory = "/home/sintra";
   home.stateVersion = "26.05";
 
+  # Add user binary directories to PATH
+  home.sessionPath = [
+    "$HOME/bin"
+  ];
+
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
 
