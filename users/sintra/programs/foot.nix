@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   programs.foot = {
@@ -39,4 +39,8 @@
       };
     };
   };
+
+  # Disable automatic systemd startup on login to prevent race condition before compositor starts.
+  # We will manually start the service in Hyprland's autostart after DBus/Wayland variables are set.
+  systemd.user.services.foot.Install.WantedBy = lib.mkForce [ ];
 }
