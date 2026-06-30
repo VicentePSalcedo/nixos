@@ -1,9 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.foot = {
     enable = true;
-    server.enable = true; # Starts the foot daemon via systemd user service
+    server.enable = false; # We run the server directly inside Hyprland autostart (Pattern A)
     settings = {
       main = {
         term = "foot";
@@ -39,8 +39,4 @@
       };
     };
   };
-
-  # Disable automatic systemd startup on login to prevent race condition before compositor starts.
-  # We will manually start the service in Hyprland's autostart after DBus/Wayland variables are set.
-  systemd.user.services.foot.Install.WantedBy = lib.mkForce [ ];
 }
