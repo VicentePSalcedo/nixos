@@ -107,6 +107,9 @@ in
         }
       })
 
+      # Always move files to Trash instead of permanently deleting with rm
+      $env.config.rm.always_trash = true
+
       # Just completion
       source ${justCompletions}
     '';
