@@ -22,7 +22,7 @@
     ./programs/fastfetch.nix
     ./programs/zen.nix
     ./programs/fuzzel.nix
-    ./programs/ghostty.nix
+    ./programs/foot.nix
     ./programs/git.nix
     ./programs/gtk.nix
     ./programs/helix.nix
@@ -99,7 +99,7 @@
       active_chars = "==";
     };
     editor = {
-      terminal = "ghostty";
+      terminal = "footclient";
       gui_if_use_terminal = "true";
     };
   };

@@ -62,12 +62,12 @@
         "cpu" = {
           "format" = " {usage}%";
           "tooltip-format" = "CPU {usage}%";
-          "on-click" = "ghostty -e btm";
+          "on-click" = "footclient btm";
         };
         "memory" = {
           "format" = " {used:0.1f}G";
           "tooltip-format" = "RAM {used:0.1f}G / {total:0.1f}G ({percentage}%)";
-          "on-click" = "ghostty -e btm";
+          "on-click" = "footclient btm";
         };
         "temperature" = {
           "hwmon-path" = "/sys/class/thermal/thermal_zone0/temp";
@@ -75,14 +75,14 @@
           "format" = " {temperatureC}°C";
           "format-critical" = " {temperatureC}°C";
           "tooltip-format" = "CPU {temperatureC}°C";
-          "on-click" = "ghostty -e btm";
+          "on-click" = "footclient btm";
         };
         "custom/tailscale" = {
           "exec" = "tailscale status 2>/dev/null | head -1 | awk '{print \" \" $2}' || echo \" offline\"";
           "interval" = 15;
           "tooltip" = true;
           "tooltip-format" = "Tailscale: {output}";
-          "on-click" = "ghostty -e bash -c 'tailscale status; read -p \"Press Enter to close...\"'";
+          "on-click" = "footclient bash -c 'tailscale status; read -p \"Press Enter to close...\"'";
         };
       };
     };

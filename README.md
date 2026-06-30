@@ -77,7 +77,7 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 │           ├── fastfetch.nix  # Neofetch replacement with performance stats
 │           ├── zen.nix        # Zen Browser with declaratively managed extensions
 │           ├── fuzzel.nix     # App launcher styled to TokyoNight Storm
-│           ├── ghostty.nix    # GPU-accelerated terminal (40% transparent, blurred)
+│           ├── foot.nix       # Lightweight, Wayland-native CPU-rendered terminal daemon
 │           ├── git.nix        # Git global configuration
 │           ├── gtk.nix        # GTK theming mirroring TokyoNight Storm
 │           ├── helix.nix      # Minimalist text editor (transparent tokyonight theme)
