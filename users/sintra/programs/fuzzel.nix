@@ -35,44 +35,4 @@
       };
     };
   };
-
-  # Hide common CLI apps from launcher (since desktop environments respect NoDisplay=true)
-  xdg.desktopEntries = {
-    "foot" = {
-      name = "Foot";
-      noDisplay = true;
-    };
-    "footclient" = {
-      name = "Foot Client";
-      noDisplay = true;
-    };
-    Helix = {
-      name = "Helix";
-      noDisplay = true;
-    };
-    "nixos-manual" = {
-      name = "NixOS Manual";
-      noDisplay = true;
-    };
-    neovim = {
-      name = "Neovim";
-      noDisplay = true;
-    };
-    btop = {
-      name = "Btop";
-      noDisplay = true;
-    };
-    htop = {
-      name = "Htop";
-      noDisplay = true;
-    };
-    yazi = {
-      name = "Yazi";
-      noDisplay = true;
-    };
-    ranger = {
-      name = "Ranger";
-      noDisplay = true;
-    };
-  };
 }
