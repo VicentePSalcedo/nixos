@@ -9,7 +9,7 @@
       model.provider = "gemini";
       display = {
         interface = "tui";
-        tui_auto_resume_recent = true;
+        tui_auto_resume_recent = false;
         tui_compact = true;
         skin = "tokyonight-storm";
       };
