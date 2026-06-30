@@ -36,6 +36,7 @@
     Login = {
       HandleLidSwitch = "suspend";
       HandleLidSwitchExternalPower = "suspend";
+      HandleLidSwitchDocked = "ignore";
       HandlePowerKey = "hibernate";
       HandlePowerKeyLongPress = "hibernate";
     };
