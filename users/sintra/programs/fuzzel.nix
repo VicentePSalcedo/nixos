@@ -5,13 +5,13 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=11";
+        font = "JetBrainsMono Nerd Font:size=14";
         dpi-aware = "no";
         prompt = "❯  ";
         icon-theme = "TokyoNight-Storm";
         fields = "filename,name,generic";
         lines = 10;
-        width = 40;
+        width = 50;
         tabs = 4;
         horizontal-pad = 12;
         vertical-pad = 8;

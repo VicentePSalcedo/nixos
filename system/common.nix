@@ -13,6 +13,7 @@
     ./ssh.nix
     ./syncthing.nix
     ./tailscale.nix
+    ./cache-sharing.nix
   ];
 
   
