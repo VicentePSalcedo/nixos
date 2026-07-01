@@ -8,7 +8,6 @@
     ./gnupg.nix
     ./hermes.nix
     ./nix-settings.nix
-    ./nvidia.nix
     ./podman.nix
     ./security.nix
     ./sops.nix
