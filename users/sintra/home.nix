@@ -50,6 +50,7 @@
     mako         # Lightweight notification daemon
     mangohud     # Vulkan/OpenGL performance overlay
     mpv          # Versatile media player
+    vlc          # Cross-platform media player and streaming server
     musikcube    # Terminal-based music player, library, and streaming server
     networkmanager_dmenu # Control NetworkManager via wofi
     podman-tui   # Terminal UI for Podman
