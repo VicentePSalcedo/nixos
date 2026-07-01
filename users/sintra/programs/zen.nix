@@ -33,9 +33,7 @@
   home.activation.setupZenProfile = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     mkdir -p $HOME/.config/zen
     
-    # Write a writable profiles.ini if it doesn't exist
-    if [ ! -f "$HOME/.config/zen/profiles.ini" ]; then
-      cat << 'EOF' > "$HOME/.config/zen/profiles.ini"
+    cat << 'EOF' > "$HOME/.config/zen/profiles.ini"
 [Profile0]
 Name=default
 IsRelative=1
@@ -46,7 +44,6 @@ Default=1
 StartWithLastProfile=1
 Version=2
 EOF
-      chmod 644 "$HOME/.config/zen/profiles.ini"
-    fi
+    chmod 644 "$HOME/.config/zen/profiles.ini"
   '';
 }
