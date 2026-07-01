@@ -12,10 +12,15 @@
         pdf = [
           { run = "zen \"$@\""; block = false; desc = "Zen Browser"; }
         ];
+        vlc = [
+          { run = "vlc \"$@\""; orphan = true; desc = "VLC"; }
+        ];
       };
       open = {
         prepend_rules = [
           { mime = "application/pdf"; use = "pdf"; }
+          { mime = "video/*"; use = "vlc"; }
+          { mime = "audio/*"; use = "vlc"; }
         ];
       };
     };
