@@ -2,6 +2,19 @@
 
 {
   imports = [
+<<<<<<< Updated upstream
+=======
+    ./gaming.nix
+    ./hermes.nix
+    ./sops.nix
+    ./docker.nix
+    ./gnupg.nix
+    ./nix-settings.nix
+    ./security.nix
+    ./ssh.nix
+    ./tailscale.nix
+    ./syncthing.nix
+>>>>>>> Stashed changes
     ./audio.nix
     ./gaming.nix
     ./gnupg.nix
