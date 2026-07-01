@@ -8,7 +8,7 @@ let
   # Replace these with the actual public keys generated on each machine.
   publicKeys = {
     wraith = "wraith-1:+eLfO0crBYxkW/BRFDkPU6NEFywzfd3v5iVCqC4Dgn0=";
-    phantom = "phantom-1:CHANGE_ME_TO_PHANTOM_PUBLIC_KEY";
+    phantom = "phantom-1:7xJKoOYRzNCBbkG5UcuafjPtc6tN3IGMpYlqWQ/frHk=";
   };
 in
 {
