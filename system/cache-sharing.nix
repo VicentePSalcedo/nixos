@@ -7,7 +7,7 @@ let
   # Swap public keys for binary verification.
   # Replace these with the actual public keys generated on each machine.
   publicKeys = {
-    wraith = "wraith-1:CHANGE_ME_TO_WRAITH_PUBLIC_KEY";
+    wraith = "wraith-1:+eLfO0crBYxkW/BRFDkPU6NEFywzfd3v5iVCqC4Dgn0=";
     phantom = "phantom-1:CHANGE_ME_TO_PHANTOM_PUBLIC_KEY";
   };
 in
