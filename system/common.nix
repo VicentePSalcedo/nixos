@@ -3,11 +3,12 @@
 {
   imports = [
     ./audio.nix
-    ./docker.nix
+    ./bluetooth.nix
     ./gaming.nix
     ./gnupg.nix
     ./hermes.nix
     ./nix-settings.nix
+    ./nvidia.nix
     ./podman.nix
     ./security.nix
     ./sops.nix
@@ -15,6 +16,7 @@
     ./syncthing.nix
     ./tailscale.nix
     ./cache-sharing.nix
+    ./tmux.nix
   ];
 
   
