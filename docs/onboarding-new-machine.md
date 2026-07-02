@@ -6,6 +6,32 @@ This assumes you have just completed the standard installation using the NixOS g
 
 ---
 
+## ⚡ Automated Onboarding (Recommended)
+
+To make onboarding seamless, you can use the interactive `onboard.sh` script included in this repository. It automates backing up your current configuration, symlinking `/etc/nixos` to your cloned repo, prompting you for machine-specific features (like Bluetooth and Nvidia drivers), registering the new host in `flake.nix`, staging changes in git, and running the initial rebuild.
+
+### 1. Clone the repository
+Log into your new minimal installation and clone the configuration repository into your home directory:
+```bash
+git clone https://github.com/your-username/nixos-config.git ~/nixos
+cd ~/nixos
+```
+
+### 2. Run the onboarding script
+Make the script executable (if it isn't already) and run it with `sudo`:
+```bash
+chmod +x onboard.sh
+sudo ./onboard.sh
+```
+
+Follow the interactive prompts to define your new hostname, configure hardware features (Nvidia/Bluetooth), and optionally trigger the initial rebuild automatically!
+
+---
+
+## 📖 Manual Onboarding (Reference)
+
+If you prefer to perform the onboarding steps manually, follow the phases below.
+
 ## Phase 1: Post-Install Prep & Backups
 
 When you first log into your new console-only NixOS installation, the system has generated a default configuration specifically for your hardware located in `/etc/nixos`.
