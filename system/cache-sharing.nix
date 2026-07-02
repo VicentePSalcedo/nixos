@@ -37,7 +37,8 @@ in
     trusted-public-keys = [ publicKeys.${otherHost} ];
 
     # Fail-fast options when a cache sharing host is offline
-    connect-timeout = 3;
+    connect-timeout = 1;
+    stalled-download-timeout = 1;
     download-attempts = 1; # No extra retries if offline
   };
 }
