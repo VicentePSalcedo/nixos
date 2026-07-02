@@ -23,6 +23,11 @@
   environment.systemPackages = [ ];
 
 
+  # Bootloader configurations (UEFI systemd-boot by default)
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 6;
+  boot.loader.timeout = 7;
+  boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Network

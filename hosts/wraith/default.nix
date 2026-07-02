@@ -14,12 +14,9 @@
     brightnessctl
   ];
 
-  # Bootloader and ultra-fast boot optimizations for the laptop
+  # Bootloader overrides and ultra-fast boot optimizations for the laptop
   boot = {
-    loader.systemd-boot.enable = true;
-    loader.systemd-boot.configurationLimit = 6;
     loader.timeout = pkgs.lib.mkForce 0; # Skip the 7-second boot menu (hold space during boot to show it)
-    loader.efi.canTouchEfiVariables = true;
     initrd.systemd.enable = true; # Use parallelized systemd in initrd instead of bash scripts
     consoleLogLevel = 0;
     kernelParams = [

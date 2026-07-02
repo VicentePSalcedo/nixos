@@ -2,7 +2,16 @@
 
 let
   hostName = config.networking.hostName;
+
+  # Map hostnames to their static Tailscale IPs to bypass DNS resolution timeouts when offline
+  tailscaleIPs = {
+    wraith = "100.64.0.1";
+    phantom = "100.64.0.7";
+  };
+
+  # Determine other host and its IP
   otherHost = if hostName == "wraith" then "phantom" else "wraith";
+  otherHostIP = if hostName == "wraith" then tailscaleIPs.phantom else tailscaleIPs.wraith;
 
   # Swap public keys for binary verification.
   # Replace these with the actual public keys generated on each machine.
@@ -24,11 +33,11 @@ in
 
   # 3. Pull builds from the other host's cache when available
   nix.settings = {
-    substituters = [ "http://${otherHost}:5000" ];
+    substituters = [ "http://${otherHostIP}:5000" ];
     trusted-public-keys = [ publicKeys.${otherHost} ];
 
     # Fail-fast options when a cache sharing host is offline
     connect-timeout = 3;
-    download-attempts = 2;
+    download-attempts = 1; # No extra retries if offline
   };
 }
