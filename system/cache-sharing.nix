@@ -26,5 +26,9 @@ in
   nix.settings = {
     substituters = [ "http://${otherHost}:5000" ];
     trusted-public-keys = [ publicKeys.${otherHost} ];
+
+    # Fail-fast options when a cache sharing host is offline
+    connect-timeout = 3;
+    download-attempts = 2;
   };
 }
