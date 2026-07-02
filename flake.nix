@@ -26,6 +26,16 @@
 
   outputs = { self, nixpkgs, hermes-agent, home-manager, sops-nix, antigravity-nix, ... }@inputs: {
     nixosConfigurations = {
+      spectre = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          sops-nix.nixosModules.sops
+          hermes-agent.nixosModules.default
+          home-manager.nixosModules.home-manager
+          ./hosts/spectre
+        ];
+      };
       phantom = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };

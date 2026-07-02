@@ -16,7 +16,7 @@
 
   # Bootloader overrides and ultra-fast boot optimizations for the laptop
   boot = {
-    loader.timeout = pkgs.lib.mkForce 0; # Skip the 7-second boot menu (hold space during boot to show it)
+    loader.timeout = lib.mkForce 0; # Skip the 7-second boot menu (hold space during boot to show it)
     initrd.systemd.enable = true; # Use parallelized systemd in initrd instead of bash scripts
     consoleLogLevel = 0;
     kernelParams = [
@@ -29,7 +29,7 @@
   };
 
   # Prevent network initialization from stalling the boot process
-  systemd.services.NetworkManager-wait-online.enable = pkgs.lib.mkForce false;
+  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
 
   # Power Management
   services.logind.settings = {
@@ -41,4 +41,7 @@
       HandlePowerKeyLongPress = "hibernate";
     };
   };
+
+  system.stateVersion = "26.05";
+
 }

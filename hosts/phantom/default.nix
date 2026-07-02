@@ -8,4 +8,7 @@
   ];
 
   networking.hostName = "phantom";
+
+  system.stateVersion = "26.05";
+
 }

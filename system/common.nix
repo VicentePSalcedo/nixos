@@ -91,6 +91,4 @@
     dates = "02:00";
     randomizedDelaySec = "45min";
   };
-
-  system.stateVersion = "26.05";
 }
