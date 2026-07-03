@@ -1,19 +1,24 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... }@args:
 
+let
+  hostName = if args ? osConfig then args.osConfig.networking.hostName else "";
+
+  # Custom Tokyo Night Storm styled host names
+  hostStyle = if hostName == "wraith" then "bold #bb9af7"      # Purple/Lavender
+              else if hostName == "phantom" then "bold #7dcfff" # Cyan/Teal
+              else if hostName == "spectre" then "bold #ff9e64" # Orange/Coral
+              else "bold #f7768e";                              # Red/Pink
+in
 {
   programs.starship = {
     enable = true;
     settings = {
       username = {
-        format = " [╭─$user]($style)@";
-        style_user = "bold red";
-        style_root = "bold red";
-        show_always = true;
+        disabled = true;
       };
 
       hostname = {
-        format = "[$hostname]($style) in ";
-        style = "bold dimmed red";
+        format = " [╭─$hostname](${hostStyle}) in ";
         trim_at = "-";
         ssh_only = false;
         disabled = false;
@@ -65,7 +70,7 @@
       };
 
       time = {
-        format = " 🕙 $time($style)\n";
+        format = "  $time($style)\n";
         time_format = "%T";
         style = "bright-white";
         disabled = true;
@@ -77,7 +82,7 @@
       };
 
       status = {
-        symbol = "🔴";
+        symbol = "󰜺 ";
         format = "[\\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\\]]($style)";
         map_symbol = true;
         disabled = false;
