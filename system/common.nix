@@ -81,6 +81,9 @@
     ];
   };
 
+  # Enable automatic login for user sintra on tty1
+  services.getty.autologinUser = "sintra";
+
   # Auto-upgrade system packages via pure Nix
   system.autoUpgrade = {
     enable = true;

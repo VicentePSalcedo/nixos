@@ -94,6 +94,11 @@
     };
   };
 
+  # Import nixos justfile so just commands can be run from the home directory
+  home.file.".justfile".text = ''
+    import 'nixos/justfile'
+  '';
+
   xdg.configFile."networkmanager-dmenu/config.ini".text = pkgs.lib.generators.toINI {} {
     dmenu = {
       dmenu_command = "fuzzel --dmenu";
