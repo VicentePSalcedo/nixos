@@ -5,8 +5,8 @@
   services.hermes-agent = {
     enable = true;
     settings = {
-      model.default = "gemini-flash-latest";
-      model.provider = "gemini";
+      model.default = "deepseek-v4-flash";
+      model.provider = "deepseek";
       display = {
         interface = "tui";
         tui_auto_resume_recent = false;
