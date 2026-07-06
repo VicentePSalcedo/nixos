@@ -17,7 +17,7 @@ set working-directory := '/home/sintra/nixos'
   git pull --rebase --autostash
   git add -A
   let generation = (nixos-rebuild list-generations --json | from json | get --optional 0.generation | default "unknown"); if (git status --porcelain | is-empty) { echo "Nothing to commit" } else { git commit -m $"NixOS Gen: ($generation) \(pre-switch\)" }
-  nixos-rebuild switch --flake . --sudo --option max-substitution-jobs 1 --option low-speed-limit 0
+  nixos-rebuild switch --flake . --sudo --option stalled-download-timeout 15
   sudo -u sintra just backup
 
 # Upgrade packages and switch the current system
@@ -27,7 +27,7 @@ set working-directory := '/home/sintra/nixos'
   nix flake update
   git add -A
   let generation = (nixos-rebuild list-generations --json | from json | get --optional 0.generation | default "unknown"); if (git status --porcelain | is-empty) { echo "Nothing to commit" } else { git commit -m $"NixOS Gen: ($generation) \(pre-update\)" }
-  nixos-rebuild switch --flake . --sudo --option max-substitution-jobs 1 --option low-speed-limit 0
+  nixos-rebuild switch --flake . --sudo --option stalled-download-timeout 15
   sudo -u sintra just backup
 
 # Download a torrent using rqbit
