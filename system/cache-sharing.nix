@@ -25,9 +25,10 @@ in
     substituters = [ "http://${spectreIP}:5000" ];
     trusted-public-keys = [ spectrePublicKey ];
 
-    # Fail-fast options when the central cache is offline
-    connect-timeout = 1;
-    stalled-download-timeout = 1;
+    # Fail-safe options when the central cache is offline or slow
+    connect-timeout = 5;
+    stalled-download-timeout = 15;
     download-attempts = 1;
+    fallback = true;
   } else {};
 }
