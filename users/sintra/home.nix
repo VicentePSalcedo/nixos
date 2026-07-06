@@ -62,6 +62,7 @@
     rqbit        # Bittorrent client in Rust
     signal-desktop # Private, simple, and secure messenger
     spotify      # Music streaming desktop client
+    speedtest-rs # CLI internet speedtest tool in Rust
     slurp        # Region selector for screenshots
     swaybg       # Wallpaper utility
     typst        # Modern typesetting system
