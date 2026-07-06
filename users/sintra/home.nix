@@ -43,6 +43,7 @@
     bottom       # Beautiful process viewer (btm)
     dust         # Beautiful disk usage utility (du)
     gh           # GitHub CLI
+    gnucash      # Free software for double entry accounting
     google-chrome
     grim         # Screenshot utility
     just         # Command runner
