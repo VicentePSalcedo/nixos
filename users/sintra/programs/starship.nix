@@ -2,12 +2,6 @@
 
 let
   hostName = if args ? osConfig then args.osConfig.networking.hostName else "";
-
-  # Custom Tokyo Night Storm styled host names
-  hostStyle = if hostName == "wraith" then "bold #bb9af7"      # Purple/Lavender
-              else if hostName == "phantom" then "bold #7dcfff" # Cyan/Teal
-              else if hostName == "spectre" then "bold #ff9e64" # Orange/Coral
-              else "bold #f7768e";                              # Red/Pink
 in
 {
   programs.starship = {
@@ -18,7 +12,7 @@ in
       };
 
       hostname = {
-        format = " [╭─$hostname](${hostStyle}) in ";
+        format = " [╭─$hostname](bold #f7768e) in ";
         trim_at = "-";
         ssh_only = false;
         disabled = false;
