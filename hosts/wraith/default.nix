@@ -35,7 +35,7 @@
   services.logind.settings = {
     Login = {
       HandleLidSwitch = "suspend";
-      HandleLidSwitchExternalPower = "suspend";
+      HandleLidSwitchExternalPower = "ignore";
       HandleLidSwitchDocked = "ignore";
       HandlePowerKey = "hibernate";
       HandlePowerKeyLongPress = "hibernate";

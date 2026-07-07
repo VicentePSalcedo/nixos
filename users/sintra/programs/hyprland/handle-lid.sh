@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Handle laptop lid switch events under Hyprland
+# logind is configured to ignore lid close on external power (HandleLidSwitchExternalPower=ignore)
+# so this script is the sole handler — no race with logind.
 
 action=$1
 
@@ -17,12 +19,14 @@ done
 
 if [[ "$action" == "close" ]]; then
     if [[ "$external_connected" == "true" ]]; then
-        # Disable internal display ONLY if an external monitor is connected
-        hyprctl keyword monitor "eDP-1, disable"
+        # Small delay to let the kernel/DRM settled after lid switch detection,
+        # preventing a race where the first hyprctl monitor disable doesn't take.
+        sleep 0.3
+        hyprctl keyword monitor "eDP-1, disable" || sleep 0.3 && hyprctl keyword monitor "eDP-1, disable"
     else
-        # If no external monitor, let systemd handle suspension (sleep) and do not disable the monitor in Hyprland
-        # This prevents the black screen / no-wake issue when resuming from sleep without a dock.
-        true
+        # No external monitor — suspend instead of blanking the screen,
+        # since logind won't do it for us on external power.
+        systemctl suspend
     fi
 elif [[ "$action" == "open" ]]; then
     # Always re-enable internal display when opening the lid

@@ -25,6 +25,7 @@
     ./programs/foot.nix
     ./programs/git.nix
     ./programs/gtk.nix
+    ./programs/gnucash.nix
     ./programs/helix.nix
     ./programs/hermes.nix
     ./programs/hyprland
@@ -39,39 +40,45 @@
   home.packages = with pkgs; [
     aerc         # Terminal email client
     inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
-    beets        # Music library organizer
     bottom       # Beautiful process viewer (btm)
     dust         # Beautiful disk usage utility (du)
     gh           # GitHub CLI
-    gnucash      # Free software for double entry accounting
-    google-chrome
-    grim         # Screenshot utility
     just         # Command runner
     lazygit      # Simple terminal UI for git
-    mako         # Lightweight notification daemon
-    mangohud     # Vulkan/OpenGL performance overlay
-    mpv          # Versatile media player
-    vlc          # Cross-platform media player and streaming server
-    musikcube    # Terminal-based music player, library, and streaming server
-    networkmanager_dmenu # Control NetworkManager via wofi
     podman-tui   # Terminal UI for Podman
-    prismlauncher # Advanced Minecraft launcher
-    protonup-qt  # Easy GE-Proton installer manager
-    pulsemixer   # TUI for PulseAudio/PipeWire
-    rustdesk     # Open-source remote desktop alternative
-    (callPackage ./programs/rust-analyzer-mcp.nix {})
     rqbit        # Bittorrent client in Rust
-    signal-desktop # Private, simple, and secure messenger
-    spotify      # Music streaming desktop client
     speedtest-rs # CLI internet speedtest tool in Rust
-    slurp        # Region selector for screenshots
-    swaybg       # Wallpaper utility
     typst        # Modern typesetting system
     unzip
     uv           # Fast Python package installer and runner
-    (callPackage ./programs/verso.nix {})
+
+    beets        # Music library organizer
+    musikcube    # Terminal-based music player, library, and streaming server
+    mpv          # Versatile media player
+    vlc          # Cross-platform media player and streaming server
+    spotify      # Music streaming desktop client
+
+    gnucash      # Free software for double entry accounting
+    google-chrome
+    rustdesk     # Open-source remote desktop alternative
+
+    mangohud     # Vulkan/OpenGL performance overlay
+    prismlauncher # Advanced Minecraft launcher
+    protonup-qt  # Easy GE-Proton installer manager
+
+    signal-desktop # Private, simple, and secure messenger
     vesktop      # Wayland-friendly Discord client with Vencord
+
+    grim         # Screenshot utility
+    mako         # Lightweight notification daemon
+    networkmanager_dmenu # Control NetworkManager via wofi
+    pulsemixer   # TUI for PulseAudio/PipeWire
+    slurp        # Region selector for screenshots
+    swaybg       # Wallpaper utility
     wl-clipboard # Wayland clipboard manager
+
+    (callPackage ./programs/rust-analyzer-mcp.nix {})
+    (callPackage ./programs/verso.nix {})
   ];
 
   home.file.".gemini/config/mcp_config.json".text = builtins.toJSON {

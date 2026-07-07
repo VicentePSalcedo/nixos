@@ -1,0 +1,415 @@
+/* GnuCash Dark Theme - TokyoNight Storm
+ * Managed by Home Manager
+ * File: ~/.config/gnucash/gtk-3.0.css
+ *
+ * Settings required:
+ *   Edit > Preferences > Register
+ *   UNCHECK "Use GnuCash built-in color theme"
+ */
+
+/* TokyoNight Storm palette */
+@define-color tn-bg       #24283b;
+@define-color tn-bg-dark  #1a1b26;
+@define-color tn-surface  #1f2335;
+@define-color tn-fg       #c0caf5;
+@define-color tn-fg-dim   #565f89;
+@define-color tn-blue     #7aa2f7;
+@define-color tn-cyan     #7dcfff;
+@define-color tn-green    #9ece6a;
+@define-color tn-orange   #ff9e64;
+@define-color tn-red      #f7768e;
+@define-color tn-purple   #bb9af7;
+@define-color tn-yellow   #e0af68;
+@define-color tn-teal     #1abc9c;
+@define-color tn-border   #3b4261;
+@define-color tn-selection #2f3b54;
+
+/* Global dark base */
+* {
+  background-color: @tn-bg;
+  color: @tn-fg;
+}
+
+/* Main window */
+#gnc-id-main-window {
+  background-color: @tn-bg-dark;
+}
+
+#gnc-id-main-window notebook tab {
+  min-height: 0px;
+  min-width: 0px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+/* Notebook tabs */
+notebook {
+  background-color: @tn-bg-dark;
+}
+
+notebook header {
+  background-color: @tn-bg-dark;
+}
+
+notebook tab {
+  background-color: @tn-surface;
+  color: @tn-fg;
+  border: 1px solid @tn-border;
+}
+
+notebook tab:checked {
+  background-color: @tn-bg;
+  color: @tn-blue;
+  border-bottom-color: @tn-blue;
+}
+
+/* Register sheet */
+gnc-id-sheet {
+  font: 11px "FiraCode Nerd Font Mono";
+}
+
+gnc-id-header {
+  background-color: @tn-surface;
+  color: @tn-fg-dim;
+}
+
+gnc-id-cursor {
+  background-color: @tn-selection;
+  color: @tn-fg;
+}
+
+gnc-id-cursor button {
+  border-width: 1px;
+  border-color: @tn-blue;
+}
+
+/* Register User Colors - uncheck built-in color theme in prefs */
+.gnc-class-user-register-header {
+  background-color: @tn-surface;
+  color: @tn-fg;
+}
+
+.gnc-class-user-register-primary {
+  background-color: @tn-bg;
+}
+
+.gnc-class-user-register-primary:disabled {
+  background-color: @tn-surface;
+}
+
+.gnc-class-user-register-secondary {
+  background-color: @tn-surface;
+}
+
+.gnc-class-user-register-secondary:disabled {
+  background-color: @tn-bg-dark;
+}
+
+.gnc-class-user-register-split {
+  background-color: @tn-bg;
+}
+
+.gnc-class-user-register-split:disabled {
+  background-color: @tn-surface;
+}
+
+.gnc-class-user-register-cursor {
+  background-color: @tn-selection;
+  color: @tn-fg;
+  border-radius: 0px;
+}
+
+/* Negative numbers */
+.gnc-class-negative-numbers {
+  color: @tn-red;
+}
+
+/* Positive numbers */
+.gnc-class-positive-numbers {
+  color: @tn-green;
+}
+
+/* Toolbar */
+toolbar {
+  background-color: @tn-bg-dark;
+  border-bottom: 1px solid @tn-border;
+  padding: 2px;
+}
+
+toolbar toolbutton button {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+toolbar toolbutton button:hover {
+  background-color: @tn-selection;
+}
+
+/* Scrollbar */
+scrollbar {
+  background-color: @tn-bg-dark;
+}
+
+scrollbar slider {
+  min-width: 8px;
+  min-height: 8px;
+  border-radius: 4px;
+  background-color: @tn-fg-dim;
+  border: 2px solid transparent;
+}
+
+scrollbar slider:hover {
+  background-color: @tn-blue;
+}
+
+/* Tree/List views */
+treeview {
+  background-color: @tn-bg;
+  color: @tn-fg;
+}
+
+treeview:selected {
+  background-color: @tn-blue;
+  color: @tn-bg-dark;
+}
+
+treeview:disabled {
+  background-color: @tn-surface;
+  color: @tn-fg-dim;
+}
+
+/* Entry fields */
+entry {
+  background-color: @tn-surface;
+  color: @tn-fg;
+  border: 1px solid @tn-border;
+}
+
+entry:focus {
+  border-color: @tn-blue;
+}
+
+/* Buttons */
+button {
+  background-color: @tn-surface;
+  color: @tn-fg;
+  border: 1px solid @tn-border;
+}
+
+button:hover {
+  background-color: @tn-selection;
+}
+
+button:active {
+  background-color: @tn-blue;
+  color: @tn-bg-dark;
+}
+
+/* Combo boxes */
+combobox {
+  background-color: @tn-surface;
+  color: @tn-fg;
+}
+
+combobox button {
+  background-color: @tn-surface;
+  color: @tn-fg;
+}
+
+/* Menus */
+menu {
+  background-color: @tn-bg-dark;
+  color: @tn-fg;
+  border: 1px solid @tn-border;
+}
+
+menu menuitem {
+  background-color: @tn-bg-dark;
+  color: @tn-fg;
+}
+
+menu menuitem:hover {
+  background-color: @tn-selection;
+}
+
+/* Summary bar */
+#gnc-id-summarybar {
+  background-color: @tn-bg-dark;
+  color: @tn-fg;
+  border-top: 1px solid @tn-border;
+}
+
+#gnc-id-summarybar .gnc-class-highlight {
+  color: @tn-blue;
+}
+
+.gnc-class-highlight {
+  color: @tn-blue;
+}
+
+/* Status bar */
+statusbar {
+  background-color: @tn-bg-dark;
+  color: @tn-fg-dim;
+  border-top: 1px solid @tn-border;
+}
+
+/* Reconcile window */
+#gnc-id-reconcile-totals * {
+  background-color: @tn-surface;
+}
+
+.gnc-class-credits treeview {
+  background-color: @tn-bg;
+}
+
+.gnc-class-credits treeview:selected {
+  background-color: @tn-green;
+  color: @tn-bg-dark;
+}
+
+.gnc-class-debits treeview {
+  background-color: @tn-bg;
+}
+
+.gnc-class-debits treeview:selected {
+  background-color: @tn-red;
+  color: @tn-bg-dark;
+}
+
+/* Progress bar */
+progressbar {
+  background-color: @tn-surface;
+  border: 1px solid @tn-border;
+}
+
+progressbar progress {
+  background-color: @tn-blue;
+}
+
+/* Calendar widget */
+calendar {
+  background-color: @tn-bg;
+  color: @tn-fg;
+  border: 1px solid @tn-border;
+}
+
+calendar .header {
+  background-color: @tn-surface;
+  color: @tn-fg;
+}
+
+calendar .frame {
+  border-color: @tn-border;
+  border-width: 1px;
+}
+
+#gnc-id-dense-calendar .frame {
+  border-color: @tn-border;
+  border-width: 1px;
+}
+
+#gnc-id-dense-calendar .header {
+  background-color: @tn-surface;
+}
+
+#gnc-id-dense-calendar .primary {
+  background-color: @tn-bg;
+}
+
+#gnc-id-dense-calendar .secondary {
+  background-color: @tn-surface;
+}
+
+#gnc-id-dense-calendar .markers {
+  background-color: @tn-orange;
+}
+
+#gnc-id-dense-calendar-popup {
+  background-color: @tn-bg;
+  color: @tn-fg;
+  border: 1px solid @tn-border;
+}
+
+#gnc-id-dense-calendar-popup treeview {
+  background-color: @tn-surface;
+}
+
+/* Labels */
+label {
+  color: @tn-fg;
+}
+
+/* Frames */
+frame {
+  border: 1px solid @tn-border;
+}
+
+frame border {
+  border-color: @tn-border;
+}
+
+/* Dialog boxes */
+dialog {
+  background-color: @tn-bg;
+}
+
+/* Check buttons */
+check {
+  background-color: @tn-surface;
+  border: 1px solid @tn-border;
+}
+
+/* Radio buttons */
+radio {
+  background-color: @tn-surface;
+  border: 1px solid @tn-border;
+}
+
+/* Spin buttons */
+spinbutton {
+  background-color: @tn-surface;
+  color: @tn-fg;
+}
+
+spinbutton button {
+  background-color: @tn-surface;
+  border: 1px solid @tn-border;
+}
+
+/* Paned window */
+paned {
+  background-color: @tn-bg;
+}
+
+paned separator {
+  background-color: @tn-border;
+}
+
+/* Scrolled window */
+scrolledwindow {
+  background-color: @tn-bg;
+}
+
+/* Expander */
+expander {
+  color: @tn-fg;
+}
+
+expander:checked {
+  color: @tn-blue;
+}
+
+/* Combo box text */
+combobox window {
+  background-color: @tn-bg-dark;
+}
+
+/* Cell renderer */
+cellview {
+  color: @tn-fg;
+}
