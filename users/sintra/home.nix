@@ -38,7 +38,6 @@
 
   # Packages to install for the user's environment
   home.packages = with pkgs; [
-    aerc         # Terminal email client
     inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
     bottom       # Beautiful process viewer (btm)
     dust         # Beautiful disk usage utility (du)
