@@ -79,6 +79,7 @@
 
     (callPackage ./programs/rust-analyzer-mcp.nix {})
     (callPackage ./programs/verso.nix {})
+    (callPackage ./programs/betterbird.nix {})
   ];
 
   home.file.".gemini/config/mcp_config.json".text = builtins.toJSON {
