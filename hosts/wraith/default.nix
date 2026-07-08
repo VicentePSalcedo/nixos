@@ -12,6 +12,7 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
+    gimp
   ];
 
   # Bootloader overrides and ultra-fast boot optimizations for the laptop
