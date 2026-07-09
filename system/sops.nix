@@ -16,7 +16,6 @@
         owner = config.users.users.sintra.name;
         format = "yaml";
       };
-      "proton-vpn-wireguard-key" = { };
     };
   };
 
