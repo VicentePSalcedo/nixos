@@ -67,6 +67,7 @@
 
     signal-desktop # Private, simple, and secure messenger
     vesktop      # Wayland-friendly Discord client with Vencord
+    slack
 
     grim         # Screenshot utility
     mako         # Lightweight notification daemon
