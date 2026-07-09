@@ -56,7 +56,7 @@
     mpv          # Versatile media player
     vlc          # Cross-platform media player and streaming server
     spotify      # Music streaming desktop client
-    jellyfin
+    jellyfin-desktop
 
     gnucash      # Free software for double entry accounting
     google-chrome
