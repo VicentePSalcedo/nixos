@@ -59,7 +59,6 @@
 
     gnucash      # Free software for double entry accounting
     google-chrome
-    rustdesk     # Open-source remote desktop alternative
 
     mangohud     # Vulkan/OpenGL performance overlay
     prismlauncher # Advanced Minecraft launcher
