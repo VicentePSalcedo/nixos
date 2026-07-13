@@ -14,6 +14,7 @@ in
     port = 5000;
     secretKeyFile = "/var/lib/nix-serve/cache-key.sec";
     bindAddress = if hostName == "spectre" then spectreIP else "127.0.0.1";
+    extraParams = [ "--workers 20" ];
   };
 
   # 2. Securely expose nix-serve ONLY over the Tailscale interface on the server
