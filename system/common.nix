@@ -32,6 +32,7 @@
   boot.loader.timeout = 7;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "lsm=landlock,lockdown,yama,apparmor,bpf" ];
 
   # Network
   networking.networkmanager.enable = true;
