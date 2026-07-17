@@ -44,6 +44,7 @@
     gh           # GitHub CLI
     just         # Command runner
     lazygit      # Simple terminal UI for git
+    openssl      # Cryptographic library and CLI tools (rand, enc, etc.)
     podman-tui   # Terminal UI for Podman
     rqbit        # Bittorrent client in Rust
     speedtest-rs # CLI internet speedtest tool in Rust
