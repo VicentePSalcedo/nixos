@@ -95,9 +95,6 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 │               ├── default.nix
 │               └── style.css  # Native stylesheet layout
 │
-└── wallpapers/                # Clean, unified repository assets & high-resolution wallpapers
-    ├── tokyonight.png         # Main wallpaper styled to matching desktop theme
-    └── 1920x1080.png          # Boot splash graphics (GRUB / Plymouth background)
 ```
 
 ---

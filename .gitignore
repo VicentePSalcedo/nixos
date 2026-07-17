@@ -14,3 +14,7 @@ secrets.decrypted.yaml
 # Backups
 *.backup
 *.bak
+
+# Wallpapers (kept locally, not tracked in git)
+wallpaper/
+wallpapers/
