@@ -14,7 +14,7 @@
         lines = 10000;
       };
       "colors-dark" = {
-        alpha = 0.90;
+        alpha = 0.75;
         background = "1a1b26"; # TokyoNight Storm background (dark blueish gray)
         foreground = "c0caf5"; # TokyoNight Storm foreground
 

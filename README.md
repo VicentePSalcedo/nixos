@@ -1,22 +1,9 @@
-# Sintra's Modular NixOS Configuration
+# Modular NixOS Configuration
 
 [![NixOS](https://img.shields.io/badge/NixOS-26.05-blue.svg?logo=nixos&logoColor=white)](https://nixos.org)
 [![Home Manager](https://img.shields.io/badge/Home_Manager-declarative-orange.svg?logo=nixos&logoColor=white)](https://github.com/nix-community/home-manager)
 [![Built with Flakes](https://img.shields.io/badge/Nix_Flakes-supported-purple.svg?logo=nixos&logoColor=white)](https://wiki.nixos.org/wiki/Flakes)
 [![TokyoNight Storm](https://img.shields.io/badge/Theme-TokyoNight_Storm-7aa2f7.svg?style=flat)](https://github.com/folke/tokyonight.nvim)
-
-> An enterprise-grade, beautifully modularized NixOS flake configuration. This repository manages Sintra's workstation styled with a cohesive, transparent **TokyoNight Storm** aesthetic.
-
----
-
-## Host Overview
-
-This repository uses a single unified Git-tracked Nix Flake to manage the physical machine under a shared declarative framework:
-
-| Hostname | Role / Architecture | Graphics / Driver | Bootloader | Highlights |
-| :--- | :--- | :--- | :--- | :--- |
-| **`phantom`** | Daily Driver Workstation <br>`x86_64-linux` | AMD Radeon RX 580 <br>`amdgpu` + Mesa | `systemd-boot` | GPU accelerated, gaming-optimized, runs local system-wide AI assistant. |
-| **`wraith`** | Portable Laptop <br>`x86_64-linux` | Integrated Graphics | `systemd-boot` | Portable laptop setup, fully syncs data with Phantom, supports backlight/brightness controls via Hyprland. |
 
 ---
 
@@ -91,10 +78,6 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 ```
 
 ---
-
-## Architecture & Design
-
-This document outlines the architectural blueprints, structural rules, and design philosophies underpinning this NixOS configuration repository.
 
 ### Core Design Philosophies
 
