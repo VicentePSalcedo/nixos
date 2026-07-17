@@ -15,6 +15,7 @@ secrets.decrypted.yaml
 *.backup
 *.bak
 
-# Wallpapers (kept locally, not tracked in git)
+# Wallpapers (ignore all by default, un-ignore specific tracked essentials)
+wallpapers/*
+!wallpapers/tokyonight.png
 wallpaper/
-wallpapers/
