@@ -28,8 +28,8 @@
                 # Rock-bottom priority so it is never auto-selected over Bluetooth
                 "priority.driver" = 100;
                 "priority.session" = 100;
-              }
-            }
+              };
+            };
           }
           # Give wired headphones/headsets a priority above the internal
           # speaker (100) but below Bluetooth (2000), so they auto-switch
