@@ -25,6 +25,11 @@
   # Ensure just is installed system-wide on all hosts now and in the future
   environment.systemPackages = [ ];
 
+  # temp allow electron, it broke 7/17/26. This should be removed when it can
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-40.10.5"
+  ];
+
 
   # Bootloader configurations (UEFI systemd-boot by default)
   boot.loader.systemd-boot.enable = true;
