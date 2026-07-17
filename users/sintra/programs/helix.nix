@@ -5,12 +5,18 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "tokyonight_storm";
+      theme = "tokyonight_storm_transparent";
       editor = {
         soft-wrap.enable = true;
       };
     };
   };
+
+  xdg.configFile."helix/themes/tokyonight_storm_transparent.toml".text = ''
+    inherits = "tokyonight_storm"
+
+    "ui.background" = {}
+  '';
 
   home.sessionVariables = {
     EDITOR = "hx";
