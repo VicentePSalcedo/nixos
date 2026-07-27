@@ -57,6 +57,7 @@
     mpv          # Versatile media player
     vlc          # Cross-platform media player and streaming server
     spotify      # Music streaming desktop client
+    rhythmbox
 
     gnucash      # Free software for double entry accounting
     google-chrome
