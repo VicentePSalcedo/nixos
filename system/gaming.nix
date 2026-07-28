@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  # Xbox Wireless Controller dongle / Bluetooth driver
+  hardware.xpadneo.enable = true;
+
   # Steam & Gaming Optimizations
   programs.steam = {
     enable = true;

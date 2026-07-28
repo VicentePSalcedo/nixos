@@ -39,49 +39,38 @@
   # Packages to install for the user's environment
   home.packages = with pkgs; [
     inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
-    bottom       # Beautiful process viewer (btm)
-    dust         # Beautiful disk usage utility (du)
-    gh           # GitHub CLI
-    just         # Command runner
-    lazygit      # Simple terminal UI for git
-    openssl      # Cryptographic library and CLI tools (rand, enc, etc.)
-    podman-tui   # Terminal UI for Podman
-    rqbit        # Bittorrent client in Rust
-    speedtest-rs # CLI internet speedtest tool in Rust
-    typst        # Modern typesetting system
+    bottom
+    dust
+    gh
+    just
+    lazygit
+    openssl
+    podman-tui
+    speedtest-rs
+    typst
     unzip
-    uv           # Fast Python package installer and runner
+    uv
 
-    beets        # Music library organizer
-    musikcube    # Terminal-based music player, library, and streaming server
-    mpv          # Versatile media player
-    vlc          # Cross-platform media player and streaming server
-    spotify      # Music streaming desktop client
-    rhythmbox
-
-    gnucash      # Free software for double entry accounting
-    google-chrome
-
-    mangohud     # Vulkan/OpenGL performance overlay
-    prismlauncher # Advanced Minecraft launcher
-    protonup-qt  # Easy GE-Proton installer manager
-
-    signal-desktop # Private, simple, and secure messenger
-    vesktop      # Wayland-friendly Discord client with Vencord
-    slack
+    beets
+    gnucash
+    mpv
     proton-vpn
+    rhythmbox
+    signal-desktop
+    slack
+    thunderbird
+    vesktop
 
-    grim         # Screenshot utility
-    mako         # Lightweight notification daemon
-    networkmanager_dmenu # Control NetworkManager via wofi
-    pulsemixer   # TUI for PulseAudio/PipeWire
-    slurp        # Region selector for screenshots
-    swaybg       # Wallpaper utility
-    wl-clipboard # Wayland clipboard manager
+    grim
+    mako
+    networkmanager_dmenu
+    pulsemixer
+    slurp
+    swaybg
+    wl-clipboard
 
     (callPackage ./programs/rust-analyzer-mcp.nix {})
     (callPackage ./programs/verso.nix {})
-    thunderbird
   ];
 
   home.file.".gemini/config/mcp_config.json".text = builtins.toJSON {
