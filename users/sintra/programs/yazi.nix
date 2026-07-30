@@ -15,12 +15,15 @@
         vlc = [
           { run = "vlc \"$@\""; orphan = true; desc = "VLC"; }
         ];
+        audio = [
+          { run = "rhythmbox \"$@\""; orphan = true; desc = "Rhythmbox"; }
+        ];
       };
       open = {
         prepend_rules = [
           { mime = "application/pdf"; use = "pdf"; }
           { mime = "video/*"; use = "vlc"; }
-          { mime = "audio/*"; use = "vlc"; }
+          { mime = "audio/*"; use = "audio"; }
         ];
       };
     };

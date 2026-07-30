@@ -25,6 +25,7 @@
     ./programs/foot.nix
     ./programs/git.nix
     ./programs/gtk.nix
+    ./programs/rhythmbox.nix
     ./programs/gnucash.nix
     ./programs/helix.nix
     ./programs/hermes.nix
