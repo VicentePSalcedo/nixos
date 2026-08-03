@@ -15,14 +15,6 @@ in
   # Set dark preference for GTK applications
   gtk = {
     enable = true;
-    theme = {
-      name = "TokyoNight-Storm";
-      package = pkgs.tokyonight-gtk-theme;
-    };
-    iconTheme = {
-      name = "TokyoNight-Storm";
-      package = pkgs.tokyonight-gtk-theme;
-    };
     font = {
       name = "FiraCode Nerd Font";
       size = 11;
