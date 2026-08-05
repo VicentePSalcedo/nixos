@@ -70,7 +70,7 @@ The repository enforces a strict, logical **Separation of Concerns**. Core syste
 │           ├── zoxide.nix     # Fast directory jumper setup
 │           ├── hyprland/      # Core window manager folder
 │           │   ├── default.nix  # Bypasses buggy Home Manager Lua generation
-│           │   └── hyprland.conf # Raw compositor config (Vim-navigation, splits)
+│           │   └── hyprland.lua # Raw Lua compositor config (Vim-navigation, splits)
 │           └── waybar/        # Custom status bar
 │               ├── default.nix
 │               └── style.css  # Native stylesheet layout
@@ -808,12 +808,12 @@ services.hermes-agent = {
 
 Recent versions of Home Manager's Hyprland module (v0.55+) attempt to generate a `.lua` configuration layout using experimental compilers. However, translating standard declarative settings lists often produces invalid Lua output, breaking core compositor features like system keybindings on system rebuild.
 
-To prevent this config drift, this repository adopts a stable, robust hybrid configuration. It disables the Home Manager generator and writes a native, raw `hyprland.conf` directly into user space via `builtins.readFile`. This preserves perfect syntax highlighting, standard formatting, and absolute stability:
+To prevent this config drift, this repository adopts a stable, robust hybrid configuration. It disables the Home Manager generator and writes a native, raw `hyprland.lua` (the modern Lua config format, since the legacy `.conf`/Hyprlang format is deprecated and slated for removal) directly into user space via `xdg.configFile`. This preserves perfect syntax highlighting, standard formatting, and absolute stability:
 
 ```nix
 # users/sintra/programs/hyprland/default.nix
 { config, pkgs, ... }: {
-  xdg.configFile."hypr/hyprland.conf".text = builtins.readFile ./hyprland.conf;
+  xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
 }
 ```
 
