@@ -30,5 +30,5 @@ if [[ "$action" == "close" ]]; then
     fi
 elif [[ "$action" == "open" ]]; then
     # Always re-enable internal display when opening the lid
-    hyprctl keyword monitor "eDP-1, preferred, auto, 1"
+    hyprctl keyword monitor "eDP-1, preferred, 0x0, 1"
 fi
