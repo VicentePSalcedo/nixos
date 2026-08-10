@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Handle laptop lid switch events under Hyprland
-# logind is configured to ignore lid close on external power (HandleLidSwitchExternalPower=ignore)
-# so this script is the sole handler — no race with logind.
+# logind is configured to ignore lid close entirely (HandleLidSwitch=ignore,
+# HandleLidSwitchExternalPower=ignore) so this script is the sole handler — no race with logind.
 
 action=$1
 
