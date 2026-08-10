@@ -26,6 +26,17 @@
           { mime = "audio/*"; use = "audio"; }
         ];
       };
+      plugin = {
+        prepend_fetchers = [
+          { url = "*";  run = "git"; group = "git"; }
+          { url = "*/"; run = "git"; group = "git"; }
+        ];
+      };
+    };
+
+    plugins.git = {
+      package = pkgs.yaziPlugins.git;
+      setup = true;
     };
   };
 }
