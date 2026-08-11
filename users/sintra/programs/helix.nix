@@ -11,6 +11,8 @@
       editor = {
         soft-wrap.enable = false;
         gutters = [ "diagnostics" "spacer" "diff" ];
+        # load .helix/config.toml + .helix/languages.toml in repos without a trust prompt
+        workspace-trust.trusted = [ "/home/sintra/Repos/*" ];
       };
     };
   };
