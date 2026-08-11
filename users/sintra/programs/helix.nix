@@ -7,7 +7,8 @@
     settings = {
       theme = "tokyonight_storm_transparent";
       editor = {
-        soft-wrap.enable = true;
+        soft-wrap.enable = false;
+        line-number = "none";
       };
     };
   };
