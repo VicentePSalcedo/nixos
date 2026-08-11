@@ -8,7 +8,7 @@
       theme = "tokyonight_storm_transparent";
       editor = {
         soft-wrap.enable = false;
-        line-number = "none";
+        gutters = [ "diagnostics" "spacer" "diff" ];
       };
     };
   };
