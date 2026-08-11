@@ -4,6 +4,8 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    # marksman: markdown LSP (wikilinks, backlinks, headings) - scoped to helix's PATH only
+    extraPackages = [ pkgs.marksman ];
     settings = {
       theme = "tokyonight_storm_transparent";
       editor = {
