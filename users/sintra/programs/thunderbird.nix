@@ -10,7 +10,10 @@
       isDefault = true;
 
       settings = {
-        # Built-in dark ("night") theme
+        # Force dark UI. TB 153 ignores extensions.activeThemeID for built-in
+        # themes (AddonManager keeps default-theme@mozilla.org active), so the
+        # working lever is ui.systemUsesDarkTheme — same mechanism as zen.nix.
+        "ui.systemUsesDarkTheme" = 1;
         "extensions.activeThemeID" = "thunderbird-compact-dark@mozilla.org";
       };
     };
