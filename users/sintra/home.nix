@@ -32,6 +32,7 @@
     ./programs/hyprland
     ./programs/nushell.nix
     ./programs/starship.nix
+    ./programs/thunderbird.nix
     ./programs/waybar
     ./programs/yazi.nix
     ./programs/zoxide.nix
@@ -59,7 +60,6 @@
     rhythmbox
     signal-desktop
     slack
-    thunderbird
     vesktop
 
     grim
