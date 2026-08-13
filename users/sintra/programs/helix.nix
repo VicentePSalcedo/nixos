@@ -9,7 +9,7 @@
     settings = {
       theme = "tokyonight_storm_transparent";
       editor = {
-        soft-wrap.enable = false;
+        soft-wrap.enable = true;
         gutters = [ "diagnostics" "spacer" "diff" ];
       };
     };
