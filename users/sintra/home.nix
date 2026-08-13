@@ -44,6 +44,7 @@
     bottom
     dust
     gh
+    htop
     just
     lazygit
     openssl
