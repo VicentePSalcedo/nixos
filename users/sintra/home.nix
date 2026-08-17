@@ -47,6 +47,7 @@
     htop
     just
     lazygit
+    oci-cli
     openssl
     podman-tui
     speedtest-rs
