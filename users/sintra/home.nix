@@ -57,6 +57,7 @@
 
     beets
     gnucash
+    google-chrome
     mpv
     proton-vpn
     rhythmbox
