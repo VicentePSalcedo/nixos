@@ -8,7 +8,7 @@
       directory = "/home/sintra/Music/Library";
       library = "/home/sintra/Music/Library/musiclibrary.db";
       ignore = [ ".*" "*~" "System Volume Information" "lost+found" "Library" ];
-      plugins = "scrub chroma lastgenre duplicates spotify inline";
+      plugins = "chroma lastgenre duplicates spotify inline";
       threaded = false;
       
       item_fields = {
