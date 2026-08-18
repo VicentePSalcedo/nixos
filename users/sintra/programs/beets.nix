@@ -6,8 +6,8 @@
     package = pkgs.beets;
     settings = {
       directory = "/home/sintra/Music/Library";
-      library = "/home/sintra/Music/Library/musiclibrary.db";
-      ignore = [ ".*" "*~" "System Volume Information" "lost+found" "Library" ];
+      library = "/home/sintra/.config/beets/musiclibrary.db";
+      ignore = [ ".*" "*~" "System Volume Information" "lost+found" "Library" "__" "*sync-conflict*" ];
       plugins = "chroma lastgenre duplicates spotify inline";
       threaded = false;
       
@@ -43,7 +43,7 @@
         copy = false;
         incremental = true;
         timid = false;
-        duplicate_action = "remove";
+        duplicate_action = "skip";
       };
 
       paths = {
