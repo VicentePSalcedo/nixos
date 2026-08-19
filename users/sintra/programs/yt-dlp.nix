@@ -10,8 +10,9 @@
     # yt-dlp config - managed by home-manager
     # All downloads land in the beets staging folder
 
-    # Output: flat, beets-friendly "Artist - Title" names (artist falls back to uploader)
-    -o /home/sintra/Music/Stagging/%(artist,uploader)s - %(title)s.%(ext)s
+    # Output: flat, beets-friendly "Artist - Title" names (artist falls back to uploader).
+    # QUOTED: config parser splits on whitespace, so spaces in the template must be quoted.
+    -o "/home/sintra/Music/Stagging/%(artist,uploader)s - %(title)s.%(ext)s"
 
     # Extract audio-only; opus matches the library format.
     # YouTube audio is already opus, so no re-encoding happens - just container handling.
@@ -30,9 +31,13 @@
     --embed-metadata
     --embed-thumbnail
 
+    # Cookies from Chrome (logged-in YouTube): fixes "HTTP Error 403: Forbidden"
+    # rate-limiting that hits anonymous sessions after ~1 download.
+    --cookies-from-browser chrome
+
     # Resilience
-    --retries 5
-    --fragment-retries 5
+    --retries 10
+    --fragment-retries 10
     --ignore-errors
   '';
 }
