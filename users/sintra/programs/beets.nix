@@ -43,7 +43,7 @@
         copy = false;
         incremental = true;
         timid = false;
-        duplicate_action = "skip";
+        duplicate_action = "remove";
       };
 
       paths = {
