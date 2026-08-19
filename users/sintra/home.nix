@@ -35,6 +35,7 @@
     ./programs/thunderbird.nix
     ./programs/waybar
     ./programs/yazi.nix
+    ./programs/yt-dlp.nix
     ./programs/zoxide.nix
   ];
 
