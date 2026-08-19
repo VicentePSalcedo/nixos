@@ -62,6 +62,7 @@
     mpv
     proton-vpn
     rhythmbox
+    rustdesk
     signal-desktop
     slack
     vesktop
