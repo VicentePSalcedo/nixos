@@ -7,16 +7,16 @@
     settings = {
       opener = {
         edit = [
-          { run = "hx \"$@\""; block = true; desc = "Helix"; }
+          { run = "hx %s"; block = true; desc = "Helix"; }
         ];
         pdf = [
-          { run = "zen \"$@\""; block = false; desc = "Zen Browser"; }
+          { run = "zen %s"; block = false; desc = "Zen Browser"; }
         ];
         vlc = [
-          { run = "vlc \"$@\""; orphan = true; desc = "VLC"; }
+          { run = "vlc %s"; orphan = true; desc = "VLC"; }
         ];
         audio = [
-          { run = "rhythmbox \"$@\""; orphan = true; desc = "Rhythmbox"; }
+          { run = "rhythmbox %s"; orphan = true; desc = "Rhythmbox"; }
         ];
       };
       open = {
