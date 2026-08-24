@@ -22,6 +22,10 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("/home/sintra/nixos/users/sintra/programs/hyprland/toggle-mic.sh"))
 
+-- Rhythmbox next/previous track (MPRIS)
+hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("busctl --user call org.mpris.MediaPlayer2.rhythmbox /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player Next"))
+hl.bind(mainMod .. " + minus", hl.dsp.exec_cmd("busctl --user call org.mpris.MediaPlayer2.rhythmbox /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player Previous"))
+
 -- Mouse move/resize
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
