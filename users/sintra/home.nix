@@ -60,6 +60,7 @@
     gnucash
     google-chrome
     mpv
+    cozy
     proton-vpn
     (callPackage ./programs/rhythmbox-wrapped.nix {})
     rustdesk

@@ -44,3 +44,26 @@ hl.window_rule({
     },
     center = true,
 })
+
+-- App-to-workspace assignments (silent = open without stealing focus)
+hl.window_rule({
+    name      = "app-workspace-vesktop",
+    match     = { class = "^vesktop$" },
+    workspace = "10 silent",
+})
+hl.window_rule({
+    name      = "app-workspace-signal",
+    match     = { class = "^Signal$" },
+    workspace = "9 silent",
+})
+hl.window_rule({
+    name      = "app-workspace-thunderbird",
+    match     = { class = "^thunderbird$" },
+    workspace = "8 silent",
+})
+-- Verify class with `hyprctl clients` after first launch if Cozy lands elsewhere
+hl.window_rule({
+    name      = "app-workspace-cozy",
+    match     = { class = "^com\\.github\\.geigi\\.cozy$" },
+    workspace = "7 silent",
+})
