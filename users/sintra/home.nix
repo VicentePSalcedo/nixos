@@ -61,7 +61,7 @@
     google-chrome
     mpv
     proton-vpn
-    rhythmbox
+    (callPackage ./programs/rhythmbox-wrapped.nix {})
     rustdesk
     signal-desktop
     slack
