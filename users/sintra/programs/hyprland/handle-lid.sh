@@ -2,6 +2,8 @@
 # Handle laptop lid switch events under Hyprland
 # logind is configured to ignore lid close entirely (HandleLidSwitch=ignore,
 # HandleLidSwitchExternalPower=ignore) so this script is the sole handler — no race with logind.
+# Lid close suspends on battery and AC, unless an external monitor is connected
+# (clamshell mode: internal display off, machine keeps running).
 
 action=$1
 
@@ -19,13 +21,12 @@ done
 
 if [[ "$action" == "close" ]]; then
     if [[ "$external_connected" == "true" ]]; then
-        # Small delay to let the kernel/DRM settled after lid switch detection,
+        # Small delay to let the kernel/DRM settle after lid switch detection,
         # preventing a race where the first hyprctl monitor disable doesn't take.
         sleep 0.3
         hyprctl keyword monitor "eDP-1, disable" || sleep 0.3 && hyprctl keyword monitor "eDP-1, disable"
     else
-        # No external monitor — suspend instead of blanking the screen,
-        # since logind won't do it for us on external power.
+        # No external monitor — suspend (on both battery and AC, since logind ignores lid events)
         systemctl suspend
     fi
 elif [[ "$action" == "open" ]]; then

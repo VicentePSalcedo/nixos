@@ -63,7 +63,7 @@
     cozy
     proton-vpn
     (callPackage ./programs/rhythmbox-wrapped.nix {})
-    rustdesk
+    rustdesk-flutter
     signal-desktop
     slack
     vesktop
