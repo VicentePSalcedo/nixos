@@ -4,8 +4,11 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    # marksman: markdown LSP (wikilinks, backlinks, headings) - scoped to helix's PATH only
-    extraPackages = [ pkgs.marksman ];
+    # LSPs scoped to helix's PATH only (bundled languages.toml wires them per-language)
+    # marksman: markdown LSP (wikilinks, backlinks, headings)
+    # nil: nix LSP - identifiers, builtins, flake schema, NixOS options (from flake's nixpkgs input)
+    # nixd: nix LSP - nixpkgs package-name completion via <nixpkgs> (resolves via nix.nixPath in system/nix-settings.nix)
+    extraPackages = [ pkgs.marksman pkgs.nil pkgs.nixd ];
     settings = {
       theme = "tokyonight_storm_transparent";
       editor = {
