@@ -103,7 +103,7 @@
           ];
         }
         {
-          ratio = 18;
+          ratio = 22;
           child = [
             {
               type = "mem";
@@ -111,7 +111,7 @@
           ];
         }
         {
-          ratio = 56;
+          ratio = 52;
           child = [
             {
               type = "proc";
