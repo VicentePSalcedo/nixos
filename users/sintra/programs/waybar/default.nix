@@ -71,7 +71,7 @@
         };
         "network" = {
           "interval" = 5;
-          "format-wifi" = " {essid}";
+          "format-wifi" = "  {essid}";
           "format-ethernet" = " {ifname}";
           "format-linked" = " {ifname} (no IP)";
           "format-disconnected" = " offline";
