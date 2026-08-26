@@ -44,18 +44,6 @@
 
       memory_graph.cache_memory = true; # split cache/buffers out of "used"
 
-      # Cut noise out of the disk + network widgets.
-      disk.name_filter = {
-        is_list_ignored = true;
-        regex = true;
-        list = [ "^/dev/loop\\d+" "^/dev/zram\\d+" ];
-      };
-      network_graph.interface_filter = {
-        is_list_ignored = true;
-        regex = true;
-        list = [ "^lo$" "^veth" "^podman" "^docker" "^virbr" "^br-" ];
-      };
-
       # TokyoNight Storm.
       styles = {
         cpu = {
@@ -77,12 +65,6 @@
           cache_colour = "#565f89";
           swap_colour = "#e0af68";
           arc_colour = "#7dcfff";
-        };
-        network = {
-          rx_colour = "#9ece6a";
-          tx_colour = "#bb9af7";
-          rx_total_colour = "#7dcfff";
-          tx_total_colour = "#ff9e64";
         };
         tables.headers = {
           colour = "#7dcfff";
@@ -110,44 +92,30 @@
         };
       };
 
-      # Layout: graphs stay small, the process table gets the screen.
+      # Layout: stacked cpu / mem / proc — no network, disk, or temp widgets.
       row = [
         {
-          ratio = 26;
+          ratio = 20;
           child = [
             {
-              ratio = 3;
               type = "cpu";
             }
+          ];
+        }
+        {
+          ratio = 14;
+          child = [
             {
-              ratio = 2;
               type = "mem";
             }
           ];
         }
         {
-          ratio = 52;
+          ratio = 66;
           child = [
             {
               type = "proc";
               default = true;
-            }
-          ];
-        }
-        {
-          ratio = 22;
-          child = [
-            {
-              ratio = 4;
-              type = "net";
-            }
-            {
-              ratio = 4;
-              type = "disk";
-            }
-            {
-              ratio = 3;
-              type = "temp";
             }
           ];
         }
