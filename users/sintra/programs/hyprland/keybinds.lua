@@ -13,6 +13,10 @@ hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("fuzzel"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 hl.bind(mainMod .. " + S", hl.dsp.layout("togglesplit"))
 
+-- Process monitor / killer (ALT + A = activity, ALT + CTRL + K = kill by name/port)
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("footclient btm --expanded"))
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd("footclient pik --fullscreen"))
+
 -- Dwindle pseudo split = shrink window as if already split, next window fills the other half
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.layout("pseudo"))
 

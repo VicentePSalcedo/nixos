@@ -17,6 +17,7 @@
   imports = [
     ./programs/bash.nix
     ./programs/beets.nix
+    ./programs/bottom.nix
     ./programs/direnv.nix
     ./programs/eza.nix
     ./programs/fastfetch.nix
@@ -42,7 +43,6 @@
   # Packages to install for the user's environment
   home.packages = with pkgs; [
     inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
-    bottom
     dust
     gh
     htop

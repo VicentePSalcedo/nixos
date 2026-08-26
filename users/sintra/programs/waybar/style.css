@@ -121,6 +121,16 @@ window#waybar {
     font-weight: bold;
 }
 
+#network {
+    padding: 0 8px;
+    color: #9ece6a;
+    font-weight: bold;
+}
+#network.disconnected,
+#network.linked {
+    color: #f7768e;
+}
+
 /* ── Tray ───────────────────────────────────────── */
 #tray {
     padding: 0 8px;

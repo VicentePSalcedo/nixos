@@ -10,7 +10,7 @@
         height = 24;
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = (if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else []) ++ [ "temperature" "cpu" "memory" "pulseaudio" "custom/tailscale" "custom/spacer" "tray" ];
+        modules-right = (if osConfig.networking.hostName == "wraith" then [ "bluetooth" "battery" ] else []) ++ [ "temperature" "cpu" "memory" "pulseaudio" "network" "custom/tailscale" "custom/spacer" "tray" ];
         "tray" = {
           "spacing" = 10;
           "icon-size" = 16;
@@ -67,7 +67,20 @@
         "memory" = {
           "format" = " {used:0.1f}G";
           "tooltip-format" = "RAM {used:0.1f}G / {total:0.1f}G ({percentage}%)";
-          "on-click" = "footclient btm";
+          "on-click" = "footclient btm --process_default_sort mem";
+        };
+        "network" = {
+          "interval" = 5;
+          "format-wifi" = " {essid}";
+          "format-ethernet" = " {ifname}";
+          "format-linked" = " {ifname} (no IP)";
+          "format-disconnected" = " offline";
+          "tooltip-format-wifi" = "{essid}\n{signalStrength}% signal at {frequency} GHz\n{ipaddr}/{cidr} via {ifname}\n{gwaddr} gateway";
+          "tooltip-format-ethernet" = "{ifname}\n{ipaddr}/{cidr}\n{gwaddr} gateway";
+          "tooltip-format-disconnected" = "No network connection";
+          "max-length" = 22;
+          "on-click" = "networkmanager_dmenu";
+          "on-click-right" = "footclient nmtui";
         };
         "temperature" = {
           "hwmon-path" = "/sys/class/thermal/thermal_zone0/temp";
