@@ -56,6 +56,7 @@
     unzip
     uv
 
+    amberol
     beets
     gnucash
     google-chrome
