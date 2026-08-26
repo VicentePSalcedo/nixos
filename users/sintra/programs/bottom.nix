@@ -95,7 +95,7 @@
       # Layout: stacked cpu / mem / proc — no network, disk, or temp widgets.
       row = [
         {
-          ratio = 26;
+          ratio = 33;
           child = [
             {
               type = "cpu";
@@ -103,7 +103,7 @@
           ];
         }
         {
-          ratio = 22;
+          ratio = 33;
           child = [
             {
               type = "mem";
@@ -111,7 +111,7 @@
           ];
         }
         {
-          ratio = 52;
+          ratio = 34;
           child = [
             {
               type = "proc";
