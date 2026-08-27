@@ -53,7 +53,7 @@ hl.window_rule({
 })
 hl.window_rule({
     name      = "app-workspace-signal",
-    match     = { class = "^Signal$" },
+    match     = { class = "^[Ss]ignal$" }, -- hyprctl shows lowercase 'signal'; keep S for legacy XWayland
     workspace = "9 silent",
 })
 hl.window_rule({
