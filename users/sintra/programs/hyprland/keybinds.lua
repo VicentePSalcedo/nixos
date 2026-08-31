@@ -4,6 +4,8 @@ local mainMod = "ALT"
 -- Terminal and launcher
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("footclient"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("/home/sintra/nixos/users/sintra/programs/hyprland/toggle-wallpaper.sh"))
+-- Cat Mode: toggle internal keyboard/touchpad/trackpoint/touchscreen off (external input stays active)
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("/home/sintra/nixos/users/sintra/programs/hyprland/cat-mode.nu"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("networkmanager_dmenu"))
 hl.bind(mainMod .. " + X", hl.dsp.window.close())
 -- Logout: lock screen (hyprlock). True exit: `hyprctl dispatch exit` in a terminal

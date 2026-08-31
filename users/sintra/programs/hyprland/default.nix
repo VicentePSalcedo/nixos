@@ -8,4 +8,5 @@
   xdg.configFile."hypr/keybinds.lua".source = ./keybinds.lua;
   xdg.configFile."hypr/hyprlock.conf".source = ./hyprlock.conf;
   xdg.configFile."hypr/toggle-wallpaper.sh".source = ./toggle-wallpaper.sh;
+  xdg.configFile."hypr/cat-mode.nu".source = ./cat-mode.nu;
 }
