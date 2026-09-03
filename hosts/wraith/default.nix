@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ../../system/common.nix
       ../../system/bluetooth.nix
+      ../../system/printing.nix
     ];
 
   networking.hostName = "wraith";
